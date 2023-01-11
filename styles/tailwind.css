@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+  
+body {
+  letter-spacing: 0.5px;
+}
