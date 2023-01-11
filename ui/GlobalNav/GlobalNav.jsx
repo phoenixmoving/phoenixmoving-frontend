@@ -148,7 +148,7 @@ export default function GlobalNav() {
                           );
                         })}
                       </div>
-                      <div className="bg-palette-background px-5 py-5 sm:px-8 sm:py-8">
+                      {/* <div className="bg-palette-background px-5 py-5 sm:px-8 sm:py-8">
                         <div>
                           <h3 className=" font-medium text-gray-500">
                             Recent Posts
@@ -177,7 +177,7 @@ export default function GlobalNav() {
                             <span aria-hidden="true"> &rarr;</span>
                           </a>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </Popover.Panel>
                 </>
@@ -199,7 +199,7 @@ export default function GlobalNav() {
           </Popover.Group>
           <div className="hidden items-center justify-end gap-1 lg:flex lg:flex-1 lg:w-0">
             <a
-              href="https://www.gophoenixmoving.com/login"
+              href="https://account.gophoenixmoving.com/login"
               target="_blank"
               rel="nofollow"
               title="Client Login"

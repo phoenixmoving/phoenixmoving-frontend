@@ -26,7 +26,7 @@ export default function MobileMenu({ invert }) {
     <Popover>
       <Popover.Button
         className={clsx(
-          'inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500',
+          'inline-flex items-center justify-center rounded-md p-2',
           {
             'text-gray-400 hover:bg-gray-100 hover:text-gray-500 stroke-gray-900':
               invert,
@@ -113,7 +113,7 @@ export default function MobileMenu({ invert }) {
                   </div>
                   <div>
                     <Button
-                      href="#"
+                      href="/"
                       color="primary"
                       className="w-full"
                       title="Book a move"
@@ -123,7 +123,7 @@ export default function MobileMenu({ invert }) {
                     <p className="mt-6 text-center  font-medium text-gray-500">
                       Existing customer?{' '}
                       <a
-                        href="https://www.gophoenixmoving.com/login"
+                        href="https://account.gophoenixmoving.com/login"
                         target="_blank"
                         rel="nofollow"
                         title="Client login"
