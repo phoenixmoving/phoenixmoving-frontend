@@ -32,7 +32,7 @@ export default function CTA() {
             <div className="relative">
               <div className="text-center">
                 <h2 className="text-4xl sm:text-5xl font-medium tracking-tight text-white">
-                  Move with Phoneix Moving Boston.
+                  Move with Phoenix Moving Boston.
                 </h2>
                 <p className="text-center mt-4 text-lg text-white">
                   No credit card required.

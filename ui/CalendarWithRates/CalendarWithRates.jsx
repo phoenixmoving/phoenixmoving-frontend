@@ -54,11 +54,11 @@ export default function CalendarWithRates(props) {
 
   // if (error) return 'An error has occurred.';
   // if (!rates) return 'Loading...';
-  
+
   return (
     <div
       ref={wrapperRef}
-      className="absolute top-48 left-12 sm:top-28 sm:left-72 lg:top-16 lg:left-20 bg-white rounded-xl shadow-3xl w-[300px] h-[350px] z-10"
+      className="absolute top-[30rem] left-12 sm:top-[30rem] sm:left-[30%] lg:top-[12rem] lg:left-[59%] bg-white rounded-xl shadow-3xl w-[300px] h-[350px] z-10"
     >
       <MonthSelect
         month={month}

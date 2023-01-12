@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default async function Hero({ image, title }) {
   return (
     <section className="relative">
-      <div className="relative sm:overflow-hidden min-h-[500px] sm:min-h-[700px] flex">
+      <div className="relative sm:overflow-hidden min-h-[500px] sm:min-h-[600px] flex">
         <Image
           src={image}
           alt={title}

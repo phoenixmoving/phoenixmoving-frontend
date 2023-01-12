@@ -33,15 +33,17 @@ export default function Photos() {
             )}
           >
             <Image
-              fill
+              // fill
               src={image}
               alt={getTitle(image)}
+              width={224}
+              height={249}
               // sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
               title={getTitle(image)}
-              sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
+              // sizes="(max-width: 768px) 100vw,
+              // (max-width: 1200px) 50vw,
+              // 33vw"
             />
           </div>
         ))}

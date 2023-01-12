@@ -12,7 +12,7 @@ export default function Item({ item }) {
           {formatter(item.price, '$')}
         </p>
       </div>
-      <div className="flex flex-1 justify-center items-center relative w-[130px] h-full min-h-[170px] m-auto">
+      <div className="relative flex flex-1 justify-center items-center w-[130px] h-full min-h-[170px] m-auto">
         <Image
           src={item.img}
           alt={item.name}

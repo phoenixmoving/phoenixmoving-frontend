@@ -56,7 +56,7 @@ export default function LocalMoveQuote({ values }) {
         <div className="py-2 grid grid-cols-2 gap-4  items-center">
           <dt className="text-xs font-medium text-gray-700">Travel time</dt>
           <dd className="text-xs font-medium text-gray-700">
-            {values.travelTime[0]}/{values.travelTime[1]} min.
+            {values.travelTime[0]}/{values.travelTime[1]} min. from/to(HQ)
           </dd>
         </div>
         <div className="py-2 grid grid-cols-2 gap-4  items-center">

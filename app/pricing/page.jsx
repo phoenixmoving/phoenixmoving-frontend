@@ -5,6 +5,7 @@ import InterstatePrices from './InterstatePrices';
 import PricingTable from './PricingTable';
 import PackingItems from '@/ui/PackingItems';
 import CTA from '@/ui/CTA';
+import Contact from '@/ui/Contact';
 
 export default async function PricingPage() {
   return (
@@ -15,6 +16,7 @@ export default async function PricingPage() {
       <InterstatePrices />
       <PackingItems />
       <CTA />
+      <Contact />
     </>
   );
 }

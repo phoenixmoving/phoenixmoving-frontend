@@ -50,9 +50,8 @@ export default function Locations() {
                 )}
                 {state.cities?.map((city) => {
                   return (
-                    <p className="leading-none">
+                    <p className="leading-none" key={city.name}>
                       <a
-                        key={city.name}
                         href={city.slug}
                         className="font-light text-xs text-gray-900 hover:text-gray-600 hover:underline"
                         title={`Moving From Boston to ${city.name}`}
