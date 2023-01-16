@@ -26,9 +26,9 @@ export const findTravelTime = (
   movingService,
   activeStep,
   setActiveStep,
-  actions
+  actions,
 ) => {
-  let office = '02026';
+  let office = '01760';
   let fromZip = originZip;
   let toZip = destinationZip;
   let originsArray = [];
@@ -96,7 +96,7 @@ export const findTravelTime = (
           fromHq = getMinutes(response.rows[0].elements[0].duration.value);
           toHq = getMinutes(response.rows[0].elements[1].duration.value);
           distanceBetween = getMiles(
-            response.rows[1].elements[1].distance.value
+            response.rows[1].elements[1].distance.value,
           );
 
           if (fromHq < 20) fromHq = 20;
@@ -108,7 +108,7 @@ export const findTravelTime = (
             timeBetween = toHq;
           } else {
             timeBetween = getMinutes(
-              response.rows[1].elements[1].duration.value
+              response.rows[1].elements[1].duration.value,
             );
           }
           if (distanceBetween > 180) {
@@ -134,6 +134,6 @@ export const findTravelTime = (
           actions.setSubmitting(false);
         }
       }
-    }
+    },
   );
 };

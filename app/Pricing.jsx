@@ -5,7 +5,7 @@ import SectionHeader from '@/ui/SectionHeader';
 
 export async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/prices`, {
-    cache: 'no-store',
+    next: { revalidate: 180 },
   });
   return res.json();
 }

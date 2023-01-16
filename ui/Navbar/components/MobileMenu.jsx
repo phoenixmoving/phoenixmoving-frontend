@@ -20,6 +20,7 @@ export default function MobileMenu({
       open={mobileMenuOpen}
       onClose={setMobileMenuOpen}
       initialFocus={null}
+      focus="false"
     >
       <Dialog.Panel
         focus="false"
@@ -27,7 +28,7 @@ export default function MobileMenu({
       >
         <div className="flex h-9 items-center justify-between">
           <div className="flex">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 className="h-8"

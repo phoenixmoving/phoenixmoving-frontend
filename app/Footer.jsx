@@ -16,16 +16,16 @@ const navigation = {
   support: [
     { name: 'Prices', href: '/pricing' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Our Work', href: '#' },
+    // { name: 'Our Work', href: '#' },
   ],
   company: [
     { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
+    // { name: 'Blog', href: '#' },
+    // { name: 'Jobs', href: '#' },
   ],
   legal: [
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    // { name: 'Privacy', href: '#' },
+    // { name: 'Terms', href: '#' },
   ],
   social: [
     {

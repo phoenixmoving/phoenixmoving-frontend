@@ -5,7 +5,6 @@ import { Bars3Icon } from '@heroicons/react/24/outline';
 import { UserIcon } from '@heroicons/react/20/solid';
 import MobileMenu from './components/MobileMenu';
 import clsx from 'clsx';
-import Link from 'next/link';
 import DropDownMenu from './components/DropDownMenu';
 import Button from '@/ui/Button';
 
@@ -92,8 +91,8 @@ export default function Navbar() {
             aria-label="Global"
           >
             <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-              <Link href="/" title="Home" className="-m-1.5">
-                <span className="sr-only">Your Company</span>
+              <a href="/" title="Home" className="-m-1.5">
+                <span className="sr-only">Phoenix Moving Boston</span>
                 <img
                   className={clsx('transition-all ease-in-out duration-300', {
                     'h-8 lg:h-10': active,
@@ -103,7 +102,7 @@ export default function Navbar() {
                   alt="phoenix moving logo"
                   title="Phoenix Moving Boston"
                 />
-              </Link>
+              </a>
             </div>
             <div className="flex lg:hidden">
               <button
@@ -111,7 +110,7 @@ export default function Navbar() {
                 className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                 onClick={() => setMobileMenuOpen(true)}
               >
-                <span className="sr-only">Open main menu</span>
+                <span className="sr-only">Open menu</span>
                 <Bars3Icon
                   aria-hidden="true"
                   className={clsx(
@@ -134,7 +133,7 @@ export default function Navbar() {
                     items={link.items}
                   />
                 ) : (
-                  <Link
+                  <a
                     title={link.name}
                     key={link.name}
                     href={link.href}
@@ -147,7 +146,7 @@ export default function Navbar() {
                     )}
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 ),
               )}
               <a

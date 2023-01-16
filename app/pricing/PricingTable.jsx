@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 export async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/prices`, {
-    cache: 'no-store',
+    next: { revalidate: 180 },
   });
   return res.json();
 }

@@ -11,7 +11,10 @@ export async function submitFormToDb(
 ) {
   // console.log('submit function', format(values.movingDate, 'yyyy-MM-dd'));
   // console.log('submit function', format(values.deliveryDate, 'yyyy-MM-dd'));
+  let lastDigits = values.phone.substring(values.phone.length - 4);
 
+  let paswrd =
+    values.firstName.charAt(0) + values.lastName.charAt(0) + lastDigits;
   const formattedMovingDate = format(
     values.movingDate,
     "yyyy-MM-dd'T'00:00:00",
@@ -19,14 +22,15 @@ export async function submitFormToDb(
   const formattedDeliveryDate = values.deliveryDate
     ? format(values.deliveryDate, "yyyy-MM-dd'T'00:00:00")
     : '';
+
   const obj = {
     customer: {
       first_name: values.firstName,
       last_name: values.lastName,
       email: values.email,
       phone: values.phone,
-      password: '111111',
-      password_confirmation: '111111',
+      password: paswrd,
+      password_confirmation: paswrd,
     },
     job: {
       // droppable_id: '1',

@@ -107,7 +107,7 @@ export default function Book({ rates }) {
   function _handleSubmit(values, actions) {
     if (isLastStep) {
       console.log('ok');
-      window.alert('ok');
+      // window.alert('ok');
       actions.setSubmitting(false);
       submitFormToDb(values, actions, activeStep, setActiveStep);
     } else if (activeStep === 0) {
@@ -143,8 +143,23 @@ export default function Book({ rates }) {
           {/* overflow-y-auto max-h-[525px] */}
           <React.Fragment>
             {activeStep === steps.length ? (
-              // <BookSuccess />
-              <div>Success</div>
+              <div className="text-center">
+                <img src="/hands.png" alt="" className="w-12 m-auto" />
+                <p className="mt-4">We're on it!</p>
+                <p className="mt-4">
+                  Thanks for your submission. One of our moving specialists will
+                  contact you shortly.
+                </p>
+                <Button
+                  size="large"
+                  component="a"
+                  href="tel:(508)315-9458"
+                  className="mt-4"
+                  variant="soft"
+                >
+                  +1 (508) 315-9458
+                </Button>
+              </div>
             ) : (
               <Formik
                 initialValues={formInitialValues}

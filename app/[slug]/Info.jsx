@@ -7,7 +7,7 @@ export default function Info({ city }) {
   return (
     <section aria-labelledby={`${city?.fullName} Info`}>
       <Container className="overflow-hidden py-16">
-        <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl space-y-8 sm:px-6 lg:px-8">
           <SectionHeader
             title={`Reliable and professional ${city?.fullName}.`}
           />

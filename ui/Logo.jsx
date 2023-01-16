@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 const Logo = ({ invert = true, width = 150, height = 150 }) => {
   return (
-    <Link
+    <a
       href="/"
       title="Phoenix Moving"
       className="focus:outline-none focus-visible:outline-none outline-none"
@@ -26,7 +25,7 @@ const Logo = ({ invert = true, width = 150, height = 150 }) => {
         src={invert ? '/logos/logo.png' : '/logos/logo-white.png'}
         alt="phoenix moving logo"
       /> */}
-    </Link>
+    </a>
   );
 };
 
