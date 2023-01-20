@@ -21,7 +21,7 @@ export default function CheckBoxField(props) {
             I have read and accept the
           </label>
           <a
-            href="#"
+            href="terms"
             target="_blank"
             className="text-blue-600 hover:underline ml-1"
           >

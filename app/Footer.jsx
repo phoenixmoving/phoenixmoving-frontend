@@ -24,8 +24,8 @@ const navigation = {
     // { name: 'Jobs', href: '#' },
   ],
   legal: [
-    // { name: 'Privacy', href: '#' },
-    // { name: 'Terms', href: '#' },
+    // { name: 'Company policy', href: 'policy' },
+    { name: 'Terms', href: 'terms' },
   ],
   social: [
     {

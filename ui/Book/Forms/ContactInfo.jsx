@@ -22,6 +22,10 @@ const referralOptions = [
     label: 'Social media',
   },
   {
+    value: 'customer referral',
+    label: 'Customer Referral',
+  },
+  {
     value: 'other',
     label: 'Other',
   },
