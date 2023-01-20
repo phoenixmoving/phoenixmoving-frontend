@@ -1,12 +1,12 @@
 import { cities } from '@/lib/citiesData';
 import { states } from '@/lib/statesData';
+import Script from 'next/script';
 
 export async function getCity(slug) {
   return cities.find((city) => city.slug === slug);
 }
 
 export async function getCityState(slug) {
-  // const filterdStates = states.filter((s) => s.cities && s.cities.length > 0);
   let interstateCity = null;
   states.map((s) => {
     if (s.slug && s.slug === slug) {
@@ -43,9 +43,71 @@ export default async function Head({ params }) {
   const description =
     city && city.interstate
       ? `Reliable Movers from Boston to ${city.name}. The Most Trusted Boston to ${city.name} Moving Company, Get a Free Quote Online (NO Registration Required).`
-      : `Professional Moving Company in ${city?.name} ${city?.state}. The most Reliable ${city?.name} Movers, Get a Free Quote Online (NO Registration Required).`;
+      : `${city?.name} Movers, Professional Moving Company in ${city?.name}, ${city?.state}. The most reliable moving company near ${city?.name}. Free Quote Online (NO Registration Required).`;
 
   const keywords = `${city?.name} Moving Company, long-distance, commercial, residential moves, stress-free, hassle-free experience, highly-trained and experienced movers, packing and unpacking, loading and unloading, furniture assembly, storage solutions, competitive rates, flexible payment options`;
+
+  const schema1 = {
+    '@context': 'https://schema.org',
+    '@type': 'MovingCompany',
+    '@id': URL,
+    name: title,
+    url: URL,
+    logo: `${process.env.NEXT_PUBLIC_MAIN_URL}/_next/image?url=%2Flogos%2Flogo.png&w=384&q=75`,
+    image: [
+      `${process.env.NEXT_PUBLIC_MAIN_URL}/_next/image?url=%2Fmover-pushing-dolly.jpg&w=3840&q=75`,
+    ],
+    telephone: '(508) 315-9458',
+    openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 8am-8pm',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.98',
+      reviewCount: '143',
+    },
+    description: description,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '18 Lakeview Gardens',
+      addressLocality: 'Natick',
+      addressRegion: 'MA',
+      postalCode: '01760',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '42.28343',
+      longitude: '-71.3495',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-508-315-9458',
+      contactType: 'customer service',
+    },
+    review: {
+      '@type': 'Review',
+      reviewBody:
+        'Excellent crew. Den and Alex were amazing. Very efficient work , professional approach to workflow. Highly recommend it, I will tell all my friends about this company. Thank you Phoenix Moving.',
+      reviewRating: { '@type': 'Rating', ratingValue: 5 },
+      author: { '@type': 'Person', name: 'A. Jacob' },
+    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Boston',
+        '@id': 'https://en.wikipedia.org/wiki/Boston',
+      },
+      {
+        '@type': 'City',
+        name: 'Natick',
+        '@id': 'https://en.wikipedia.org/wiki/Natick,_Massachusetts',
+      },
+      {
+        '@type': 'State',
+        name: 'Massachusetts',
+        '@id': 'https://en.wikipedia.org/wiki/Massachusetts',
+      },
+    ],
+  };
+
   return (
     <>
       <meta charSet="UTF-8" />
@@ -92,6 +154,10 @@ export default async function Head({ params }) {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema1) }}
+      />
     </>
   );
 }

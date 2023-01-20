@@ -13,14 +13,13 @@ const schema1 = {
   '@context': 'https://schema.org',
   '@type': 'MovingCompany',
   '@id': URL,
-  name: 'Phoenix Moving | Boston - Chicago from $2950. Boston to Chicago Movers',
+  name: title,
   url: URL,
   logo: `${URL}/_next/image?url=%2Flogos%2Flogo.png&w=384&q=75`,
   image: [`${URL}/_next/image?url=%2Fmover-pushing-dolly.png&w=2048&q=75`],
   telephone: '(508) 315-9458',
   openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 8am-8pm',
-  description:
-    'Fully Licensed and Insured Reliable Boston Moving Company. Phoenix Movers are professionals and ready to move across MA and other states.',
+  description: description,
   address: {
     '@type': 'PostalAddress',
     streetAddress: '18 Lakeview Gardens',
@@ -62,26 +61,6 @@ const schema1 = {
       '@id': 'https://en.wikipedia.org/wiki/Massachusetts',
     },
   ],
-  '@graph': [
-    {
-      '@type': 'WebPage',
-      '@id': `${URL}/#webpage`,
-      url: URL,
-      name: 'Phoenix Moving | Boston - Chicago from $2950. Boston to Chicago Movers',
-      isPartOf: { '@id': `${URL}/#website` },
-      datePublished: '2022-11-26T10:23:12+00:00',
-      dateModified: '2022-11-26T12:13:32+00:00',
-      description:
-        'Fully Licensed and Insured Reliable Boston Moving Company. Phoenix Movers are professionals and ready to move across MA and other states.',
-      inLanguage: 'en-US',
-      potentialAction: [
-        {
-          '@type': 'ReadAction',
-          target: [`${URL}`],
-        },
-      ],
-    },
-  ],
 };
 
 const schema2 = {
@@ -93,19 +72,19 @@ const schema2 = {
       '@type': 'ListItem',
       position: 1,
       name: 'Landing Page',
-      item: 'https://www.gophoenixmoving.com',
+      item: URL,
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'Moving & Packing Services',
-      item: 'https://www.gophoenixmoving.com/',
+      item: URL,
     },
     {
       '@type': 'ListItem',
       position: 3,
-      name: 'Phoenix Moving Boston - 🚚 Make Moving Chill (Free Estimate)',
-      item: 'https://www.gophoenixmoving.com/#',
+      name: title,
+      item: URL,
     },
   ],
 };
@@ -113,7 +92,7 @@ const schema2 = {
 const schema3 = {
   '@context': 'http://schema.org',
   '@type': 'Product',
-  name: 'Boston to Chicago IL Movers',
+  name: title,
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.98',
@@ -169,17 +148,14 @@ export default function Head() {
       />
       <link rel="manifest" href="/site.webmanifest" />
       <Script
-        strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema1) }}
       />
       <Script
-        strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }}
       />
       <Script
-        strategy="afterInteractive"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema3) }}
       />
