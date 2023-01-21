@@ -38,6 +38,12 @@ const navigation = [
         description: 'Temperature-controlled storage for up to 6 months',
         href: 'storage-solutions',
       },
+      {
+        name: 'Piano Movers',
+        description:
+          'Right tools, equipment, and expertise to ensure it is done correctly and safely',
+        href: 'piano-movers',
+      },
     ],
   },
   { name: 'Pricing', href: 'pricing' },

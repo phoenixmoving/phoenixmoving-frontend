@@ -52,7 +52,7 @@ const features = [
   },
   {
     name: 'Insurance',
-    description: 'moving insurance of up to $20.000',
+    description: 'basic value protection',
   },
   {
     name: 'Moving certificates',

@@ -12,19 +12,21 @@ const SectionHeader = ({
       <h2
         className={clsx(
           'text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900',
-          titleClassName
+          titleClassName,
         )}
       >
         {title}
       </h2>
-      <p
-        className={clsx(
-          'mt-2  sm:text-lg -tracking-[0.003em] text-gray-900',
-          subtitleClassName
-        )}
-      >
-        {subtitle}
-      </p>
+      {subtitle && (
+        <p
+          className={clsx(
+            'mt-2  sm:text-lg -tracking-[0.003em] text-gray-900',
+            subtitleClassName,
+          )}
+        >
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 };

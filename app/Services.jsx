@@ -28,6 +28,12 @@ const services = [
     description:
       'All types of storages for your move with Phoenix Moving Company. Short and Long terms available.',
   },
+  {
+    name: 'Piano Movers.',
+    href: 'piano-movers',
+    description:
+      'Right tools, equipment, and expertise to ensure it is done correctly and safely',
+  },
 ];
 
 export default function Services() {

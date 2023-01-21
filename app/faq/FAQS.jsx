@@ -44,7 +44,7 @@ const faqs = [
   {
     question: 'Am I able to change my move date and/or time?',
     answer:
-      'If you need to change your move date and/or time, log\n in to your profile to request a date and/or time change. If you can’t log in, email info@phoenixmoving.com or give us a call at (508) 315-9458 and we will assist you with the change. Keep in mind that price may change when rescheduling online.',
+      'If you need to change your move date and/or time, email us at info@phoenixmoving.com or give us a call at (508) 315-9458 and we will assist you with the change. Keep in mind that price may change when rescheduling your moving date.',
   },
 ];
 
