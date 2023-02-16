@@ -19,9 +19,9 @@ import { findTravelTime } from './utils/findTravelTime';
 import { submitFormToDb } from './utils/submitFormToDb';
 
 const steps = [
-  'Swift Estimate!',
+  'Get a Quote!',
   'Fill Move Details',
-  'Calculator Result',
+  'Quote Result',
   'Fill Addresses',
   'Contact Information',
   'Review & sumbit',
@@ -139,7 +139,7 @@ export default function Book({ rates }) {
       <Toaster />
       <div className="flex justify-center items-center w-full sm:w-[400px]">
         {/* relative */}
-        <div className="w-full bg-white p-4 rounded-2xl shadow-lg shadow-gray-900/5 overflow-y-auto max-h-[525px]">
+        <div className="w-full bg-white p-6 rounded-2xl shadow-lg shadow-gray-900/5">
           {/* overflow-y-auto max-h-[525px] */}
           <React.Fragment>
             {activeStep === steps.length ? (

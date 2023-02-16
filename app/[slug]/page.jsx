@@ -5,12 +5,15 @@ import { states } from '@/lib/statesData';
 import Info from './Info';
 import Faqs from '@/ui/Faqs';
 import Stats from './Stats';
+import Conclusion from './Conclusion';
 import Services from './Services';
+import WhyBook from './WhyBook';
 import CTA from '@/ui/CTA';
 import Advantages from './Advantages';
 import Partners from '@/ui/Partners';
 import Photos from '@/ui/Photos';
 import Contact from '@/ui/Contact';
+import Divider from '@/ui/Divider';
 
 export const dynamicParams = true;
 
@@ -72,12 +75,16 @@ export default async function CityPage({ params }) {
     <>
       <Hero image={'/mover-pushing-dolly.jpg'} title={heroTitle} />
       <Partners />
-      {city.state && <Info city={city} />}
+      {city?.state && <Info city={city} />}
+      <Divider />
+      {city?.state && <WhyBook city={city} />}
       <Stats />
-      {city.state && <Advantages city={city} />}
+      {city?.state && <Advantages city={city} />}
       <Photos />
       <Services city={city} />
       <Faqs />
+      <Divider />
+      {city?.state && <Conclusion city={city} />}
       <CTA />
       <Contact />
     </>

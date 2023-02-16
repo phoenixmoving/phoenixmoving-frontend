@@ -4,10 +4,7 @@ import SectionHeader from '@/ui/SectionHeader';
 
 export default function CallToAction() {
   return (
-    <section
-      aria-label="boston-moving-call-to-action"
-      className="py-10 sm:py-16 bg-palette-background"
-    >
+    <section className="py-10 sm:py-16 bg-palette-background">
       <Container className="justify-center">
         <SectionHeader
           title="Have a moving need?"

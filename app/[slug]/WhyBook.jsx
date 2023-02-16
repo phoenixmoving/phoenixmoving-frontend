@@ -1,7 +1,7 @@
 import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 import Section from '@/ui/Section';
 import Image from 'next/image';
-import SectionHeader from './SectionHeader';
+import SectionHeader from '@/ui/SectionHeader';
 
 const incentives = [
   {
@@ -24,25 +24,33 @@ const incentives = [
   },
 ];
 
-export default function WhyBookSection() {
+export default function WhyBook({ city }) {
   return (
     <Section>
-      <SectionHeader title="Why book with Phoenix Moving Boston." />
+      <SectionHeader
+        start
+        title={`Why book with Phoenix Moving ${city.name}.`}
+      />
+      <div className="max-w-3xl">
+        <p className="mt-4 text-gray-900">
+          At Phoenix Moving Company in {city.name}, we pride ourselves on our
+          commitment to excellence. We are fully licensed and insured, and we go
+          above and beyond to ensure that your belongings are safe and secure
+          throughout the entire moving process. Our team of movers is highly
+          trained and experienced, and we use the latest equipment and
+          techniques to ensure a smooth and efficient move. We also offer
+          competitive pricing and exceptional customer service, so you can rest
+          assured that you are getting the best value for your money.
+        </p>
+      </div>
       <div className="mx-auto mt-12 grid max-w-sm grid-cols-1 gap-y-10 gap-x-8 sm:max-w-none lg:grid-cols-3">
         {incentives.map((incentive, i) => (
-          <div
-            key={incentive.name}
-            className={
-              i === 1
-                ? 'text-center sm:flex sm:text-left lg:block lg:text-center lg:relative bottom-[4px]'
-                : 'text-center sm:flex sm:text-left lg:block lg:text-center'
-            }
-          >
+          <div key={incentive.name} className="flex flex-col text-left">
             <div className="sm:flex-shrink-0">
               <div className="flow-root">
                 {typeof incentive.imageSrc === 'string' ? (
                   <Image
-                    className="mx-auto h-16 w-16"
+                    className="h-16 w-16"
                     width={64}
                     height={64}
                     src={incentive.imageSrc}
@@ -50,7 +58,7 @@ export default function WhyBookSection() {
                     title={incentive.name}
                   />
                 ) : (
-                  <incentive.imageSrc className="mx-auto h-16 w-16 stroke-[0.7px]" />
+                  <incentive.imageSrc className="h-16 w-16 stroke-[0.7px]" />
                 )}
               </div>
             </div>

@@ -3,7 +3,6 @@ import HeroWithBooking from '@/ui/HeroWithBooking';
 import Pricing from './Pricing';
 import CTA from '@/ui/CTA';
 import Services from './Services';
-import Divider from '@/ui/Divider';
 import Faqs from '@/ui/Faqs';
 import Reviews from '@/ui/Reviews';
 import Contact from '@/ui/Contact';
@@ -29,7 +28,6 @@ export default function Home() {
         <Reviews />
       </Suspense>
       <Faqs />
-      <Divider />
       <CitiesSection />
       <Contact />
     </>

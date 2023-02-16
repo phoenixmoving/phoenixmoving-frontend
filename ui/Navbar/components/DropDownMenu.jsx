@@ -1,6 +1,7 @@
 import { Popover } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 export default function DropDownMenu({ title, active, items }) {
   return (
@@ -23,7 +24,8 @@ export default function DropDownMenu({ title, active, items }) {
             <div className="overflow-hidden rounded-xl shadow-lg ring-1 ring-black ring-opacity-5">
               <div className="relative grid gap-8 bg-white p-6">
                 {items.map((item) => (
-                  <a
+                  <Popover.Button
+                    as={Link}
                     key={item.name}
                     title={item.name}
                     href={item.href}
@@ -31,7 +33,7 @@ export default function DropDownMenu({ title, active, items }) {
                   >
                     <p className="font-medium text-gray-900">{item.name}</p>
                     <p className="text-sm text-gray-500">{item.description}</p>
-                  </a>
+                  </Popover.Button>
                 ))}
               </div>
             </div>

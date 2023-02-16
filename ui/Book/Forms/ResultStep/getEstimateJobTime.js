@@ -10,6 +10,18 @@ const averageTime = {
   'Office / Commercial space': 220,
 };
 
+const averageTimeLongDistance = {
+  'Room or less (partial move)': 60,
+  'Studio apartment': 120,
+  '1 Bedroom apartment': 180,
+  '2 Bedroom apartment': 240,
+  '2 Bedroom House/Townhouse': 360,
+  '3+ Bedroom apartment': 360,
+  '3 Bedroom House/Townhouse': 480,
+  '4+ Bedroom House/Townhouse': 540,
+  'Office / Commercial space': 300,
+};
+
 const timeFrame = {
   'Room or less (partial move)': 0.5,
   'Studio apartment': 1,
@@ -32,6 +44,20 @@ const averageFloorTime = (size) => {
     '2nd floor': Math.round(averageTime[size] * 0.2),
     '3rd floor': Math.round(averageTime[size] * 0.3),
     '4th floor': Math.round(averageTime[size] * 0.4),
+  };
+  return obj;
+};
+
+const averageFloorTimeLongDistance = (size) => {
+  if (!size) return {};
+  let obj = {
+    'elevator building': Math.round(averageTimeLongDistance[size] * 0.2),
+    'private house': Math.round(averageTimeLongDistance[size] * 0.1),
+    'storage unit': -10,
+    '1st/ground floor': Math.round(averageTimeLongDistance[size] * 0.1),
+    '2nd floor': Math.round(averageTimeLongDistance[size] * 0.2),
+    '3rd floor': Math.round(averageTimeLongDistance[size] * 0.3),
+    '4th floor': Math.round(averageTimeLongDistance[size] * 0.4),
   };
   return obj;
 };
@@ -124,6 +150,58 @@ export const estimateJobTime = (data) => {
 
   // console.log('total Time in hours --->', totalTimeInHours);
   // console.log('time + window --->', totalTimeInHours + timeWindow);
+
+  if (totalTimeInHours + timeWindow <= 2) estimateTimeArray = [2];
+  return estimateTimeArray;
+};
+
+export const estimateJobTimeLongDistance = (data) => {
+  //   console.log(data);
+  //   return;
+  const {
+    movingService,
+    fromHouseType,
+    toHouseType,
+    movingSize,
+    travelTime,
+    timeBetween,
+    isFlatRate,
+  } = data;
+
+  if (travelTime.length == 0) return [];
+
+  let travelTimeSum = travelTime.reduce((a, b) => a + b);
+  if (isMovingWithStorage(movingService) && !isFlatRate)
+    travelTimeSum = travelTime[0] * 2;
+
+  let averageFloorTimeDest =
+    toHouseType === ''
+      ? 0
+      : averageFloorTimeLongDistance(movingSize)[toHouseType];
+
+  let totalTimeInMinutes = 0;
+  let averageLabourTime = averageTimeLongDistance[movingSize];
+  let timeWindow =
+    movingService === 'Moving' || movingService === 'Moving with Storage'
+      ? timeFrame[movingSize]
+      : 0.5;
+
+  if (isLoading(movingService))
+    averageLabourTime = averageTimeLongDistance[movingSize] * 0.5;
+  if (isUnloading(movingService) || isPacking(movingService))
+    averageLabourTime = averageTimeLongDistance[movingSize] * 0.5;
+  if (isInsideMove(movingService))
+    averageLabourTime = averageTimeLongDistance[movingSize] * 0.2;
+
+  totalTimeInMinutes =
+    averageLabourTime +
+    averageFloorTimeLongDistance(movingSize)[fromHouseType] +
+    averageFloorTimeDest +
+    travelTimeSum +
+    timeBetween;
+
+  let totalTimeInHours = roundTime(totalTimeInMinutes / 60);
+  let estimateTimeArray = [totalTimeInHours, totalTimeInHours + timeWindow];
 
   if (totalTimeInHours + timeWindow <= 2) estimateTimeArray = [2];
   return estimateTimeArray;

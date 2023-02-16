@@ -31,21 +31,14 @@ export const getCrewSize = (apartment, fromFloor, toFloor) => {
             if (floor[k] === toFloor) {
               // logic starts from big to small
 
-              // 4+ bdrm house/office
-              if (i >= 7) {
-                return (nr += 2);
-              }
-
-              // 3 bdrm apt/house
+              // 3 bdrm apt/house and up
               if (i >= 5) {
-                if (j > 5 || k > 5) {
-                  return (nr += 2);
-                } else return (nr += 1);
+                return (nr += 2);
               }
 
               // 2bdr apt/house
               if (i >= 3) {
-                if (j > 6 || k > 6) {
+                if (j >= 6 && k >= 6) {
                   return (nr += 2);
                 }
                 return (nr += 1);
@@ -53,12 +46,14 @@ export const getCrewSize = (apartment, fromFloor, toFloor) => {
 
               // 1 brdrm / studio
               if (i > 1) {
-                // return (nr += 1);
-                if (j > 5 || k > 5) {
+                return (nr += 1);
+              }
+
+              //studio
+              if (i === 1) {
+                if (j > 5 && k > 5) {
                   return (nr += 1);
-                } else if (j === 5 && k === 5) {
-                  return (nr += 1);
-                } else return nr;
+                }
               }
             }
           }
@@ -66,7 +61,6 @@ export const getCrewSize = (apartment, fromFloor, toFloor) => {
       }
     }
   }
-  // console.log('crew Size--->', nr);
   return nr;
 };
 
@@ -81,15 +75,19 @@ export const getCrewSizeFlatRate = (apartment, fromFloor, toFloor) => {
               // logic starts from big to small
 
               // 4+ bdrm house/office
-              if (i >= 7) {
-                return (nr += 2);
-              }
+              // if (i >= 7) {
+              //   return (nr += 2);
+              // }
 
               // 3 bdrm apt/house
+              // if (i >= 5) {
+              //   if (j > 5 || k > 5) {
+              //     return (nr += 1);
+              //   } else return (nr += 1);
+              // }
+
               if (i >= 5) {
-                if (j > 5 || k > 5) {
-                  return (nr += 1);
-                } else return (nr += 1);
+                return (nr += 2);
               }
 
               // 2bdr apt/house
@@ -109,7 +107,7 @@ export const getCrewSizeFlatRate = (apartment, fromFloor, toFloor) => {
       }
     }
   }
-  // console.log('crew Size--->', nr);
+  // console.log('crew Size---> FLAT', nr);
   return nr;
 };
 

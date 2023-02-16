@@ -2,7 +2,7 @@ import Button from '@/ui/Button';
 
 export default function CTA() {
   return (
-    <section aria-label="boston-moving-call-to-action">
+    <section>
       <div className="relative py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-2xl">
           <div className="relative overflow-hidden bg-palette-primary-900 rounded-2xl px-6 py-10 sm:px-12 sm:py-20">

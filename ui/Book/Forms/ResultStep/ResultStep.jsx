@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import FlatRateQuote from './components/FlatRateQuote';
 import LocalMoveQuote from './components/LocalMoveQuote';
 import {
@@ -6,7 +6,10 @@ import {
   getCrewSizeLoadingUnloading,
   getCrewSizeFlatRate,
 } from './getCrewSize';
-import { estimateJobTime } from './getEstimateJobTime';
+import {
+  estimateJobTime,
+  estimateJobTimeLongDistance,
+} from './getEstimateJobTime';
 import { getEstimateQuote } from './getEstimateQuote';
 import { useFormikContext } from 'formik';
 
@@ -18,7 +21,9 @@ const ResultStep = ({ values }) => {
   }, []);
 
   useEffect(() => {
-    calculateJobTime();
+    if (formikProps.values.rate) {
+      calculateJobTime();
+    }
   }, [formikProps.values.rate]);
 
   const findCrewSize = useCallback(() => {
@@ -44,7 +49,7 @@ const ResultStep = ({ values }) => {
     formikProps.setFieldValue('crewSize', crew);
     formikProps.setFieldValue(
       'rate',
-      parseInt(formikProps.values.rates[crew - 2])
+      parseInt(formikProps.values.rates[crew - 2]),
     );
     return crew;
   }, [values]);
@@ -59,7 +64,9 @@ const ResultStep = ({ values }) => {
       timeBetween: values.timeBetween,
       isFlatRate: values.isFlatRate,
     };
-    let jobTime = estimateJobTime(data);
+    let jobTime = values.isFlatRate
+      ? estimateJobTimeLongDistance(data)
+      : estimateJobTime(data);
 
     formikProps.setFieldValue('estimateTime', jobTime);
     let quote = getEstimateQuote(

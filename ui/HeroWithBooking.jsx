@@ -27,12 +27,12 @@ export default async function HeroWithBooking({ image, title }) {
                     #1 movers in Boston
                   </span>
                 </h1>
-                <p className="mt-3 text-base text-gray-50 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                <p className="mt-3 text-base text-gray-50 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl hidden md:block">
                   Professional moving company serving the Boston area. We
                   provide fast, reliable, and affordable moving services for
                   residential and commercial customers.
                 </p>
-                <div className="mt-10 sm:mt-12">
+                <div className="mt-10 sm:mt-12 hidden md:block">
                   <p className="mt-3 text-sm text-gray-50 sm:mt-4">
                     We offer FREE Online estimates to provide you with a
                     hassle-free and convenient experience.

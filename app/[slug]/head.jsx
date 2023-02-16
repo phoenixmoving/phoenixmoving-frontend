@@ -35,17 +35,23 @@ export default async function Head({ params }) {
   }
 
   const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/${city?.slug}`;
+
   const title =
-    city && city.interstate
+    city && city?.interstate
       ? `Movers from Boston to ${city?.name} - Phoenix Moving (Free Estimate)`
       : `${city?.fullName} - Phoenix Moving ${city?.name} (Free Estimate)`;
 
   const description =
-    city && city.interstate
+    city && city?.interstate
       ? `Reliable Movers from Boston to ${city.name}. The Most Trusted Boston to ${city.name} Moving Company, Get a Free Quote Online (NO Registration Required).`
       : `${city?.name} Movers, Professional Moving Company in ${city?.name}, ${city?.state}. The most reliable moving company near ${city?.name}. Free Quote Online (NO Registration Required).`;
 
   const keywords = `${city?.name} Moving Company, long-distance, commercial, residential moves, stress-free, hassle-free experience, highly-trained and experienced movers, packing and unpacking, loading and unloading, furniture assembly, storage solutions, competitive rates, flexible payment options`;
+
+  const icon =
+    city && city.interstate
+      ? `${process.env.NEXT_PUBLIC_MAIN_URL}/_next/image?url=%2Flogos%2Flogo.png&w=384&q=75`
+      : `${process.env.NEXT_PUBLIC_MAIN_URL + city?.icon}`;
 
   const schema1 = {
     '@context': 'https://schema.org',
@@ -53,10 +59,8 @@ export default async function Head({ params }) {
     '@id': URL,
     name: title,
     url: URL,
-    logo: `${process.env.NEXT_PUBLIC_MAIN_URL}/_next/image?url=%2Flogos%2Flogo.png&w=384&q=75`,
-    image: [
-      `${process.env.NEXT_PUBLIC_MAIN_URL}/_next/image?url=%2Fmover-pushing-dolly.jpg&w=3840&q=75`,
-    ],
+    logo: icon,
+    image: [icon],
     telephone: '(508) 315-9458',
     openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 8am-8pm',
     aggregateRating: {
@@ -154,10 +158,23 @@ export default async function Head({ params }) {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-      <Script
+      {/* <Script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema1) }}
+      /> */}
+      <Script
+        id="app-ld-json"
+        type="application/ld+json"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema1, null, '\t'),
+        }}
       />
+      {/* <script
+        async
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema1) }}
+      /> */}
     </>
   );
 }

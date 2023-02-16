@@ -16,7 +16,7 @@ export default function Photos() {
   };
 
   return (
-    <section aria-labelledby="phoenix-moving-in-action-images">
+    <section>
       <div className="-mb-10 relative z-[1] flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
         {[
           '/wrapped-furniture.jpeg',
@@ -32,18 +32,25 @@ export default function Photos() {
               rotations[imageIndex % rotations.length],
             )}
           >
-            <Image
-              // fill
+            {/* <Image
               src={image}
               alt={getTitle(image)}
               width={224}
               height={249}
-              // sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
               title={getTitle(image)}
-              // sizes="(max-width: 768px) 100vw,
-              // (max-width: 1200px) 50vw,
-              // 33vw"
+            /> */}
+            <Image
+              src={image}
+              alt={getTitle(image)}
+              title={getTitle(image)}
+              className="absolute inset-0 h-full w-full object-cover"
+              width={224}
+              height={249}
+              // width={500} automatically provided
+              // height={500} automatically provided
+              // blurDataURL="data:..." automatically provided
+              // placeholder="blur" // Optional blur-up while loading
             />
           </div>
         ))}

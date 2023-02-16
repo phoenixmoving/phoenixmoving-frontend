@@ -7,6 +7,8 @@ import MobileMenu from './components/MobileMenu';
 import clsx from 'clsx';
 import DropDownMenu from './components/DropDownMenu';
 import Button from '@/ui/Button';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const clientLink = process.env.NEXT_PUBLIC_CLIENT_LOGIN;
 
@@ -50,12 +52,35 @@ const navigation = [
   { name: 'Faq', href: 'faq' },
 ];
 
+// function Logo({ large = false, className, ...props }) {
+//   return (
+//     <Link
+//       href="/"
+//       aria-label="Home"
+//       className={clsx(className, 'pointer-events-auto')}
+//       {...props}
+//     >
+//       <Image
+//         sizes={large ? '4rem' : '2.25rem'}
+//         className={clsx(
+//           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+//           large ? 'h-16 w-16' : 'h-9 w-9',
+//         )}
+//         priority
+//         src={props.active ? '/logos/logo.png' : '/logos/logo-white.png'}
+//         alt="phoenix moving logo"
+//         title="Phoenix Moving Boston"
+//       />
+//     </Link>
+//   );
+// }
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [active, setActive] = useState(false);
 
   const changeBackground = () => {
-    if (window.scrollY >= 38) {
+    if (window.scrollY >= 18) {
       setActive(true);
     } else {
       setActive(false);
@@ -73,7 +98,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
+    <header
       className={clsx(
         'isolat sticky top-0 z-20 transition-colors ease-in-out duration-300',
         {
@@ -91,113 +116,122 @@ export default function Navbar() {
           },
         )}
       >
-        <div>
-          <nav
-            className="flex h-9 items-center justify-between"
-            aria-label="Global"
-          >
-            <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-              <a href="/" title="Home" className="-m-1.5">
-                <span className="sr-only">Phoenix Moving Boston</span>
-                <img
-                  className={clsx('transition-all ease-in-out duration-300', {
-                    'h-8 lg:h-10': active,
-                    'h-10 lg:h-12': !active,
-                  })}
+        <nav
+          className="flex h-9 items-center justify-between"
+          aria-label="Global"
+        >
+          <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
+            <a href="/" title="Home" className="-m-1.5">
+              <span className="sr-only">Phoenix Moving Boston</span>
+              <div className="relative">
+                {/* <img
+                    className={clsx('transition-all ease-in-out duration-300', {
+                      'h-8 lg:h-10': active,
+                      'h-10 lg:h-12': !active,
+                    })}
+                    src={active ? '/logos/logo.png' : '/logos/logo-white.png'}
+                    alt="phoenix moving logo"
+                    title="Phoenix Moving Boston"
+                  /> */}
+                <Image
+                  width={active ? 130 : 150}
+                  height={active ? 38 : 43}
+                  className="transition-all ease-in-out duration-300 object-cove"
+                  priority
                   src={active ? '/logos/logo.png' : '/logos/logo-white.png'}
                   alt="phoenix moving logo"
                   title="Phoenix Moving Boston"
                 />
-              </a>
-            </div>
-            <div className="flex lg:hidden">
-              <button
-                type="button"
-                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(true)}
-              >
-                <span className="sr-only">Open menu</span>
-                <Bars3Icon
-                  aria-hidden="true"
-                  className={clsx(
-                    'h-6 w-6 transition-colors ease-in-out duration-150',
-                    {
-                      'text-gray-900 hover:text-gray-600': active,
-                      'text-white': !active,
-                    },
-                  )}
-                />
-              </button>
-            </div>
-            <div className="hidden lg:flex lg:min-w-0 lg:flex-auto lg:justify-center lg:items-center lg:gap-x-6">
-              {navigation.map((link) =>
-                link.items ? (
-                  <DropDownMenu
-                    title="Services"
-                    active={active}
-                    key={link.name}
-                    items={link.items}
-                  />
-                ) : (
-                  <a
-                    title={link.name}
-                    key={link.name}
-                    href={link.href}
-                    className={clsx(
-                      'font-medium transition-colors ease-in-out duration-150',
-                      {
-                        'text-gray-900 hover:text-gray-600': active,
-                        'text-white hover:text-gray-300': !active,
-                      },
-                    )}
-                  >
-                    {link.name}
-                  </a>
-                ),
-              )}
-              <a
-                href="tel:(508)315-9458"
-                title="Give us a call"
+              </div>
+            </a>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open menu</span>
+              <Bars3Icon
+                aria-hidden="true"
                 className={clsx(
-                  'font-semibold uppercase text-md transition-colors ease-in-out duration-150',
-                  {
-                    'text-palette-primary-500 hover:text-palette-primary-900':
-                      active,
-                    'text-white hover:text-gray-300': !active,
-                  },
-                )}
-              >
-                (508) 315-9458
-              </a>
-            </div>
-            <div className="hidden items-center gap-x-6 lg:flex lg:min-w-0 lg:flex-initial lg:justify-end">
-              <a
-                href={clientLink}
-                target="_blank"
-                className={clsx(
-                  'font-medium transition-colors ease-in-out duration-150 inline-flex gap-1 items-center justify-center',
+                  'h-6 w-6 transition-colors ease-in-out duration-150',
                   {
                     'text-gray-900 hover:text-gray-600': active,
-                    'text-white hover:text-gray-300': !active,
+                    'text-white': !active,
                   },
                 )}
-              >
-                <UserIcon aria-hidden="true" className="h-4 w-4" />
-                Client Login
-              </a>
-              <Button color="secondary" href="/" size="small">
-                Book now
-              </Button>
-            </div>
-          </nav>
-          <MobileMenu
-            navigation={navigation}
-            mobileMenuOpen={mobileMenuOpen}
-            setMobileMenuOpen={setMobileMenuOpen}
-            clientLink={clientLink}
-          />
-        </div>
+              />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:min-w-0 lg:flex-auto lg:justify-center lg:items-center lg:gap-x-6">
+            {navigation.map((link) =>
+              link.items ? (
+                <DropDownMenu
+                  title="Services"
+                  active={active}
+                  key={link.name}
+                  items={link.items}
+                />
+              ) : (
+                <Link
+                  title={link.name}
+                  key={link.name}
+                  href={link.href}
+                  className={clsx(
+                    'font-medium transition-colors ease-in-out duration-150',
+                    {
+                      'text-gray-900 hover:text-gray-600': active,
+                      'text-white hover:text-gray-300': !active,
+                    },
+                  )}
+                >
+                  {link.name}
+                </Link>
+              ),
+            )}
+            <a
+              href="tel:(508)315-9458"
+              title="Give us a call"
+              className={clsx(
+                'font-semibold uppercase text-md transition-colors ease-in-out duration-150',
+                {
+                  'text-palette-primary-500 hover:text-palette-primary-900':
+                    active,
+                  'text-white hover:text-gray-300': !active,
+                },
+              )}
+            >
+              (508) 315-9458
+            </a>
+          </div>
+          <div className="hidden items-center gap-x-6 lg:flex lg:min-w-0 lg:flex-initial lg:justify-end">
+            <a
+              href={clientLink}
+              target="_blank"
+              className={clsx(
+                'font-medium transition-colors ease-in-out duration-150 inline-flex gap-1 items-center justify-center',
+                {
+                  'text-gray-900 hover:text-gray-600': active,
+                  'text-white hover:text-gray-300': !active,
+                },
+              )}
+            >
+              <UserIcon aria-hidden="true" className="h-4 w-4" />
+              Client Login
+            </a>
+            <Button color="secondary" href="/" size="small">
+              Book now
+            </Button>
+          </div>
+        </nav>
+        <MobileMenu
+          navigation={navigation}
+          mobileMenuOpen={mobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}
+          clientLink={clientLink}
+        />
       </div>
-    </nav>
+    </header>
   );
 }

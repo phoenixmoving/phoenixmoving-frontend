@@ -5,7 +5,7 @@ const links = {
   google:
     'https://www.google.com/maps/place/Phoenix+Moving+%26+Storage/@42.291787,-71.3626797,17z/data=!3m1!4b1!4m5!3m4!1s0x89e387680ffe9aeb:0x4651b1e640f15b41!8m2!3d42.291787!4d-71.360491',
   yelp: 'https://www.yelp.com/biz/phoenix-moving-and-storage-natick-4',
-  bbb: '#',
+  bbb: 'https://www.bbb.org/us/ma/natick/profile/moving-companies/phoenix-moving-inc-0021-555605',
   thumbtack:
     'https://www.thumbtack.com/ma/natick/movers/phoenix-moving/service/452281587871776773?utm_medium=web&utm_source=txt&surface=sp',
   unpakt: '#',
@@ -55,7 +55,13 @@ export default function Partners() {
             </a>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <p className="flex items-center">
+            <a
+              href={links['bbb']}
+              target="_blank"
+              title=""
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
               <Image
                 height={46}
                 width={90}
@@ -64,11 +70,12 @@ export default function Partners() {
                 alt="Better Business Bureau"
                 title="Better Business Bureau"
               />
-            </p>
+              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-gray-700" />
+            </a>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
             <a
-              href="https://www.thumbtack.com/ma/natick/movers/phoenix-moving/service/452281587871776773"
+              href={links['thumbtack']}
               target="_blank"
               title=""
               rel="noopener noreferrer"

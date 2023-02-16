@@ -1,6 +1,7 @@
 import Script from 'next/script';
 
 const URL = process.env.NEXT_PUBLIC_MAIN_URL;
+const GTAG = process.env.NEXT_PUBLIC_G_TAG;
 
 const title = 'Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)';
 const description =
@@ -149,16 +150,37 @@ export default function Head() {
       <link rel="manifest" href="/site.webmanifest" />
       <Script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema1) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema1, null, '\t'),
+        }}
       />
       <Script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema2) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema2, null, '\t'),
+        }}
       />
       <Script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema3) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema3, null, '\t'),
+        }}
       />
+      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GTAG}',{
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
     </>
   );
 }

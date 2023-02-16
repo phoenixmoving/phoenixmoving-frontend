@@ -28,11 +28,14 @@ export const findTravelTime = (
   setActiveStep,
   actions,
 ) => {
-  let office = '01760';
+  let office = '02493';
   let fromZip = originZip;
   let toZip = destinationZip;
   let originsArray = [];
   let destinationsArray = [];
+
+  // console.log(fromZip);
+  // console.log(toZip);
 
   if (toZip === '') {
     originsArray = [office];
@@ -41,6 +44,9 @@ export const findTravelTime = (
     originsArray = [office, fromZip];
     destinationsArray = [fromZip, toZip];
   }
+
+  // console.log(originsArray);
+  // console.log(destinationsArray);
 
   const TravelTime = new window.google.maps.DistanceMatrixService();
   TravelTime.getDistanceMatrix(
@@ -54,6 +60,7 @@ export const findTravelTime = (
       avoidTolls: false,
     },
     function (response, status) {
+      // console.log(response);
       if (status !== 'OK') {
         console.log('Error was:', status);
       } else {
@@ -103,7 +110,7 @@ export const findTravelTime = (
           if (toHq < 20) toHq = 20;
           if (
             movingService === 'Moving with Storage' &&
-            distanceBetween < 180
+            distanceBetween < 150
           ) {
             timeBetween = toHq;
           } else {
@@ -111,7 +118,7 @@ export const findTravelTime = (
               response.rows[1].elements[1].duration.value,
             );
           }
-          if (distanceBetween > 180) {
+          if (distanceBetween > 150) {
             actions.setFieldValue('isFlatRate', true);
           } else {
             actions.setFieldValue('isFlatRate', false);
