@@ -1,32 +1,65 @@
 import { services } from '@/lib/navigation';
-import { states } from '@/lib/statesData';
 import PopularCities from '@/ui/PopularCities';
 
-export async function interstateCities(s) {
-  let ct = [];
-
-  let f = states.filter((s) => s.cities);
-  f.map((c) => c.cities.map((s) => ct.push(s)));
-
-  return ct;
-}
+const interstateCities = [
+  {
+    name: 'New York',
+    href: 'boston-new-york-movers',
+  },
+  {
+    name: 'Philadelphia',
+    href: 'boston-philadelphia-movers',
+  },
+  {
+    name: 'Miami',
+    href: 'boston-miami-movers',
+  },
+  {
+    name: 'Chicago',
+    href: 'boston-chicago-movers',
+  },
+  {
+    name: 'Detroit',
+    href: 'boston-detroit-movers',
+  },
+  {
+    name: 'Charlotte',
+    href: 'boston-charlotte-movers',
+  },
+  {
+    name: 'Atlanta',
+    href: 'boston-atlanta-movers',
+  },
+  {
+    name: 'Nashville',
+    href: 'boston-nashville-movers',
+  },
+  {
+    name: 'Denver',
+    href: 'boston-denver-movers',
+  },
+  {
+    name: 'Austin',
+    href: 'boston-austin-movers',
+  },
+  {
+    name: 'Raleigh',
+    href: 'boston-raleigh-movers',
+  },
+  {
+    name: 'Jersey City',
+    href: 'boston-jersey-city-movers',
+  },
+];
 
 const navigation = {
   services,
   support: [
     { name: 'Prices', href: '/pricing' },
     { name: 'FAQ', href: '/faq' },
-    // { name: 'Our Work', href: '#' },
   ],
-  company: [
-    { name: 'About', href: '#' },
-    // { name: 'Blog', href: '#' },
-    // { name: 'Jobs', href: '#' },
-  ],
-  legal: [
-    // { name: 'Company policy', href: 'policy' },
-    { name: 'Terms', href: 'terms' },
-  ],
+  company: [{ name: 'About', href: 'about' }],
+  legal: [{ name: 'Terms', href: 'terms' }],
   social: [
     {
       name: 'Facebook',
@@ -84,7 +117,7 @@ const navigation = {
 };
 
 export default async function Footer() {
-  let interCities = await interstateCities(states);
+  const year = new Date().getFullYear();
   return (
     <footer className="bg-palette-footer" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -98,12 +131,12 @@ export default async function Footer() {
           <p className="text-white text-xs font-semibold p-2 sm:p-1">
             Top Cities
           </p>
-          {interCities.slice(0, 15).map((city, i) => {
+          {interstateCities.map((city, i) => {
             return (
               <a
-                key={`${city.slug}-${i}`}
+                key={i}
                 className="text-gray-400 text-xs p-2 sm:p-1"
-                href={city.slug}
+                href={city.href}
                 title={`Moving From Boston to ${city.name}`}
               >
                 <span className="text-gray-400 text-xs">|</span>
@@ -188,28 +221,21 @@ export default async function Footer() {
         </div>
         <div className="border-t border-gray-500 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
           <div>
-            <h3 className=" font-medium text-white">© Copyright</h3>
             <p className="mt-2  text-gray-300">
               Phoenix Moving Inc. is fully licensed, bonded and insured.
             </p>
-            <p className="mt-2  text-gray-300">
-              We carry general liability, cargo and workers' compensation.
-            </p>
-            <p className="mt-2  text-gray-300">
-              Phoenix Moving Inc. is licensed by the Massachusetts Department of
-              Public Utilities, Transportation Oversight Division, certificate
-              number 32054 (MA).
-            </p>
-            <p className="mt-2  text-gray-300">
-              Phoenix Moving Inc. is licensed by the Federal Motor Carrier
-              Safety Administration U.S. DOT# 3868109, MC# 01415308. Phoenix
-              Moving Inc.
+            <p className="mt-2  text-gray-300 flex gap-4 items-center">
+              <span>MDPU&#183;32054</span>
+
+              <span>DOT&#183;3868109</span>
+
+              <span>MC&#183;01415308</span>
             </p>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-500 pt-8 md:flex md:items-center md:justify-between">
           <p className="mt-8  text-gray-400 md:order-1 md:mt-0">
-            &copy; 2022 Phoenix Moving, Inc. Make moving chill
+            &copy; {year} Phoenix Moving, Inc. Make moving chill
           </p>
         </div>
       </div>

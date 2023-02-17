@@ -47,6 +47,7 @@ export default function Photos() {
               className="absolute inset-0 h-full w-full object-cover"
               width={224}
               height={249}
+              loading="lazy"
               // width={500} automatically provided
               // height={500} automatically provided
               // blurDataURL="data:..." automatically provided

@@ -6,7 +6,7 @@ import CalendarWithRates from '@/ui/CalendarWithRates';
 import { useState } from 'react';
 import { format } from 'date-fns';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+// const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function CustomDatePicker(props) {
   const [open, setOpen] = useState();
@@ -44,28 +44,28 @@ export default function CustomDatePicker(props) {
 
   return (
     <>
-      <label
-        htmlFor={field}
-        className="block text-xs font-semibold text-gray-700"
-      >
+      <label className="block text-xs font-semibold text-gray-700">
         {label}
-        <input
-          {...field}
-          value={field.value ? format(field.value, 'MM-dd-yyyy') : ''}
-          inputMode="none"
-          placeholder={placeholder}
-          type="text"
-          className={clsx(
-            'mt-1 block w-full rounded-md border-gray-300 font-normal placeholder:text-gray-400 py-2 pl-3 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
-            {
-              'text-gray-400': field.value === '',
-              'border-red-500 bg-red-50': isError,
-              'border-green-500 bg-green-50': isSuccess,
-            }
-          )}
-          onClick={handleOpen}
-        />
       </label>
+      <input
+        id={field.name}
+        {...field}
+        value={field.value ? format(field.value, 'MM-dd-yyyy') : ''}
+        inputMode="none"
+        placeholder={placeholder}
+        type="text"
+        className={clsx(
+          'relative mt-1 block w-full rounded-md border-gray-300 font-normal placeholder:text-gray-400 py-2 pl-3 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
+          {
+            'text-gray-400': field.value === '',
+            'border-red-500 bg-red-50': isError,
+            'border-green-500 bg-green-50': isSuccess,
+          },
+        )}
+        onClick={handleOpen}
+        readOnly
+      />
+
       {open && (
         <CalendarWithRates
           close={handleClose}
@@ -74,7 +74,6 @@ export default function CustomDatePicker(props) {
           movingDate={movingDate}
           isDelivery={field.name === 'deliveryDate'}
           rates={rates}
-          // error={ratesError}
         />
       )}
     </>

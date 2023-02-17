@@ -23,15 +23,6 @@ export default function CalendarWithRates(props) {
   const [startDay, days] = generateDays(month);
   const wrapperRef = useRef(null);
 
-  // useEffect(() => {
-  //   if (pickedDay) {
-  //     setMonth(new Date(pickedDay));
-  //   }
-  //   if (isDelivery && movingDate) {
-  //     setMonth(new Date(movingDate));
-  //   }
-  // }, [pickedDay]);
-
   useEffect(() => {
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
@@ -52,13 +43,10 @@ export default function CalendarWithRates(props) {
     setMonth(mo);
   };
 
-  // if (error) return 'An error has occurred.';
-  // if (!rates) return 'Loading...';
-
   return (
     <div
       ref={wrapperRef}
-      className="absolute top-[30rem] left-12 sm:top-[30rem] sm:left-[30%] lg:top-[12rem] lg:left-[59%] bg-white rounded-xl shadow-3xl w-[300px] h-[350px] z-10"
+      className="absolute left-1/2 -translate-y-1/2 -translate-x-1/2 sm:left-[unset] sm:right-[unset] sm:translate-y-[unset] sm:translate-x-[unset] bg-white rounded-xl shadow-3xl w-[300px] h-[350px] z-10"
     >
       <MonthSelect
         month={month}

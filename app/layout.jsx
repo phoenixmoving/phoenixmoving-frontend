@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google';
 import Navbar from '@/ui/Navbar';
 // import Script from 'next/script';
 
-const GTAG = process.env.NEXT_PUBLIC_G_TAG;
+// const GTAG = process.env.NEXT_PUBLIC_G_TAG;
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({

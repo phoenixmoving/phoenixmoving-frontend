@@ -25,6 +25,7 @@ export default function Info() {
                 alt="Image of a storage facility"
                 title="Image of a storage facility"
                 fill
+                loading="lazy"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>

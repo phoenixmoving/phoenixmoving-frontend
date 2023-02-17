@@ -1,7 +1,7 @@
-const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/pricing`;
-const title = 'Moving Prices & Rates - Phoenix Moving Boston (Free Estimate)';
+const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/about`;
+const title = 'About - Phoenix Moving Boston (Free Estimate)';
 const description =
-  'We offer competitive prices on our moving services. Get a free quote today and start planning your move with our reliable team of professionals.';
+  'We are professional moving and storage company based in Boston, MA. We are dedicated to providing you with the highest quality service and value for your relocation needs.';
 
 export default function Head() {
   return (

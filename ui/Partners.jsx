@@ -25,6 +25,7 @@ export default function Partners() {
               className="flex items-center"
             >
               <Image
+                loading="lazy"
                 height={27}
                 width={80}
                 className="grayscale hover:grayscale-0 transition-all duration-150 ease-in"
@@ -44,6 +45,7 @@ export default function Partners() {
               className="flex items-center"
             >
               <Image
+                loading="lazy"
                 height={33}
                 width={80}
                 className="grayscale hover:grayscale-0 transition-all duration-150 ease-in"
@@ -63,6 +65,7 @@ export default function Partners() {
               className="flex items-center"
             >
               <Image
+                loading="lazy"
                 height={46}
                 width={90}
                 className="grayscale hover:grayscale-0 transition-all duration-150 ease-in"
@@ -82,6 +85,7 @@ export default function Partners() {
               className="flex items-center"
             >
               <Image
+                loading="lazy"
                 height={27}
                 width={110}
                 className="grayscale hover:grayscale-0 transition-all duration-150 ease-in"
@@ -95,6 +99,7 @@ export default function Partners() {
           <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
             <p className="flex items-center">
               <Image
+                loading="lazy"
                 height={33}
                 width={55}
                 className="grayscale hover:grayscale-0 transition-all duration-150 ease-in"

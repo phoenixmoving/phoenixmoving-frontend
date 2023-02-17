@@ -63,6 +63,7 @@ export default function Info() {
               className="rounded-2xl bg-white shadow-lg rotate-2 object-cover"
               title="Full Packing Services"
               fill
+              loading="lazy"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>

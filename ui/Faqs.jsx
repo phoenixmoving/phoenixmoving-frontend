@@ -1,6 +1,3 @@
-// import Link from 'next/link';
-// import Image from 'next/image';
-
 import Section from '@/ui/Section';
 import SectionHeader from './SectionHeader';
 
@@ -49,7 +46,7 @@ const faqs = [
     {
       question: 'Am I able to change my move date and/or time?',
       answer:
-        "If you need to change your move date and/or time, log\n in to your profile to request a date and/or time change. If you can't log in, email <a href='mailto:info@phoenixmoving.com'>info@phoenixmoving.com</a> or give us a call at <a href='tel:(508)315-9458'>(508)315-9458</a> and we will assist you with the change. Keep in mind that price may change when rescheduling online.",
+        "If you need to change your move, date and/or time, log\n in to your profile to request a date and/or time change. If you can't log in, email <a href='mailto:info@gophoenixmoving.com'>info@gophoenixmoving.com</a> or give us a call at <a href='tel:(508)315-9458'>(508)315-9458</a> and we will assist you with the change. Keep in mind that price may change when rescheduling online.",
     },
   ],
 ];
@@ -57,15 +54,6 @@ const faqs = [
 export default function Faqs() {
   return (
     <Section>
-      {/* <Image
-        className="absolute top-0 left-1/2 max-w-none translate-x-[-30%] -translate-y-1/4"
-        src="/background-faqs.jpg"
-        alt="nice background image"
-        width={1558}
-        height={946}
-        unoptimized
-        title="background image"
-      /> */}
       <SectionHeader
         title="Questions? Answers."
         subtitle={
@@ -91,9 +79,6 @@ export default function Faqs() {
                   <p className="text-lg font-semibold leading-6 text-gray-900">
                     {faq.question}
                   </p>
-                  {/* <p className="mt-4 text-sm prose prose-blue text-gray-900">
-                    {faq.answer}
-                  </p> */}
                   <p
                     dangerouslySetInnerHTML={{ __html: faq.answer }}
                     className="mt-4 text-sm prose prose-blue text-gray-900"

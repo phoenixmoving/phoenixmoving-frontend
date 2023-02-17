@@ -20,7 +20,7 @@ const incentives = [
     name: 'Licensed, Bonded and Insured',
     imageSrc: ClipboardDocumentCheckIcon,
     description:
-      'Phoenix Moving is Fully Licensed and Insured with the <a href="https://www.mass.gov/orgs/department-of-public-utilities" target="_blank" title="Massachusetts Department of Public Utilities">Massachusetts Department of Public Utilities</a>.',
+      'Phoenix Moving is Fully Licensed and Insured with the <a href="https://www.mass.gov/orgs/department-of-public-utilities" target="_blank" title="Massachusetts Department of Public Utilities" rel="noopener noreferrer nofollow">Massachusetts Department of Public Utilities</a>.',
   },
 ];
 

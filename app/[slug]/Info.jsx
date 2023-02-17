@@ -11,7 +11,7 @@ export default function Info({ city }) {
           <SectionHeader
             title={`Reliable and professional ${city?.fullName}.`}
           />
-          <div className="relative z-10 mx-auto max-w-prose  lg:mx-0 lg:max-w-5xl lg:pr-72">
+          <div className="relative z-10 mx-auto max-w-prose lg:mx-0 lg:max-w-5xl lg:pr-72">
             <p className="text-gray-900">
               Phoenix Moving is a premier moving company that provides
               high-quality service to customers in{' '}
@@ -75,6 +75,7 @@ export default function Info({ city }) {
                 title={`Boston to ${city?.fullName}`}
                 className="object-contain"
                 fill
+                loading="lazy"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>

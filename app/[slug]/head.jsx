@@ -26,12 +26,10 @@ export async function getCityState(slug) {
 
 export default async function Head({ params }) {
   const { slug } = params;
-  let city = {};
+  let city = await getCity(slug);
 
-  if (slug.includes('boston-')) {
+  if (!city) {
     city = await getCityState(slug);
-  } else {
-    city = await getCity(slug);
   }
 
   const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/${city?.slug}`;
@@ -50,7 +48,7 @@ export default async function Head({ params }) {
 
   const icon =
     city && city.interstate
-      ? `${process.env.NEXT_PUBLIC_MAIN_URL}/_next/image?url=%2Flogos%2Flogo.png&w=384&q=75`
+      ? `${process.env.NEXT_PUBLIC_MAIN_URL}/logos/logo.png`
       : `${process.env.NEXT_PUBLIC_MAIN_URL + city?.icon}`;
 
   const schema1 = {

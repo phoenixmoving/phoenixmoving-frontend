@@ -16,7 +16,7 @@ export default async function HeroWithBooking({ image, title }) {
         />
         <div className="absolute inset-0 bg-gray-900/60 mix-blend-multiply" />
       </div>
-      <div className="relative py-40 sm:py-32 lg:overflow-hidden lg:py-28">
+      <div className="relative py-40 sm:py-32 lg:py-28">
         <div className="mx-auto max-w-7xl lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-8">
             <div className="mx-auto max-w-md px-6 sm:max-w-2xl sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
