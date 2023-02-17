@@ -6,7 +6,7 @@ const faqs = [
     {
       question: 'Are you licensed and insured?',
       answer:
-        'Yes, we are fully licensed with the <a href="https://www.mass.gov/orgs/department-of-public-utilities" target="_blank" title="Massachusetts Department of Public Utilities">Massachusetts Department of Public Utilities</a> and we carry Cargo, Motor Vehicle, and General Liability Insurance.',
+        'Yes, we are fully licensed with the Massachusetts Department of Public Utilities and we carry Cargo, Motor Vehicle, and General Liability Insurance.',
     },
     {
       question: 'Is the price base on the hours?',

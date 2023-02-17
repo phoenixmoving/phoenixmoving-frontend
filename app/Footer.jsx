@@ -7,6 +7,10 @@ const interstateCities = [
     href: 'boston-new-york-movers',
   },
   {
+    name: 'Washington, DC.',
+    href: 'boston-washington-dc-movers',
+  },
+  {
     name: 'Philadelphia',
     href: 'boston-philadelphia-movers',
   },

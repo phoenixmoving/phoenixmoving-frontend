@@ -7,19 +7,19 @@ const cities = [
     name: 'New York, NY',
     price: 950,
     imageUrl: '',
-    url: '#',
+    url: '/boston-new-york-movers',
   },
   {
     name: 'Charlotte, NC',
-    price: 2200,
+    price: 3000,
     imageUrl: '',
-    url: '#',
+    url: '/boston-charlotte-movers',
   },
   {
     name: 'Philadelphia, PA',
     price: 1300,
     imageUrl: '',
-    url: '#',
+    url: '/boston-philadelphia-movers',
   },
   {
     name: 'Miami, FL',
@@ -29,9 +29,9 @@ const cities = [
   },
   {
     name: 'Washington, DC.',
-    price: 1500,
+    price: 1600,
     imageUrl: '',
-    url: '#',
+    url: 'boston-washington-dc-movers',
   },
   {
     name: 'Chicago, IL',
