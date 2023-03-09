@@ -47,20 +47,18 @@ export default function WhyBook({ city }) {
         {incentives.map((incentive, i) => (
           <div key={incentive.name} className="flex flex-col text-left">
             <div className="sm:flex-shrink-0">
-              <div className="flow-root">
-                {typeof incentive.imageSrc === 'string' ? (
-                  <Image
-                    className="h-16 w-16"
-                    width={64}
-                    height={64}
-                    src={incentive.imageSrc}
-                    alt={incentive.name}
-                    title={incentive.name}
-                  />
-                ) : (
-                  <incentive.imageSrc className="h-16 w-16 stroke-[0.7px]" />
-                )}
-              </div>
+              {typeof incentive.imageSrc === 'string' ? (
+                <Image
+                  className="h-16 w-16"
+                  width={64}
+                  height={64}
+                  src={incentive.imageSrc}
+                  alt={incentive.name}
+                  title={incentive.name}
+                />
+              ) : (
+                <incentive.imageSrc className="h-16 w-16 stroke-[0.7px]" />
+              )}
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
               <h3 className="text-xl font-semibold text-gray-900">

@@ -18,7 +18,7 @@ const faqs = [
   {
     question: 'Do I have to pay for the travel time?',
     answer:
-      'You will be billed for the travel time from our parking location in Natick, MA (18 Lakeview Gdns, Natick, MA 01760) to your origin, and for the travel time from the destination back to our parking. Those charges are prorated based on 15 minute increments and are calculated by the reading of Google Maps. In case if our truck is being delayed by traffic, the additional time incurred will not be added to the bill. Any travel time between the origin and the destination is considered to be part of the "labor time".',
+      'You will be billed for the travel time from our warehouse to your origin, and for the travel time from the destination back to our parking. Those charges are prorated based on 15 minute increments and are calculated by the reading of Google Maps. In case if our truck is being delayed by traffic, the additional time incurred will not be added to the bill. Any travel time between the origin and the destination is considered to be part of the "labor time".',
   },
   {
     question: 'What forms of payment do you accept?',

@@ -1,4 +1,5 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import PhoneIcon from '@heroicons/react/24/outline/PhoneIcon';
+import EnvelopeIcon from '@heroicons/react/24/outline/EnvelopeIcon';
 import Container from '@/ui/Container';
 
 const social = [
@@ -70,27 +71,13 @@ export default function Contact() {
           <h2 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
             Get in touch.
           </h2>
-          <div
-            itemScope
-            itemType="https://schema.org/LocalBusiness"
-            className="flex gap-10 flex-col sm:flex-row justify-between mt-4"
-          >
+          <div className="flex gap-10 flex-col sm:flex-row justify-between mt-4">
             <div>
               <p className="text-lg font-medium">Address</p>
-              {/* <p className="text-gray-500 mt-2 text-base">
-                18 Lakeview Gardens <br />
-                Natick, MA 01760
-              </p> */}
-              <address
-                itemScope
-                itemType="http://schema.org/PostalAddress"
-                className="text-gray-500 mt-2 text-base not-italic"
-              >
-                <span itemProp="streetAddress"> 18 Lakeview Gardens</span>
+              <address className="text-gray-500 mt-2 text-base not-italic">
+                <span>18 Lakeview Gardens</span>
                 <br />
-                <span itemProp="addressLocality">Natick</span>,{' '}
-                <span itemProp="addressRegion">MA</span>{' '}
-                <span itemProp="postalCode">01760</span>
+                <span>Natick</span>, <span>MA</span> <span>01760</span>
               </address>
             </div>
             <div>
@@ -107,11 +94,6 @@ export default function Contact() {
                 <span className="ml-3" itemProp="telephone">
                   +1 (508) 315-9458
                 </span>
-                {/* <PhoneIcon
-                  className="h-6 w-6 flex-shrink-0"
-                  aria-hidden="true"
-                />
-                <span className="ml-3">+1 (508) 315-9458</span> */}
               </a>
             </div>
             <div>
