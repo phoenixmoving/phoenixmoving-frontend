@@ -1,12 +1,12 @@
 import { Disclosure } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon';
 
 export default function MobileServicesDropdown({ item }) {
   return (
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex items-center w-full -mx-3 rounded-lg py-2 px-3 font-medium leading-7 text-gray-900 hover:bg-gray-400/10">
+          <Disclosure.Button className="flex items-center w-full rounded-lg py-2 px-3 font-medium leading-7 text-gray-900 hover:bg-gray-400/10">
             <span>{item.name}</span>
             <ChevronDownIcon
               className={`${

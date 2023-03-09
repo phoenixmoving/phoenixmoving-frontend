@@ -1,10 +1,8 @@
 import { Dialog } from '@headlessui/react';
-import {
-  PhoneIcon,
-  XMarkIcon,
-  EnvelopeIcon,
-} from '@heroicons/react/24/outline';
-import { UserIcon } from '@heroicons/react/20/solid';
+import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon';
+import EnvelopeIcon from '@heroicons/react/24/outline/EnvelopeIcon';
+import PhoneIcon from '@heroicons/react/24/outline/PhoneIcon';
+import UserIcon from '@heroicons/react/20/solid/UserIcon';
 import Button from '@/ui/Button';
 import MobileServicesDropdown from './MobileServicesDropdown';
 
@@ -60,7 +58,7 @@ export default function MobileMenu({
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg py-2 px-3 font-medium leading-7 text-gray-900 hover:bg-gray-400/10"
+                      className="block rounded-lg py-2 px-3 font-medium leading-7 text-gray-900 hover:bg-gray-400/10"
                     >
                       {item.name}
                     </a>

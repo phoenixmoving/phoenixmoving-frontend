@@ -11,7 +11,7 @@ export default function InputField(props) {
   return (
     <>
       <label
-        htmlFor={field}
+        htmlFor={field.name}
         className="flex justify-between text-xs font-semibold text-gray-700"
       >
         {label}

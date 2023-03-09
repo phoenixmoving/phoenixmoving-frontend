@@ -35,7 +35,7 @@ export default function SelectField(props) {
   return (
     <>
       <label
-        htmlFor={field}
+        htmlFor={field.name}
         className="block text-xs font-semibold text-gray-700"
       >
         {label}
@@ -50,7 +50,7 @@ export default function SelectField(props) {
             'text-gray-400': value === '',
             'border-red-500 bg-red-50': isError,
             'border-green-500 bg-green-50': isSuccess,
-          }
+          },
         )}
       >
         {options.map((o) => {

@@ -32,10 +32,7 @@ const localMoving = [
 
 export default function Included() {
   return (
-    <section
-      aria-label="local-services"
-      className="py-2 sm:py-6 bg-palette-background"
-    >
+    <section className="py-2 sm:py-6 bg-palette-background">
       <Container>
         <dl className="grid grid-cols-2 gap-6 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8 py-10 px-6 lg:px-8">
           {localMoving.map((feature) => (

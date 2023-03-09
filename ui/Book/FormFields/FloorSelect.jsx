@@ -26,7 +26,7 @@ export default function FloorSelect(props) {
 
   return (
     <>
-      <label htmlFor={field} className="block text-sm font-b text-gray-700">
+      <label htmlFor={field.name} className="block text-sm font-b text-gray-700">
         {label}
       </label>
       <RadioGroup onChange={handleChange} value={mem} className="mt-1">

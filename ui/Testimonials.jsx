@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import { useInView } from 'framer-motion';
 import Image from 'next/image';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
-// import Link from 'next/link';
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 
@@ -80,8 +79,6 @@ function Review({
         'animate-fade-in rounded-3xl bg-white p-6 opacity-0 shadow-md shadow-gray-900/5',
         className,
       )}
-      style={{ animationDelay: animationDelay ? animationDelay : '0s' }}
-      {...props}
     >
       <blockquote className="text-gray-900">
         <div className="flex justify-between items-center">
@@ -228,11 +225,7 @@ function ReviewGrid({ reviews }) {
 
 export default function Testimonials({ reviews, totalReviews }) {
   return (
-    <Section
-      label="phoenix-moving-reviews"
-      id="reviews"
-      className="bg-palette-background"
-    >
+    <Section id="reviews" className="bg-palette-background">
       <SectionHeader title="What real people say about us." />
       {reviews && reviews.length > 0 && <ReviewGrid reviews={reviews} />}
       <div className="flex items-center justify-center mt-10">
@@ -244,10 +237,6 @@ export default function Testimonials({ reviews, totalReviews }) {
         >
           {totalReviews} Google Reviews
           <ArrowUpRightIcon className="w-3 h-3 ml-1 text-blue-600" />
-          {/* <span aria-hidden="true" className="ml-2">
-            {' '}
-            &rarr;
-          </span> */}
         </a>
       </div>
     </Section>

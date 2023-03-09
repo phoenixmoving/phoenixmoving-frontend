@@ -16,7 +16,7 @@ export default function CalendarWithRates(props) {
     movingDate,
     isDelivery,
     rates,
-    error,
+    prices,
   } = props;
 
   const [month, setMonth] = useState(new Date());
@@ -79,7 +79,7 @@ export default function CalendarWithRates(props) {
           );
         })}
       </div>
-      <CalendarFooter />
+      <CalendarFooter prices={prices} />
     </div>
   );
 }

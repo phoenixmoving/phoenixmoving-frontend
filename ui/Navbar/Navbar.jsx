@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Bars3Icon } from '@heroicons/react/24/outline';
-import { UserIcon } from '@heroicons/react/20/solid';
+import Bars3Icon from '@heroicons/react/24/outline/Bars3Icon';
+import UserIcon from '@heroicons/react/20/solid/UserIcon';
 import MobileMenu from './components/MobileMenu';
 import clsx from 'clsx';
 import DropDownMenu from './components/DropDownMenu';
@@ -52,29 +52,6 @@ const navigation = [
   { name: 'Faq', href: 'faq' },
 ];
 
-// function Logo({ large = false, className, ...props }) {
-//   return (
-//     <Link
-//       href="/"
-//       aria-label="Home"
-//       className={clsx(className, 'pointer-events-auto')}
-//       {...props}
-//     >
-//       <Image
-//         sizes={large ? '4rem' : '2.25rem'}
-//         className={clsx(
-//           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-//           large ? 'h-16 w-16' : 'h-9 w-9',
-//         )}
-//         priority
-//         src={props.active ? '/logos/logo.png' : '/logos/logo-white.png'}
-//         alt="phoenix moving logo"
-//         title="Phoenix Moving Boston"
-//       />
-//     </Link>
-//   );
-// }
-
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [active, setActive] = useState(false);
@@ -116,25 +93,13 @@ export default function Navbar() {
           },
         )}
       >
-        <nav
-          className="flex h-9 items-center justify-between"
-          aria-label="Global"
-        >
-          <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
+        <nav className="flex h-9 items-center justify-between">
+          <div className="flex lg:min-w-0 lg:flex-1">
             <a href="/" title="Home" className="-m-1.5">
               <span className="sr-only">Phoenix Moving Boston</span>
               <div className="relative">
-                {/* <img
-                    className={clsx('transition-all ease-in-out duration-300', {
-                      'h-8 lg:h-10': active,
-                      'h-10 lg:h-12': !active,
-                    })}
-                    src={active ? '/logos/logo.png' : '/logos/logo-white.png'}
-                    alt="phoenix moving logo"
-                    title="Phoenix Moving Boston"
-                  /> */}
                 <Image
-                  width={active ? 130 : 150}
+                  width={active ? 135 : 150}
                   height={active ? 38 : 43}
                   className="transition-all ease-in-out duration-300 object-cove"
                   priority
@@ -221,7 +186,7 @@ export default function Navbar() {
               Client Login
             </a>
             <Button color="secondary" href="/" size="small">
-              Book now
+              Book Now
             </Button>
           </div>
         </nav>

@@ -12,7 +12,15 @@ export async function getData() {
   return res.json();
 }
 
+export async function getPrices() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/prices`, {
+    next: { revalidate: 180 },
+  });
+  return res.json();
+}
+
 export default async function BookFormWrapper() {
   const rates = await getData();
-  return <DynamicBook rates={rates} />;
+  const prices = await getPrices();
+  return <DynamicBook rates={rates} prices={prices} />;
 }

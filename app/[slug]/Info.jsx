@@ -48,7 +48,7 @@ export default function Info({ city }) {
                   <a href="/local-moving">services</a> and to get a free quote.
                 </p>
               </div>
-              <div className="mx-auto mt-10 flex max-w-prose lg:max-w-none justify-between sm:justify-start">
+              <div className="mx-auto mt-10 flex max-w-prose lg:max-w-none justify-evenly sm:justify-start sm:gap-4">
                 <Button
                   href="/"
                   size="large"
@@ -61,7 +61,6 @@ export default function Info({ city }) {
                   href="/pricing"
                   size="large"
                   variant="soft"
-                  className="ml-4"
                   title="View Rates"
                 >
                   View Rates

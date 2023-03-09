@@ -11,7 +11,7 @@ export default function Info() {
         <p className="text-base font-light">
           At the time of the move, the customer or a representative must be
           present during the move at all times, as movers will need guidance. It
-          is customer's responsibility to do a final “walk-through” at the
+          is customer&apos;s responsibility to do a final “walk-through” at the
           pickup location to ensure the movers have taken everything that needs
           to be moved. Having the form of payment, you choose to use at the end
           of the job ready will save you time and money. Please note: we do not
@@ -75,9 +75,9 @@ export default function Info() {
           Our trucks carry a standard set of boxes: 5 small, 5 medium, 5 large,
           5 picture boxes, 5 wardrobe and 1 bundle of white packing paper. If
           you feel like there will be some packing for us to be done, please
-          make sure to inform us ahead of time, otherwise we'll be limited to
-          our supplies. All boxes and supplies used on your move are subject to
-          addition charge, unless specified in your moving estimate.
+          make sure to inform us ahead of time, otherwise we&apos;ll be limited
+          to our supplies. All boxes and supplies used on your move are subject
+          to addition charge, unless specified in your moving estimate.
         </p>
       </div>
 
@@ -100,10 +100,10 @@ export default function Info() {
           <p className="font-bold">Waiting time.</p>
         </div>
         <p className="text-base font-light">
-          If our crew arrives at your location as agreed, but you're not ready
-          for us to start the job, you'll be billed for our waiting time. Please
-          understand that you're holding up our team by not being ready for the
-          move.
+          If our crew arrives at your location as agreed, but you&apos;re not
+          ready for us to start the job, you&apos;ll be billed for our waiting
+          time. Please understand that you&apos;re holding up our team by not
+          being ready for the move.
         </p>
       </div>
 
@@ -116,11 +116,11 @@ export default function Info() {
           Two parking spaces (to accommodate a 34-foot-long moving truck) should
           be provided/secured by the customer. Parking spot must be located
           within 75 feet from the entrance. In case if a parking permit is
-          needed, it is customer's responsibility to inform Phoenix Moving. All
-          parking permits must be obtained by the customer unless otherwise
+          needed, it is customer&apos;s responsibility to inform Phoenix Moving.
+          All parking permits must be obtained by the customer unless otherwise
           indicated on the move plan. In case if there is no parking space
           available next to the origin/delivery location and the moving truck
-          needs to be parked in a non-permitted space, it is customer's
+          needs to be parked in a non-permitted space, it is customer&apos;s
           responsibility to cover the cost of any parking tickets issued to
           Phoenix Moving.
         </p>
@@ -152,12 +152,12 @@ export default function Info() {
           </p>
         </div>
         <p className="text-base font-light">
-          We require cash, credit card, money order/cashier's check (no personal
-          checks) at the time of delivery for any balance due on long-distance
-          moves. 3% processing fee will be applied for credit card payments. For
-          all interstate moves we require 10% deposit on booking stage to secure
-          crew and truck for your move, another 40% due at the pick-up time and
-          50% balance due at the delivery after unloading.
+          We require cash, credit card, money order/cashier&apos;s check (no
+          personal checks) at the time of delivery for any balance due on
+          long-distance moves. 3% processing fee will be applied for credit card
+          payments. For all interstate moves we require 10% deposit on booking
+          stage to secure crew and truck for your move, another 40% due at the
+          pick-up time and 50% balance due at the delivery after unloading.
         </p>
       </div>
 

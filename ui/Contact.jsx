@@ -70,40 +70,64 @@ export default function Contact() {
           <h2 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
             Get in touch.
           </h2>
-          <div className="flex gap-10 flex-col sm:flex-row justify-between mt-4">
+          <div
+            itemScope
+            itemType="https://schema.org/LocalBusiness"
+            className="flex gap-10 flex-col sm:flex-row justify-between mt-4"
+          >
             <div>
               <p className="text-lg font-medium">Address</p>
-              <p className="text-gray-500 mt-2 text-base">
+              {/* <p className="text-gray-500 mt-2 text-base">
                 18 Lakeview Gardens <br />
                 Natick, MA 01760
-              </p>
+              </p> */}
+              <address
+                itemScope
+                itemType="http://schema.org/PostalAddress"
+                className="text-gray-500 mt-2 text-base not-italic"
+              >
+                <span itemProp="streetAddress"> 18 Lakeview Gardens</span>
+                <br />
+                <span itemProp="addressLocality">Natick</span>,{' '}
+                <span itemProp="addressRegion">MA</span>{' '}
+                <span itemProp="postalCode">01760</span>
+              </address>
             </div>
             <div>
               <p className="text-lg font-medium">Phone</p>
               <a
                 href="tel:(508)315-9458"
-                className="flex items-center text-gray-500 mt-2 text-base"
+                className="flex items-center text-gray-500 mt-2 text-base hover:text-palette-primary-500"
                 title="Phoenix Moving Phone"
               >
                 <PhoneIcon
-                  className="h-6 w-6 flex-shrink-0 text-gray-500"
+                  className="h-6 w-6 flex-shrink-0"
                   aria-hidden="true"
                 />
-                <span className="ml-3">+1 (508) 315-9458</span>
+                <span className="ml-3" itemProp="telephone">
+                  +1 (508) 315-9458
+                </span>
+                {/* <PhoneIcon
+                  className="h-6 w-6 flex-shrink-0"
+                  aria-hidden="true"
+                />
+                <span className="ml-3">+1 (508) 315-9458</span> */}
               </a>
             </div>
             <div>
               <p className="text-lg font-medium">Email</p>
               <a
                 href="mailto:info@gophoenixmoving.com"
-                className="flex items-center text-gray-500 mt-2 text-base"
+                className="flex items-center text-gray-500 mt-2 text-base hover:text-palette-primary-500"
                 title="Phoenix Moving Email"
               >
                 <EnvelopeIcon
-                  className="h-6 w-6 flex-shrink-0 text-gray-500"
+                  className="h-6 w-6 flex-shrink-0"
                   aria-hidden="true"
                 />
-                <span className="ml-3 break-all">info@gophoenixmoving.com</span>
+                <span className="ml-3 break-all" itemProp="email">
+                  info@gophoenixmoving.com
+                </span>
               </a>
             </div>
           </div>
@@ -113,7 +137,7 @@ export default function Contact() {
               return (
                 <li key={item.name}>
                   <a
-                    className="text-gray-500 hover:text-palette-primary-500 transition-all duration-150 ease-in relative inline-block group"
+                    className="relative text-gray-500 hover:text-palette-primary-500 transition-all duration-150 ease-in inline-block group"
                     href={item.href}
                     title={item.name}
                     target="_blank"
@@ -126,7 +150,7 @@ export default function Contact() {
                       }
                       aria-hidden="true"
                     />
-                    <span className="invisible group-hover:visible absolute bottom-10 -left-2 bg-gray-600 rounded-xl py-1 px-2 text-xs text-white z-10">
+                    <span className="invisible group-hover:visible absolute bottom-10 bg-gray-600 rounded-xl py-1 px-2 text-xs text-white z-10">
                       {item.name}
                     </span>
                   </a>

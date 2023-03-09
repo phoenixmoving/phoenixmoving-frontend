@@ -1,7 +1,6 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
-import { ChevronRightIcon } from '@heroicons/react/24/outline';
-// import Link from 'next/link';
+import ChevronRightIcon  from '@heroicons/react/24/outline/ChevronRightIcon';
 
 const services = [
   {

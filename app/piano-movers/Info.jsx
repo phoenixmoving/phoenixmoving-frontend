@@ -5,9 +5,7 @@ export default function Info() {
   return (
     <div className="overflow-hidden bg-white">
       <div className="relative mx-auto max-w-7xl py-16 px-6 lg:px-8">
-        <div className="mx-auto max-w-prose lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
-          <SectionHeader title="How does the process of moving a Piano work?" />
-        </div>
+        <SectionHeader title="How does the process of moving a Piano work?" />
         <div className="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
           <div className="relative lg:col-start-2 lg:row-start-1">
             <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-full lg:w-[80%] h-[25rem] lg:h-[65%]">
@@ -47,9 +45,9 @@ export default function Info() {
                 pianos and an additional $250 for grand pianos. The final cost
                 will ultimately depend on several factors: the type of piano,
                 its age, whether there are sets of stairs, and the distance
-                you're transporting it. Longer moves and larger instruments such
-                as a grand piano will cost significantly more, as they require
-                more equipment, extra manpower, and take more time.
+                you&apos;re transporting it. Longer moves and larger instruments
+                such as a grand piano will cost significantly more, as they
+                require more equipment, extra manpower, and take more time.
               </p>
               <h3>Why choose Phoenix Moving?</h3>
               <p>

@@ -51,8 +51,9 @@ export default function Info() {
                 If you choose to pack yourself, we provide packing materials
                 such as boxes, packing tape, and bubble wrap. You pay only for
                 the boxes you use, and we will collect any unused boxes on the
-                day of your move. Don't know how many boxes you need for your
-                move size? Check our <a href="#packages">Packages section</a>.
+                day of your move. Don&apos;t know how many boxes you need for
+                your move size? Check our{' '}
+                <a href="#packages">Packages section</a>.
               </p>
             </div>
           </div>

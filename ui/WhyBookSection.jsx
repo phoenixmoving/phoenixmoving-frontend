@@ -34,7 +34,7 @@ export default function WhyBookSection() {
             key={incentive.name}
             className={
               i === 1
-                ? 'text-center sm:flex sm:text-left lg:block lg:text-center lg:relative bottom-[4px]'
+                ? 'text-center sm:flex sm:text-left lg:block lg:text-center lg:relative bottom-1'
                 : 'text-center sm:flex sm:text-left lg:block lg:text-center'
             }
           >

@@ -34,7 +34,7 @@ export default function PhoneInput(props) {
   return (
     <>
       <label
-        htmlFor={field}
+        htmlFor={field.name}
         className="block text-xs font-semibold text-gray-700"
       >
         {label}

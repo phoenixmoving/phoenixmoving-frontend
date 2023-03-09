@@ -22,7 +22,7 @@ export default function CustomDatePicker(props) {
 
   const movingDate = formikProps.values.movingDate;
 
-  const { label, placeholder, rates } = props;
+  const { label, placeholder, rates, prices } = props;
 
   const handleOpen = () => {
     setOpen(true);
@@ -44,7 +44,10 @@ export default function CustomDatePicker(props) {
 
   return (
     <>
-      <label className="block text-xs font-semibold text-gray-700">
+      <label
+        className="block text-xs font-semibold text-gray-700"
+        htmlFor={field.name}
+      >
         {label}
       </label>
       <input
@@ -74,6 +77,7 @@ export default function CustomDatePicker(props) {
           movingDate={movingDate}
           isDelivery={field.name === 'deliveryDate'}
           rates={rates}
+          prices={prices}
         />
       )}
     </>

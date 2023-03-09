@@ -38,10 +38,7 @@ export default async function PricingTable() {
   ];
 
   return (
-    <Section
-      label="phoenix-moving-pricing-table"
-      className="bg-palette-background"
-    >
+    <Section className="bg-palette-background">
       <SectionHeader
         title="Affordable moving rates."
         subtitle={

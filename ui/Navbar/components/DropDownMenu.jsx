@@ -1,12 +1,12 @@
 import { Popover } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon';
 import clsx from 'clsx';
 import Link from 'next/link';
 
 export default function DropDownMenu({ title, active, items }) {
   return (
     <Popover className="relative">
-      {() => (
+      {({ open }) => (
         <>
           <Popover.Button
             className={clsx(
@@ -18,7 +18,10 @@ export default function DropDownMenu({ title, active, items }) {
             )}
           >
             {title}
-            <ChevronDownIcon className="h-6 w-6" aria-hidden="true" />
+            <ChevronDownIcon
+              className={`${open ? 'rotate-180 transform' : ''} h-6 w-6`}
+              aria-hidden="true"
+            />
           </Popover.Button>
           <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
             <div className="overflow-hidden rounded-xl shadow-lg ring-1 ring-black ring-opacity-5">

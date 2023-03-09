@@ -37,7 +37,7 @@ const stepsButtons = [
 
 const { formId, formField } = sumbitFormModel;
 
-function _renderStepContent(step, values, rates) {
+function _renderStepContent(step, values, rates, prices) {
   // console.log(values);
   const showDeliveryDate = values.service === 'Moving with Storage';
   const showDestination =
@@ -51,6 +51,7 @@ function _renderStepContent(step, values, rates) {
           showDeliveryDate={showDeliveryDate}
           showDestination={showDestination}
           rates={rates}
+          prices={prices}
         />
       );
     case 1:
@@ -76,7 +77,7 @@ function _renderStepContent(step, values, rates) {
   }
 }
 
-export default function Book({ rates }) {
+export default function Book({ rates, prices }) {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
@@ -174,7 +175,7 @@ export default function Book({ rates }) {
                       <p className="text-2xl font-semibold text-center">
                         {steps[activeStep]}
                       </p>
-                      {_renderStepContent(activeStep, values, rates)}
+                      {_renderStepContent(activeStep, values, rates, prices)}
                       <div className="flex mt-6 gap-2 px-1 justify-between">
                         {activeStep !== 0 && (
                           <Button
@@ -182,7 +183,6 @@ export default function Book({ rates }) {
                             onClick={_handleBack}
                             color="primary"
                             variant="outline"
-                            size="small"
                             className="w-full"
                           >
                             Back
@@ -192,7 +192,6 @@ export default function Book({ rates }) {
                         <Button
                           type="submit"
                           color="primary"
-                          size="small"
                           className="w-full"
                         >
                           {isSubmitting
@@ -202,7 +201,7 @@ export default function Book({ rates }) {
                       </div>
                       {activeStep === 0 && (
                         <p className="text-gray-500 font-semmibold text-xs text-center mt-2">
-                          Free quote at step 3
+                          Free instant quote at step 3
                         </p>
                       )}
                     </Form>

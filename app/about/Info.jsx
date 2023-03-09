@@ -26,7 +26,7 @@ export default function Info() {
             We take great pride in our commitment to customer satisfaction, and
             strive to make your move as stress-free as possible.
           </p>
-          <h3>We're here to help.</h3>
+          <h3>We&apos;re here to help.</h3>
           <p>
             With our competitive rates, reliable service, and wide range of
             solutions for every budget, we are the ideal choice for your next

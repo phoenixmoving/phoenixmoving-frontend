@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import ArrowUpRightIcon  from '@heroicons/react/24/outline/ArrowUpRightIcon';
 
 const links = {
   google:

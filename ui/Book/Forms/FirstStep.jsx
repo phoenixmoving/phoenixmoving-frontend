@@ -63,6 +63,7 @@ export default function FirstStep(props) {
     showDeliveryDate,
     showDestination,
     rates,
+    prices,
   } = props;
 
   return (
@@ -73,6 +74,7 @@ export default function FirstStep(props) {
           label={movingDate.label}
           placeholder={movingDate.placeholder}
           rates={rates}
+          prices={prices}
         />
       </div>
 
@@ -111,15 +113,12 @@ export default function FirstStep(props) {
       </div>
       {showDeliveryDate && (
         <div className="col-span-2">
-          {/* <DatePickerField
-            name={deliveryDate.name}
-            label={deliveryDate.label}
-          /> */}
           <CustomDatePicker
             name={deliveryDate.name}
             label={deliveryDate.label}
             placeholder={deliveryDate.placeholder}
             rates={rates}
+            prices={prices}
           />
         </div>
       )}

@@ -2,19 +2,38 @@ import '@/styles/tailwind.css';
 import Footer from './Footer';
 import { Inter } from '@next/font/google';
 import Navbar from '@/ui/Navbar';
-// import Script from 'next/script';
-
-// const GTAG = process.env.NEXT_PUBLIC_G_TAG;
+import Script from 'next/script';
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
   variable: '--font-inter',
 });
 
+const GTAG = process.env.NEXT_PUBLIC_G_TAG;
+
+export const metadata = {
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
+  verification: {
+    google: 'ACFgIKDb3RQe19sMvNkxXUi1lPW4t1kCQmgUDjGp_eA',
+  },
+  manifest: '/site.webmanifest',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} font-sans`}>
-      <head />
       <body className="relative z-0">
         <Navbar />
         <main className="mt-[-72px]">{children}</main>
@@ -38,6 +57,22 @@ export default function RootLayout({ children }) {
         </a>
         <Footer />
       </body>
+      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+      <Script
+        id="gtag"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-tag-manager" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GTAG}',{
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
     </html>
   );
 }

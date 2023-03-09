@@ -3,14 +3,6 @@ import Button from '@/ui/Button';
 export default function NotFound() {
   return (
     <>
-      {/*
-          This example requires updating your template:
-  
-          ```
-          <html class="h-full">
-          <body class="h-full">
-          ```
-        */}
       <div className="min-h-full bg-palette-footer h-[100vh] grid place-items-center">
         <div className="mx-auto max-w-max">
           <main className="sm:flex">
@@ -25,7 +17,7 @@ export default function NotFound() {
               </div>
               <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
                 <Button href="/" color="primary">
-                  Go back home
+                  Go Back Home
                 </Button>
               </div>
             </div>

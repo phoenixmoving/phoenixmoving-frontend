@@ -9,12 +9,12 @@ export default function Info() {
   return (
     <Section>
       <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
-        <SectionHeader title="Boston local moving." start />
+        <SectionHeader title="Boston local moving." />
         <div className="relative z-10 mx-auto max-w-prose  lg:mx-0 lg:max-w-5xl lg:pr-72 prose prose-blue ">
           <p className="text-gray-900">
             We are a <b>local moving company in Boston, Massachusetts</b>. If
-            you're looking for local movers in Boston MA, see if we operate in
-            your area, and then contact us for a quote.
+            you&apos;re looking for local movers in Boston MA, see if we operate
+            in your area, and then contact us for a quote.
           </p>
         </div>
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
@@ -41,19 +41,19 @@ export default function Info() {
                 of moving equipment and materials — our workers are trained and
                 equipped in the best possible way.
               </p>
-              <h3>We're here to help.</h3>
+              <h3>We&apos;re here to help.</h3>
               <p>
                 The cost of hiring a Boston local moving company is a loss only
                 if you hire the wrong one. The quality and range of services
                 provided must be considered when evaluating the
-                cost-effectiveness of the investment. There's an entire laundry
-                list of unexpected expenses that self-movers tend to forget when
-                making their decisions not to seek professional help. Gas
-                prices, tolls, rent and insurance pitfalls, accidents, injuries,
-                delays — the list goes on. Choosing the wrong wrapping materials
-                and covers can also lead to unforeseen damages and expenses.
-                Without professional guidance, additional costs accrue almost
-                every step of the way.
+                cost-effectiveness of the investment. There&apos;s an entire
+                laundry list of unexpected expenses that self-movers tend to
+                forget when making their decisions not to seek professional
+                help. Gas prices, tolls, rent and insurance pitfalls, accidents,
+                injuries, delays — the list goes on. Choosing the wrong wrapping
+                materials and covers can also lead to unforeseen damages and
+                expenses. Without professional guidance, additional costs accrue
+                almost every step of the way.
               </p>
             </div>
           </div>

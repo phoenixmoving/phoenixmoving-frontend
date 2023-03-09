@@ -1,4 +1,4 @@
-import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
+import ClipboardDocumentCheckIcon from '@heroicons/react/24/outline/ClipboardDocumentCheckIcon';
 import Section from '@/ui/Section';
 import Image from 'next/image';
 import SectionHeader from '@/ui/SectionHeader';

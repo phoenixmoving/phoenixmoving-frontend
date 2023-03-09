@@ -21,7 +21,7 @@ const MonthSelect = (props) => {
   };
 
   return (
-    <div className="flex gap-2 flex-col bg-palette-background rounded-t-2xl">
+    <div className="flex gap-2 flex-col bg-palette-background rounded-t-xl">
       <div className="flex items-center justify-between text-sm px-4 py-2">
         <button
           type="button"
