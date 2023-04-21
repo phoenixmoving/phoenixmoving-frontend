@@ -27,11 +27,8 @@ const incentives = [
 export default function WhyBook({ city }) {
   return (
     <Section>
-      <SectionHeader
-        start
-        title={`Why book with Phoenix Moving ${city.name}.`}
-      />
-      <div className="max-w-3xl">
+      <SectionHeader title={`Why book with Phoenix Moving ${city.name}.`} />
+      <div className="max-w-5xl m-auto">
         <p className="mt-4 text-gray-900">
           At Phoenix Moving Company in {city.name}, we pride ourselves on our
           commitment to excellence. We are fully licensed and insured, and we go

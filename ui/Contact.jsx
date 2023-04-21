@@ -65,7 +65,7 @@ const social = [
 
 export default function Contact() {
   return (
-    <section className="bg-palette-background shadow-lg">
+    <section className="bg-palette-background">
       <Container className="flex flex-col lg:flex-row">
         <div className="py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 xl:pr-12 w-full">
           <h2 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl">
