@@ -1,12 +1,14 @@
-import '@/styles/tailwind.css';
+import './global.css';
 import Footer from './Footer';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 import Navbar from '@/ui/Navbar';
 import Script from 'next/script';
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({
   variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 const GTAG = process.env.NEXT_PUBLIC_G_TAG;

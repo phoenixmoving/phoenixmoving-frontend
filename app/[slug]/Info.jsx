@@ -59,7 +59,7 @@ export default function Info({ city }) {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-[200px] lg:w-[300px] h-[200px] lg:h-[300px]">
+          <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] animate-fade-in">
             <Image
               src={city?.icon}
               alt={`${city?.name} ${city?.state} image`}

@@ -14,6 +14,8 @@ import Partners from '@/ui/Partners';
 import Photos from '@/ui/Photos';
 import Contact from '@/ui/Contact';
 import Divider from '@/ui/Divider';
+// import MovingServices from './MovingServices';
+import CitiesSection from '@/ui/CitiesSection';
 
 export const dynamicParams = true;
 
@@ -77,9 +79,20 @@ export async function generateMetadata({ params }) {
       ? `Reliable Movers from Boston to ${city.name}. The Most Trusted Boston to ${city.name} Moving Company, Get a Free Quote Online (NO Registration Required).`
       : `${city?.name} Movers, Professional Moving Company in ${city?.name}, ${city?.state}. The most reliable moving company near ${city?.name}. Free Quote Online (NO Registration Required).`;
 
+  const keywords = [
+    `Movers near ${city.name} MA`,
+    `${city.name} Movers`,
+    `${city.name} Moving Company`,
+    'Phoenix Moving is a professional Boston local and long distance moving company with a great reputation and affordable rates',
+    `${city.name} Movers serving ${city.name} MA and beyond`,
+    'Best moving prices',
+    'Best moving rates with 100% satisfaction guaranteed',
+  ];
+
   return {
     title,
     description,
+    keywords: city && city?.interstate ? [] : keywords,
     alternates: {
       canonical: URL,
     },
@@ -219,6 +232,8 @@ export default async function CityPage({ params }) {
       <Partners />
       {city?.state && <Info city={city} />}
       <Divider />
+      {/* {city?.state && <MovingServices city={city} />} */}
+      {/* <Divider /> */}
       {city?.state && <WhyBook city={city} />}
       <Stats />
       {city?.state && <Advantages city={city} />}
@@ -227,6 +242,7 @@ export default async function CityPage({ params }) {
       <Faqs />
       {city?.state && <Divider />}
       {city?.state && <Conclusion city={city} />}
+      <CitiesSection />
       <CTA />
       <Contact />
     </>

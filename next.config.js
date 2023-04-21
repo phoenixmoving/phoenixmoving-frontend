@@ -5,9 +5,6 @@ const nextConfig = {
     appDir: true,
     optimizeCss: true,
     swcMinify: true,
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
   },
   images: {
     domains: [
