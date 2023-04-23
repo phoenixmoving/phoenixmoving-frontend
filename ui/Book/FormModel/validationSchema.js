@@ -45,9 +45,8 @@ export default [
       .ensure()
       .when(['service'], {
         is: (service) => service === 'Moving with Storage',
-        then: Yup.string()
-          .nullable()
-          .required(`${deliveryDate.requiredErrorMsg}`),
+        then: () =>
+          Yup.string().nullable().required(`${deliveryDate.requiredErrorMsg}`),
       }),
     [startTime.name]: Yup.string()
       .nullable()
@@ -59,12 +58,13 @@ export default [
     [destinationZip.name]: Yup.string().when('service', {
       is: (service) =>
         service === 'Moving with Storage' || service === 'Moving',
-      then: Yup.string()
-        .nullable()
-        .required(`${destinationZip.requiredErrorMsg}`)
-        .test('len', `${destinationZip.invalidErrorMsg}`, (val) =>
-          findCity(val)
-        ),
+      then: () =>
+        Yup.string()
+          .nullable()
+          .required(`${destinationZip.requiredErrorMsg}`)
+          .test('len', `${destinationZip.invalidErrorMsg}`, (val) =>
+            findCity(val),
+          ),
     }),
 
     [service.name]: Yup.string().required(`${service.requiredErrorMsg}`),
@@ -72,27 +72,29 @@ export default [
   Yup.object().shape({
     [size.name]: Yup.string().required(`${size.requiredErrorMsg}`),
     [originFloor.name]: Yup.string().required(
-      `${originFloor.requiredErrorMsg}`
+      `${originFloor.requiredErrorMsg}`,
     ),
     [destinationFloor.name]: Yup.string().when('service', {
       is: (service) =>
         service === 'Moving with Storage' || service === 'Moving',
-      then: Yup.string()
-        .nullable()
-        .required(`${destinationFloor.requiredErrorMsg}`),
+      then: () =>
+        Yup.string()
+          .nullable()
+          .required(`${destinationFloor.requiredErrorMsg}`),
     }),
   }),
   Yup.object().shape({}),
   Yup.object().shape({
     [originAddress.name]: Yup.string().required(
-      `${originAddress.requiredErrorMsg}`
+      `${originAddress.requiredErrorMsg}`,
     ),
     [destinationAddress.name]: Yup.string().when('service', {
       is: (service) =>
         service === 'Moving with Storage' || service === 'Moving',
-      then: Yup.string()
-        .nullable()
-        .required(`${destinationAddress.requiredErrorMsg}`),
+      then: () =>
+        Yup.string()
+          .nullable()
+          .required(`${destinationAddress.requiredErrorMsg}`),
     }),
   }),
   Yup.object().shape({
@@ -106,7 +108,7 @@ export default [
       .required('Phone is required')
       .matches(
         /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)$/,
-        'Invalid phone number'
+        'Invalid phone number',
       ),
     [referral.name]: Yup.string()
       .nullable()

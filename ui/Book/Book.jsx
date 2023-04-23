@@ -176,7 +176,7 @@ export default function Book({ rates, prices }) {
                         {steps[activeStep]}
                       </p>
                       {_renderStepContent(activeStep, values, rates, prices)}
-                      <div className="flex mt-6 gap-2 px-1 justify-between">
+                      <div className="flex mt-6 gap-6 px-1 justify-between">
                         {activeStep !== 0 && (
                           <Button
                             type="button"
