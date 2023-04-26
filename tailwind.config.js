@@ -22,7 +22,7 @@ module.exports = {
       //   sans: ['Inter', ...defaultTheme.fontFamily.sans],
       // },
       fontFamily: {
-        sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-maven)', ...defaultTheme.fontFamily.sans],
       },
       borderRadius: {
         '4xl': '2rem',

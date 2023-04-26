@@ -7,47 +7,44 @@ export default function Info({ city }) {
   return (
     <section aria-labelledby={`${city?.fullName} Info`}>
       <Container className="overflow-hidden py-16">
-        <SectionHeader title={`Reliable and professional ${city?.fullName}.`} />
-        <div className="relative z-10 mx-auto max-w-prose lg:mx-0 lg:max-w-5xl lg:pr-72">
-          <p className="text-gray-900">
-            Phoenix Moving is a premier moving company that provides
-            high-quality service to customers in{' '}
-            <strong>{`${city?.name}, ${city?.state}`}</strong> and entire state
-            of Massachusetts.
-          </p>
-        </div>
+        <SectionHeader
+          title={`Reliable and affordable movers near ${city?.name}, ${city?.state}.`}
+        />
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
           <div className="relative z-10">
             <div className="prose prose-blue mx-auto text-gray-900 lg:max-w-none">
-              {city?.intro ? (
-                <p>{city?.intro}</p>
-              ) : (
-                <p>
-                  As a{' '}
-                  <strong className="text-gray-900">{`${city?.name} Moving Company`}</strong>
-                  , we specialize in long-distance, commercial, and residential
-                  moves, providing a stress-free and hassle-free experience. Our
-                  team of highly-trained and experienced movers will ensure that
-                  your possessions are packed and moved securely and safely. We
-                  take great pride in offering top-notch customer service and a
-                  wide range of moving services. Our services include packing
-                  and unpacking, loading and unloading, and furniture assembly.
-                  We also offer{' '}
-                  <a href="/storage-solutions">storage solutions</a> for those
-                  who need extra space for their belongings.
-                </p>
-              )}
+              <p className="text-gray-900">
+                Phoenix Moving is a premier moving company that provides
+                high-quality moving services to customers in{' '}
+                <strong>{`${city?.name}, ${city?.state}`}</strong> and entire
+                state of Massachusetts.
+              </p>
               <p>
-                {`With our competitive rates and flexible payment options, you
-                  can rest assured that when moving to/from
-                  ${city?.name} ${city?.state}, you're getting the best value
-                  for your money. Contact us today to learn more about our `}
-                <a href="/local-moving">services</a> and to get a free quote.
+                Phoneix Moving {city.name} is one of the best moving company in{' '}
+                {city.name}, MA. We have been providing quality moving services
+                for many years and have built up a great reputation in the area.
+                We offer a variety of services including residential and
+                commercial moves, packing and unpacking, storage and much more.
+                Our team of experienced movers will make sure that your move is
+                stress-free and your belongings are safe and secure. We will
+                provide you with a quote before the move and will work with you
+                to make sure your move goes as smoothly as possible. Phoneix
+                Moving {city.name} is the perfect choice for anyone looking for
+                reliable and affordable house{' '}
+                <strong>movers near {city.name}</strong>, MA.
+              </p>
+              <p>
+                With our competitive rates and flexible payment options, you can
+                rest assured that when moving to/from {city?.name} {city?.state}
+                , you&apos;re getting the best value for your money.{' '}
+                <a href="tel:(508)315-9458">Contact us</a> today to learn more
+                about our <a href="/local-moving">services</a> and to get a free
+                quote.
               </p>
             </div>
             <div className="mx-auto mt-10 flex max-w-prose lg:max-w-none justify-evenly sm:justify-start sm:gap-4">
               <Button href="/" size="large" color="primary" title="Get a Quote">
-                Get a Quote
+                Get a Free Quote
               </Button>
               <Button
                 href="/pricing"

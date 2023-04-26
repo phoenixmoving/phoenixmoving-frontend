@@ -5,7 +5,7 @@ import SectionHeader from '@/ui/SectionHeader';
 const items = [
   {
     img: '/packing/blanket.jpg',
-    price: 20,
+    price: 'free',
     name: 'Moving Blankets',
     size: `72" x 0.2" x 80`,
   },

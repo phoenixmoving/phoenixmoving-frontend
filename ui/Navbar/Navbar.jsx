@@ -9,6 +9,7 @@ import DropDownMenu from './components/DropDownMenu';
 import Button from '@/ui/Button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const clientLink = process.env.NEXT_PUBLIC_CLIENT_LOGIN;
 
@@ -21,40 +22,41 @@ const navigation = [
       {
         name: 'Local Moving',
         description: 'Hourly based full moving servcies',
-        href: 'local-moving',
+        href: '/local-moving',
       },
       {
         name: 'Interstate Moving',
         description:
           'Flat rate moving. Gas, mileage, tolls and insurance are included',
-        href: 'interstate-moving',
+        href: '/interstate-moving',
       },
       {
         name: 'Packing Services',
         description:
           'Top-notch packing services to reduce the stress of moving',
-        href: 'packing-services',
+        href: '/packing-services',
       },
       {
         name: 'Storage Solutions',
         description: 'Temperature-controlled storage for up to 6 months',
-        href: 'storage-solutions',
+        href: '/storage-solutions',
       },
       {
         name: 'Piano Movers',
         description:
           'Right tools, equipment, and expertise to ensure it is done correctly and safely',
-        href: 'piano-movers',
+        href: '/piano-movers',
       },
     ],
   },
-  { name: 'Pricing', href: 'pricing' },
-  { name: 'Faq', href: 'faq' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Faq', href: '/faq' },
 ];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [active, setActive] = useState(false);
+  const pathname = usePathname();
 
   const changeBackground = () => {
     if (window.scrollY >= 18) {
@@ -144,7 +146,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={clsx(
-                    'font-medium transition-colors ease-in-out duration-150',
+                    'relative font-medium transition-colors ease-in-out duration-150',
                     {
                       'text-gray-900 hover:text-gray-600': active,
                       'text-white hover:text-gray-300': !active,
@@ -152,6 +154,19 @@ export default function Navbar() {
                   )}
                 >
                   {link.name}
+                  {link.href === pathname && (
+                    <span
+                      className={clsx(
+                        'absolute inset-x-1 -bottom-px h-px bg-gradient-to-r',
+                        {
+                          'from-purple-500/0 via-purple-500/60 to-purple-500/0 dark:from-purple-400/0 dark:via-purple-400/40 dark:to-purple-400/0':
+                            active,
+                          'from-yellow-500/0 via-yellow-500/60 to-yellow-500/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0':
+                            !active,
+                        },
+                      )}
+                    />
+                  )}
                 </Link>
               ),
             )}

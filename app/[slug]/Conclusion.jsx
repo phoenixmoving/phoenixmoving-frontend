@@ -14,8 +14,8 @@ export default function Conclusion({ city }) {
         help you every step of the way, from planning and{' '}
         <Link href="/packing-services">packing</Link> to loading, unloading, and{' '}
         <Link href="/storage-solutions">storage</Link>. Contact us today to
-        learn more about our services and to{' '}
-        <Link href="/">request a quote</Link> for your upcoming move.
+        learn more about our services and to <a href="/">request a quote</a> for
+        your upcoming move.
       </p>
     </Section>
   );

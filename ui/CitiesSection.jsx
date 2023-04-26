@@ -8,20 +8,29 @@ export default async function CitiesSection() {
     <Section>
       <div className="bg-palette-background px-10 py-24 rounded-3xl">
         <SectionHeader title="Massachusetts serving areas." />
-        <div className="grid grid-cols-3 gap-1 md:grid-cols-6">
-          {cities.map((city, i) => {
-            return (
-              <div key={i} className="col-span-1 text-center">
+        <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          {cities
+            .sort((a, b) => {
+              if (a.name < b.name) {
+                return -1;
+              }
+              if (a.name > b.name) {
+                return 1;
+              }
+              return 0;
+            })
+            .map((city, i) => {
+              return (
                 <a
+                  key={i}
                   href={`/${city.slug}`}
                   title={city.fullName}
-                  className="hover:underline text-xs font-light sm:text-sm text-gray-900"
+                  className="hover:underline text-xs font-light sm:text-sm text-gray-900 col-span-1 text-start w-fit"
                 >
-                  {city.name}
+                  {city.name} Movers
                 </a>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </Section>

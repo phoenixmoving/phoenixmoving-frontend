@@ -30,7 +30,7 @@ export default function WhyBook({ city }) {
       <SectionHeader title={`Why book with Phoenix Moving ${city.name}.`} />
       <div className="max-w-5xl m-auto">
         <p className="mt-4 text-gray-900">
-          At Phoenix Moving Company in {city.name}, we pride ourselves on our
+          At Phoenix Moving near {city.name} MA, we pride ourselves on our
           commitment to excellence. We are fully licensed and insured, and we go
           above and beyond to ensure that your belongings are safe and secure
           throughout the entire moving process. Our team of movers is highly

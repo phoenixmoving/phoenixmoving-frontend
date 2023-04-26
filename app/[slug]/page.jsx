@@ -72,7 +72,7 @@ export async function generateMetadata({ params }) {
   const title =
     city && city?.interstate
       ? `Movers from Boston to ${city?.name} - Phoenix Moving (Free Estimate)`
-      : `${city?.fullName} - Phoenix Moving ${city?.name} (Free Estimate)`;
+      : `${city?.fullName} - Phoenix Moving ${city?.name} (Free Estimate)`
 
   const description =
     city && city?.interstate
@@ -80,17 +80,17 @@ export async function generateMetadata({ params }) {
       : `${city?.name} Movers, Professional Moving Company in ${city?.name}, ${city?.state}. The most reliable moving company near ${city?.name}. Free Quote Online (NO Registration Required).`;
 
   const keywords = [
-    `Movers near ${city.name} MA`,
-    `${city.name} Movers`,
-    `${city.name} Moving Company`,
+    `Movers near ${city?.name} MA`,
+    `${city?.name} Movers`,
+    `${city?.name} Moving Company`,
     'Phoenix Moving is a professional Boston local and long distance moving company with a great reputation and affordable rates',
-    `${city.name} Movers serving ${city.name} MA and beyond`,
+    `${city?.name} Movers serving ${city?.name} MA and beyond`,
     'Best moving prices',
     'Best moving rates with 100% satisfaction guaranteed',
   ];
 
   return {
-    title,
+    title: city ? title : 'Not Found',
     description,
     keywords: city && city?.interstate ? [] : keywords,
     alternates: {

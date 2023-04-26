@@ -1,12 +1,12 @@
 import './global.css';
 import Footer from './Footer';
-import { Inter } from 'next/font/google';
+import { Maven_Pro } from 'next/font/google';
 import Navbar from '@/ui/Navbar';
 import Script from 'next/script';
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
-  variable: '--font-inter',
+const maven = Maven_Pro({
+  variable: '--font-maven',
   subsets: ['latin'],
   display: 'swap',
 });
@@ -35,7 +35,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}>
+    <html lang="en" className={`${maven.variable} font-sans`}>
       <body className="relative z-0">
         <Navbar />
         <main className="mt-[-72px]">{children}</main>
