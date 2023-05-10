@@ -12,6 +12,7 @@ const maven = Maven_Pro({
 });
 
 const GTAG = process.env.NEXT_PUBLIC_G_TAG;
+const GTAG2 = process.env.NEXT_PUBLIC_G_TAG2;
 
 export const metadata = {
   viewport: {
@@ -71,6 +72,21 @@ export default function RootLayout({ children }) {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${GTAG}',{
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+      <Script
+        id="gtag"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GTAG2}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-tag-manager2" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GTAG2}',{
             page_path: window.location.pathname,
           });
         `}

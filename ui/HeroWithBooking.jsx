@@ -10,7 +10,6 @@ export default async function HeroWithBooking({ image, title }) {
           className="h-full w-full object-cover"
           src={image}
           alt={title}
-          fill
           priority
           title={title}
         />

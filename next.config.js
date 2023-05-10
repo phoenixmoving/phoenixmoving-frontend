@@ -2,7 +2,7 @@
 const nextConfig = {
   poweredByHeader: false,
   experimental: {
-    appDir: true,
+    // appDir: true,
     optimizeCss: true,
     swcMinify: true,
   },

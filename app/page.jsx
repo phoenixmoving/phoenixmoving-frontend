@@ -10,12 +10,13 @@ import CitiesSection from '@/ui/CitiesSection';
 import WhyBookSection from '@/ui/WhyBookSection';
 import Partners from '@/ui/Partners';
 import Photos from '@/ui/Photos';
+import bgImage from '../public/mover-pushing-dolly.jpg';
 
 const URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const title = 'Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)';
 const description =
   'Professional moving company serving the Boston area. We provide fast, reliable, and affordable moving services for residential and commercial customers.';
-const bgImage = '/mover-pushing-dolly.jpg';
+const bgImageString = '/mover-pushing-dolly.jpg';
 
 export const metadata = {
   title,
@@ -28,11 +29,6 @@ export const metadata = {
     description,
     url: URL,
     siteName: 'Phoenix Moving Boston',
-    images: [
-      {
-        url: bgImage,
-      },
-    ],
     locale: 'en-US',
     type: 'website',
   },
@@ -42,7 +38,6 @@ export const metadata = {
     domain: URL,
     title,
     description,
-    images: [bgImage],
   },
 };
 
@@ -53,7 +48,7 @@ const schema1 = {
   name: title,
   url: URL,
   logo: URL + '/logos/logo.png',
-  image: [URL + bgImage],
+  image: [URL + bgImageString],
   telephone: '(508) 315-9458',
   openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 8am-8pm',
   description: description,

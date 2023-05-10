@@ -5,6 +5,8 @@ import PhoneIcon from '@heroicons/react/24/outline/PhoneIcon';
 import UserIcon from '@heroicons/react/20/solid/UserIcon';
 import Button from '@/ui/Button';
 import MobileServicesDropdown from './MobileServicesDropdown';
+import logo from '../../../public/logos/logo.png';
+import Image from 'next/image';
 
 export default function MobileMenu({
   navigation,
@@ -25,21 +27,23 @@ export default function MobileMenu({
         className="fixed inset-0 z-30 overflow-y-auto bg-white px-6 py-4 lg:hidden"
       >
         <div className="flex h-9 items-center justify-between">
-          <div className="flex">
-            <a href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8"
-                src="/logos/logo.png"
-                alt="phoenix moving logo"
-                title="Phoenix Moving Boston"
-              />
-            </a>
-          </div>
+          {/* <div className="flex"> */}
+          <a href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">Your Company</span>
+            <Image
+              className="h-10 w-fit"
+              // width="auto"
+              // height="auto"
+              src={logo}
+              alt="phoenix moving logo"
+              title="Phoenix Moving Boston"
+            />
+          </a>
+          {/* </div> */}
           <div className="flex">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>

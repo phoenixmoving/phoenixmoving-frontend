@@ -3,6 +3,8 @@ import Hero from '@/ui/Hero';
 import { cities } from '@/lib/citiesData';
 import { states } from '@/lib/statesData';
 import Info from './Info';
+import InterstateInfo from './InterstateInfo';
+import InterstateInfoTwo from './InterstateInfoTwo';
 import Faqs from '@/ui/Faqs';
 import Stats from './Stats';
 import Conclusion from './Conclusion';
@@ -16,11 +18,12 @@ import Contact from '@/ui/Contact';
 import Divider from '@/ui/Divider';
 // import MovingServices from './MovingServices';
 import CitiesSection from '@/ui/CitiesSection';
+import bgImage from '../../public/mover-pushing-dolly.jpg';
 
 export const dynamicParams = true;
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
-const bgImage = '/mover-pushing-dolly.jpg';
+const bgImageString = '/mover-pushing-dolly.jpg';
 
 export async function generateStaticParams() {
   let localCities = cities.map((city) => ({
@@ -72,7 +75,7 @@ export async function generateMetadata({ params }) {
   const title =
     city && city?.interstate
       ? `Movers from Boston to ${city?.name} - Phoenix Moving (Free Estimate)`
-      : `${city?.fullName} - Phoenix Moving ${city?.name} (Free Estimate)`
+      : `${city?.fullName} - Phoenix Moving ${city?.name} (Free Estimate)`;
 
   const description =
     city && city?.interstate
@@ -103,7 +106,7 @@ export async function generateMetadata({ params }) {
       siteName: 'Phoenix Moving Boston',
       images: [
         {
-          url: BASE_URL + bgImage,
+          url: BASE_URL + bgImageString,
         },
       ],
       locale: 'en-US',
@@ -115,10 +118,16 @@ export async function generateMetadata({ params }) {
       domain: URL,
       title,
       description,
-      images: [BASE_URL + bgImage],
+      images: [BASE_URL + bgImageString],
     },
   };
 }
+
+const stats = [
+  { label: 'Transactions every 24 hours', value: '44 million' },
+  { label: 'Assets under holding', value: '$119 trillion' },
+  { label: 'New users annually', value: '46,000' },
+];
 
 export default async function CityPage({ params }) {
   const { slug } = params;
@@ -231,7 +240,9 @@ export default async function CityPage({ params }) {
       <Hero image={bgImage} title={heroTitle} />
       <Partners />
       {city?.state && <Info city={city} />}
-      <Divider />
+      {city?.interstate && <InterstateInfo city={city} />}
+      {/* <Divider /> */}
+      {/* {city?.interstate && <InterstateInfoTwo city={city} />} */}
       {/* {city?.state && <MovingServices city={city} />} */}
       {/* <Divider /> */}
       {city?.state && <WhyBook city={city} />}

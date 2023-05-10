@@ -43,18 +43,25 @@ export default function Info() {
           <SectionHeader title="Long distance Interstate moving." start />
           <div className="mt-6 space-y-6 text-gray-900 prose prose-blue ">
             <p>
-              Moving across the state? Across the country? We&apos;ll get you
-              there! Phoenix Moving here to help with a variety of long-distance
-              services that can take the stress out of your next move. With our
-              long-distance moves, you can expect a quick delivery time to your
-              new home, often times with the same movers who moved the
-              belongings out of your home.
+              If you are looking for reliable interstate movers, Phoenix Moving
+              can provide you with top-notch long distance moving services.
+              Moving to a new state can be a daunting task, but our team of
+              experienced professionals can make the process smooth and
+              stress-free.
             </p>
             <p>
-              Unlike other long distance movers who cannot guarantee arrival
-              times, we provide you with an exact date for arrival at your new
-              location which means you can settle into your new home sooner,
-              rather than later.
+              We offer a range of services, including packing, loading,
+              transport, and unloading, all tailored to meet your specific
+              needs. Our skilled movers use the latest equipment and techniques
+              to ensure the safety of your belongings during transport. Whether
+              you are moving across the country or just a few states away, we
+              are committed to providing you with the highest level of service
+              at a competitive price.
+            </p>
+            <p>
+              Choose Phoenix Moving for your next long distance move and
+              experience the peace of mind that comes with working with trusted
+              professionals.
             </p>
           </div>
 

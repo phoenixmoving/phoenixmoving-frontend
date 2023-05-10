@@ -1,5 +1,10 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import img1 from '../public/wrapped-furniture.jpeg';
+import img2 from '../public/two-movers-disassembling-beds.jpeg';
+import img3 from '../public/two-movers-and-tv.jpeg';
+import img4 from '../public/items-packed-in-the-truck.jpeg';
+import img5 from '../public/movers-and-elliptical.jpeg';
 
 export default function Photos() {
   let rotations = [
@@ -10,50 +15,28 @@ export default function Photos() {
     '-rotate-2',
   ];
 
-  const getTitle = (str) => {
-    str = str.slice(1, str.indexOf('.')).split('-').join(' ');
-    return str;
-  };
-
   return (
     <section>
       <div className="-mb-10 relative z-[1] flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[
-          '/wrapped-furniture.jpeg',
-          '/two-movers-disassembling-beds.jpeg',
-          '/two-movers-and-tv.jpeg',
-          '/items-packed-in-the-truck.jpeg',
-          '/movers-and-elliptical.jpeg',
-        ].map((image, imageIndex) => (
-          <div
-            key={image}
+        {[img1, img2, img3, img4, img5].map((image, imageIndex) => (
+          // <div
+          //   key={imageIndex}
+          //   className={clsx(
+          //     'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-56 sm:rounded-2xl',
+          //     rotations[imageIndex % rotations.length],
+          //   )}
+          // >
+          <Image
+            key={imageIndex}
+            src={image}
+            alt={`Movers in action ${imageIndex + 1}`}
+            title={`Movers in action ${imageIndex + 1}`}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-56 sm:rounded-2xl',
+              'relative object-cover w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-56 sm:rounded-2xl',
               rotations[imageIndex % rotations.length],
             )}
-          >
-            {/* <Image
-              src={image}
-              alt={getTitle(image)}
-              width={224}
-              height={249}
-              className="absolute inset-0 h-full w-full object-cover"
-              title={getTitle(image)}
-            /> */}
-            <Image
-              src={image}
-              alt={getTitle(image)}
-              title={getTitle(image)}
-              className="absolute inset-0 h-full w-full object-cover"
-              width={224}
-              height={249}
-              loading="lazy"
-              // width={500} automatically provided
-              // height={500} automatically provided
-              // blurDataURL="data:..." automatically provided
-              // placeholder="blur" // Optional blur-up while loading
-            />
-          </div>
+          />
+          // </div>
         ))}
       </div>
     </section>

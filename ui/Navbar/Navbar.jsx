@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Bars3Icon from '@heroicons/react/24/outline/Bars3Icon';
+import Bars3BottomRightIcon from '@heroicons/react/24/outline/Bars3BottomRightIcon';
 import UserIcon from '@heroicons/react/20/solid/UserIcon';
 import MobileMenu from './components/MobileMenu';
 import clsx from 'clsx';
@@ -10,6 +10,8 @@ import Button from '@/ui/Button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import logoWhite from '../../public/logos/logo-white2.png';
+import logo from '../../public/logos/logo.png';
 
 const clientLink = process.env.NEXT_PUBLIC_CLIENT_LOGIN;
 
@@ -95,41 +97,24 @@ export default function Navbar() {
           },
         )}
       >
-        <nav className="flex h-9 items-center justify-between">
+        <nav className="flex h-10 lg:h-9 items-center justify-between gap-x-4">
           <div className="flex lg:min-w-0 lg:flex-1">
-            <a href="/" title="Home" className="-m-1.5">
+            <a href="/" title="Home">
               <span className="sr-only">Phoenix Moving Boston</span>
-              <div className="relative">
-                <Image
-                  width={active ? 135 : 150}
-                  height={active ? 38 : 43}
-                  className="transition-all ease-in-out duration-300 object-cove"
-                  priority
-                  src={active ? '/logos/logo.png' : '/logos/logo-white.png'}
-                  alt="phoenix moving logo"
-                  title="Phoenix Moving Boston"
-                />
-              </div>
-            </a>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <span className="sr-only">Open menu</span>
-              <Bars3Icon
-                aria-hidden="true"
+              <Image
                 className={clsx(
-                  'h-6 w-6 transition-colors ease-in-out duration-150',
+                  'transition-all ease-in-out duration-300 object-cove w-fit',
                   {
-                    'text-gray-900 hover:text-gray-600': active,
-                    'text-white': !active,
+                    'h-8 lg:h-10': active,
+                    'h-10 lg:h-12': !active,
                   },
                 )}
+                priority
+                src={active ? logo : logoWhite}
+                alt="phoenix moving logo"
+                title="Phoenix Moving Boston"
               />
-            </button>
+            </a>
           </div>
           <div className="hidden lg:flex lg:min-w-0 lg:flex-auto lg:justify-center lg:items-center lg:gap-x-6">
             {navigation.map((link) =>
@@ -185,12 +170,13 @@ export default function Navbar() {
               (508) 315-9458
             </a>
           </div>
-          <div className="hidden items-center gap-x-6 lg:flex lg:min-w-0 lg:flex-initial lg:justify-end">
+          {/* <div className="hidden items-center gap-x-6 lg:flex lg:min-w-0 lg:flex-initial lg:justify-end"> */}
+          <div className="flex flex-1 lg:flex-none items-center justify-end gap-x-6">
             <a
               href={clientLink}
               target="_blank"
               className={clsx(
-                'font-medium transition-colors ease-in-out duration-150 inline-flex gap-1 items-center justify-center',
+                'hidden lg:inline-flex font-medium transition-colors ease-in-out duration-150 gap-1 items-center justify-center',
                 {
                   'text-gray-900 hover:text-gray-600': active,
                   'text-white hover:text-gray-300': !active,
@@ -201,8 +187,27 @@ export default function Navbar() {
               Client Login
             </a>
             <Button color="secondary" href="/" size="small">
-              Book Now
+              Get a Quote
             </Button>
+          </div>
+          <div className="flex lg:hidden">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open menu</span>
+              <Bars3BottomRightIcon
+                aria-hidden="true"
+                className={clsx(
+                  'h-6 w-6 transition-colors ease-in-out duration-150',
+                  {
+                    'text-gray-900 hover:text-gray-600': active,
+                    'text-white': !active,
+                  },
+                )}
+              />
+            </button>
           </div>
         </nav>
         <MobileMenu

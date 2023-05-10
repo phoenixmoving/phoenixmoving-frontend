@@ -11,7 +11,7 @@ const sizeStyles = {
 const baseStyles = {
   solid:
     'inline-flex justify-center rounded-lg outline-2 outline-offset-2 transition-colors font-semibold',
-  soft: 'inline-flex justify-center rounded-lg outline-2 outline-offset-2 transition-colors font-semibold',
+  soft: 'inline-flex justify-center rounded-lg outline-2 outline-offset-2 transition-colors font-semibold shadow-sm',
   outline:
     'inline-flex justify-center rounded-lg outline-2 outline-offset-2 transition-colors font-semibold',
 };

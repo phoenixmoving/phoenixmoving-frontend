@@ -18,6 +18,7 @@ export default async function Pricing() {
       name: '2 Movers',
       href: '/',
       priceMonthly: prices[0].two_men[0],
+      oldPrice: prices[0].two_men[0] + 30,
       description: 'Starting at',
       includedFeatures: [
         '2 Professional Movers.',
@@ -30,6 +31,7 @@ export default async function Pricing() {
       name: '3 Movers',
       href: '/',
       priceMonthly: prices[0].three_men[0],
+      oldPrice: prices[0].three_men[0] + 30,
       description: 'Starting at',
       includedFeatures: [
         '3 Professional Movers.',
@@ -42,6 +44,7 @@ export default async function Pricing() {
       name: '4 Movers',
       href: '/',
       priceMonthly: prices[0].four_men[0],
+      oldPrice: prices[0].four_men[0] + 30,
       description: 'Starting at',
       includedFeatures: [
         '4 Professional Movers.',
@@ -70,11 +73,14 @@ export default async function Pricing() {
                 {tier.name}
               </p>
               <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
-              <p className="mt-4">
-                <span className="text-4xl font-semibold tracking-tight text-gray-900">
-                  ${tier.priceMonthly}
-                </span>{' '}
-                <span className="text-sm text-gray-500">per hour</span>
+              <p className="text-2xl font-semibold tracking-tight text-gray-500">
+                <s>${tier.oldPrice}</s>
+              </p>
+              <p className="text-4xl font-semibold tracking-tight text-gray-900">
+                ${tier.priceMonthly}
+                <span className="text-sm text-gray-500 ml-1 font-normal tracking-normal">
+                  per hour
+                </span>
               </p>
               <Button
                 href={tier.href}
