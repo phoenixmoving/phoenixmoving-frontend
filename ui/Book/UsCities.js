@@ -12503,6 +12503,8 @@ export const jsonCityState = [
   { z: '29904', c: 'Beaufort', s: 'SC' },
   { z: '29905', c: 'Beaufort', s: 'SC' },
   { z: '29906', c: 'Beaufort', s: 'SC' },
+  { z: '29907', c: 'Beaufort', s: 'SC' },
+  { z: '29909', c: 'Bluffton', s: 'SC' },
   { z: '29910', c: 'Bluffton', s: 'SC' },
   { z: '29911', c: 'Brunson', s: 'SC' },
   { z: '29912', c: 'Coosawatchie', s: 'SC' },
