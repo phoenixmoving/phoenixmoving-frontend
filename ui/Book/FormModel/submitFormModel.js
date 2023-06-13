@@ -27,7 +27,7 @@ export default {
     },
     movingDate: {
       name: 'movingDate',
-      label: 'Move date*',
+      label: 'Moving date*',
       requiredErrorMsg: 'Move date is required',
       invalidErrorMsg: 'Move date is not valid',
       placeholder: 'Moving date',
@@ -69,7 +69,7 @@ export default {
     originAddress: {
       name: 'originAddress',
       label: 'Origin Address*',
-      placeholder: '123 Street Name*',
+      placeholder: '123 Street Name',
       requiredErrorMsg: 'Address is required',
     },
     originCity: {

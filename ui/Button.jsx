@@ -10,10 +10,10 @@ const sizeStyles = {
 
 const baseStyles = {
   solid:
-    'inline-flex justify-center rounded-lg outline-2 outline-offset-2 transition-colors font-semibold',
-  soft: 'inline-flex justify-center rounded-lg outline-2 outline-offset-2 transition-colors font-semibold shadow-sm',
+    'flex justify-center items-center rounded-3xl outline-2 outline-offset-2 transition-colors font-medium',
+  soft: 'flex justify-center items-center rounded-3xl outline-2 outline-offset-2 transition-colors font-medium',
   outline:
-    'inline-flex justify-center rounded-lg outline-2 outline-offset-2 transition-colors font-semibold',
+    'flex justify-center items-center rounded-3xl outline-2 outline-offset-2 transition-colors font-medium',
 };
 
 const variantStyles = {
@@ -25,15 +25,15 @@ const variantStyles = {
       'bg-palette-secondary-500 hover:bg-palette-secondary-900 text-gray-900',
   },
   outline: {
-    default: 'text-gray-900 bg-white hover:bg-gray-100 border border-gray-900',
+    default: 'text-gray-900 bg-white hover:bg-gray-100 border border-gray-300',
     primary:
       'text-palette-primary-900 hover:bg-purple-100 border border-palette-primary-500',
     secondary:
       'text-palette-secondary-500 hover:bg-orange-100 border border-palette-secondary-500',
   },
   soft: {
-    default: 'bg-gray-100 text-gray-900 hover:bg-gray-200',
-    primary: 'bg-purple-100 text-purple-900 hover:bg-purple-200',
+    default: 'bg-gray-100 text-black hover:bg-gray-200',
+    primary: 'bg-indigo-100 text-indigo-900 hover:bg-indigo-200',
     secondary: 'bg-orange-100 text-orange-900 hover:bg-orange-200',
   },
 };

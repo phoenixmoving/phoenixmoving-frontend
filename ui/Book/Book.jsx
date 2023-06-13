@@ -1,5 +1,7 @@
 'use client';
 
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion';
+import useMeasure from 'react-use-measure';
 import { Toaster } from 'react-hot-toast';
 import React, { useState } from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
@@ -18,13 +20,15 @@ import ReviewDetails from './Forms/ReviewDetails';
 import { findTravelTime } from './utils/findTravelTime';
 import { submitFormToDb } from './utils/submitFormToDb';
 
+let duration = 0.5;
+
 const steps = [
-  'Get a Quote!',
+  'Get a Quote',
   'Fill Move Details',
   'Quote Result',
   'Fill Addresses',
   'Contact Information',
-  'Review & sumbit',
+  'Review & submit',
 ];
 const stepsButtons = [
   'Continue',
@@ -138,9 +142,10 @@ export default function Book({ rates, prices }) {
   return (
     <React.Fragment>
       <Toaster />
+      {/* <ResizablePanel> */}
       <div className="flex justify-center items-center w-full sm:w-[400px]">
         {/* relative */}
-        <div className="w-full bg-white p-6 rounded-2xl shadow-lg shadow-gray-900/5">
+        <div className="w-full bg-white rounded-3xl shadow-3xl">
           {/* overflow-y-auto max-h-[525px] */}
           <React.Fragment>
             {activeStep === steps.length ? (
@@ -169,41 +174,59 @@ export default function Book({ rates, prices }) {
               >
                 {({ isSubmitting, values, errors }) => {
                   // console.log(values);
-                  // console.log(values.deliveryDate);
+                  // console.log(errors);
                   return (
                     <Form id={formId} autoComplete="off">
-                      <p className="text-2xl font-semibold text-center">
-                        {steps[activeStep]}
-                      </p>
-                      {_renderStepContent(activeStep, values, rates, prices)}
-                      <div className="flex mt-6 gap-6 px-1 justify-between">
-                        {activeStep !== 0 && (
-                          <Button
-                            type="button"
-                            onClick={_handleBack}
-                            color="primary"
-                            variant="outline"
-                            className="w-full"
-                          >
-                            Back
-                          </Button>
-                        )}
+                      <MotionConfig transition={{ duration, type: 'tween' }}>
+                        <ResizablePanel>
+                          <p className="text-2xl font-semibold text-center mb-6">
+                            {steps[activeStep]}
+                          </p>
 
-                        <Button
-                          type="submit"
-                          color="primary"
-                          className="w-full"
-                        >
-                          {isSubmitting
-                            ? 'Loading...'
-                            : stepsButtons[activeStep]}
-                        </Button>
-                      </div>
-                      {activeStep === 0 && (
-                        <p className="text-gray-500 font-semmibold text-xs text-center mt-2">
-                          Free instant quote at step 3
-                        </p>
-                      )}
+                          {_renderStepContent(
+                            activeStep,
+                            values,
+                            rates,
+                            prices,
+                          )}
+
+                          <div className="flex mt-10 gap-6 justify-between">
+                            {activeStep !== 0 && (
+                              <Button
+                                type="button"
+                                onClick={_handleBack}
+                                // color="primary"
+                                variant="outline"
+                                className="w-full"
+                                // size="small"
+                              >
+                                Back
+                              </Button>
+                            )}
+
+                            <Button
+                              type="submit"
+                              color="primary"
+                              className="w-full"
+                              disabled={isSubmitting}
+                              // size="small"
+                            >
+                              {isSubmitting
+                                ? 'Loading...'
+                                : stepsButtons[activeStep]}
+                            </Button>
+                          </div>
+                          {activeStep === 0 ? (
+                            <p className="text-gray-500 font-semmibold text-xs text-center mt-2">
+                              Free instant quote at step 3
+                            </p>
+                          ) : (
+                            <p className="text-gray-500 font-semmibold text-xs text-center mt-2">
+                              step {activeStep + 1}/{steps.length}
+                            </p>
+                          )}
+                        </ResizablePanel>
+                      </MotionConfig>
                     </Form>
                   );
                 }}
@@ -215,3 +238,53 @@ export default function Book({ rates, prices }) {
     </React.Fragment>
   );
 }
+
+function ResizablePanel({ children }) {
+  let [ref, { height }] = useMeasure();
+
+  return (
+    <motion.div
+      animate={{ height: height || 'auto' }}
+      className="relative overflow-hidden"
+    >
+      <AnimatePresence initial={false}>
+        <motion.div
+          // key={JSON.stringify(children, ignoreCircularReferences())}
+          // initial={{
+          //   x: 384,
+          // }}
+          // animate={{
+          //   x: 0,
+          //   // transition: { duration: duration / 2, delay: duration / 2 },
+          // }}
+          // exit={{
+          //   x: -384,
+          //   // transition: { duration: duration / 2 },
+          // }}
+          className="relative"
+        >
+          <div ref={ref} className="p-8">
+            {children}
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
+/*
+  Replacer function to JSON.stringify that ignores
+  circular references and internal React properties.
+  https://github.com/facebook/react/issues/8669#issuecomment-531515508
+*/
+const ignoreCircularReferences = () => {
+  const seen = new WeakSet();
+  return (key, value) => {
+    if (key.startsWith('_')) return; // Don't compare React's internal props.
+    if (typeof value === 'object' && value !== null) {
+      if (seen.has(value)) return;
+      seen.add(value);
+    }
+    return value;
+  };
+};

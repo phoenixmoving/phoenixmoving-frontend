@@ -63,7 +63,11 @@ const navigation = {
     { name: 'FAQ', href: '/faq' },
   ],
   company: [{ name: 'About', href: 'about' }],
-  legal: [{ name: 'Terms', href: 'terms' }],
+  legal: [
+    { name: 'Company Policy', href: 'policy' },
+    { name: 'Privacy Policy', href: 'privacy' },
+    { name: 'Terms and Conditions', href: 'terms' },
+  ],
   social: [
     {
       name: 'Facebook',

@@ -29,7 +29,7 @@ const items = [
   },
   {
     img: '/packing/wardrobe.jpg',
-    price: 18,
+    price: 20,
     name: 'Wardrobe',
     size: `21" x 18" x 46`,
   },

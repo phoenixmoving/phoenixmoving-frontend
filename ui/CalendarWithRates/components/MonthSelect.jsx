@@ -21,30 +21,30 @@ const MonthSelect = (props) => {
   };
 
   return (
-    <div className="flex gap-2 flex-col bg-palette-background rounded-t-xl">
-      <div className="flex items-center justify-between text-sm px-4 py-2">
-        <button
-          type="button"
-          disabled={disablePrevMonth}
-          onClick={prev}
-          className={clsx('hover:bg-gray-200 p-2 rounded-lg', {
-            'opacity-40': disablePrevMonth,
-          })}
-        >
-          <ChevronLeftIcon className="w-4 h-4 stroke-2" />
-        </button>
-        <p className="font-semibold">{format(month, 'MMMM yyyy')}</p>
-        <button
-          type="button"
-          disabled={disableNextMonth}
-          onClick={next}
-          className={clsx('hover:bg-gray-200 p-2 rounded-lg', {
-            'opacity-40': disableNextMonth,
-          })}
-        >
-          <ChevronRightIcon className="w-4 h-4 stroke-2" />
-        </button>
-      </div>
+    <div className="flex mb-4 items-center justify-between text-sm rounded-t-xl">
+      <button
+        type="button"
+        disabled={disablePrevMonth}
+        onClick={prev}
+        className={clsx('p-1.5 border rounded-full', {
+          'opacity-30 hover:cursor-not-allowed': disablePrevMonth,
+          'hover:bg-gray-100': !disablePrevMonth,
+        })}
+      >
+        <ChevronLeftIcon className="w-4 h-4 stroke-2" />
+      </button>
+      <p className="font-semibold">{format(month, 'MMMM yyyy')}</p>
+      <button
+        type="button"
+        disabled={disableNextMonth}
+        onClick={next}
+        className={clsx('p-1.5 border rounded-full', {
+          'opacity-30 hover:cursor-not-allowed': disableNextMonth,
+          'hover:bg-gray-100': !disableNextMonth,
+        })}
+      >
+        <ChevronRightIcon className="w-4 h-4 stroke-2" />
+      </button>
     </div>
   );
 };

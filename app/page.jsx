@@ -18,9 +18,20 @@ const description =
   'Professional moving company serving the Boston area. We provide fast, reliable, and affordable moving services for residential and commercial customers.';
 const bgImageString = '/mover-pushing-dolly.jpg';
 
+const keywords = [
+  'Movers near Boston MA',
+  ' Boston Movers',
+  ' Boston Moving Company',
+  ' Phoenix Moving is a professional Boston local and long distance moving company with a great reputation and affordable rates',
+  ' Boston Movers serving Boston MA and beyond',
+  ' Best moving prices',
+  ' Best moving rates with 100% satisfaction guaranteed',
+];
+
 export const metadata = {
   title,
   description,
+  keywords,
   alternates: {
     canonical: URL,
   },

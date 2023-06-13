@@ -1,4 +1,10 @@
+import {
+  ArrowTrendingDownIcon,
+  ArrowTrendingUpIcon,
+  HomeIcon,
+} from '@heroicons/react/24/outline';
 import { SelectField } from '../FormFields';
+import { TbStairsDown, TbStairsUp } from 'react-icons/tb';
 
 const movingSizeOptions = [
   {
@@ -76,12 +82,13 @@ export default function SecondStep(props) {
   } = props;
 
   return (
-    <div className="mt-6 grid grid-cols-4 gap-4 p-1">
+    <div className="grid grid-cols-4 gap-4">
       <div className="col-span-4">
         <SelectField
           name={size.name}
           label={size.label}
           options={movingSizeOptions}
+          icon={HomeIcon}
         />
       </div>
       <div className="col-span-4">
@@ -89,6 +96,7 @@ export default function SecondStep(props) {
           name={originFloor.name}
           label={originFloor.label}
           options={floorOptions}
+          icon={TbStairsDown}
         />
       </div>
       {showDestination && (
@@ -97,6 +105,7 @@ export default function SecondStep(props) {
             name={destinationFloor.name}
             label={destinationFloor.label}
             options={floorOptions}
+            icon={TbStairsUp}
           />
         </div>
       )}

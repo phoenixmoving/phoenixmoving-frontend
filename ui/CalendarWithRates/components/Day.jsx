@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { isSameMonth, format, isToday, isEqual } from 'date-fns';
 import { preventPastDays } from '../helpers/preventPastDays';
+import { motion } from 'framer-motion';
 
 const Day = ({
   day,
@@ -14,8 +15,13 @@ const Day = ({
   const isSameMonthDate = isSameMonth(day, startDay);
   const formatted = format(day, 'd');
   const isTodayDay = isToday(day);
-  const isValid = preventPastDays(day, movingDate, isDelivery) ? false : true;
+  const isValid = preventPastDays(day, movingDate, isDelivery) ? true : false;
   const selected = isEqual(new Date(day), new Date(pickedDay));
+  const isDiscount = rate?.rate_type === 'discounted' && isValid;
+  const isRegular = rate?.rate_type === 'regular' && isValid;
+  const isPeak = rate?.rate_type === 'pick' && isValid;
+
+  const isDisabled = rate?.rate_type === 'disabled';
 
   if (!isSameMonthDate) {
     return <div key={day}></div>;
@@ -23,21 +29,30 @@ const Day = ({
 
   return (
     <button
+      // transition={{ duration: 0.2 }}
       key={day}
+      // whileHover={{
+      //   scale: !isValid || rate?.rate_type === 'disabled' ? 1 : 1.2,
+      // }}
+      // whileTap={{
+      //   scale: !isValid || rate?.rate_type === 'disabled' ? 1 : 0.9,
+      // }}
       type="button"
-      disabled={isValid || rate?.rate_type === 'disabled'}
+      disabled={!isValid || rate?.rate_type === 'disabled'}
       onClick={() => hanldeChange(day)}
-      className={clsx('text-xs font-medium rounded-lg w-full h-full p-2', {
-        'text-blue-600': isTodayDay && !selected,
-        'text-gray-300': isValid || rate?.rate_type === 'disabled',
-        // 'hover:bg-gray-100': !selected,
-        'bg-palette-cyan/20 text-palette-cyan':
-          rate?.rate_type === 'discounted' && !isValid,
-        'bg-palette-blue/20 text-palette-blue':
-          rate?.rate_type === 'regular' && !isValid,
-        'bg-palette-pink/20 text-palette-pink':
-          rate?.rate_type === 'pick' && !isValid,
-      })}
+      className={clsx(
+        'text-xs font-medium rounded-lg w-full h-full py-1.5 px-1 transition-all',
+        {
+          'text-gray-400 cursor-not-allowed': !isValid || isDisabled,
+          'text-blue-600': isTodayDay && !selected,
+          'bg-gray-500/20': isDisabled,
+          'hover:scale-125': !isDisabled && isValid,
+          // 'hover:bg-gray-100': !selected,
+          'bg-palette-cyan/20 text-palette-cyan': isDiscount,
+          'bg-palette-blue/20 text-palette-blue': isRegular,
+          'bg-palette-pink/20 text-palette-pink': isPeak,
+        },
+      )}
     >
       {formatted}
     </button>

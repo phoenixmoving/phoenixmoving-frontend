@@ -2,266 +2,225 @@ import Section from '@/ui/Section';
 
 export default function Info() {
   return (
-    <Section>
+    <Section className="max-w-5xl m-auto">
+      <p className="text-sm font-light mb-8">
+        The following terms and conditions apply to all services performed by
+        the carrier under this contract. The term “carrier” refers to Phoenix
+        Moving Inc., a Massachusetts corporation. The contract is also subject
+        to all rules, rates, and charges in the current tariffs, published, or
+        on file with, the Massachusetts Department of Public Utilities.
+      </p>
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 1.</p>
-          <p className="font-bold">Guidance, walk-trough and payment.</p>
-        </div>
-        <p className="text-base font-light">
-          At the time of the move, the customer or a representative must be
-          present during the move at all times, as movers will need guidance. It
-          is customer&apos;s responsibility to do a final “walk-through” at the
-          pickup location to ensure the movers have taken everything that needs
-          to be moved. Having the form of payment, you choose to use at the end
-          of the job ready will save you time and money. Please note: we do not
-          accept checks of any kind, only credit cards or cash. We have no
-          processing fee for the credit card transactions.
+        <p className="italic">Sec 1.</p>
+        <p className="text-sm font-light">
+          (a) The Carrier or party in possession of any of the property here in
+          described (“Property”) shall be liable as a common law for any loss
+          thereof or damage thereto, except as herein provided.
+          <br />
+          <br />
+          (b) No Carrier or party in possession of all or any of the Property
+          (“Carrier”) shall be liable for any loss, damage or delay caused by
+          act of God, public enemy, war, declared or undeclared, acts of public
+          authority, quarantine, riots, strikes, perils of navigation, act of
+          de- fault of Shipper or owner, nature of Property or defect or
+          inherent vice, occurrences in customs warehouse, or for any loss or
+          damage to paintings, statuary, ornamental items, works of art,
+          articles of unusual nature or value, photographs or pictures,
+          antiques, dishes, glassware, musical instruments, vases, mirrors,
+          marble or enamel pieces, lamps, lamp shades or other fragile articles,
+          unless such loss or damage was caused by negligence of the Carrier,
+          and the responsibility to prove such negligence shall be on the
+          shipper, except where arrangements have been made for the packing and
+          unpacking of such articles by the Carrier or its agent. No carrier
+          shall be held liable for the internal malfunction of any computerized,
+          electrical or mechanical item or piece of equipment, whether or not
+          such articles are packed, unpacked, or packed and unpacked by the
+          Shipper or his agent or Carrier or its agents. No Carrier shall be
+          liable for damage to or loss of contents of pieces of furniture,
+          crates, bundles, cartons, boxes, barrels or other containers unless
+          such contents are open for Carrier&apos;s inspection and then only for
+          such articles as are specifically listed by the Shipper and receipted
+          for by the Carrier or its agent.
+          <br />
+          <br />
+          (c) No Carrier shall be liable for delay caused by obstructions,
+          faulty or impassable highways, lack of capacity of any highway,
+          bridge, ferry, or caused by breakdown, or mechanical defect of
+          vehicles or equipment.
+          <br />
+          <br />
+          (d) Carrier&apos;s liability shall be that of a warehouseman, only,
+          for loss, damage or delay caused by fire occurring after the arrival
+          of the Property at destination or at the port of export and tender of
+          delivery of the Property to the party entitled to receive it has been
+          made. Except in case of negligence of the Carrier, Carrier shall not
+          be liable for loss, damage, or delay occurring while the Property is
+          stopped and held or stored in transit on the request of the Shipper,
+          owner, or party entitled to make such request, whether such request
+          was made before or after Carrier came into possession of the Property.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 2.</p>
-          <p className="font-bold">Moving cost.</p>
-        </div>
-        <p className="text-base font-light">
-          The final cost of your move will be determined by multiplying the
-          actual number of hours our moving crew had worked by the hourly rate
-          indicated on your estimate, travel time, the amount of packing
-          materials used, the amount of valuation coverage and any will be added
-          to the final cost of your move, additional services listed below (if
-          such services are provided). All jobs are subject to a 2-hour minimum
-          labor + fixed travel time.
+        <p className="italic">Sec 2.</p>
+        <p className="text-sm font-light">
+          (a) Carrier shall have the right in case of physical necessity to
+          forward the Property by any Carrier or route between the point of
+          shipment and the point of destination. In all cases not prohibited by
+          law, where a lower value than actual value has been represented in
+          writing by the Shipper or as been agreed upon in writing as the
+          released value of the Property as determined by the classification or
+          tariffs upon which the rate is based, such lower value less charges
+          shall be the maximum amount to be recovered, whether or not such loss
+          or damage occurs from negligence.
+          <br />
+          <br />
+          (b) As a condition precedent to recovery, claims must be filed in
+          writing with the receiving or delivering Carrier, or Carrier is- suing
+          this proposal for service and bill of lading, or Carrier in possession
+          of the Property when the loss, damage, injury, or delay occurred,
+          within 10 days after delivery of the Property; and suits shall be
+          instituted against any Carrier only within two years and on day from
+          the day when notice in writing is given by the Carrier to the claimant
+          that the Carrier has disallowed by claim of any part or parts thereof
+          specified in the notice. Where claims are not filed or suits are not
+          instituted in accordance with the foregoing provisions, no Carrier
+          hereunder shall be liable.
+          <br />
+          <br />
+          (c) Any Carrier or party liable on account of loss or damage to any of
+          the Property shall have the full benefit of any insurance that may
+          have been affected upon or on account of the Property so long as this
+          shall not avoid the policies or contracts of insurance; provided that
+          the Carrier reimbursed the claimant for the premium paid thereon.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 3.</p>
-          <p className="font-bold">Labor time.</p>
-        </div>
-        <p className="text-base font-light">
-          Labor time starts upon the arrival of our crew at your location and
-          ends upon the departure from your final destination. Labor time is
-          calculated based on 15-minute increments at the rate indicated on the
-          estimate. Any travel between the origin and the destination is
-          considered to be part of the labor time.
+        <p className="italic">Sec 3.</p>
+        <p className="text-sm font-light">
+          Except where such service is required as the result of Carrier&apos;s
+          negligence, all Property shall be subject to necessary cooperage,
+          packing and repacking at owner&apos;s cost.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 4.</p>
-          <p className="font-bold">Travel time.</p>
-        </div>
-        <p className="text-base font-light">
-          Please keep in mind that you will be billed for the travel time from
-          our office (18 Lakeview Gardens, Natick, MA 01760) to your origin, and
-          for the travel time from your final destination back to our office.
-          Those charges are prorated based on 15-minute increments and are
-          calculated by the reading of the GPS or Google Maps. In case if our
-          truck is being delayed by traffic, the additional time incurred will
-          not be added to the bill.
+        <p className="italic">Sec 4.</p>
+        <p className="text-sm font-light">
+          (a) Carrier shall have the right to retain possession of any Property
+          transported by it and to take and place the same in storage at the
+          charge and expense of the Shipper, until all tariff rates and charges
+          thereon have been paid in cash or credit card. Nothing herein shall
+          limit the right of Carrier to require, at a time of or before
+          shipment, the prepayment in part or in full or guarantee of the
+          charges.
+          <br />
+          <br />
+          (b) Property not received by the party entitled to receive it after
+          appropriate notice, may be kept in vehicle, warehouse or place of
+          business of the Carrier, subject to all lawful charges and to
+          Carrier&apos;s responsibility as warehouseman only, or at the option
+          of the Carrier, may be removed to and stored in a warehouse at the
+          point of delivery or at other available points at the cost of the
+          owner, and there held without liability on the part of the Carrier,
+          and subject to a lien for all transportation and other lawful charges,
+          including a reasonable charge for storage. In the event the Consignee
+          cannot be found at the address given on the bill of lading for
+          notification, the Carrier shall be discharged from liability upon
+          sending a notice to Shipper showing the warehouse in which such
+          Property has been placed, subject to the provisions of this paragraph.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 5.</p>
-          <p className="font-bold">Packing materials.</p>
-        </div>
-        <p className="text-base font-light">
-          Our trucks carry a standard set of boxes: 5 small, 5 medium, 5 large,
-          5 picture boxes, 5 wardrobe and 1 bundle of white packing paper. If
-          you feel like there will be some packing for us to be done, please
-          make sure to inform us ahead of time, otherwise we&apos;ll be limited
-          to our supplies. All boxes and supplies used on your move are subject
-          to addition charge, unless specified in your moving estimate.
+        <p className="italic">Sec 5.</p>
+        <p className="text-sm font-light">
+          (a) Where Carrier is directed to take Property from a place or places
+          at which the Consignor or his agent is not present, the Property shall
+          be at the risk of the owner before loading.
+          <br />
+          <br />
+          (b) Where Carrier is directed to unload or deliver Property at a place
+          or places at which the Consignee or its agent is not present, the
+          Property shall be at the risk of the owner after unloading or
+          delivery.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 6.</p>
-          <p className="font-bold">Arrival time frame.</p>
-        </div>
-        <p className="text-base font-light">
-          Please keep in mind that we do not provide a specific time of arrival.
-          We offer 2-hour arrival time frames for all jobs scheduled in the
-          morning and 3-hour arrival time frames for all the jobs scheduled in
-          the afternoon.
+        <p className="italic">Sec 6.</p>
+        <p className="text-sm font-light">
+          No Carrier will carry or be liable in any way for any documents,
+          specie, or for any article of extraordinary value unless a special
+          agreement to do so and a stipulated value of the articles are endorsed
+          hereon.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 7.</p>
-          <p className="font-bold">Waiting time.</p>
-        </div>
-        <p className="text-base font-light">
-          If our crew arrives at your location as agreed, but you&apos;re not
-          ready for us to start the job, you&apos;ll be billed for our waiting
-          time. Please understand that you&apos;re holding up our team by not
-          being ready for the move.
+        <p className="italic">Sec 7.</p>
+        <p className="text-sm font-light">
+          Explosives or dangerous goods will not be accepted for shipment. Every
+          party whether principal or agent shipping such goods shall be liable
+          for any indemnify Carrier against all loss or damage caused by such
+          goods and Carrier will not be liable for safe delivery of the
+          shipment.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 8.</p>
-          <p className="font-bold">Parking.</p>
-        </div>
-        <p className="text-base font-light">
-          Two parking spaces (to accommodate a 34-foot-long moving truck) should
-          be provided/secured by the customer. Parking spot must be located
-          within 75 feet from the entrance. In case if a parking permit is
-          needed, it is customer&apos;s responsibility to inform Phoenix Moving.
-          All parking permits must be obtained by the customer unless otherwise
-          indicated on the move plan. In case if there is no parking space
-          available next to the origin/delivery location and the moving truck
-          needs to be parked in a non-permitted space, it is customer&apos;s
-          responsibility to cover the cost of any parking tickets issued to
-          Phoenix Moving.
+        <p className="italic">Sec 8.</p>
+        <p className="text-sm font-light">
+          The owner or Consignee shall pay the advances, tariff charges, packing
+          and storage, if any, and all other lawful charges accruing on said
+          Property. No carrier shall deliver or relinquish possession at
+          destination of the Property until all tariff and charges thereon have
+          been paid. Consignor shall also be liable for the advances, tariff
+          charges, packing, storage, and all other lawful charges, except as
+          otherwise agreed in writing. The beneficial owner shall also be liable
+          for all charges due to Carrier where not paid by Consignor or
+          Consignee. If the Consignor or Consignee has given to the Carrier
+          erroneous information as to the identity of the beneficial owner, such
+          Consignor or Consignee shall be liable for such additional charges and
+          any attorney&apos;s fees incurred by Carrier as a result of this
+          disclosure. Nothing herein shall limit the right of the Carrier to
+          require, at the time of shipment, the prepayment of the charges, if
+          upon inspection it is ascertained that the articles shipped are not
+          those described herein, the advances or tariff charges must be paid
+          upon the articles actually shipped.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 9.</p>
-          <p className="font-bold">
-            Payment and payment forms (for local moves).
-          </p>
-        </div>
-        <p className="text-base font-light">
-          For local moves, the payment is required at the end of the move/each
-          moving day (for multiple days move), before the moving team leaves
-          your location. The clock will continue running until the payment has
-          been processed completely. We accept all types of credit cards (Visa,
-          Mastercard, Discover, AMEX) and 3% processing fee will be applied for
-          all credit card payments.
-        </p>
-        <p className="font-bold">We do not accept checks of any kind.</p>
-      </div>
-
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 10.</p>
-          <p className="font-bold">
-            Payment and payment forms (for long distance/interstate moves).
-          </p>
-        </div>
-        <p className="text-base font-light">
-          We require cash, credit card, money order/cashier&apos;s check (no
-          personal checks) at the time of delivery for any balance due on
-          long-distance moves. 3% processing fee will be applied for credit card
-          payments. For all interstate moves we require 10% deposit on booking
-          stage to secure crew and truck for your move, another 40% due at the
-          pick-up time and 50% balance due at the delivery after unloading.
+        <p className="italic">Sec 9.</p>
+        <p className="text-sm font-light">
+          If this proposal for service and bill of lading is issued on the order
+          of the Shipper or his agent, in exchange or in substitution for
+          another proposal for service and bill of lading, the Shipper&apos;s
+          signature to the prior proposal for service and bill of lading as to
+          the statement of the value or otherwise or election for common law or
+          bill of lading liability, in or in connection with such prior proposal
+          for service and bill of lading, shall be considered a part of this
+          proposal for service and bill of lading as fully as if the same were
+          written or made in or in connection with this proposal for service and
+          bill of lading.
         </p>
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 11.</p>
-          <p className="font-bold">Additional services.</p>
-        </div>
-        <p className="text-base font-light">
-          In the event additional services are required to perform your move,
-          these costs will be in addition to the amount stated in your moving
-          estimate:
-        </p>
-        <ul className="text-base font-light list-disc ml-4">
-          <li>
-            All hoisting services will be subject to a fee of $40 (per item per
-            flight).
-          </li>
-          <li>
-            Upright piano (ground floor only) will be subject to a fee of $150
-            per item.
-          </li>
-          <li>
-            Baby grand piano (ground floor only) will be subject to a fee of
-            $300 per item.
-          </li>
-          <li>
-            Heavy item fee (over 300 lbs) will be subject to a fee of $150 per
-            item.
-          </li>
-        </ul>
-      </div>
-
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 12.</p>
-          <p className="font-bold">Piano move.</p>
-        </div>
-        <p className="text-base font-light">
-          We do not move large upright pianos up or down flights of stairs
-          inside the house. We only move pianos from ground to ground floor.
-          Exterior stairs are fine, but we encourage sending us pictures of
-          entrances at each location, so that we can confirm that we can move
-          your piano. There may be circumstances when we cannot safely move
-          items and will need to discuss the situation with you. If the piano
-          has thin legs (usually the front), we will not be responsible if they
-          will not go back on if we take them off (sometimes the nut is loose
-          inside the piano and will turn when you try to replace the leg). If
-          the customer elects to leave the legs on, we will not be responsible
-          if damage occurs to them.
+        <p className="italic">Sec 10.</p>
+        <p className="text-sm font-light">
+          Any alteration in this proposal for service and bill of lading made
+          without the special notation hereon of the Carrier shall be without
+          effect, and this document shall be enforceable according to its
+          original tenor.
         </p>
       </div>
 
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 13.</p>
-          <p className="font-bold">Heavy/Oversized items move.</p>
-        </div>
-        <p className="text-base font-light">
-          Under safe conditions, we move upright or baby grand pianos,
-          appliances, safe and items over 300 lbs. Unfortunately, sometimes, due
-          to the weight of these items, damage may result to floor surfaces or
-          walls so before we proceed with moving these items we will have a
-          release of any liability signed so we can move those items for you.
-        </p>
-      </div>
-
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="italic">Sec 14.</p>
-          <p className="font-bold">Moving Crew size.</p>
-        </div>
-        <p className="text-base font-light">
-          The size of the moving crew is determined by the number of items that
-          will have to be packed and/or moved as well as factors like access on
-          each moving location, walking distance, stairs, etc. We recommend a
-          certain number of movers for each job taking in consideration all the
-          above as well as our current schedule, availability, etc. On extreme
-          situations, Phoenix Moving & Storage might recommend sending extra men
-          and/or truck during the day to complete a job if there is an overflow
-          of items that needs to be moved, or additional packing required, a
-          time restriction, very difficult access or very difficult pieces of
-          furniture, etc. The hourly rate will be increased accordingly and the
-          move will run more efficiently with more movers.
-        </p>
-      </div>
-
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="font-bold">Changes to Our Policy.</p>
-        </div>
-        <p className="text-base font-light">
-          We may change our Privacy and Website Use Policy from time to time.
-          The most current version of the Policy will govern our collection, use
-          and disclosure of information about you and will be detailed here. If
-          we make material changes to this Policy, we will notify you by email
-          or by posting a notice here prior to the effective date of the change.
-          By continuing to access or use the Service after those changes become
-          effective, you agree to the revised Privacy and Website Use Policy.
-        </p>
-      </div>
-      <div className="mb-8">
-        <p className="italic">This Policy was last modified on July 1, 2022.</p>
-      </div>
+      <p className="italic text-xs">
+        Terms and Conditions was last modified on June 1, 2023.
+      </p>
     </Section>
   );
 }

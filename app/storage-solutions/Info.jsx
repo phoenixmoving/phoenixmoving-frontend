@@ -73,7 +73,7 @@ export default function Info() {
               <a
                 href="/pricing"
                 title="Moving Pricing Plans"
-                className="inline-flex items-center rounded-xl border border-transparent px-4 py-3  font-medium leading-4 text-blue-600 hover:bg-indigo-50"
+                className="inline-flex items-center rounded-full border border-transparent px-4 py-3  font-medium leading-4 text-blue-600 hover:bg-indigo-50"
               >
                 View Pricing Plans
                 <span aria-hidden="true" className="ml-2">

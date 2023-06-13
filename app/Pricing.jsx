@@ -19,7 +19,8 @@ export default async function Pricing() {
       href: '/',
       priceMonthly: prices[0].two_men[0],
       oldPrice: prices[0].two_men[0] + 30,
-      description: 'Starting at',
+      description: 'Starting from',
+      sizes: 'Room/Studio',
       includedFeatures: [
         '2 Professional Movers.',
         'Clean, fully stocked moving trucks.',
@@ -32,7 +33,8 @@ export default async function Pricing() {
       href: '/',
       priceMonthly: prices[0].three_men[0],
       oldPrice: prices[0].three_men[0] + 30,
-      description: 'Starting at',
+      description: 'Starting from',
+      sizes: '1-2 Bedroom Apt/House',
       includedFeatures: [
         '3 Professional Movers.',
         'Clean, fully stocked moving trucks.',
@@ -45,7 +47,8 @@ export default async function Pricing() {
       href: '/',
       priceMonthly: prices[0].four_men[0],
       oldPrice: prices[0].four_men[0] + 30,
-      description: 'Starting at',
+      description: 'Starting from',
+      sizes: '3-4 Bedroom Apt/House',
       includedFeatures: [
         '4 Professional Movers.',
         'Clean, fully stocked moving trucks.',
@@ -82,6 +85,7 @@ export default async function Pricing() {
                   per hour
                 </span>
               </p>
+              <p className="font-semibold my-8">{tier.sizes}</p>
               <Button
                 href={tier.href}
                 color="primary"
