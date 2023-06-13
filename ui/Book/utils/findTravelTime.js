@@ -28,7 +28,7 @@ export const findTravelTime = (
   setActiveStep,
   actions,
 ) => {
-  let office = '02493';
+  let office = '01760';
   let fromZip = originZip;
   let toZip = destinationZip;
   let originsArray = [];
@@ -63,6 +63,8 @@ export const findTravelTime = (
       // console.log(response);
       if (status !== 'OK') {
         console.log('Error was:', status);
+        actions.setTouched({});
+        actions.setSubmitting(false);
       } else {
         let fromHq = 20;
         let toHq = 20;
@@ -106,8 +108,8 @@ export const findTravelTime = (
             response.rows[1].elements[1].distance.value,
           );
 
-          if (fromHq < 20) fromHq = 20;
-          if (toHq < 20) toHq = 20;
+          if (fromHq < 15) fromHq = 15;
+          if (toHq < 15) toHq = 15;
           if (
             movingService === 'Moving with Storage' &&
             distanceBetween < 150

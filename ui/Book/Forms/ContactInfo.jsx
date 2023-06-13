@@ -1,3 +1,10 @@
+import {
+  ArrowPathIcon,
+  AtSymbolIcon,
+  InformationCircleIcon,
+  PhoneIcon,
+  UserCircleIcon,
+} from '@heroicons/react/24/outline';
 import { InputField, SelectField, PhoneInput } from '../FormFields';
 
 const referralOptions = [
@@ -37,12 +44,13 @@ export default function ContactInfo(props) {
   } = props;
 
   return (
-    <div className="mt-6 grid grid-cols-4 gap-4 p-1">
+    <div className="grid grid-cols-4 gap-4">
       <div className="col-span-2">
         <InputField
           name={firstName.name}
           label={firstName.label}
           placeholder={firstName.placeholder}
+          icon={UserCircleIcon}
         />
       </div>
 
@@ -51,6 +59,7 @@ export default function ContactInfo(props) {
           name={lastName.name}
           label={lastName.label}
           placeholder={lastName.placeholder}
+          icon={UserCircleIcon}
         />
       </div>
       <div className="col-span-4">
@@ -58,6 +67,7 @@ export default function ContactInfo(props) {
           name={email.name}
           label={email.label}
           placeholder={email.placeholder}
+          icon={AtSymbolIcon}
         />
       </div>
       <div className="col-span-4">
@@ -65,6 +75,7 @@ export default function ContactInfo(props) {
           name={phone.name}
           label={phone.label}
           placeholder={phone.placeholder}
+          icon={PhoneIcon}
         />
       </div>
       <div className="col-span-4">
@@ -72,6 +83,7 @@ export default function ContactInfo(props) {
           name={additionalInfo.name}
           label={additionalInfo.label}
           placeholder={additionalInfo.placeholder}
+          icon={InformationCircleIcon}
           rows="3"
           textArea
           optional
@@ -82,6 +94,7 @@ export default function ContactInfo(props) {
           name={referral.name}
           label={referral.label}
           options={referralOptions}
+          icon={ArrowPathIcon}
         />
       </div>
     </div>

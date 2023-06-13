@@ -23,15 +23,15 @@ export const metadata = {
     google: 'ACFgIKDb3RQe19sMvNkxXUi1lPW4t1kCQmgUDjGp_eA',
   },
   manifest: '/site.webmanifest',
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
+  // robots: {
+  //   index: true,
+  //   follow: true,
+  //   nocache: true,
+  //   googleBot: {
+  //     index: true,
+  //     follow: true,
+  //   },
+  // },
 };
 
 export default function RootLayout({ children }) {

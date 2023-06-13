@@ -46,14 +46,14 @@ export default function CalendarWithRates(props) {
   return (
     <div
       ref={wrapperRef}
-      className="absolute left-1/2 -translate-y-1/2 -translate-x-1/2 sm:left-[unset] sm:right-[unset] sm:translate-y-[unset] sm:translate-x-[unset] bg-white rounded-xl shadow-3xl w-[300px] h-[350px] z-10"
+      className="fixed p-4 h-auto flex flex-col justify-between left-1/2 -translate-y-1/2 -translate-x-1/2 sm:left-[unset] sm:right-[unset] sm:translate-y-1 sm:translate-x-[unset] bg-white rounded-2xl shadow-3xl w-[300px] z-50"
     >
       <MonthSelect
         month={month}
         handlePrevMonth={handlePrevMonth}
         handleNextMonth={handleNextMonth}
       />
-      <div className="grid grid-cols-7 gap-2 px-4 py-2 capitalize text-center">
+      <div className="border-t border-gray-900/5 grid grid-cols-7 gap-2 pt-4 capitalize text-center">
         {WEEK_DAYS.map((weekDay) => {
           return (
             <span key={weekDay} className="text-xs text-gray-400">
@@ -62,7 +62,7 @@ export default function CalendarWithRates(props) {
           );
         })}
       </div>
-      <div className="grid grid-cols-7 grid-rows-6 items-center gap-1 px-4 py-2 text-center">
+      <div className="grid grid-cols-7 grid-rows-6 items-center gap-2 py-4 text-center">
         {days.map((day) => {
           const rate = rates?.find((r) => r.date === format(day, 'MM/dd/yyyy'));
           return (

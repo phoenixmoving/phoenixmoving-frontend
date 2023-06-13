@@ -3,8 +3,8 @@ import Info from './Info';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/terms`;
-const title = 'Terms and Conditions - Phoenix Moving Boston (Free Estimate)';
-const description = 'Terms and Conditions for Phoenix Moving & Storage';
+const title = 'Privacy Policy - Phoenix Moving Boston (Free Estimate)';
+const description = 'Privacy Policy for Phoenix Moving & Storage';
 
 const bgImage = '/prices.jpg';
 
@@ -37,10 +37,10 @@ export const metadata = {
   },
 };
 
-export default async function TermsPage() {
+export default async function PrivacyPage() {
   return (
     <>
-      <Hero image={bgImage} title="Terms and Conditions" />
+      <Hero image={bgImage} title="Privacy Policy" />
       <Info />
     </>
   );

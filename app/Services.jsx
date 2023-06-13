@@ -1,6 +1,7 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import ChevronRightIcon  from '@heroicons/react/24/outline/ChevronRightIcon';
+import Link from 'next/link';
 
 const services = [
   {
@@ -42,23 +43,21 @@ export default function Services() {
         title="Moving services."
         subtitle="Phoenix Moving Boston is a premier moving company that provides high-quality service to customers throughout the United States. We specialize in long-distance, commercial, and residential moves, providing a stress-free and hassle-free experience."
       />
-      <ul className="mx-auto grid max-w-2xl grid-cols-1 gap-6 text-sm sm:grid-cols-2 md:gap-y-6 lg:max-w-none lg:grid-cols-3">
+      <ul className="mx-auto grid max-w-2xl grid-cols-1 gap-6 text-sm sm:grid-cols-2 lg:max-w-none lg:grid-cols-3">
         {services.map((service) => (
           <li key={service.name}>
-            <a
+            <Link
               href={service.href}
-              className="rounded-2xl border border-gray-200 p-8 flex flex-col h-full hover:shadow-lg hover:shadow-gray-900/5 transition-all duration-150 ease-in"
+              className="rounded-2xl border border-gray-200 p-8 flex flex-col h-full hover:shadow-3xl hover:scale-[1.05] transition-all duration-150 ease-in"
               title={service.name}
             >
-              <p className="font-semibold text-gray-900 text-lg flex justify-between items-center">
+              <p className="font-semibold text-lg flex justify-between items-center">
                 {service.name}
                 <ChevronRightIcon className="w-4 h-4" />
               </p>
 
-              <p className="mt-2 font-normal text-gray-900">
-                {service.description}
-              </p>
-            </a>
+              <p className="mt-2 font-normal">{service.description}</p>
+            </Link>
           </li>
         ))}
       </ul>

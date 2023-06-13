@@ -75,43 +75,19 @@ export default function InterstatePrices() {
         title="Our rates for common destinations."
         subtitle="Is based upon the mileage from the origin to the destination, and the cubic footage of your belongings."
       />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {cities.map((city, i) => (
-          <div
+          <a
+            href={city.url}
             key={i}
-            className="relative flex items-center space-x-3 rounded-2xl border border-gray-300 bg-white shadow-sm hover:border-gray-400"
+            className="flex items-center justify-between p-6 space-x-3 rounded-2xl border border-gray-200 shadow-sm hover:shadow-3xl hover:scale-[1.05] transition-all duration-150 ease-in"
           >
-            {/* <div className="flex-shrink-0"> */}
-            {/* <img
-                  className="h-full w-20 rounded-l-[7px]"
-                  src={city.imageUrl}
-                  alt={city.name}
-                /> */}
-            {/* <Image
-                  src={city.imageUrl}
-                  alt={`${city.name} image`}
-                  width={50}
-                  height={50}
-                /> */}
-            {/* </div> */}
-            <div className="min-w-0 flex-1">
-              <a
-                href={city.url}
-                className="focus:outline-none flex justify-between items-center px-6 py-6"
-              >
-                <span className="absolute inset-0" aria-hidden="true" />
-                <p className="text-sm font-semibold text-gray-900">
-                  {city.name}
-                </p>
-                <p className="truncate text-gray-900">
-                  <span className="text-sm text-gray-400 mr-2">
-                    Starting at
-                  </span>
-                  ${city.price}
-                </p>
-              </a>
-            </div>
-          </div>
+            <p className="text-sm font-semibold text-gray-900">{city.name}</p>
+            <p>
+              <span className="text-sm text-gray-400 mr-2">Starting at</span>$
+              {city.price}
+            </p>
+          </a>
         ))}
       </div>
       <h3 className="text-xl font-medium tracking-tight text-gray-900 mt-16">

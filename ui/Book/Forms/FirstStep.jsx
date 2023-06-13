@@ -1,4 +1,5 @@
 import { SelectField, ZipField, CustomDatePicker } from '../FormFields';
+import { ClockIcon, TruckIcon } from '@heroicons/react/24/outline';
 
 const times = [
   {
@@ -67,7 +68,7 @@ export default function FirstStep(props) {
   } = props;
 
   return (
-    <div className="mt-6 grid grid-cols-4 gap-4 p-1">
+    <div className="grid grid-cols-4 gap-4">
       <div className="col-span-2">
         <CustomDatePicker
           name={movingDate.name}
@@ -83,6 +84,8 @@ export default function FirstStep(props) {
           name={startTime.name}
           label={startTime.label}
           options={times}
+          // icon={<ClockIcon />}
+          icon={ClockIcon}
         />
       </div>
 
@@ -109,6 +112,7 @@ export default function FirstStep(props) {
           name={service.name}
           label={service.label}
           options={services}
+          icon={TruckIcon}
         />
       </div>
       {showDeliveryDate && (

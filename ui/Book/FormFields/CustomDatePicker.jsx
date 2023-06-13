@@ -5,6 +5,8 @@ import clsx from 'clsx';
 import CalendarWithRates from '@/ui/CalendarWithRates';
 import { useState } from 'react';
 import { format } from 'date-fns';
+import { CalendarDaysIcon } from '@heroicons/react/24/outline';
+// import { CalendarDaysIcon } from '@heroicons/react/20/solid';
 
 // const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -45,29 +47,60 @@ export default function CustomDatePicker(props) {
   return (
     <>
       <label
-        className="block text-xs font-semibold text-gray-700"
+        className="block text-sm font-medium leading-6"
         htmlFor={field.name}
       >
         {label}
       </label>
-      <input
+      <div className="relative rounded-md">
+        <div className="z-10 pointer-events-none absolute inset-y-0 left-0 mt-1 flex items-center pl-3">
+          <CalendarDaysIcon
+            // className="h-4 w-4"
+            className={clsx('h-5 w-5', {
+              'text-gray-400': field.value === '',
+              'text-gray-900': isError,
+              'text-gray-900': isSuccess,
+            })}
+            aria-hidden="true"
+          />
+        </div>
+        <input
+          {...field}
+          id={field.name}
+          value={field.value ? format(field.value, 'MMM dd, yyyy') : ''}
+          // inputMode="none"
+          placeholder={placeholder}
+          type="text"
+          className={clsx(
+            'relative mt-1 lock w-full rounded-md border-0 bg-gray-100 font-normal placeholder:text-gray-400 py-2 pl-10 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
+            {
+              'text-gray-400': field.value === '',
+              'shadow-inner bg-red-50': isError,
+              'shadow-inner bg-green-50': isSuccess,
+            },
+          )}
+          onClick={handleOpen}
+          readOnly
+        />
+      </div>
+      {/* <input
         id={field.name}
         {...field}
-        value={field.value ? format(field.value, 'MM-dd-yyyy') : ''}
+        value={field.value ? format(field.value, 'MMM dd, yyyy') : ''}
         inputMode="none"
         placeholder={placeholder}
         type="text"
         className={clsx(
-          'relative mt-1 block w-full rounded-md border-gray-300 font-normal placeholder:text-gray-400 py-2 pl-3 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
+          'relative mt-1 block w-full rounded-md border-0 bg-gray-100 font-normal placeholder:text-gray-400 py-2 pl-3 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
           {
             'text-gray-400': field.value === '',
-            'border-red-500 bg-red-50': isError,
-            'border-green-500 bg-green-50': isSuccess,
+            'shadow-inner bg-red-100': isError,
+            'shadow-inner bg-green-100': isSuccess,
           },
         )}
         onClick={handleOpen}
         readOnly
-      />
+      /> */}
 
       {open && (
         <CalendarWithRates
