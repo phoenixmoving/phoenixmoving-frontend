@@ -149,7 +149,7 @@ export default function Book({ rates, prices }) {
           {/* overflow-y-auto max-h-[525px] */}
           <React.Fragment>
             {activeStep === steps.length ? (
-              <div className="text-center">
+              <div className="text-center p-8">
                 <img src="/hands.png" alt="" className="w-12 m-auto" />
                 <p className="mt-4">We're on it!</p>
                 <p className="mt-4">
