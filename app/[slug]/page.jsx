@@ -4,7 +4,7 @@ import { cities } from '@/lib/citiesData';
 import { states } from '@/lib/statesData';
 import Info from './Info';
 import InterstateInfo from './InterstateInfo';
-import InterstateInfoTwo from './InterstateInfoTwo';
+// import InterstateInfoTwo from './InterstateInfoTwo';
 import Faqs from '@/ui/Faqs';
 import Stats from './Stats';
 import Conclusion from './Conclusion';

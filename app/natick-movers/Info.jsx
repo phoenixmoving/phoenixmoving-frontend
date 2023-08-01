@@ -48,7 +48,7 @@ export default function Info() {
                 size="large"
                 variant="soft"
                 title="View Rates"
-                color="primary"
+                // color="primary"
               >
                 View Pricing
               </Button>
