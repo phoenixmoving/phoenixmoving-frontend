@@ -82,6 +82,7 @@ export default function Benefits() {
                   <Image
                     src={feature.imageSrc}
                     alt={feature.imageAlt}
+                    title={feature.imageAlt}
                     className="object-cover object-center"
                   />
                 </div>

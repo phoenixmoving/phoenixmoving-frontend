@@ -103,7 +103,7 @@ export default function Navbar() {
               <span className="sr-only">Phoenix Moving Boston</span>
               <Image
                 className={clsx(
-                  'transition-all ease-in-out duration-300 object-cove w-fit',
+                  'transition-all ease-in-out duration-300 w-auto',
                   {
                     'h-8 lg:h-10': active,
                     'h-10 lg:h-12': !active,

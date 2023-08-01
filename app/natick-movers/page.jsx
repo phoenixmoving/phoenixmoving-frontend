@@ -13,9 +13,10 @@ import WhyBook from './WhyBook';
 import CitiesSection from '@/ui/CitiesSection';
 
 const URL = process.env.NEXT_PUBLIC_MAIN_URL + '/natick-movers';
-const title = 'Natick Movers - Phoenix Moving Natick (Free Estimate)';
+const title =
+  'Professional Moving Services in Natick, MA | Phoenix Moving and Storage';
 const description =
-  'Natick movers, Movers Near Natick MA, Professional Moving Company in Natick, MA. The most reliable moving company near Natick MA. Free Quote Online (NO HIDDEN FEES).';
+  'Your Trusted Natick, MA Movers | Local & Long-Distance Moves | Expert Service for Residential & Commercial Moves | Get a Free Quote Today!';
 
 const keywords = [
   'Movers near Natick MA',
@@ -51,10 +52,67 @@ export const metadata = {
   },
 };
 
+const schema1 = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Phoenix Moving and Storage',
+  description: description,
+  url: 'https://www.gophoenixmoving.com/',
+  telephone: '+1-508-315-9458',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '18 Lakeview Gardens',
+    addressLocality: 'Natick',
+    addressRegion: 'MA',
+    postalCode: '01760',
+    addressCountry: 'US',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '42.2917',
+    longitude: '-71.3607',
+  },
+  openingHours: 'Mo-Fr 08:00-18:00, Sa 09:00-16:00',
+  sameAs: [
+    'https://www.facebook.com/phoenixmoving/',
+    'https://twitter.com/phoenix_moving?ref_src=twsrc%5Etfw/',
+    'https://www.instagram.com/phoenixmovingboston/',
+  ],
+};
+
+const ratingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Rating',
+  ratingValue: '4.98',
+  bestRating: '5',
+  worstRating: '4',
+  ratingCount: '250',
+  itemReviewed: {
+    '@type': 'Thing',
+    name: 'Phoenix Moving and Storage',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Josh M.',
+  },
+};
+
 export default function NatickMoversPage() {
   return (
-    <div>
-      <Hero image={natick} title="Natick Movers" />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema1, null, '\t'),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(ratingSchema, null, '\t'),
+        }}
+      />
+      <Hero image={natick} title="Professional Moving Services in Natick, MA" />
       <Partners />
       <Info />
       <Divider />
@@ -68,6 +126,6 @@ export default function NatickMoversPage() {
       <Stats />
       <CTA />
       <Contact />
-    </div>
+    </>
   );
 }
