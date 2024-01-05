@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import SectionHeader from '@/ui/SectionHeader';
+import img from '@/images/moving-piano.jpg';
 
 export default function Info() {
   return (
@@ -10,7 +11,9 @@ export default function Info() {
           <div className="relative lg:col-start-2 lg:row-start-1">
             <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-full lg:w-[80%] h-[25rem] lg:h-[65%]">
               <Image
-                src="/moving-piano.jpg"
+                src={img}
+                placeholder="blur"
+                blurDataURL={img.blurDataURL}
                 alt="Moving piano to the truck"
                 className="rounded-2xl bg-white shadow-lg rotate-2 object-cover"
                 title="Full Packing Services"
@@ -21,7 +24,7 @@ export default function Info() {
             </div>
           </div>
           <div className="mt-8 lg:mt-0">
-            <div className="prose prose-indigo mx-auto text-gray-900 lg:col-start-1 lg:row-start-1 lg:max-w-none">
+            <div className="prose prose-indigo mx-auto text-slate-900 lg:col-start-1 lg:row-start-1 lg:max-w-none">
               <p>
                 Moving a piano is no easy task. It requires the right tools,
                 equipment, and expertise to ensure it is done correctly and

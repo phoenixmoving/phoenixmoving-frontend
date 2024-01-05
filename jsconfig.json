@@ -19,6 +19,8 @@
         "@/app/*": ["app/*"],
         "@/ui/*": ["ui/*"],
         "@/lib/*": ["lib/*"],
+        "@/components/*": ["components/*"],
+        "@/images/*": ["images/*"],
       },
       "plugins": [
         {

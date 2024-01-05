@@ -1,7 +1,7 @@
 import SectionHeader from '@/ui/SectionHeader';
-import img1 from '../../public/mover-and-truck.jpeg';
-import img2 from '../../public/wrapped-furniture.jpeg';
-import img3 from '../../public/storage-services-main.jpg';
+import img1 from '@/images/mover-and-truck.jpeg';
+import img2 from '@/images/wrapped-furniture.jpeg';
+import img3 from '@/images/storage-services-main.jpg';
 import Image from 'next/image';
 
 /*
@@ -63,13 +63,13 @@ export default function Benefits() {
                 )}
               >
                 {feature.name && (
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-slate-900">
                     {feature.name}
                   </h3>
                 )}
                 <p
                   dangerouslySetInnerHTML={{ __html: feature.description }}
-                  className="mt-2 prose prose-blue text-gray-900 max-w-none"
+                  className="mt-2 prose prose-blue text-slate-900 max-w-none"
                 />
               </div>
               <div
@@ -78,7 +78,7 @@ export default function Benefits() {
                   'flex-auto lg:col-span-6 lg:row-start-1',
                 )}
               >
-                <div className="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
+                <div className="aspect-h-[5/2] aspect-w-5 overflow-hidden rounded-2xl bg-slate-100">
                   <Image
                     src={feature.imageSrc}
                     alt={feature.imageAlt}

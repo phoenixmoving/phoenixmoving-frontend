@@ -1,17 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Bars3BottomRightIcon from '@heroicons/react/24/outline/Bars3BottomRightIcon';
-import UserIcon from '@heroicons/react/20/solid/UserIcon';
+import Bars3BottomRightIcon from '@heroicons/react/24/solid/Bars3BottomRightIcon';
+import UserIcon from '@heroicons/react/24/solid/UserIcon';
+import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon';
 import MobileMenu from './components/MobileMenu';
 import clsx from 'clsx';
 import DropDownMenu from './components/DropDownMenu';
 import Button from '@/ui/Button';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import logoWhite from '../../public/logos/logo-white2.png';
-import logo from '../../public/logos/logo.png';
+import Logo from '@/components/Logo';
 
 const clientLink = process.env.NEXT_PUBLIC_CLIENT_LOGIN;
 
@@ -81,7 +80,7 @@ export default function Navbar() {
   return (
     <header
       className={clsx(
-        'isolat sticky top-0 z-20 transition-colors ease-in-out duration-300',
+        'isolat sticky top-0 z-20 transition-colors duration-300',
         {
           'bg-white shadow-sm': active,
           'bg-trasnparent': !active,
@@ -90,7 +89,7 @@ export default function Navbar() {
     >
       <div
         className={clsx(
-          'px-6 lg:px-8 max-w-screen-xl m-auto transform ease-in-out duration-300',
+          'px-6 lg:px-8 max-w-screen-xl m-auto transform duration-300',
           {
             'py-2': active,
             'py-4': !active,
@@ -101,19 +100,7 @@ export default function Navbar() {
           <div className="flex lg:min-w-0 lg:flex-1">
             <a href="/" title="Home">
               <span className="sr-only">Phoenix Moving Boston</span>
-              <Image
-                className={clsx(
-                  'transition-all ease-in-out duration-300 w-auto',
-                  {
-                    'h-8 lg:h-10': active,
-                    'h-10 lg:h-12': !active,
-                  },
-                )}
-                priority
-                src={active ? logo : logoWhite}
-                alt="phoenix moving logo"
-                title="Phoenix Moving Boston"
-              />
+              <Logo active={active} />
             </a>
           </div>
           <div className="hidden lg:flex lg:min-w-0 lg:flex-auto lg:justify-center lg:items-center lg:gap-x-6">
@@ -131,10 +118,10 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={clsx(
-                    'relative font-medium transition-colors ease-in-out duration-150',
+                    'relative font-medium transition-colors duration-150',
                     {
-                      'text-gray-900 hover:text-gray-600': active,
-                      'text-white hover:text-gray-300': !active,
+                      'text-slate-900 hover:text-slate-600': active,
+                      'text-white hover:text-slate-300': !active,
                     },
                   )}
                 >
@@ -159,32 +146,32 @@ export default function Navbar() {
               href="tel:(508)315-9458"
               title="Give us a call"
               className={clsx(
-                'font-semibold uppercase text-md transition-colors ease-in-out duration-150',
+                'flex font-semibold text-sm transition-colors duration-150 gap-1 items-center justify-center rounded-full border py-1.5 px-3',
                 {
-                  'text-palette-primary-500 hover:text-palette-primary-900':
+                  'text-palette-primary-500 hover:bg-palette-primary-500/10 border-palette-primary-500':
                     active,
-                  'text-white hover:text-gray-300': !active,
+                  'text-white hover:bg-slate-50/10 border-slate-200': !active,
                 },
               )}
             >
-              (508) 315-9458
+              <PhoneIcon aria-hidden="true" className="h-4 w-4" />
+              <p>(508) 315-9458</p>
             </a>
           </div>
-          {/* <div className="hidden items-center gap-x-6 lg:flex lg:min-w-0 lg:flex-initial lg:justify-end"> */}
           <div className="flex flex-1 lg:flex-none items-center justify-end gap-x-6">
             <a
               href={clientLink}
               target="_blank"
               className={clsx(
-                'hidden lg:inline-flex font-medium transition-colors ease-in-out duration-150 gap-1 items-center justify-center',
+                'hidden lg:inline-flex font-medium transition-colors duration-150 gap-1 items-center justify-center',
                 {
-                  'text-gray-900 hover:text-gray-600': active,
-                  'text-white hover:text-gray-300': !active,
+                  'text-slate-900 hover:text-slate-600': active,
+                  'text-white hover:text-slate-300': !active,
                 },
               )}
             >
               <UserIcon aria-hidden="true" className="h-4 w-4" />
-              Client Login
+              <p>Client Login</p>
             </a>
             <Button color="secondary" href="/" size="small">
               Get a Quote
@@ -193,19 +180,16 @@ export default function Navbar() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-900"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-900"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open menu</span>
               <Bars3BottomRightIcon
                 aria-hidden="true"
-                className={clsx(
-                  'h-6 w-6 transition-colors ease-in-out duration-150',
-                  {
-                    'text-gray-900 hover:text-gray-600': active,
-                    'text-white': !active,
-                  },
-                )}
+                className={clsx('h-6 w-6 transition-colors duration-150', {
+                  'text-slate-900 hover:text-slate-600': active,
+                  'text-white': !active,
+                })}
               />
             </button>
           </div>

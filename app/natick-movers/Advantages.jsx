@@ -6,7 +6,7 @@ export default function Advantages() {
     <Section>
       <div className="bg-palette-background px-10 py-24 rounded-3xl">
         <SectionHeader title="Advantages of living in Natick" />
-        <p className="prose text-gray-900 max-w-none">
+        <p className="prose text-slate-900 max-w-none">
           Natick Massachusetts is a great place to live for many reasons. It is
           located in Middlesex County, just a short drive from Boston, so you
           can enjoy the convenience of city life while still living in a quiet

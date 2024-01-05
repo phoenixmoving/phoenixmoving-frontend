@@ -19,10 +19,10 @@ export default function Info() {
       <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
         <div className="relative py-0">
           <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-none lg:px-0">
-            <div className="relative overflow-hidden rounded-2xl lg:pt-24">
+            <div className="relative overflow-hidden lg:pt-24">
               <Map />
             </div>
-            <div className="pb-10 text-sm text-gray-500">
+            <div className="pb-10 text-sm text-slate-500">
               <p className="flex items-center">
                 <span className="h-[10px] w-[10px] bg-[#00d866] mr-2" />
                 same/next day delivery
@@ -41,7 +41,7 @@ export default function Info() {
 
         <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
           <SectionHeader title="Long distance Interstate moving." start />
-          <div className="mt-6 space-y-6 text-gray-900 prose prose-blue ">
+          <div className="mt-6 space-y-6 text-slate-900 prose prose-blue ">
             <p>
               If you are looking for reliable interstate movers, Phoenix Moving
               can provide you with top-notch long distance moving services.
@@ -71,9 +71,9 @@ export default function Info() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="border-t-2 border-gray-100 pt-6"
+                  className="border-t-2 border-slate-100 pt-6"
                 >
-                  <dt className="font-semibold text-gray-900">{stat.label}</dt>
+                  <dt className="font-semibold text-slate-900">{stat.label}</dt>
                   <dd className="text-3xl font-semibold tracking-tight text-palette-primary-500">
                     {stat.value}
                   </dd>
@@ -84,7 +84,7 @@ export default function Info() {
               <a
                 href="/pricing"
                 title="Moving Pricing Plans"
-                className="inline-flex items-center rounded-full border border-transparent px-4 py-3 font-medium leading-4 text-blue-600 hover:bg-indigo-50"
+                className="inline-flex items-center rounded-full border border-transparent px-4 py-3 font-medium leading-4 text-blue-600 hover:bg-indigo-50 transition-all duration-150"
               >
                 View Pricing Plans
                 <span aria-hidden="true" className="ml-2">

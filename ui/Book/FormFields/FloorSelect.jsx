@@ -43,7 +43,7 @@ export default function FloorSelect(props) {
                 classNames(
                   checked
                     ? 'bg-green-50 shadow-inner border border-green-400 text-green-600 hover:bg-green-100 flex-1'
-                    : 'bg-white border-gray-300 text-gray-900 hover:bg-gray-100 flex-1',
+                    : 'bg-white border-slate-300 text-slate-900 hover:bg-slate-100 flex-1',
                   'cursor-pointer focus:outline-none border rounded-lg py-2 px-4 flex items-center justify-center text-xs flex-1',
                 )
               }

@@ -1,18 +1,16 @@
 import Hero from '@/ui/Hero';
 import CallToAction from '@/ui/CallToAction';
-import CTA from '@/ui/CTA';
 import CitiesSection from '@/ui/CitiesSection';
 import Photos from '@/ui/Photos';
 import Info from './Info';
 import Faqs from '@/ui/Faqs';
+import bgImage from '@/images/about.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/about`;
 const title = 'About - Phoenix Moving Boston (Free Estimate)';
 const description =
   'We are professional moving and storage company based in Boston, MA. We are dedicated to providing you with the highest quality service and value for your relocation needs.';
-
-const bgImage = '/about.jpg';
 
 export const metadata = {
   title,
@@ -27,7 +25,7 @@ export const metadata = {
     siteName: 'Phoenix Moving Boston',
     images: [
       {
-        url: BASE_URL + bgImage,
+        url: bgImage.src,
       },
     ],
     locale: 'en-US',
@@ -48,11 +46,10 @@ export default function AboutUs() {
     <>
       <Hero image={bgImage} title="About Us" />
       <Info />
-      <CTA />
-      <CitiesSection />
-      <Faqs />
       <Photos />
       <CallToAction />
+      <CitiesSection />
+      <Faqs />
     </>
   );
 }

@@ -1,19 +1,39 @@
 import Image from 'next/image';
 import BookFormWrapper from '@/ui/BookFormWrapper';
 import { Suspense } from 'react';
+// import { getPlaiceholder } from 'plaiceholder';
+
+// const getImage = async (src) => {
+//   const buffer = await fetch(src).then(async (res) =>
+//     Buffer.from(await res.arrayBuffer()),
+//   );
+
+//   const {
+//     metadata: { height, width },
+//     ...plaiceholder
+//   } = await getPlaiceholder(buffer, { size: 10 });
+
+//   return {
+//     ...plaiceholder,
+//     img: { src, height, width },
+//   };
+// };
 
 export default async function HeroWithBooking({ image, title }) {
   return (
     <section className="relative">
       <div className="absolute inset-0">
         <Image
+          // {...img}
           className="h-full w-full object-cover"
           src={image}
           alt={title}
           priority
           title={title}
+          blurDataURL={image.blurDataURL}
+          placeholder="blur"
         />
-        <div className="absolute inset-0 bg-gray-900/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply" />
       </div>
       <div className="relative py-40 sm:py-32 lg:py-28">
         <div className="mx-auto max-w-7xl lg:px-8">
@@ -26,13 +46,13 @@ export default async function HeroWithBooking({ image, title }) {
                     #1 movers in Boston
                   </span>
                 </h1>
-                <p className="mt-3 text-base text-gray-50 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl hidden md:block">
+                <p className="mt-3 text-base text-slate-50 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl hidden md:block">
                   Professional moving company serving the Boston area. We
                   provide fast, reliable, and affordable moving services for
                   residential and commercial customers.
                 </p>
                 <div className="mt-10 sm:mt-12 hidden md:block">
-                  <p className="mt-3 text-sm text-gray-50 sm:mt-4">
+                  <p className="mt-3 text-sm text-slate-50 sm:mt-4">
                     We offer FREE Online estimates to provide you with a
                     hassle-free and convenient experience.
                   </p>

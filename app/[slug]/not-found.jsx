@@ -10,7 +10,7 @@ export default function NotFound() {
               404
             </p>
             <div className="sm:ml-6">
-              <div className="sm:border-l sm:border-gray-200 sm:pl-6">
+              <div className="sm:border-l sm:border-slate-200 sm:pl-6">
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
                   Page not found
                 </h1>

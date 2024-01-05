@@ -13,7 +13,7 @@ export default function CheckBoxField(props) {
           type="checkbox"
           id={field.name}
           checked={field.value}
-          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
           {...rest}
           {...field}
         />

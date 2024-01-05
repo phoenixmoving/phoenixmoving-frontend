@@ -1,5 +1,5 @@
 import Hero from '@/ui/Hero';
-import natick from '../../public/mover-pushing-dolly.jpg';
+import img from '@/images/cities/natick-ma.jpeg';
 import Partners from '@/ui/Partners';
 import Info from './Info';
 import Advantages from './Advantages';
@@ -7,8 +7,6 @@ import Stats from './Stats';
 import Faqs from '@/ui/Faqs';
 import Benefits from './Benefits';
 import Divider from '@/ui/Divider';
-import CTA from '@/ui/CTA';
-import Contact from '@/ui/Contact';
 import WhyBook from './WhyBook';
 import CitiesSection from '@/ui/CitiesSection';
 
@@ -112,7 +110,7 @@ export default function NatickMoversPage() {
           __html: JSON.stringify(ratingSchema, null, '\t'),
         }}
       />
-      <Hero image={natick} title="Professional Moving Services in Natick, MA" />
+      <Hero image={img} title="Professional Moving Services in Natick, MA" />
       <Partners />
       <Info />
       <Divider />
@@ -124,8 +122,6 @@ export default function NatickMoversPage() {
       <CitiesSection />
       <Faqs />
       <Stats />
-      <CTA />
-      <Contact />
     </>
   );
 }

@@ -28,7 +28,7 @@ const MonthSelect = (props) => {
         onClick={prev}
         className={clsx('p-1.5 border rounded-full', {
           'opacity-30 hover:cursor-not-allowed': disablePrevMonth,
-          'hover:bg-gray-100': !disablePrevMonth,
+          'hover:bg-slate-100': !disablePrevMonth,
         })}
       >
         <ChevronLeftIcon className="w-4 h-4 stroke-2" />
@@ -40,7 +40,7 @@ const MonthSelect = (props) => {
         onClick={next}
         className={clsx('p-1.5 border rounded-full', {
           'opacity-30 hover:cursor-not-allowed': disableNextMonth,
-          'hover:bg-gray-100': !disableNextMonth,
+          'hover:bg-slate-100': !disableNextMonth,
         })}
       >
         <ChevronRightIcon className="w-4 h-4 stroke-2" />

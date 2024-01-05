@@ -1,6 +1,7 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import Image from 'next/image';
+import img from '@/images/local.jpeg';
 
 const p1 =
   'Our local moving service provides fast and efficient transportation of your belongings from one residence to another. Our team of experienced movers will ensure that all of your items are transported safely and securely, while providing exceptional customer service. We also provide packing and unpacking services to make your move easier. We know how stressful moving can be, and we`re dedicated to helping you make it as seamless and stress-free as possible. With our local moving service, you can rest assured that your belongings will be delivered safely and on time.';
@@ -11,7 +12,7 @@ export default function Info() {
       <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
         <SectionHeader title="Boston local moving." />
         <div className="relative z-10 mx-auto max-w-prose  lg:mx-0 lg:max-w-5xl lg:pr-72 prose prose-blue ">
-          <p className="text-gray-900">
+          <p className="text-slate-900">
             We are a <b>local moving company in Boston, Massachusetts</b>. If
             you&apos;re looking for local movers in Boston MA, see if we operate
             in your area, and then contact us for a quote.
@@ -19,7 +20,7 @@ export default function Info() {
         </div>
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
           <div className="relative z-10">
-            <div className="prose prose-blue mx-auto text-gray-900 lg:max-w-none">
+            <div className="prose prose-blue mx-auto text-slate-900 lg:max-w-none">
               <p>{p1}</p>
 
               <ul>
@@ -59,7 +60,9 @@ export default function Info() {
           </div>
           <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-full lg:w-[80%] h-[25rem] lg:h-[65%]">
             <Image
-              src="/local.jpeg"
+              src={img}
+              placeholder="blur"
+              blurDataURL={img.blurDataURL}
               alt="Two movers packing dishes"
               className="rounded-2xl bg-white shadow-lg rotate-2 object-cover"
               title="Full Packing Services"

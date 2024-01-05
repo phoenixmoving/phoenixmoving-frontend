@@ -1,6 +1,7 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import Image from 'next/image';
+import img from '@/images/storage-units.jpg';
 
 const stats = [
   { label: 'Affordable Rates and Discounts.', value: '100%' },
@@ -21,7 +22,9 @@ export default function Info() {
             <div className="relative overflow-hidden rounded-2xl pt-64 pb-10 shadow-lg rotate-2 lg:min-h-[350px]">
               <Image
                 className="inset-0 h-full w-full object-cover"
-                src="/storage-units.jpg"
+                src={img}
+                placeholder="blur"
+                blurDataURL={img.blurDataURL}
                 alt="Image of a storage facility"
                 title="Image of a storage facility"
                 fill
@@ -37,7 +40,7 @@ export default function Info() {
             title="Storage solutions for your moving needs."
             start
           />
-          <div className="mt-6 space-y-6 text-gray-900 prose prose-blue">
+          <div className="mt-6 space-y-6 text-slate-900 prose prose-blue">
             <p>
               For those who need storage services, our company provides
               convenient, secure, and reliable storage solutions. Our storage
@@ -60,9 +63,9 @@ export default function Info() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="border-t-2 border-gray-100 pt-6"
+                  className="border-t-2 border-slate-100 pt-6"
                 >
-                  <dt className="font-semibold text-gray-900">{stat.label}</dt>
+                  <dt className="font-semibold text-slate-900">{stat.label}</dt>
                   <dd className="text-3xl font-semibold tracking-tight text-palette-primary-500">
                     {stat.value}
                   </dd>

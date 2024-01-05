@@ -58,7 +58,7 @@ export default function Addresses({ formField, values, showDestination }) {
       </div>
 
       {/* <div className="col-span-5">
-        <p className="flex items-center text-sm font-medium text-gray-700">
+        <p className="flex items-center text-sm font-medium text-slate-700">
           <CheckIcon
             className="mr-2 h-4 w-4 text-green-500"
             aria-hidden="true"
@@ -114,7 +114,7 @@ export default function Addresses({ formField, values, showDestination }) {
           </div>
 
           {/* <div className="col-span-5">
-            <p className="flex items-center text-sm font-medium text-gray-700">
+            <p className="flex items-center text-sm font-medium text-slate-700">
               <CheckIcon
                 className="mr-2 h-4 w-4 text-green-500"
                 aria-hidden="true"

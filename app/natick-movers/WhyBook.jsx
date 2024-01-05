@@ -29,7 +29,7 @@ export default function WhyBook() {
     <Section>
       <SectionHeader title="Why book with Phoenix Moving as your Natick movers." />
       <div className="max-w-5xl m-auto">
-        <p className="mt-4 prose text-gray-900 max-w-none">
+        <p className="mt-4 prose text-slate-900 max-w-none">
           At Phoenix Moving in Natick MA, we pride ourselves on our commitment
           to excellence. We are fully licensed and insured, and we go above and
           beyond to ensure that your belongings are safe and secure throughout
@@ -58,11 +58,11 @@ export default function WhyBook() {
               )}
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0 text-center">
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-slate-900">
                 {incentive.name}
               </h3>
               <p
-                className="mt-2 text-gray-900 prose prose-blue"
+                className="mt-2 text-slate-900 prose prose-blue"
                 dangerouslySetInnerHTML={{
                   __html: incentive.description,
                 }}

@@ -1,22 +1,20 @@
 import { Suspense } from 'react';
+
 import HeroWithBooking from '@/ui/HeroWithBooking';
-import Pricing from './Pricing';
-import CTA from '@/ui/CTA';
-import Services from './Services';
 import Faqs from '@/ui/Faqs';
 import Reviews from '@/ui/Reviews';
-import Contact from '@/ui/Contact';
 import CitiesSection from '@/ui/CitiesSection';
 import WhyBookSection from '@/ui/WhyBookSection';
 import Partners from '@/ui/Partners';
 import Photos from '@/ui/Photos';
-import bgImage from '../public/mover-pushing-dolly.jpg';
+import Pricing from '@/components/Pricing';
+import Services from '@/components/Services';
+import bgImage from '@/images/mover-pushing-dolly.jpg';
 
 const URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const title = 'Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)';
 const description =
   'Professional moving company serving the Boston area. We provide fast, reliable, and affordable moving services for residential and commercial customers.';
-const bgImageString = '/mover-pushing-dolly.jpg';
 
 const keywords = [
   'Movers near Boston MA',
@@ -59,7 +57,7 @@ const schema1 = {
   name: title,
   url: URL,
   logo: URL + '/logos/logo.png',
-  image: [URL + bgImageString],
+  image: bgImage.src,
   telephone: '(508) 315-9458',
   openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 8am-8pm',
   description: description,
@@ -138,13 +136,11 @@ export default function Home() {
       <Photos />
       <Pricing />
       <WhyBookSection />
-      <CTA />
       <Suspense fallback="loading...">
         <Reviews />
       </Suspense>
       <Faqs />
       <CitiesSection />
-      <Contact />
     </>
   );
 }

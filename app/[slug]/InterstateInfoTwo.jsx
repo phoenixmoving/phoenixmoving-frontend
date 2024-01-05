@@ -6,13 +6,13 @@ export default function InterstateInfoTwo({city}) {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-4">
-            <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
+            <div className="relative overflow-hidden rounded-3xl bg-slate-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
               <img
                 className="absolute inset-0 h-full w-full object-cover brightness-125 saturate-0"
                 src="https://images.unsplash.com/photo-1630569267625-157f8f9d1a7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2669&q=80"
                 alt=""
               />
-              <div className="absolute inset-0 bg-gray-900 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-slate-900 mix-blend-multiply" />
               <div
                 className="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl"
                 aria-hidden="true"
@@ -50,7 +50,7 @@ export default function InterstateInfoTwo({city}) {
                     natoque erat et cursus tortor.”
                   </p>
                 </blockquote>
-                <figcaption className="mt-6 text-sm leading-6 text-gray-300">
+                <figcaption className="mt-6 text-sm leading-6 text-slate-300">
                   <strong className="font-semibold text-white">
                     Judith Rogers,
                   </strong>{' '}
@@ -60,20 +60,12 @@ export default function InterstateInfoTwo({city}) {
             </div>
           </div>
           <div>
-            <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
+            <div className="text-base leading-7 text-slate-700 lg:max-w-lg">
               <SectionHeader title="Same-day moving." />
               <div className="max-w-xl">
-                {city?.p1 && (
-                  <p className="mt-6">
-                    {city.p1}
-                  </p>
-                )}
-               {city?.p2 &&  <p className="mt-8">
-                  {city.p2}
-                </p>}
-               {city?.p3 && <p className="mt-8">
-                 {city.p3}
-                </p>}
+                {city?.p1 && <p className="mt-6">{city.p1}</p>}
+                {city?.p2 && <p className="mt-8">{city.p2}</p>}
+                {city?.p3 && <p className="mt-8">{city.p3}</p>}
               </div>
             </div>
             <div className="mt-10 flex">

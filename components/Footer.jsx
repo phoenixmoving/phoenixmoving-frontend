@@ -99,8 +99,23 @@ const navigation = {
       name: 'Twitter',
       href: 'https://twitter.com/phoenix_moving',
       icon: (props) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+        // <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+        //   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+        // </svg>
+        <svg
+          fill="currentColor"
+          // viewBox="0 0 24 24"
+          {...props}
+          width="1200"
+          height="1227"
+          viewBox="0 0 1200 1227"
+          // fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+            fill="white"
+          />
         </svg>
       ),
     },
@@ -143,11 +158,11 @@ export default async function Footer() {
             return (
               <a
                 key={i}
-                className="text-gray-400 text-xs p-2 sm:p-1"
+                className="text-slate-400 text-xs p-2 sm:p-1"
                 href={city.href}
                 title={`Moving From Boston to ${city.name}`}
               >
-                <span className="text-gray-400 text-xs">|</span>
+                <span className="text-slate-400 text-xs">|</span>
                 <span className="hover:underline ml-4 sm:ml-2">
                   {city.name}
                 </span>
@@ -165,7 +180,7 @@ export default async function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-gray-400 hover:underline"
+                        className="text-slate-400 hover:underline"
                         title={item.name}
                       >
                         {item.name}
@@ -181,7 +196,7 @@ export default async function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-gray-400 hover:underline"
+                        className="text-slate-400 hover:underline"
                         title={item.name}
                       >
                         {item.name}
@@ -199,7 +214,7 @@ export default async function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-gray-400 hover:underline"
+                        className="text-slate-400 hover:underline"
                         title={item.name}
                       >
                         {item.name}
@@ -215,7 +230,7 @@ export default async function Footer() {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-gray-400 hover:underline"
+                        className="text-slate-400 hover:underline"
                         title={item.name}
                       >
                         {item.name}
@@ -227,12 +242,12 @@ export default async function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-500 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
+        <div className="border-t border-slate-500 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
           <div>
-            <p className="mt-2  text-gray-300">
+            <p className="mt-2  text-slate-300">
               Phoenix Moving Inc. is fully licensed, bonded and insured.
             </p>
-            <p className="mt-2  text-gray-300 flex gap-4 items-center">
+            <p className="mt-2  text-slate-300 flex gap-4 items-center">
               <span>MDPU&#183;32054</span>
 
               <span>DOT&#183;3868109</span>
@@ -241,8 +256,8 @@ export default async function Footer() {
             </p>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-500 pt-8 md:flex md:items-center md:justify-between">
-          <p className="mt-8  text-gray-400 md:order-1 md:mt-0">
+        <div className="mt-8 border-t border-slate-500 pt-8 md:flex md:items-center md:justify-between">
+          <p className="mt-8  text-slate-400 md:order-1 md:mt-0">
             &copy; {year} Phoenix Moving, Inc. Make moving chill
           </p>
         </div>

@@ -64,17 +64,17 @@ export default async function PricingTable() {
               </h2>
             </div>
             <table className="w-full bg-white">
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-slate-200">
                 {data.map((row, rowIndex) => (
-                  <tr key={rowIndex} className="border-t border-gray-200">
+                  <tr key={rowIndex} className="border-t border-slate-200">
                     <th
-                      className="py-5 px-4 text-left text-sm font-normal text-gray-700"
+                      className="py-5 px-4 text-left text-sm font-normal text-slate-700"
                       scope="row"
                     >
                       {row.crew}
                     </th>
                     <td className="py-5 pr-4">
-                      <span className="block text-right text-xl font-semibold text-gray-900">
+                      <span className="block text-right text-xl font-semibold text-slate-900">
                         ${row.prices[tierIndex]}
                       </span>
                     </td>
@@ -93,7 +93,7 @@ export default async function PricingTable() {
           <thead>
             <tr>
               <th
-                className="px-6 pb-4 text-left text-sm text-gray-900"
+                className="px-6 pb-4 text-left text-sm text-slate-900"
                 scope="col"
               >
                 <span className="sr-only">Prices</span>
@@ -116,12 +116,12 @@ export default async function PricingTable() {
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200 border-t border-gray-200">
+          <tbody className="divide-y divide-slate-200 border-t border-slate-200">
             {data.map((row) => {
               return (
                 <tr key={row.crew}>
                   <th
-                    className="py-8 px-6 text-left align-top text-lg font-semibold text-gray-900"
+                    className="py-8 px-6 text-left align-top text-lg font-semibold text-slate-900"
                     scope="row"
                   >
                     {row.crew}
@@ -131,7 +131,7 @@ export default async function PricingTable() {
                       key={i}
                       className="h-full py-8 px-6 align-top text-center"
                     >
-                      <p className="text-2xl tracking-tight text-gray-900">
+                      <p className="text-2xl tracking-tight text-slate-900">
                         ${price}
                       </p>
                     </td>
@@ -143,13 +143,13 @@ export default async function PricingTable() {
         </table>
       </div>
       <div className="flex gap-4 justify-between items-baseline flex-col lg:flex-row mt-10">
-        <p className="w-full lg:max-w-[550px] text-sm font-light text-gray-900">
+        <p className="w-full lg:max-w-[550px] text-sm font-light text-slate-900">
           <b className="font-semibold">Up to 1 hour Travel Time</b> is applied
           to all jobs in Metro Boston area. (approx 30 min for our movers to get
           to you address from our office plus approx 30 min to get back when the
           move is finished).
         </p>
-        <p className="w-full lg:max-w-[550px] text-sm font-light text-gray-900">
+        <p className="w-full lg:max-w-[550px] text-sm font-light text-slate-900">
           We have a <b className="font-semibold">2 hours minimum Labour Time</b>
           , plus fixed Travel Time, charge policy. After first 2 hours of labor,
           the move time is prorated every 15 min.

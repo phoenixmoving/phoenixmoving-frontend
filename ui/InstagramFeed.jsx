@@ -23,7 +23,7 @@ export default async function InstagramFeeds() {
         {feeds.slice(0, 12).map((feed, index) => {
           return (
             <div key={feed.id} className="group relative">
-              <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg bg-gray-100 h-full relative">
+              <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg bg-slate-100 h-full relative">
                 {feed.media_type === 'IMAGE' ||
                 feed.media_type === 'CAROUSEL_ALBUM' ? (
                   <img

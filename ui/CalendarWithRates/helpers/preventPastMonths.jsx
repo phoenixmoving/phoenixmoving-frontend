@@ -1,5 +1,6 @@
-export function preventPastMonths(month) {
-  const today = new Date();
-  const isValid = month.getMonth() <= today.getMonth();
-  return isValid;
-}
+export const preventPastMonths = (date) => {
+  const currentDate = new Date();
+  const selectedDate = new Date(date);
+
+  return selectedDate < currentDate;
+};

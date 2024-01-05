@@ -65,8 +65,8 @@ export default function FAQS() {
             {({ open }) => (
               <>
                 <dt className="text-lg">
-                  <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-400">
-                    <span className="font-semibold text-gray-900">
+                  <Disclosure.Button className="flex w-full items-start justify-between text-left text-slate-400">
+                    <span className="font-semibold text-slate-900">
                       {faq.question}
                     </span>
                     <span className="ml-6 flex h-7 items-center">
@@ -89,7 +89,7 @@ export default function FAQS() {
                   leaveTo="opacity-0 -translate-y-2"
                 >
                   <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                    <p className="font-light text-gray-900">{faq.answer}</p>
+                    <p className="font-light text-slate-900">{faq.answer}</p>
                   </Disclosure.Panel>
                 </Transition>
               </>

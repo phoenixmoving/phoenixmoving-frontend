@@ -16,12 +16,12 @@ export default function LocalMoveQuote({ values }) {
           </>
         )}
       </p>
-      <p className="text-gray-500">
+      <p className="text-slate-500">
         {values.distanceBetween > 0
           ? `Distance - ${values.distanceBetween} miles.`
           : null}
       </p>
-      {/* <p className="mt-2 text-xs text-gray-900 font-semibold uppercase">
+      {/* <p className="mt-2 text-xs text-slate-900 font-semibold uppercase">
         {oCity}
         {hideArrow && <span className="mx-4">&#x2192;</span>}
         {dCity}
@@ -31,7 +31,7 @@ export default function LocalMoveQuote({ values }) {
         {hideArrow && <span>&#x2192;</span>}
         {dCity}
       </p>
-      <dl className="divide-y divide-gray-200 mt-2 text-xs">
+      <dl className="divide-y divide-slate-200 mt-2 text-xs">
         <div className="py-2 flex justify-between items-center">
           <dt className="font-semibold">
             <span className="text-palette-primary-500 text-base">
@@ -61,7 +61,7 @@ export default function LocalMoveQuote({ values }) {
           <dt className="font-semibold">Travel time</dt>
           <dd className="flex flex-1 justify-end items-center">
             {values.travelTime[0]}/{values.travelTime[1]} mins.
-            <span className="text-gray-500 relative inline-block group">
+            <span className="text-slate-500 relative inline-block group">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -75,7 +75,7 @@ export default function LocalMoveQuote({ values }) {
                 />
               </svg>
 
-              <span className="invisible group-hover:visible w-[200px] absolute right-0 bottom-6 bg-gray-100 shadow-3xl rounded-xl py-1 px-2 text-xs text-white z-10 scale-0 transition-all group-hover:scale-100">
+              <span className="invisible group-hover:visible w-[200px] absolute right-0 bottom-6 bg-slate-100 shadow-3xl rounded-xl py-1 px-2 text-xs text-white z-10 scale-0 transition-all group-hover:scale-100">
                 <img src="/traveltime.png" className="w-full h-full" />
               </span>
             </span>
@@ -92,7 +92,7 @@ export default function LocalMoveQuote({ values }) {
             </span>
           </dd>
         </div>
-        <p className="text-gray-500 py-2 sm:py-5">
+        <p className="text-slate-500 py-2 sm:py-5">
           *Please note, this quote is just an estimate and provided for your
           convenience only. Your final cost is based on hourly rate and actual
           time your move will take.

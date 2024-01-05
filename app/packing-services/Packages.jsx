@@ -119,22 +119,19 @@ const data = [
 
 const Card = ({ houseSize }) => {
   return (
-    <li
-      className="shadow-lg shadow-gray-900/5 sm:shadow-none overflow-hidden mx-4 sm:mx-0 rounded-2xl bg-white border border-gray-200 flex flex-col min-w-[240px] sm:col-span-1"
-      // className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-2xl bg-white text-center border border-gray-200"
-    >
-      <table className="divide-y divide-gray-300">
+    <li className="shadow-lg shadow-slate-900/5 sm:shadow-none overflow-hidden mx-4 sm:mx-0 rounded-2xl bg-white border border-slate-200 flex flex-col min-w-[240px] sm:col-span-1">
+      <table className="divide-y divide-slate-300">
         <thead>
-          <tr className="bg-gray-100">
+          <tr className="bg-slate-100">
             <th
               scope="col"
-              className="pl-4 py-4 text-left text-sm font-bold text-gray-900"
+              className="pl-4 py-2 text-left text-sm font-bold text-slate-900"
             >
               {houseSize.apt}
             </th>
             <th
               scope="col"
-              className="pr-4 py-4 text-right text-xs font-semibold text-gray-900"
+              className="pr-4 py-2 text-right text-xs font-semibold text-slate-900"
             >
               Qty
             </th>
@@ -146,12 +143,12 @@ const Card = ({ houseSize }) => {
             return (
               <tr
                 key={`${material[0]}-${i}`}
-                className="border-b border-gray-200"
+                className="border-b border-slate-200"
               >
-                <td className="text-xs text-left pl-4 py-2 font-medium text-gray-900">
+                <td className="text-xs text-left pl-4 py-2 font-medium text-slate-900">
                   {material[0]}
                 </td>
-                <td className="text-right text-gray-500 pr-4 py-2">
+                <td className="text-right text-slate-500 pr-4 py-2">
                   {material[1]}
                 </td>
               </tr>
@@ -162,11 +159,11 @@ const Card = ({ houseSize }) => {
           <tr>
             <th
               scope="row"
-              className="pl-4 py-4 text-left sm:text-right text-sm font-normal text-gray-500 table-cell md:pl-0"
+              className="pl-4 py-4 text-left sm:text-right text-sm font-normal text-slate-500 table-cell md:pl-0"
             >
               Total price
             </th>
-            <td className="pr-4 py-4 text-right text-sm text-gray-500">
+            <td className="pr-4 py-4 text-right text-sm text-slate-500">
               {/* ${houseSize.total}.00 */}$
               {getTotal(houseSize.items).toFixed(2)}
             </td>

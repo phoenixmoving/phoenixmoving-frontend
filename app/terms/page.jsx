@@ -1,12 +1,11 @@
 import Hero from '@/ui/Hero';
 import Info from './Info';
+import bgImage from '@/images/prices.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/terms`;
 const title = 'Terms and Conditions - Phoenix Moving Boston (Free Estimate)';
 const description = 'Terms and Conditions for Phoenix Moving & Storage';
-
-const bgImage = '/prices.jpg';
 
 export const metadata = {
   title,
@@ -21,7 +20,7 @@ export const metadata = {
     siteName: 'Phoenix Moving Boston',
     images: [
       {
-        url: BASE_URL + bgImage,
+        url: bgImage.src,
       },
     ],
     locale: 'en-US',
