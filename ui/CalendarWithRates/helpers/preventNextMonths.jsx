@@ -1,15 +1,9 @@
-export function preventNextMonths(month) {
-  const now = new Date();
-  var newDate = new Date(now.setMonth(now.getMonth() + 6));
-  const sixMoAhead = new Date(
-    newDate.getFullYear(),
-    newDate.getMonth(),
-    newDate.getDate(),
-    0,
-    0,
-    0
-  );
+export const preventNextMonths = (date) => {
+  const currentDate = new Date();
+  const selectedDate = new Date(date);
 
-  const isValid = sixMoAhead.getTime() <= month.getTime();
-  return isValid;
-}
+  const sixMonthsAhead = new Date();
+  sixMonthsAhead.setMonth(currentDate.getMonth() + 5);
+
+  return selectedDate > sixMonthsAhead;
+};

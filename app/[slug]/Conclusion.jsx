@@ -6,7 +6,7 @@ export default function Conclusion({ city }) {
   return (
     <Section>
       <SectionHeader start title="Get the help you need." />
-      <p className="prose prose-blue text-gray-900 max-w-none">
+      <p className="prose prose-blue text-slate-900 max-w-none">
         Moving can be a challenging and stressful experience, but if you hire
         the right movers near {city.name}, it doesn&apos;t have to be. We
         provide top-quality moving services to ensure a smooth and stress-free

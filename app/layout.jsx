@@ -1,8 +1,10 @@
-import './global.css';
-import Footer from './Footer';
+import '../styles/global.css';
 import { Maven_Pro } from 'next/font/google';
 import Navbar from '@/ui/Navbar';
 import Script from 'next/script';
+import Footer from '@/components/Footer';
+import Contact from '@/components/Contact';
+import CTA from '@/components/CTA';
 
 // If loading a variable font, you don't need to specify the font weight
 const maven = Maven_Pro({
@@ -58,6 +60,8 @@ export default function RootLayout({ children }) {
             />
           </svg>
         </a>
+        <CTA />
+        <Contact />
         <Footer />
       </body>
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}

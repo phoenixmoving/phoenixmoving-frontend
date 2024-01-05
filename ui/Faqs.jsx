@@ -76,12 +76,12 @@ export default function Faqs() {
             <ul className="space-y-10">
               {column.map((faq, faqIndex) => (
                 <li key={faqIndex}>
-                  <p className="text-lg font-semibold leading-6 text-gray-900">
+                  <p className="text-lg font-semibold leading-6 text-slate-900">
                     {faq.question}
                   </p>
                   <p
                     dangerouslySetInnerHTML={{ __html: faq.answer }}
-                    className="mt-4 text-sm prose prose-blue text-gray-900"
+                    className="mt-4 text-sm prose prose-blue text-slate-900"
                   />
                 </li>
               ))}

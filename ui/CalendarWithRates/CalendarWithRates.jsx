@@ -53,10 +53,10 @@ export default function CalendarWithRates(props) {
         handlePrevMonth={handlePrevMonth}
         handleNextMonth={handleNextMonth}
       />
-      <div className="border-t border-gray-900/5 grid grid-cols-7 gap-2 pt-4 capitalize text-center">
+      <div className="border-t border-slate-900/5 grid grid-cols-7 gap-2 pt-4 capitalize text-center">
         {WEEK_DAYS.map((weekDay) => {
           return (
-            <span key={weekDay} className="text-xs text-gray-400">
+            <span key={weekDay} className="text-xs text-slate-400">
               {weekDay}
             </span>
           );

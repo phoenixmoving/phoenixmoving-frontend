@@ -1,6 +1,7 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import Image from 'next/image';
+import img from '@/images/two-movers-packing-kitchen.jpeg';
 
 const p1 =
   'Our packing service is an ideal solution for those looking to make their move as stress-free as possible. Our team of experienced professionals will come to your home and carefully pack all of your belongings into sturdy boxes and containers that are designed to protect your items during the move. We will label each box with its contents, so that you can easily find your belongings after the move. Additionally, our packing service allows you to focus on other aspects of your move, such as finding a new home or making travel arrangements. With our packing service, you can rest assured that your items will be securely and safely transported to your new home.';
@@ -11,7 +12,7 @@ export default function Info() {
       <div className="mx-auto max-w-7xl space-y-8 px-4 sm:px-6 lg:px-8">
         <SectionHeader title="Packing and unpacking services." start />
         <div className="relative z-10 mx-auto max-w-prose lg:mx-0 lg:max-w-5xl lg:pr-72 prose prose-blue">
-          <p className="text-gray-700">
+          <p className="text-slate-700">
             {p1}
             <a href="/pricing" className="ml-1">
               View pricing page
@@ -21,7 +22,7 @@ export default function Info() {
         </div>
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
           <div className="relative z-10">
-            <div className="prose prose-blue mx-auto text-gray-900 lg:max-w-none">
+            <div className="prose prose-blue mx-auto text-slate-900 lg:max-w-none">
               <h3>Full Packing Service.</h3>
               <p>
                 Our full packing and moving service is a comprehensive service
@@ -59,7 +60,9 @@ export default function Info() {
           </div>
           <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-full lg:w-[80%] h-[25rem] lg:h-[70%]">
             <Image
-              src="/two-movers-packing-kitchen.jpeg"
+              src={img}
+              placeholder="blur"
+              blurDataURL={img.blurDataURL}
               alt="Two movers packing dishes"
               className="rounded-2xl bg-white shadow-lg rotate-2 object-cover"
               title="Full Packing Services"

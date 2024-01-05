@@ -19,10 +19,10 @@ export default function Services({ city }) {
             Everything you need
           </p>
           <div className="mx-auto max-w-3xl mb-16">
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
               Moving services.
             </h2>
-            <p className="mt-2 text-sm prose text-gray-900">
+            <p className="mt-2 text-sm prose text-slate-900">
               Among all of {city?.name}
               {city.state && `, ${city?.state}`} moving companies there is good
               reputable movers and shall we say. Phoenix Moving is fully
@@ -41,7 +41,7 @@ export default function Services({ city }) {
                   className="absolute h-6 w-6 text-green-500"
                   aria-hidden="true"
                 />
-                <p className="ml-9  font-semibold leading-6 text-gray-900">
+                <p className="ml-9  font-semibold leading-6 text-slate-900">
                   {feature}
                 </p>
               </div>

@@ -2,9 +2,9 @@ import Hero from '@/ui/Hero';
 import Info from './Info';
 import Included from './Included';
 import CallToAction from '@/ui/CallToAction';
-import CTA from '@/ui/CTA';
 import CitiesSection from '@/ui/CitiesSection';
 import Photos from '@/ui/Photos';
+import bgImage from '@/images/two-movers-and-dolly.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${BASE_URL}/local-moving`;
@@ -12,12 +12,7 @@ const title = 'Local Moving Services - Phoenix Moving Boston (Free Estimate)';
 const description =
   'We are your local moving experts! Our experienced movers can help you pack, load, and relocate your belongings quickly and safely. Call us today to get started!';
 
-const bgImage = '/two-movers-and-dolly.jpg';
-
-const VERCEL_URL = BASE_URL + bgImage;
-
 export const metadata = {
-  metadataBase: VERCEL_URL,
   title,
   description,
   alternates: {
@@ -30,7 +25,7 @@ export const metadata = {
     siteName: 'Phoenix Moving Boston',
     images: [
       {
-        url: BASE_URL + bgImage,
+        url: bgImage.src,
       },
     ],
     locale: 'en-US',
@@ -52,10 +47,9 @@ export default function LocalMoving() {
       <Hero image={bgImage} title="Local Moving Services" />
       <Included />
       <Info />
-      <CTA />
-      <CitiesSection />
       <Photos />
       <CallToAction />
+      <CitiesSection />
     </>
   );
 }

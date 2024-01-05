@@ -12,7 +12,7 @@ export default async function CitiesSection() {
           <a
             href="/natick-movers"
             title="Natick Movers"
-            className="hover:underline text-xs font-light sm:text-sm text-gray-900 col-span-1 text-start w-fit"
+            className="hover:underline text-xs font-light sm:text-sm text-slate-900 col-span-1 text-start w-fit"
           >
             Natick Movers
           </a>
@@ -32,7 +32,7 @@ export default async function CitiesSection() {
                   key={i}
                   href={`/${city.slug}`}
                   title={city.fullName}
-                  className="hover:underline text-xs font-light sm:text-sm text-gray-900 col-span-1 text-start w-fit"
+                  className="hover:underline text-xs font-light sm:text-sm text-slate-900 col-span-1 text-start w-fit"
                 >
                   {city.name} Movers
                 </a>

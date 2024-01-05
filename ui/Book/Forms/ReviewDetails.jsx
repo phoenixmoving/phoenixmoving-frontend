@@ -70,7 +70,7 @@ export default function ReviewDetails(props) {
         <dt className="font-semibold">Origin</dt>
         <dd className="text-end flex-1">
           {oCity}
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-slate-500">
             {`${values.originFloor}  #${values.originApt}`}
           </p>
         </dd>
@@ -80,7 +80,7 @@ export default function ReviewDetails(props) {
           <dt className="font-semibold">Storage</dt>
           <dd className="text-end flex-1">
             Phoenix Moving Storage
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-slate-500">
               {`*${
                 getDaysDiff(values.movingDate, values.deliveryDate).days
               } days`}
@@ -93,7 +93,7 @@ export default function ReviewDetails(props) {
           <dt className="font-semibold">Destination</dt>
           <dd className="text-end flex-1">
             {dCity}{' '}
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-slate-500">
               {`${values.destinationFloor}  #${values.destinationApt}`}
             </p>
           </dd>
@@ -175,14 +175,14 @@ export default function ReviewDetails(props) {
       </div>
       <div className="py-2 sm:py-5 ">
         {!isFlatRate && (
-          <p className="mt-1 text-xs text-gray-500 sm:mt-0">
+          <p className="mt-1 text-xs text-slate-500 sm:mt-0">
             *Please note, this quote is just an estimate and provided for your
             convenience only. Your final cost is based on hourly rate and actual
             time your move will take.
           </p>
         )}
         {isFlatRate && (
-          <p className="mt-1 text-xs text-gray-500 sm:mt-0">
+          <p className="mt-1 text-xs text-slate-500 sm:mt-0">
             *Please note, the above information provides an estimated quote only
             and is subject to change in case of undisclosed or unpredicetd
             circumstances.

@@ -217,11 +217,11 @@ export default function Book({ rates, prices }) {
                             </Button>
                           </div>
                           {activeStep === 0 ? (
-                            <p className="text-gray-500 font-semmibold text-xs text-center mt-2">
+                            <p className="text-slate-500 font-semmibold text-xs text-center mt-2">
                               Free instant quote at step 3
                             </p>
                           ) : (
-                            <p className="text-gray-500 font-semmibold text-xs text-center mt-2">
+                            <p className="text-slate-500 font-semmibold text-xs text-center mt-2">
                               step {activeStep + 1}/{steps.length}
                             </p>
                           )}

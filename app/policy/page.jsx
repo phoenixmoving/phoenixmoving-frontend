@@ -1,13 +1,12 @@
 import Hero from '@/ui/Hero';
 import Info from './Info';
+import bgImage from '@/images/prices.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/policy`;
 const title = 'Company Policy - Phoenix Moving Boston (Free Estimate)';
 const description =
   'Our moving company policy page outlines all the services we provide. Read our policies to learn more about how we work and what to expect when you hire us.';
-
-const bgImage = '/prices.jpg';
 
 export const metadata = {
   title,
@@ -22,7 +21,7 @@ export const metadata = {
     siteName: 'Phoenix Moving Boston',
     images: [
       {
-        url: BASE_URL + bgImage,
+        url: bgImage.src,
       },
     ],
     locale: 'en-US',

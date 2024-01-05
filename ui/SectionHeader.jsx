@@ -11,7 +11,7 @@ const SectionHeader = ({
     <div className={start ? 'mb-8' : 'mx-auto max-w-3xl text-center mb-[50px]'}>
       <h2
         className={clsx(
-          'text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900',
+          'text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900',
           titleClassName,
         )}
       >
@@ -20,7 +20,7 @@ const SectionHeader = ({
       {subtitle && (
         <p
           className={clsx(
-            'mt-2  sm:text-lg -tracking-[0.003em] text-gray-900',
+            'mt-2  sm:text-lg -tracking-[0.003em] text-slate-900',
             subtitleClassName,
           )}
         >

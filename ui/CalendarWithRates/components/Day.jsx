@@ -43,11 +43,11 @@ const Day = ({
       className={clsx(
         'text-xs font-medium rounded-lg w-full h-full py-1.5 px-1 transition-all',
         {
-          'text-gray-400 cursor-not-allowed': !isValid || isDisabled,
+          'text-slate-400 cursor-not-allowed': !isValid || isDisabled,
           'text-blue-600': isTodayDay && !selected,
-          'bg-gray-500/20': isDisabled,
+          'bg-slate-500/20': isDisabled,
           'hover:scale-125': !isDisabled && isValid,
-          // 'hover:bg-gray-100': !selected,
+          // 'hover:bg-slate-100': !selected,
           'bg-palette-cyan/20 text-palette-cyan': isDiscount,
           'bg-palette-blue/20 text-palette-blue': isRegular,
           'bg-palette-pink/20 text-palette-pink': isPeak,

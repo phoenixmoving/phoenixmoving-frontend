@@ -2,18 +2,16 @@ import Hero from '@/ui/Hero';
 import Partners from '@/ui/Partners';
 import Info from './Info';
 import CallToAction from '@/ui/CallToAction';
-import CTA from '@/ui/CTA';
 import Faqs from '@/ui/Faqs';
 import Photos from '@/ui/Photos';
 import CitiesSection from '@/ui/CitiesSection';
+import bgImage from '@/images/storage-services-main.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/storage-solutions`;
 const title = 'Moving and Storage - Phoenix Moving Boston (Free Estimate)';
 const description =
   'Phoenix Moving offers reliable and secure storage services for your moving needs. We provide flexible storage solutions to accommodate your unique requirements.';
-
-const bgImage = '/storage-services-main.jpg';
 
 export const metadata = {
   title,
@@ -28,7 +26,7 @@ export const metadata = {
     siteName: 'Phoenix Moving Boston',
     images: [
       {
-        url: BASE_URL + bgImage,
+        url: bgImage.src,
       },
     ],
     locale: 'en-US',
@@ -50,11 +48,10 @@ export default function StorageSolutions() {
       <Hero image={bgImage} title="Moving and Storage" />
       <Partners />
       <Info />
-      <CTA />
-      <Faqs />
-      <CitiesSection />
       <Photos />
       <CallToAction />
+      <Faqs />
+      <CitiesSection />
     </>
   );
 }

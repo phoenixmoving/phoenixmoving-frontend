@@ -33,7 +33,7 @@ export default function Partners() {
                 alt="Google logo"
                 title="Google"
               />
-              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-gray-700" />
+              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-slate-700" />
             </a>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -53,7 +53,7 @@ export default function Partners() {
                 alt="Yelp logo"
                 title="Better Business Bureau"
               />
-              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-gray-700" />
+              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-slate-700" />
             </a>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
@@ -73,7 +73,7 @@ export default function Partners() {
                 alt="Better Business Bureau"
                 title="Better Business Bureau"
               />
-              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-gray-700" />
+              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-slate-700" />
             </a>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
@@ -93,7 +93,7 @@ export default function Partners() {
                 alt="Thumbtack logo"
                 title="Thumbtack"
               />
-              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-gray-700" />
+              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-slate-700" />
             </a>
           </div>
           <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">

@@ -55,11 +55,11 @@ export default function WhyBookSection() {
               </div>
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-6 lg:mt-6 lg:ml-0">
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-slate-900">
                 {incentive.name}
               </h3>
               <p
-                className="mt-2 text-sm text-gray-900 prose prose-blue"
+                className="mt-2 text-sm text-slate-900 prose prose-blue"
                 dangerouslySetInnerHTML={{
                   __html: incentive.description,
                 }}

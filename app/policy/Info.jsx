@@ -8,15 +8,15 @@ export default function Info() {
           <p className="italic">Sec 1.</p>
           <p className="font-bold">Guidance, walk-trough and payment.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           At the time of the move, the customer or a representative must be
           present during the move at all times, as movers will need guidance. It
           is customer&apos;s responsibility to do a final “walk-through” at the
           pickup location to ensure the movers have taken everything that needs
           to be moved. Having the form of payment, you choose to use at the end
-          of the job ready will save you time and money. Please note: we do not
-          accept checks of any kind, only credit cards or cash. We have no
-          processing fee for the credit card transactions.
+          of the job ready will save you time and money. Please note: Any
+          payments with a personal check have to be granted by your moving
+          coordinator.
         </p>
       </div>
 
@@ -25,7 +25,7 @@ export default function Info() {
           <p className="italic">Sec 2.</p>
           <p className="font-bold">Moving cost.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           The final cost of your move will be determined by multiplying the
           actual number of hours our moving crew had worked by the hourly rate
           indicated on your estimate, travel time, the amount of packing
@@ -41,7 +41,7 @@ export default function Info() {
           <p className="italic">Sec 3.</p>
           <p className="font-bold">Labor time.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           Labor time starts upon the arrival of our crew at your location and
           ends upon the departure from your final destination. Labor time is
           calculated based on 15-minute increments at the rate indicated on the
@@ -55,14 +55,14 @@ export default function Info() {
           <p className="italic">Sec 4.</p>
           <p className="font-bold">Travel time.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           Please keep in mind that you will be billed for the travel time from
-          our office (18 Lakeview Gardens, Natick, MA 01760) to your origin, and
-          for the travel time from your final destination back to our office.
-          Those charges are prorated based on 15-minute increments and are
-          calculated by the reading of the GPS or Google Maps. In case if our
-          truck is being delayed by traffic, the additional time incurred will
-          not be added to the bill.
+          our parking office to your origin, and for the travel time from your
+          final destination back to our parking office. Those charges are
+          prorated based on 15-minute increments and are calculated by the
+          reading of the GPS or Google Maps. In case if our truck is being
+          delayed by traffic, the additional time incurred will not be added to
+          the bill.
         </p>
       </div>
 
@@ -71,7 +71,7 @@ export default function Info() {
           <p className="italic">Sec 5.</p>
           <p className="font-bold">Packing materials.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           Our trucks carry a standard set of boxes: 5 small, 5 medium, 5 large,
           5 picture boxes, 5 wardrobe and 1 bundle of white packing paper. If
           you feel like there will be some packing for us to be done, please
@@ -86,7 +86,7 @@ export default function Info() {
           <p className="italic">Sec 6.</p>
           <p className="font-bold">Arrival time frame.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           Please keep in mind that we do not provide a specific time of arrival.
           We offer 2-hour arrival time frames for all jobs scheduled in the
           morning and 3-hour arrival time frames for all the jobs scheduled in
@@ -99,7 +99,7 @@ export default function Info() {
           <p className="italic">Sec 7.</p>
           <p className="font-bold">Waiting time.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           If our crew arrives at your location as agreed, but you&apos;re not
           ready for us to start the job, you&apos;ll be billed for our waiting
           time. Please understand that you&apos;re holding up our team by not
@@ -112,7 +112,7 @@ export default function Info() {
           <p className="italic">Sec 8.</p>
           <p className="font-bold">Parking.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           Two parking spaces (to accommodate a 34-foot-long moving truck) should
           be provided/secured by the customer. Parking spot must be located
           within 75 feet from the entrance. In case if a parking permit is
@@ -133,15 +133,18 @@ export default function Info() {
             Payment and payment forms (for local moves).
           </p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           For local moves, the payment is required at the end of the move/each
           moving day (for multiple days move), before the moving team leaves
           your location. The clock will continue running until the payment has
           been processed completely. We accept all types of credit cards (Visa,
-          Mastercard, Discover, AMEX) and 3% processing fee will be applied for
+          Mastercard, Discover, AMEX) and 4% processing fee will be applied for
           all credit card payments.
         </p>
-        <p className="font-bold">We do not accept checks of any kind.</p>
+        <p className="font-bold">
+          Any payments with a personal check have to be granted by your moving
+          coordinator.
+        </p>
       </div>
 
       <div className="mb-8">
@@ -151,7 +154,7 @@ export default function Info() {
             Payment and payment forms (for long distance/interstate moves).
           </p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           We require cash, credit card, money order/cashier&apos;s check (no
           personal checks) at the time of delivery for any balance due on
           long-distance moves. 3% processing fee will be applied for credit card
@@ -166,12 +169,12 @@ export default function Info() {
           <p className="italic">Sec 11.</p>
           <p className="font-bold">Additional services.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           In the event additional services are required to perform your move,
           these costs will be in addition to the amount stated in your moving
           estimate:
         </p>
-        <ul className="text-base font-light list-disc ml-4">
+        <ul className="text-sm font-light list-disc ml-4">
           <li>
             All hoisting services will be subject to a fee of $40 (per item per
             flight).
@@ -196,7 +199,7 @@ export default function Info() {
           <p className="italic">Sec 12.</p>
           <p className="font-bold">Piano move.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           We do not move large upright pianos up or down flights of stairs
           inside the house. We only move pianos from ground to ground floor.
           Exterior stairs are fine, but we encourage sending us pictures of
@@ -216,7 +219,7 @@ export default function Info() {
           <p className="italic">Sec 13.</p>
           <p className="font-bold">Heavy/Oversized items move.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           Under safe conditions, we move upright or baby grand pianos,
           appliances, safe and items over 300 lbs. Unfortunately, sometimes, due
           to the weight of these items, damage may result to floor surfaces or
@@ -230,7 +233,7 @@ export default function Info() {
           <p className="italic">Sec 14.</p>
           <p className="font-bold">Moving Crew size.</p>
         </div>
-        <p className="text-base font-light">
+        <p className="text-sm font-light">
           The size of the moving crew is determined by the number of items that
           will have to be packed and/or moved as well as factors like access on
           each moving location, walking distance, stairs, etc. We recommend a
@@ -246,10 +249,8 @@ export default function Info() {
       </div>
 
       <div className="mb-8">
-        <div className="flex items-center gap-2 mb-2">
-          <p className="font-bold">Changes to Our Policy.</p>
-        </div>
-        <p className="text-base font-light">
+        <p className="font-bold">Changes to Our Policy.</p>
+        <p className="text-sm font-light">
           We may change our Privacy and Website Use Policy from time to time.
           The most current version of the Policy will govern our collection, use
           and disclosure of information about you and will be detailed here. If
@@ -259,9 +260,10 @@ export default function Info() {
           effective, you agree to the revised Privacy and Website Use Policy.
         </p>
       </div>
-      <div className="mb-8">
-        <p className="italic">This Policy was last modified on June 1, 2023.</p>
-      </div>
+
+      <p className="italic text-xs">
+        This Policy was last modified on January 5, 2024.
+      </p>
     </Section>
   );
 }

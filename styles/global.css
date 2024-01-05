@@ -7,8 +7,8 @@
     display: none;
   }
 }
-  
+
 body {
-  letter-spacing: 0.5px;
+  /* letter-spacing: 0.5px; */
   height: 100%;
 }

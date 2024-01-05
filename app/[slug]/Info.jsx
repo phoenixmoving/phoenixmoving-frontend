@@ -12,8 +12,8 @@ export default function Info({ city }) {
         />
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
           <div className="relative z-10">
-            <div className="prose prose-blue mx-auto text-gray-900 lg:max-w-none">
-              <p className="text-gray-900">
+            <div className="prose prose-blue mx-auto text-slate-900 lg:max-w-none">
+              <p className="text-slate-900">
                 Phoenix Moving is a premier moving company that provides
                 high-quality moving services to customers in{' '}
                 <strong>{`${city?.name}, ${city?.state}`}</strong> and entire

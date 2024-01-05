@@ -69,19 +69,19 @@ export default async function Pricing() {
         {tiers.map((tier) => (
           <div
             key={tier.name}
-            className="divide-y divide-gray-200 rounded-2xl bg-white shadow-lg shadow-gray-900/5"
+            className="divide-y divide-slate-200 rounded-3xl bg-white shadow-lg shadow-slate-900/5"
           >
             <div className="p-6">
-              <p className="text-lg font-semibold leading-6 text-gray-900">
+              <p className="text-lg font-semibold leading-6 text-slate-900">
                 {tier.name}
               </p>
-              <p className="mt-4 text-sm text-gray-500">{tier.description}</p>
-              <p className="text-2xl font-semibold tracking-tight text-gray-500">
+              <p className="mt-4 text-sm text-slate-500">{tier.description}</p>
+              <p className="text-2xl font-semibold tracking-tight text-slate-500">
                 <s>${tier.oldPrice}</s>
               </p>
-              <p className="text-4xl font-semibold tracking-tight text-gray-900">
+              <p className="text-4xl font-semibold tracking-tight text-slate-900">
                 ${tier.priceMonthly}
-                <span className="text-sm text-gray-500 ml-1 font-normal tracking-normal">
+                <span className="text-sm text-slate-500 ml-1 font-normal tracking-normal">
                   per hour
                 </span>
               </p>
@@ -96,7 +96,7 @@ export default async function Pricing() {
               </Button>
             </div>
             <div className="px-6 pt-6 pb-8">
-              <p className="text-sm font-semibold text-gray-900">
+              <p className="text-sm font-semibold text-slate-900">
                 What&apos;s included
               </p>
               <ul className="mt-6 space-y-4">
@@ -106,7 +106,7 @@ export default async function Pricing() {
                       className="h-5 w-5 flex-shrink-0 text-green-500"
                       aria-hidden="true"
                     />
-                    <span className="text-sm font-light text-gray-900">
+                    <span className="text-sm font-light text-slate-900">
                       {feature}
                     </span>
                   </li>
@@ -116,16 +116,16 @@ export default async function Pricing() {
           </div>
         ))}
         <div className="flex flex-col gap-4 sm:gap-6 justify-between">
-          <div className="divide-y h-full divide-gray-200 rounded-2xl bg-white shadow-lg shadow-gray-900/5">
+          <div className="divide-y h-full divide-slate-200 rounded-3xl bg-white shadow-lg shadow-slate-900/5">
             <div className="p-6">
-              <p className="text-lg font-semibold leading-6 text-gray-900">
+              <p className="text-lg font-semibold leading-6 text-slate-900">
                 Additional mover
               </p>
               <p className="mt-4">
-                <span className="text-4xl font-semibold tracking-tight text-gray-900">
+                <span className="text-4xl font-semibold tracking-tight text-slate-900">
                   ${prices[0].add_men[0]}
                 </span>{' '}
-                <span className="text-sm text-gray-500">per hour</span>
+                <span className="text-sm text-slate-500">per hour</span>
               </p>
             </div>
             <div className="px-6 pt-6 pb-8">
@@ -134,23 +134,23 @@ export default async function Pricing() {
                   className="h-5 w-5 flex-shrink-0 text-green-500"
                   aria-hidden="true"
                 />
-                <span className="text-sm font-light text-gray9500">
+                <span className="text-sm font-light text-slate9500">
                   Rate per hour per moving added to your quoted houry rate if
                   you request it.
                 </span>
               </p>
             </div>
           </div>
-          <div className="divide-y h-full divide-gray-200 rounded-2xl bg-white shadow-lg shadow-gray-900/5">
+          <div className="divide-y h-full divide-slate-200 rounded-3xl bg-white shadow-lg shadow-slate-900/5">
             <div className="p-6">
-              <p className="text-lg font-semibold leading-6 text-gray-900">
+              <p className="text-lg font-semibold leading-6 text-slate-900">
                 Additional truck
               </p>
               <p className="mt-4">
-                <span className="text-4xl font-semibold tracking-tight text-gray-900">
+                <span className="text-4xl font-semibold tracking-tight text-slate-900">
                   ${prices[0].add_truck[0]}
                 </span>{' '}
-                <span className="text-sm text-gray-500">per hour</span>
+                <span className="text-sm text-slate-500">per hour</span>
               </p>
             </div>
             <div className="px-6 pt-6 pb-8">
@@ -159,7 +159,7 @@ export default async function Pricing() {
                   className="h-5 w-5 flex-shrink-0 text-green-500"
                   aria-hidden="true"
                 />
-                <span className="text-sm font-light text-gray-900">
+                <span className="text-sm font-light text-slate-900">
                   Rate per hour per truck added to your quoted houry rate if you
                   requested.
                 </span>

@@ -44,7 +44,7 @@ export default function MovingServices() {
       <div className="grid max-w-xl grid-cols-1 gap-y-10 gap-x-8 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
         {services.map((service) => (
           <div key={service.name} className="relative pl-16">
-            <p className="text-base font-semibold leading-7 text-gray-900">
+            <p className="text-base font-semibold leading-7 text-slate-900">
               <span className="absolute top-0 left-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                 <service.icon
                   className="h-6 w-6 text-white"
@@ -53,7 +53,7 @@ export default function MovingServices() {
               </span>
               {service.name}
             </p>
-            <p className="mt-2 text-base leading-7 text-gray-600">
+            <p className="mt-2 text-base leading-7 text-slate-600">
               {service.description}
             </p>
           </div>

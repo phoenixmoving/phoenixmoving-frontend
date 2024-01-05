@@ -9,14 +9,14 @@ export default function Info() {
         <SectionHeader title="What makes us different." start />
       </div>
       <div className="relative z-10 mx-auto max-w-prose mb-8 lg:mx-0 lg:max-w-5xl lg:pr-72">
-        <p className="text-gray-900">
+        <p className="text-slate-900">
           We are professional moving and storage company based in Boston, MA. We
           are dedicated to providing you with the highest quality service and
           value for your relocation needs.
         </p>
       </div>
       <div className="relative z-10">
-        <div className="prose prose-blue mx-auto text-gray-900 lg:max-w-none">
+        <div className="prose prose-blue mx-auto text-slate-900 lg:max-w-none">
           <p>
             Our experienced team of movers offer local and long distance, as
             well as packing and unpacking services, loading and unloading,

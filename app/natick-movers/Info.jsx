@@ -11,8 +11,8 @@ export default function Info() {
         <SectionHeader title="Reliable and affordable Natick movers." />
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
           <div className="relative z-10">
-            <div className="prose prose-blue mx-auto text-gray-900 lg:max-w-none col-span-2">
-              <p className="text-gray-900">
+            <div className="prose prose-blue mx-auto text-slate-900 lg:max-w-none col-span-2">
+              <p className="text-slate-900">
                 Moving to a new apartment, home or office is an exciting
                 adventure, but it can also be a daunting and stressful task.
                 From packing up your belongings to arranging transportation and

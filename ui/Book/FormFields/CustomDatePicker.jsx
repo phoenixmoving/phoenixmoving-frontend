@@ -57,9 +57,9 @@ export default function CustomDatePicker(props) {
           <CalendarDaysIcon
             // className="h-4 w-4"
             className={clsx('h-5 w-5', {
-              'text-gray-400': field.value === '',
-              'text-gray-900': isError,
-              'text-gray-900': isSuccess,
+              'text-slate-400': field.value === '',
+              'text-slate-900': isError,
+              'text-slate-900': isSuccess,
             })}
             aria-hidden="true"
           />
@@ -72,11 +72,11 @@ export default function CustomDatePicker(props) {
           placeholder={placeholder}
           type="text"
           className={clsx(
-            'relative mt-1 lock w-full rounded-md border-0 bg-gray-100 font-normal placeholder:text-gray-400 py-2 pl-10 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
+            'relative mt-1 lock w-full rounded-md border-0 bg-slate-100 font-normal placeholder:text-slate-400 py-2 pl-10 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
             {
-              'text-gray-400': field.value === '',
-              'shadow-inner bg-red-50': isError,
-              'shadow-inner bg-green-50': isSuccess,
+              'text-slate-400': field.value === '',
+              'shadow-inner !bg-red-50': isError,
+              'shadow-inner !bg-green-50': isSuccess,
             },
           )}
           onClick={handleOpen}
@@ -91,9 +91,9 @@ export default function CustomDatePicker(props) {
         placeholder={placeholder}
         type="text"
         className={clsx(
-          'relative mt-1 block w-full rounded-md border-0 bg-gray-100 font-normal placeholder:text-gray-400 py-2 pl-3 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
+          'relative mt-1 block w-full rounded-md border-0 bg-slate-100 font-normal placeholder:text-slate-400 py-2 pl-3 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
           {
-            'text-gray-400': field.value === '',
+            'text-slate-400': field.value === '',
             'shadow-inner bg-red-100': isError,
             'shadow-inner bg-green-100': isSuccess,
           },

@@ -7,14 +7,14 @@ const DynamicBook = dynamic(() => import('@/ui/Book'), {
 
 export async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/rates`, {
-    next: { revalidate: 180 },
+    next: { revalidate: 5 },
   });
   return res.json();
 }
 
 export async function getPrices() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/prices`, {
-    next: { revalidate: 180 },
+    next: { revalidate: 5 },
   });
   return res.json();
 }

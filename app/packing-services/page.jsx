@@ -1,5 +1,4 @@
 import CallToAction from '@/ui/CallToAction';
-import CTA from '@/ui/CTA';
 import Faqs from '@/ui/Faqs';
 import Hero from '@/ui/Hero';
 import Photos from '@/ui/Photos';
@@ -7,14 +6,13 @@ import PackingItems from '@/ui/PackingItems';
 import Info from './Info';
 import Packages from './Packages';
 import Partners from '@/ui/Partners';
+import bgImage from '@/images/services.jpeg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/packing-services`;
 const title = 'Packing Services - Phoenix Moving Boston (Free Estimate)';
 const description =
   'A professional packing and moving services company. Our experienced team is dedicated to providing the best quality service and customer satisfaction.';
-
-const bgImage = '/services.jpeg';
 
 export const metadata = {
   title,
@@ -29,7 +27,7 @@ export const metadata = {
     siteName: 'Phoenix Moving Boston',
     images: [
       {
-        url: BASE_URL + bgImage,
+        url: bgImage.src,
       },
     ],
     locale: 'en-US',
@@ -53,10 +51,9 @@ export default function PackingServices() {
       <Info />
       <PackingItems />
       <Packages />
-      <CTA />
-      <Faqs />
       <Photos />
       <CallToAction />
+      <Faqs />
     </>
   );
 }

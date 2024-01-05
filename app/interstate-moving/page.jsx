@@ -6,6 +6,7 @@ import CallToAction from '@/ui/CallToAction';
 import Photos from '@/ui/Photos';
 import Partners from '@/ui/Partners';
 import InterstatePrices from '../pricing/InterstatePrices';
+import bgImage from '@/images/interstate.jpeg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/interstate-moving`;
@@ -13,7 +14,6 @@ const title =
   'Long Distance Moving Services - Phoenix Moving Boston (Free Estimate)';
 const description =
   'We offer reliable and affordable interstate moving services. Our experienced team will make sure your belongings are safely and securely transported to your destination.';
-const bgImage = '/interstate.jpeg';
 
 export const metadata = {
   title,
@@ -28,7 +28,7 @@ export const metadata = {
     siteName: 'Phoenix Moving Boston',
     images: [
       {
-        url: BASE_URL + bgImage,
+        url: bgImage.src,
       },
     ],
     locale: 'en-US',
@@ -52,12 +52,10 @@ export default function InterstateMoving() {
       <Info />
       {/* <Divider /> */}
       <Photos />
+      <CallToAction />
       <Locations />
       <Divider />
       <InterstatePrices />
-      <CallToAction />
     </>
   );
 }
-
-// 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

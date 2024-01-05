@@ -5,15 +5,13 @@ import Photos from '@/ui/Photos';
 import WhyBookSection from '@/ui/WhyBookSection';
 import CitiesSection from '@/ui/CitiesSection';
 import Faqs from '@/ui/Faqs';
-import CTA from '@/ui/CTA';
+import bgImage from '@/images/piano-movers.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/piano-movers`;
 const title = 'Piano Movers - Phoenix Moving Boston (Free Estimate)';
 const description =
   'We provide experienced and reliable piano moving services, ensuring your piano is safe and secure during transport. Contact us today for a free quote!';
-
-const bgImage = '/piano-movers.jpg';
 
 export const metadata = {
   title,
@@ -28,7 +26,7 @@ export const metadata = {
     siteName: 'Phoenix Moving Boston',
     images: [
       {
-        url: BASE_URL + bgImage,
+        url: bgImage.src,
       },
     ],
     locale: 'en-US',
@@ -50,11 +48,10 @@ export default function page() {
       <Hero image={bgImage} title="Piano Movers" />
       <Info />
       <WhyBookSection />
-      <CTA />
-      <Faqs />
-      <CitiesSection />
       <Photos />
       <CallToAction />
+      <Faqs />
+      <CitiesSection />
     </>
   );
 }

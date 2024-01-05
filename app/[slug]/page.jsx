@@ -4,26 +4,19 @@ import { cities } from '@/lib/citiesData';
 import { states } from '@/lib/statesData';
 import Info from './Info';
 import InterstateInfo from './InterstateInfo';
-// import InterstateInfoTwo from './InterstateInfoTwo';
 import Faqs from '@/ui/Faqs';
 import Stats from './Stats';
 import Conclusion from './Conclusion';
 import Services from './Services';
 import WhyBook from './WhyBook';
-import CTA from '@/ui/CTA';
 import Advantages from './Advantages';
 import Partners from '@/ui/Partners';
 import Photos from '@/ui/Photos';
-import Contact from '@/ui/Contact';
 import Divider from '@/ui/Divider';
-// import MovingServices from './MovingServices';
 import CitiesSection from '@/ui/CitiesSection';
-import bgImage from '../../public/mover-pushing-dolly.jpg';
+import bgImage from '@/images/mover-pushing-dolly.jpg';
 
 export const dynamicParams = true;
-
-const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
-const bgImageString = '/mover-pushing-dolly.jpg';
 
 export async function generateStaticParams() {
   let localCities = cities.map((city) => ({
@@ -106,7 +99,7 @@ export async function generateMetadata({ params }) {
       siteName: 'Phoenix Moving Boston',
       images: [
         {
-          url: BASE_URL + bgImageString,
+          url: bgImage.src,
         },
       ],
       locale: 'en-US',
@@ -118,7 +111,7 @@ export async function generateMetadata({ params }) {
       domain: URL,
       title,
       description,
-      images: [BASE_URL + bgImageString],
+      images: [bgImage.src],
     },
   };
 }
@@ -237,14 +230,21 @@ export default async function CityPage({ params }) {
           __html: JSON.stringify(schema2, null, '\t'),
         }}
       />
-      <Hero image={bgImage} title={heroTitle} />
+      {city?.state ? (
+        <Hero
+          image={
+            require(`/images/cities/${city.name
+              .replace(/\s/g, '')
+              .toLocaleLowerCase()}-ma.jpeg`) ?? bgImage
+          }
+          title={heroTitle}
+        />
+      ) : (
+        <Hero image={bgImage} title={heroTitle} />
+      )}
       <Partners />
       {city?.state && <Info city={city} />}
       {city?.interstate && <InterstateInfo city={city} />}
-      {/* <Divider /> */}
-      {/* {city?.interstate && <InterstateInfoTwo city={city} />} */}
-      {/* {city?.state && <MovingServices city={city} />} */}
-      {/* <Divider /> */}
       {city?.state && <WhyBook city={city} />}
       <Stats />
       {city?.state && <Advantages city={city} />}
@@ -254,8 +254,6 @@ export default async function CityPage({ params }) {
       {city?.state && <Divider />}
       {city?.state && <Conclusion city={city} />}
       <CitiesSection />
-      <CTA />
-      <Contact />
     </>
   );
 }

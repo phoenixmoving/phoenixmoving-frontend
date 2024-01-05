@@ -8,7 +8,7 @@ export default function Advantages({ city }) {
         title={`Advantages of living in ${city?.name} ${city?.state}.`}
         start
       />
-      <p className="prose text-gray-900 max-w-none">{city?.description}</p>
+      <p className="prose text-slate-900 max-w-none">{city?.description}</p>
     </Section>
   );
 }

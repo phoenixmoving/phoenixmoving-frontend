@@ -16,7 +16,7 @@ export default function PopularCities() {
       <div
         onClick={() => handleOpen()}
         className={clsx('pt-6 w-full hover:cursor-pointer', {
-          'border-b border-gray-500': !open,
+          'border-b border-slate-500': !open,
         })}
       >
         <div className="w-full pb-4">
@@ -33,7 +33,7 @@ export default function PopularCities() {
       </div>
       <div
         className={clsx(
-          'pb-4 grid grid-cols-3 gap-1 md:grid-cols-6 border-b border-gray-500',
+          'pb-4 grid grid-cols-3 gap-1 md:grid-cols-6 border-b border-slate-500',
           {
             hidden: !open,
           },
@@ -45,7 +45,7 @@ export default function PopularCities() {
               key={city.fullName}
               href={`/${city.slug}`}
               title={`${city.fullName} near me`}
-              className="hover:underline text-xs text-gray-400 col-span-1 justify-start"
+              className="hover:underline text-xs text-slate-400 col-span-1 justify-start"
             >
               {`${city.fullName} near me`}
             </a>
