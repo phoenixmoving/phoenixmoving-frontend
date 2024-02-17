@@ -1,6 +1,6 @@
 import SectionHeader from '@/ui/SectionHeader';
 import img1 from '@/images/mover-and-truck.jpeg';
-import img2 from '@/images/wrapped-furniture.jpeg';
+import img2 from '@/images/2-movers-and-coffee-table.jpg';
 import img3 from '@/images/storage-services-main.jpg';
 import Image from 'next/image';
 
@@ -50,7 +50,7 @@ export default function Benefits() {
       <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
         <SectionHeader title="Benefits of hiring movers in Natick." />
 
-        <div className="mt-16 space-y-16">
+        <div className="mt-16 space-y-20">
           {features.map((feature, featureIdx) => (
             <div
               key={featureIdx}

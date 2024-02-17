@@ -94,6 +94,8 @@ export const estimateJobTime = (data) => {
     isFlatRate,
   } = data;
 
+  // console.log('data', data);
+
   if (travelTime.length == 0) return [];
 
   let travelTimeSum = travelTime.reduce((a, b) => a + b);
@@ -126,6 +128,8 @@ export const estimateJobTime = (data) => {
     travelTimeSum +
     timeBetween;
 
+  if (totalTimeInMinutes < 60) totalTimeInMinutes = 150;
+
   // console.log('avg labour', averageLabourTime);
   // console.log('avg floor pickup', averageFloorTime(movingSize)[fromHouseType]);
   // console.log('avg floor destination', averageFloorTimeDest);
@@ -151,7 +155,7 @@ export const estimateJobTime = (data) => {
   // console.log('total Time in hours --->', totalTimeInHours);
   // console.log('time + window --->', totalTimeInHours + timeWindow);
 
-  if (totalTimeInHours + timeWindow <= 2) estimateTimeArray = [2];
+  if (totalTimeInHours + timeWindow <= 2.5) estimateTimeArray = [2.5];
   return estimateTimeArray;
 };
 

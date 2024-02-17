@@ -117,7 +117,9 @@ export default function Book({ rates, prices }) {
       submitFormToDb(values, actions, activeStep, setActiveStep);
     } else if (activeStep === 0) {
       let originZip = `${values.originCity}, ${values.originState} ${values.originZip}, USA`;
-      let destinationZip = `${values.destinationCity}, ${values.destinationState} ${values.destinationZip}, USA`;
+      let destinationZip = values.destinationZip
+        ? `${values.destinationCity}, ${values.destinationState} ${values.destinationZip}, USA`
+        : '';
       let service = values.service;
       if (isLoaded) {
         findTravelTime(

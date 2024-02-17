@@ -25,12 +25,28 @@ const referralOptions = [
     label: 'Thumbtack',
   },
   {
+    value: 'bbb',
+    label: 'BBB',
+  },
+  {
     value: 'social media',
     label: 'Social media',
   },
   {
+    value: 'repeat customer',
+    label: 'Repeat customer',
+  },
+  {
+    value: 'saw our truck',
+    label: 'Saw our truck',
+  },
+  {
     value: 'customer referral',
     label: 'Customer Referral',
+  },
+  {
+    value: 'business card',
+    label: 'Business Card',
   },
   {
     value: 'other',

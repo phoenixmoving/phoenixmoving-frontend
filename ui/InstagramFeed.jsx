@@ -16,14 +16,16 @@ export async function getFeeds() {
 export default async function InstagramFeeds() {
   const ig = await getFeeds();
   const feeds = ig.data;
+
+  console.log(ig);
   return (
     <Section>
       <SectionHeader title="Follow us on Instagram" />
       <div className="mt-6 grid grid-cols-3 gap-x-2 gap-y-2 md:gap-x-6 md:gap-y-6 md:grid-cols-4">
-        {feeds.slice(0, 12).map((feed, index) => {
+        {feeds.slice(0, 8).map((feed, index) => {
           return (
             <div key={feed.id} className="group relative">
-              <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-lg bg-slate-100 h-full relative">
+              <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-2xl bg-slate-100 h-full relative">
                 {feed.media_type === 'IMAGE' ||
                 feed.media_type === 'CAROUSEL_ALBUM' ? (
                   <img

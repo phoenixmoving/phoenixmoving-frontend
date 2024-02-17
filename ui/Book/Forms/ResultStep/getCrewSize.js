@@ -46,7 +46,9 @@ export const getCrewSize = (apartment, fromFloor, toFloor) => {
 
               // 1 brdrm / studio
               if (i > 1) {
-                return (nr += 1);
+                if (j > 5 && k > 5) {
+                  return (nr += 1);
+                }
               }
 
               //studio

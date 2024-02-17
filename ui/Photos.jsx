@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import img1 from '@/images/wrapped-furniture.jpeg';
+import img1 from '@/images/2-movers-and-coffee-table.jpg';
 import img2 from '@/images/two-movers-disassembling-beds.jpeg';
 import img3 from '@/images/two-movers-and-tv.jpeg';
-import img4 from '@/images/items-packed-in-the-truck.jpeg';
+import img4 from '@/images/2-movers-and-truck.jpg';
 import img5 from '@/images/movers-and-elliptical.jpeg';
 
 export default function Photos() {
@@ -27,7 +27,7 @@ export default function Photos() {
             alt={`Movers in action ${imageIndex + 1}`}
             title={`Movers in action ${imageIndex + 1}`}
             className={clsx(
-              'relative object-cover w-40 h-48 sm:w-60 sm:h-72 flex-none overflow-hidden rounded-2xl',
+              'relative object-cover w-56 h-48 sm:w-72 sm:h-72 flex-none overflow-hidden rounded-2xl',
               rotations[imageIndex % rotations.length],
             )}
           />

@@ -34,8 +34,8 @@ export const findTravelTime = (
   let originsArray = [];
   let destinationsArray = [];
 
-  // console.log(fromZip);
-  // console.log(toZip);
+  // console.log('fromZip', fromZip);
+  // console.log('toZip', toZip);
 
   if (toZip === '') {
     originsArray = [office];

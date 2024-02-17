@@ -42,7 +42,7 @@ export default function DropDownMenu({ title, active, items }) {
               />
             )}
           </Popover.Button>
-          <Popover.Panel className="absolute -left-8 top-full mt-3 w-80 rounded-2xl bg-white p-2 border border-slate-200 shadow-lg grid gap-1">
+          <Popover.Panel className="absolute -left-8 top-full mt-3 w-80 rounded-3xl bg-white p-2 border border-slate-200 shadow-lg grid gap-1">
             {items.map((item) => (
               <Popover.Button
                 as={Link}
@@ -51,7 +51,7 @@ export default function DropDownMenu({ title, active, items }) {
                 href={item.href}
                 disabled={item.href === pathname}
                 className={clsx(
-                  'block rounded-xl p-3 hover:bg-slate-100 group',
+                  'block rounded-2xl p-3 hover:bg-slate-100 group',
                   {
                     'bg-slate-100': item.href === pathname,
                   },

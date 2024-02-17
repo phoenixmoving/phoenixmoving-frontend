@@ -4,7 +4,7 @@ import Included from './Included';
 import CallToAction from '@/ui/CallToAction';
 import CitiesSection from '@/ui/CitiesSection';
 import Photos from '@/ui/Photos';
-import bgImage from '@/images/two-movers-and-dolly.jpg';
+import bgImage from '@/images/truck-and-building.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${BASE_URL}/local-moving`;
