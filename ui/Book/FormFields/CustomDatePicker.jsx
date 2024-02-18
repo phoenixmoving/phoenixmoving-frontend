@@ -26,6 +26,8 @@ export default function CustomDatePicker(props) {
 
   const { label, placeholder, rates, prices } = props;
 
+  const isDelivery = field.name === 'deliveryDate';
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -38,7 +40,10 @@ export default function CustomDatePicker(props) {
     const formattedDate = format(date, 'MM/dd/yyyy');
     const rateArray = rates.find((r) => r.date === formattedDate);
 
-    formikProps.setFieldValue('rates', rateArray.rates);
+    if (!isDelivery) {
+      formikProps.setFieldValue('rates', rateArray.rates);
+    }
+
     formikProps.setFieldValue(field.name, date);
 
     handleClose();
@@ -72,7 +77,7 @@ export default function CustomDatePicker(props) {
           placeholder={placeholder}
           type="text"
           className={clsx(
-            'relative mt-1 lock w-full rounded-md border-0 bg-slate-100 font-normal placeholder:text-slate-400 py-2 pl-10 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
+            'mt-1 lock w-full rounded-md border-0 bg-slate-100 font-normal placeholder:text-slate-400 py-2 pl-10 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
             {
               'text-slate-400': field.value === '',
               'shadow-inner !bg-red-50': isError,
@@ -108,7 +113,7 @@ export default function CustomDatePicker(props) {
           hanldeChange={hanldeChange}
           pickedDay={field.value}
           movingDate={movingDate}
-          isDelivery={field.name === 'deliveryDate'}
+          isDelivery={isDelivery}
           rates={rates}
           prices={prices}
         />

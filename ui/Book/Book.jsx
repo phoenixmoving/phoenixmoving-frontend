@@ -245,10 +245,7 @@ function ResizablePanel({ children }) {
   let [ref, { height }] = useMeasure();
 
   return (
-    <motion.div
-      animate={{ height: height || 'auto' }}
-      className="relative overflow-hidden"
-    >
+    <motion.div animate={{ height: height || 'auto' }} className="relative">
       <AnimatePresence initial={false}>
         <motion.div
           // key={JSON.stringify(children, ignoreCircularReferences())}

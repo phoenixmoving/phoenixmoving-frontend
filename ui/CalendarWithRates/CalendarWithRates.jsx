@@ -5,6 +5,7 @@ import MonthSelect from './components/MonthSelect';
 import Day from './components/Day';
 import CalendarFooter from './components/CalendarFooter';
 import { format } from 'date-fns';
+import clsx from 'clsx';
 
 const WEEK_DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
@@ -46,7 +47,14 @@ export default function CalendarWithRates(props) {
   return (
     <div
       ref={wrapperRef}
-      className="fixed p-4 h-auto flex flex-col justify-between left-1/2 -translate-y-1/2 -translate-x-1/2 sm:left-[unset] sm:right-[unset] sm:translate-y-1 sm:translate-x-[unset] bg-white rounded-2xl shadow-3xl w-[300px] z-50"
+      // className="fixed p-4 h-auto flex flex-col justify-between left-1/2 -translate-y-1/2 -translate-x-1/2 sm:left-[unset] sm:right-[unset] sm:translate-y-1 sm:translate-x-[unset] bg-white rounded-2xl shadow-3xl w-[300px] z-50"
+      className={clsx(
+        'fixed p-4 h-auto flex flex-col justify-between left-1/2 sm:absolute -translate-x-1/2 sm:left-[unset] sm:right-[unset] sm:translate-y-1 sm:translate-x-[unset] bg-white rounded-2xl shadow-3xl w-[300px] z-50',
+        {
+          '-translate-y-[120%]': isDelivery,
+          '-translate-y-[80%]': !isDelivery,
+        },
+      )}
     >
       <MonthSelect
         month={month}
