@@ -17,7 +17,7 @@ const localServices = [
   {
     name: 'Small Moves',
     description:
-      "If you find yourself needing to move only a few items, opting for a full-service moving company might not be necessary. At our company, we offer a diverse range of services tailored to meet your specific needs, whether it's relocating a piano or household appliances.",
+      'If you find yourself needing to move only a few items, opting for a full-service moving company might not be necessary. At our company, we offer a diverse range of services tailored to meet your specific needs, whether it is relocating a piano or household appliances.',
   },
   {
     name: 'Loading/Unloading Help',
@@ -45,7 +45,7 @@ export default function ServicesSection() {
                 services extend to Cambridge, Somerville, Brookline, Newton,
                 Quincy, Waltham, Medford, Arlington, and other nearby cities.
                 Wherever your destination may be within the Greater Boston area,
-                we're here to assist you.
+                we are here to assist you.
               </>
             }
           />
