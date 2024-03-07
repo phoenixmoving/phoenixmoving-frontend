@@ -1,12 +1,13 @@
-import Hero from '@/ui/Hero';
-import Divider from '@/ui/Divider';
-import Info from './Info';
-import Locations from './Locations';
-import CallToAction from '@/ui/CallToAction';
-import Photos from '@/ui/Photos';
-import Partners from '@/ui/Partners';
-import InterstatePrices from '../pricing/InterstatePrices';
 import bgImage from '@/images/interstate.jpeg';
+import CallToAction from '@/ui/CallToAction';
+import Divider from '@/ui/Divider';
+import Hero from '@/ui/Hero';
+import Partners from '@/ui/Partners';
+import Photos from '@/ui/Photos';
+import InterstatePrices from '../pricing/InterstatePrices';
+import InterstateSection from './InterstateSection';
+import Locations from './Locations';
+import WhyChooseUs from './WhyChooseUs';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/interstate-moving`;
@@ -49,13 +50,14 @@ export default function InterstateMoving() {
     <>
       <Hero image={bgImage} title="Long Distance Moving Services" />
       <Partners />
-      <Info />
-      {/* <Divider /> */}
+      <InterstateSection />
+      <Divider />
+      <WhyChooseUs />
       <Photos />
       <CallToAction />
-      <Locations />
-      <Divider />
       <InterstatePrices />
+      <Divider />
+      <Locations />
     </>
   );
 }

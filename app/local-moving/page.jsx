@@ -5,6 +5,9 @@ import CallToAction from '@/ui/CallToAction';
 import CitiesSection from '@/ui/CitiesSection';
 import Photos from '@/ui/Photos';
 import bgImage from '@/images/truck-and-building.jpg';
+import ServicesSection from './ServicesSection';
+import Divider from '@/ui/Divider';
+import WhyChooseUs from './WhyChooseUs';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${BASE_URL}/local-moving`;
@@ -47,6 +50,10 @@ export default function LocalMoving() {
       <Hero image={bgImage} title="Local Moving Services" />
       <Included />
       <Info />
+      <Divider />
+      <ServicesSection />
+      <Divider />
+      <WhyChooseUs />
       <Photos />
       <CallToAction />
       <CitiesSection />

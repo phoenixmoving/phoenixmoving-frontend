@@ -72,7 +72,7 @@ export default function InterstatePrices() {
   return (
     <Section>
       <SectionHeader
-        title="Our rates for common destinations."
+        title="Our most popular destinations."
         subtitle="Is based upon the mileage from the origin to the destination, and the cubic footage of your belongings."
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

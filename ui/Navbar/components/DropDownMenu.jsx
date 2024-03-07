@@ -43,10 +43,10 @@ export default function DropDownMenu({ title, active, items }) {
             )}
           </Popover.Button>
           <Popover.Panel className="absolute -left-8 top-full mt-3 w-80 rounded-3xl bg-white p-2 border border-slate-200 shadow-lg grid gap-1">
-            {items.map((item) => (
+            {items.map((item, i) => (
               <Popover.Button
                 as={Link}
-                key={item.name}
+                key={i}
                 title={item.name}
                 href={item.href}
                 disabled={item.href === pathname}

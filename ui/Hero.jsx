@@ -34,7 +34,7 @@ export default async function HeroWithBooking({ image, title }) {
                 )}
               </div>
             </div>
-            <div className="flex justify-center items-center mt-12 px-2">
+            <div className="flex justify-end items-center mt-12 px-2">
               <Suspense fallback="loading...">
                 <BookFormWrapper />
               </Suspense>

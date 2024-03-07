@@ -157,7 +157,7 @@ export default function Info() {
         <p className="text-sm font-light">
           We require cash, credit card, money order/cashier&apos;s check (no
           personal checks) at the time of delivery for any balance due on
-          long-distance moves. 3% processing fee will be applied for credit card
+          long-distance moves. 4% processing fee will be applied for credit card
           payments. For all interstate moves we require 10% deposit on booking
           stage to secure crew and truck for your move, another 40% due at the
           pick-up time and 50% balance due at the delivery after unloading.

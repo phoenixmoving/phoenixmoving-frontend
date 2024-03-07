@@ -1,10 +1,10 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import Image from 'next/image';
-import img from '@/images/local.jpeg';
+import img from '@/images/movers-and-boxes.jpg';
 
 const p1 =
-  'Our local moving service provides fast and efficient transportation of your belongings from one residence to another. Our team of experienced movers will ensure that all of your items are transported safely and securely, while providing exceptional customer service. We also provide packing and unpacking services to make your move easier. We know how stressful moving can be, and we`re dedicated to helping you make it as seamless and stress-free as possible. With our local moving service, you can rest assured that your belongings will be delivered safely and on time.';
+  "Are you searching for reliable local movers in Boston and the surrounding areas? Look no further! At Phoenix Moving, we specialize in professional local moving services tailored to meet your needs. Whether you're relocating within Boston, Cambridge, Somerville, Brookline, or beyond, our experienced team is here to make your move seamless and stress-free.";
 
 export default function Info() {
   return (
@@ -42,29 +42,15 @@ export default function Info() {
                 of moving equipment and materials — our workers are trained and
                 equipped in the best possible way.
               </p>
-              <h3>We&apos;re here to help.</h3>
-              <p>
-                The cost of hiring a Boston local moving company is a loss only
-                if you hire the wrong one. The quality and range of services
-                provided must be considered when evaluating the
-                cost-effectiveness of the investment. There&apos;s an entire
-                laundry list of unexpected expenses that self-movers tend to
-                forget when making their decisions not to seek professional
-                help. Gas prices, tolls, rent and insurance pitfalls, accidents,
-                injuries, delays — the list goes on. Choosing the wrong wrapping
-                materials and covers can also lead to unforeseen damages and
-                expenses. Without professional guidance, additional costs accrue
-                almost every step of the way.
-              </p>
             </div>
           </div>
-          <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-full lg:w-[80%] h-[25rem] lg:h-[65%]">
+          <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-full lg:w-[80%] h-[30rem] lg:h-full">
             <Image
               src={img}
               placeholder="blur"
               blurDataURL={img.blurDataURL}
               alt="Two movers packing dishes"
-              className="rounded-2xl bg-white shadow-lg rotate-2 object-cover"
+              className="rounded-2xl bg-white rotate-2 object-cover"
               title="Full Packing Services"
               fill
               loading="lazy"

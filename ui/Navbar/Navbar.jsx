@@ -1,16 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Bars3BottomRightIcon from '@heroicons/react/24/solid/Bars3BottomRightIcon';
-import UserIcon from '@heroicons/react/24/solid/UserIcon';
-import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon';
-import MobileMenu from './components/MobileMenu';
-import clsx from 'clsx';
-import DropDownMenu from './components/DropDownMenu';
+import Logo from '@/components/Logo';
 import Button from '@/ui/Button';
+import Bars3BottomRightIcon from '@heroicons/react/24/solid/Bars3BottomRightIcon';
+import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon';
+import UserIcon from '@heroicons/react/24/solid/UserIcon';
+import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Logo from '@/components/Logo';
+import { useEffect, useState } from 'react';
+import DropDownMenu from './components/DropDownMenu';
+import MobileMenu from './components/MobileMenu';
 
 const clientLink = process.env.NEXT_PUBLIC_CLIENT_LOGIN;
 
@@ -21,28 +21,33 @@ const navigation = [
     href: '#',
     items: [
       {
+        id: 1,
         name: 'Local Moving',
         description: 'Hourly based full moving servcies',
         href: '/local-moving',
       },
       {
+        id: 2,
         name: 'Interstate Moving',
         description:
           'Flat rate moving. Gas, mileage, tolls and insurance are included',
         href: '/interstate-moving',
       },
       {
+        id: 3,
         name: 'Packing Services',
         description:
           'Top-notch packing services to reduce the stress of moving',
         href: '/packing-services',
       },
       {
+        id: 4,
         name: 'Storage Solutions',
         description: 'Temperature-controlled storage for up to 6 months',
         href: '/storage-solutions',
       },
       {
+        id: 5,
         name: 'Piano Movers',
         description:
           'Right tools, equipment, and expertise to ensure it is done correctly and safely',
@@ -104,18 +109,18 @@ export default function Navbar() {
             </a>
           </div>
           <div className="hidden lg:flex lg:min-w-0 lg:flex-auto lg:justify-center lg:items-center lg:gap-x-6">
-            {navigation.map((link) =>
+            {navigation.map((link, i) =>
               link.items ? (
                 <DropDownMenu
                   title="Services"
                   active={active}
-                  key={link.name}
+                  key={i}
                   items={link.items}
                 />
               ) : (
                 <Link
                   title={link.name}
-                  key={link.name}
+                  key={i}
                   href={link.href}
                   className={clsx(
                     'relative font-medium transition-colors duration-150',

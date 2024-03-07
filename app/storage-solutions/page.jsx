@@ -1,11 +1,13 @@
+import bgImage from '@/images/storage-services-main.jpg';
+import CallToAction from '@/ui/CallToAction';
+import CitiesSection from '@/ui/CitiesSection';
+import Divider from '@/ui/Divider';
+import Faqs from '@/ui/Faqs';
 import Hero from '@/ui/Hero';
 import Partners from '@/ui/Partners';
-import Info from './Info';
-import CallToAction from '@/ui/CallToAction';
-import Faqs from '@/ui/Faqs';
 import Photos from '@/ui/Photos';
-import CitiesSection from '@/ui/CitiesSection';
-import bgImage from '@/images/storage-services-main.jpg';
+import StorageSection from './StorageSection';
+import WhyChooseUs from './WhyChooseUs';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/storage-solutions`;
@@ -47,7 +49,9 @@ export default function StorageSolutions() {
     <>
       <Hero image={bgImage} title="Moving and Storage" />
       <Partners />
-      <Info />
+      <StorageSection />
+      <Divider />
+      <WhyChooseUs />
       <Photos />
       <CallToAction />
       <Faqs />

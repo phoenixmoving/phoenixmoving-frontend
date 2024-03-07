@@ -56,16 +56,19 @@ export default function FAQS() {
   return (
     <Section className="bg-palette-background">
       <dl className="mt-6 space-y-4 max-w-3xl m-auto">
-        {faqs.map((faq) => (
+        {faqs.map((faq, i) => (
           <Disclosure
             as="div"
-            key={faq.question}
+            key={i}
             className="py-4 px-6 bg-white rounded-lg"
           >
             {({ open }) => (
               <>
                 <dt className="text-lg">
-                  <Disclosure.Button className="flex w-full items-start justify-between text-left text-slate-400">
+                  <Disclosure.Button
+                    className="flex w-full items-start justify-between text-left text-slate-400"
+                    id={i}
+                  >
                     <span className="font-semibold text-slate-900">
                       {faq.question}
                     </span>

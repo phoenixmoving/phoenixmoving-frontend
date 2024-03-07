@@ -1,11 +1,12 @@
 import Hero from '@/ui/Hero';
-import Info from './Info';
 import CallToAction from '@/ui/CallToAction';
 import Photos from '@/ui/Photos';
-import WhyBookSection from '@/ui/WhyBookSection';
 import CitiesSection from '@/ui/CitiesSection';
 import Faqs from '@/ui/Faqs';
 import bgImage from '@/images/piano-movers.jpg';
+import InfoSection from './InfoSection';
+import Divider from '@/ui/Divider';
+import WhyChooseUs from './WhyChooseUs';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/piano-movers`;
@@ -46,8 +47,9 @@ export default function page() {
   return (
     <>
       <Hero image={bgImage} title="Piano Movers" />
-      <Info />
-      <WhyBookSection />
+      <InfoSection />
+      <Divider />
+      <WhyChooseUs />
       <Photos />
       <CallToAction />
       <Faqs />
