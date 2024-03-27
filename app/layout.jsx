@@ -1,7 +1,8 @@
 import '../styles/global.css';
 import { Maven_Pro } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 import Navbar from '@/ui/Navbar';
-import Script from 'next/script';
 import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
 import CTA from '@/components/CTA';
@@ -13,7 +14,6 @@ const maven = Maven_Pro({
 });
 
 const GTAG = process.env.NEXT_PUBLIC_G_TAG;
-const GTAG2 = process.env.NEXT_PUBLIC_G_TAG2;
 
 export const metadata = {
   verification: {
@@ -50,37 +50,7 @@ export default function RootLayout({ children }) {
         <Contact />
         <Footer />
       </body>
-      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <Script
-        id="gtag"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-tag-manager" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GTAG}',{
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
-      <Script
-        id="gtag"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GTAG2}`}
-        strategy="afterInteractive"
-      />
-      <Script id="google-tag-manager2" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GTAG2}',{
-            page_path: window.location.pathname,
-          });
-        `}
-      </Script>
+      <GoogleAnalytics gaId={GTAG} />
     </html>
   );
 }
