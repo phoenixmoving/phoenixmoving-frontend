@@ -1,9 +1,5 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.gophoenixmoving.com/
-
-# Sitemaps
 Sitemap: https://www.gophoenixmoving.com/sitemap.xml
+Sitemap: https://www.gophoenixmoving.com/sitemap-0.xml

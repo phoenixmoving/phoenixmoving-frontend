@@ -6,7 +6,6 @@ import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
 import CTA from '@/components/CTA';
 
-// If loading a variable font, you don't need to specify the font weight
 const maven = Maven_Pro({
   variable: '--font-maven',
   subsets: ['latin'],
@@ -17,23 +16,10 @@ const GTAG = process.env.NEXT_PUBLIC_G_TAG;
 const GTAG2 = process.env.NEXT_PUBLIC_G_TAG2;
 
 export const metadata = {
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
   verification: {
     google: 'ACFgIKDb3RQe19sMvNkxXUi1lPW4t1kCQmgUDjGp_eA',
   },
   manifest: '/site.webmanifest',
-  // robots: {
-  //   index: true,
-  //   follow: true,
-  //   nocache: true,
-  //   googleBot: {
-  //     index: true,
-  //     follow: true,
-  //   },
-  // },
 };
 
 export default function RootLayout({ children }) {

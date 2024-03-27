@@ -3,7 +3,7 @@ import Info from './Info';
 import bgImage from '@/images/prices.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
-const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/terms`;
+const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/privacy`;
 const title = 'Privacy Policy - Phoenix Moving Boston (Free Estimate)';
 const description = 'Privacy Policy for Phoenix Moving & Storage';
 

@@ -10,7 +10,6 @@ import Photos from '@/ui/Photos';
 import Pricing from '@/components/Pricing';
 import Services from '@/components/Services';
 import bgImage from '@/images/truck-and-house.jpg';
-// import InstagramFeeds from '@/ui/InstagramFeed';
 
 const URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const title = 'Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)';
@@ -140,9 +139,6 @@ export default function Home() {
       <Suspense fallback="loading...">
         <Reviews />
       </Suspense>
-      {/* <Suspense fallback="loading...">
-        <InstagramFeeds />
-      </Suspense> */}
       <Faqs />
       <CitiesSection />
     </>

@@ -48,7 +48,6 @@ export default function Info() {
                 size="large"
                 variant="soft"
                 title="View Rates"
-                // color="primary"
               >
                 View Pricing
               </Button>
@@ -57,11 +56,13 @@ export default function Info() {
           <div className="relative mx-auto mt-12 max-w-prose lg:mt-0 mb-7 lg:mb-0 w-[200px] lg:w-[300px] h-[200px] lg:h-[300px] animate-fade-in">
             <Image
               src={natick}
+              placeholder="blur"
+              blurDataURL={natick.blurDataURL}
               alt="Natick MA image"
               title="Boston to Natick MA"
               className="object-contain"
               fill
-              //   loading="lazy"
+              loading="lazy"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
