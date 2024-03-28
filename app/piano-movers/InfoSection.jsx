@@ -1,4 +1,4 @@
-import image from '@/images/moving-piano.jpg';
+import image from '@/images/moving-piano-opt.jpg';
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import Image from 'next/image';

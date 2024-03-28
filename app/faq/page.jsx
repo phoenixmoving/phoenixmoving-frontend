@@ -1,7 +1,7 @@
 // import Script from 'next/script';
 import Hero from '@/ui/Hero';
 import FAQS from './FAQS';
-import bgImage from '@/images/truck-and-condos.jpg';
+import bgImage from '@/images/truck-and-condos-opt.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/faq`;

@@ -1,7 +1,7 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import Image from 'next/image';
-import img from '@/images/movers-and-boxes.jpg';
+import img from '@/images/movers-and-boxes-opt.jpg';
 
 const p1 =
   "Are you searching for reliable local movers in Boston and the surrounding areas? Look no further! At Phoenix Moving, we specialize in professional local moving services tailored to meet your needs. Whether you're relocating within Boston, Cambridge, Somerville, Brookline, or beyond, our experienced team is here to make your move seamless and stress-free.";

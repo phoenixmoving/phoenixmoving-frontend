@@ -1,7 +1,7 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import Image from 'next/image';
-import image from '@/images/truck-and-tree.jpg';
+import image from '@/images/truck-and-tree-opt.jpg';
 
 const localServices = [
   {

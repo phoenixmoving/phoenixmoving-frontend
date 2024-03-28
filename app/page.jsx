@@ -9,7 +9,7 @@ import Partners from '@/ui/Partners';
 import Photos from '@/ui/Photos';
 import Pricing from '@/components/Pricing';
 import Services from '@/components/Services';
-import bgImage from '@/images/truck-and-house.jpg';
+import bgImage from '@/images/truck-and-house-opt.jpg';
 
 const URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const title = 'Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)';

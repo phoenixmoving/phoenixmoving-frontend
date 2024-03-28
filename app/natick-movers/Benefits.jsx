@@ -1,6 +1,6 @@
 import SectionHeader from '@/ui/SectionHeader';
 import img1 from '@/images/mover-and-truck.jpeg';
-import img2 from '@/images/2-movers-and-coffee-table.jpg';
+import img2 from '@/images/2-movers-and-coffee-table-opt.jpg';
 import img3 from '@/images/storage-services-main.jpg';
 import Image from 'next/image';
 

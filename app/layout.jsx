@@ -1,6 +1,7 @@
 import '../styles/global.css';
 import { Maven_Pro } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 import Navbar from '@/ui/Navbar';
 import Footer from '@/components/Footer';
@@ -14,6 +15,7 @@ const maven = Maven_Pro({
 });
 
 const GTAG = process.env.NEXT_PUBLIC_G_TAG;
+const GTAG2 = process.env.NEXT_PUBLIC_G_TAG2;
 
 export const metadata = {
   verification: {
@@ -51,6 +53,7 @@ export default function RootLayout({ children }) {
         <Footer />
       </body>
       <GoogleAnalytics gaId={GTAG} />
+      <GoogleTagManager gaId={GTAG2} />
     </html>
   );
 }

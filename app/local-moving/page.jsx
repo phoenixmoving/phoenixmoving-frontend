@@ -4,7 +4,7 @@ import Included from './Included';
 import CallToAction from '@/ui/CallToAction';
 import CitiesSection from '@/ui/CitiesSection';
 import Photos from '@/ui/Photos';
-import bgImage from '@/images/truck-and-building.jpg';
+import bgImage from '@/images/truck-and-building-opt.jpg';
 import ServicesSection from './ServicesSection';
 import Divider from '@/ui/Divider';
 import WhyChooseUs from './WhyChooseUs';

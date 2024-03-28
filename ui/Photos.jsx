@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import img1 from '@/images/2-movers-and-coffee-table.jpg';
-import img2 from '@/images/two-movers-disassembling-beds.jpeg';
+import img1 from '@/images/2-movers-and-coffee-table-opt.jpg';
+import img2 from '@/images/two-movers-disassembling-beds-opt.jpg';
 import img3 from '@/images/two-movers-and-tv.jpeg';
-import img4 from '@/images/2-movers-and-truck.jpg';
+import img4 from '@/images/2-movers-and-truck-opt.jpg';
 import img5 from '@/images/movers-and-elliptical.jpeg';
 
 export default function Photos() {
