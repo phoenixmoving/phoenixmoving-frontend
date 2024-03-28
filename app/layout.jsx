@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
         <Footer />
       </body>
       <GoogleAnalytics gaId={GTAG} />
-      <GoogleTagManager gaId={GTAG2} />
+      <GoogleTagManager gtmId={GTAG2} />
     </html>
   );
 }
