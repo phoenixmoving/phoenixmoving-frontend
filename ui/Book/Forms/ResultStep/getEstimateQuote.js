@@ -6,7 +6,7 @@ export const getEstimateQuote = (distance, isFlatRate, estimateTime, rate) => {
   // console.log(rate);
   if (estimateTime.length === 0) return [];
   let estimateQuoteArray = [];
-  let oneDollarPerMile = Math.floor(distance * 0.6);
+  let oneDollarPerMile = Math.floor(distance * 2 * 0.6);
   // if (oneDollarPerMile < 300) {
   //   oneDollarPerMile += 300;
   // }

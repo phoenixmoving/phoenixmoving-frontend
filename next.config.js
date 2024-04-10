@@ -7,10 +7,22 @@ const nextConfig = {
     swcMinify: true,
   },
   images: {
-    domains: [
-      'scontent-bos5-1.cdninstagram.com',
-      's3-media3.fl.yelpcdn.com',
-      'lh3.googleusercontent.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'scontent-bos5-1.cdninstagram.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 's3-media3.fl.yelpcdn.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        pathname: '**',
+      },
     ],
   },
   async headers() {

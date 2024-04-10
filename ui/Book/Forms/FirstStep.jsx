@@ -1,5 +1,6 @@
-import { SelectField, ZipField, CustomDatePicker } from '../FormFields';
 import { ClockIcon, TruckIcon } from '@heroicons/react/24/outline';
+import { FiPackage } from 'react-icons/fi';
+import { CustomDatePicker, SelectField, ZipField } from '../FormFields';
 
 const times = [
   {
@@ -51,6 +52,25 @@ const services = [
   },
 ];
 
+const packingOptions = [
+  {
+    value: '',
+    label: 'Select...',
+  },
+  {
+    value: 'I will pack by myself',
+    label: 'I will pack by myself',
+  },
+  {
+    value: 'I need partial packing service',
+    label: 'I need partial packing service',
+  },
+  {
+    value: 'I need full packing service',
+    label: 'I need full packing service',
+  },
+];
+
 export default function FirstStep(props) {
   const {
     formField: {
@@ -60,6 +80,7 @@ export default function FirstStep(props) {
       originZip,
       destinationZip,
       service,
+      packing,
     },
     showDeliveryDate,
     showDestination,
@@ -126,6 +147,18 @@ export default function FirstStep(props) {
           />
         </div>
       )}
+      <div className="col-span-4">
+        <SelectField
+          name={packing.name}
+          label={packing.label}
+          options={packingOptions}
+          icon={FiPackage}
+        />
+        <p className="text-xs mt-2 font-medium text-slate-700 leading-tight">
+          Note: Packing services are based on a same hourly rates. Packing
+          materials charges will be applied upon usage.
+        </p>
+      </div>
     </div>
   );
 }

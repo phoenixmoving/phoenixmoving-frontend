@@ -50,6 +50,7 @@ export async function submitFormToDb(
       travel_time: values.travelTime,
       estimated_quote: values.estimateQuote,
       referral: values.referral,
+      packing: values.packing,
     },
     origin: {
       address: values.originAddress,
@@ -77,6 +78,8 @@ export async function submitFormToDb(
     if (response.data.customer) {
       let customerId = response.data.customer.id;
       let job = obj.job;
+
+      console.log('job from submit', job);
       job.customer_id = customerId;
       axios.post(`${API}/api/v1/jobs`, { job }).then((response) => {
         // console.log('job', response);

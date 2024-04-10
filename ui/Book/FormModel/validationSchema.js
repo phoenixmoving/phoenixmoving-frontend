@@ -12,6 +12,7 @@ const {
     deliveryDate,
     startTime,
     service,
+    packing,
     size,
     referral,
     originAddress,
@@ -51,6 +52,9 @@ export default [
     [startTime.name]: Yup.string()
       .nullable()
       .required(`${startTime.requiredErrorMsg}`),
+    [packing.name]: Yup.string()
+      .nullable()
+      .required(`${packing.requiredErrorMsg}`),
 
     [originZip.name]: Yup.string()
       .required(`${originZip.requiredErrorMsg}`)

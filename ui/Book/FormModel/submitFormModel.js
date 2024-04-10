@@ -49,6 +49,11 @@ export default {
       label: 'Service*',
       requiredErrorMsg: 'Service is required',
     },
+    packing: {
+      name: 'packing',
+      label: 'Do you need packing help?',
+      requiredErrorMsg: 'Packing is required',
+    },
     size: {
       name: 'size',
       label: 'Move size*',
