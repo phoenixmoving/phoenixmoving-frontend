@@ -1,7 +1,7 @@
 import Section from '@/ui/Section';
 import SectionHeader from '@/ui/SectionHeader';
 import Image from 'next/image';
-import img from '@/images/two-movers-packing-kitchen.jpeg';
+import img from '@/images/mover-packing-china.jpg';
 
 const p1 =
   'Our packing service is an ideal solution for those looking to make their move as stress-free as possible. Our team of experienced professionals will come to your home and carefully pack all of your belongings into sturdy boxes and containers that are designed to protect your items during the move. We will label each box with its contents, so that you can easily find your belongings after the move. Additionally, our packing service allows you to focus on other aspects of your move, such as finding a new home or making travel arrangements. With our packing service, you can rest assured that your items will be securely and safely transported to your new home.';

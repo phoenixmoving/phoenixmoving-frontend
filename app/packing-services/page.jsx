@@ -6,7 +6,7 @@ import PackingItems from '@/ui/PackingItems';
 import Info from './Info';
 import Packages from './Packages';
 import Partners from '@/ui/Partners';
-import bgImage from '@/images/services.jpeg';
+import bgImage from '@/images/mover-packing-kitchen.jpg';
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/packing-services`;
