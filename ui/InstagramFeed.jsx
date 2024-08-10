@@ -17,7 +17,7 @@ export default async function InstagramFeeds() {
   const ig = await getFeeds();
   const feeds = ig.data;
 
-  console.log(ig);
+  // console.log(ig);
   return (
     <Section>
       <SectionHeader title="Follow us on Instagram" />

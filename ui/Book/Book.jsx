@@ -176,8 +176,6 @@ export default function Book({ rates, prices }) {
                 onSubmit={_handleSubmit}
               >
                 {({ isSubmitting, values, errors }) => {
-                  console.log(isSubmitting);
-                  // console.log(errors);
                   return (
                     <Form id={formId} autoComplete="off">
                       <MotionConfig transition={{ duration, type: 'tween' }}>

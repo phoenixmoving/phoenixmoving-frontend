@@ -22,12 +22,12 @@ export default function FloorSelect(props) {
   );
 
   function handleChange(e) {
-    console.log(e);
+    // console.log(e);
     formikProps.setFieldValue(name, e.value);
     setMem(e);
   }
 
-  console.log(field);
+  // console.log(field);
 
   return (
     <>

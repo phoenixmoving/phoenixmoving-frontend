@@ -78,8 +78,8 @@ export async function submitFormToDb(
     if (response.data.customer) {
       let customerId = response.data.customer.id;
       let job = obj.job;
-
-      console.log('job from submit', job);
+      //
+      // console.log('job from submit', job);
       job.customer_id = customerId;
       axios.post(`${API}/api/v1/jobs`, { job }).then((response) => {
         // console.log('job', response);
