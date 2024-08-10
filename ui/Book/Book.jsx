@@ -110,10 +110,11 @@ export default function Book({ rates, prices }) {
   );
 
   function _handleSubmit(values, actions) {
+    actions.setSubmitting(true);
     if (isLastStep) {
       console.log('ok');
       // window.alert('ok');
-      actions.setSubmitting(false);
+      // actions.setSubmitting(false);
       submitFormToDb(values, actions, activeStep, setActiveStep);
     } else if (activeStep === 0) {
       let originZip = `${values.originCity}, ${values.originState} ${values.originZip}, USA`;
@@ -175,7 +176,7 @@ export default function Book({ rates, prices }) {
                 onSubmit={_handleSubmit}
               >
                 {({ isSubmitting, values, errors }) => {
-                  // console.log(values);
+                  console.log(isSubmitting);
                   // console.log(errors);
                   return (
                     <Form id={formId} autoComplete="off">
@@ -209,7 +210,7 @@ export default function Book({ rates, prices }) {
                             <Button
                               type="submit"
                               color="primary"
-                              className="w-full"
+                              className="w-full disabled:opacity-50"
                               disabled={isSubmitting}
                               // size="small"
                             >
