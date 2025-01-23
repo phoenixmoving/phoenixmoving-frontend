@@ -6,7 +6,6 @@ import { Toaster } from 'react-hot-toast';
 import React, { useState } from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { Formik, Form } from 'formik';
-import Button from '@/ui/Button';
 import validationSchema from './FormModel/validationSchema';
 import sumbitFormModel from './FormModel/submitFormModel';
 import formInitialValues from './FormModel/formInitialValues';
@@ -16,6 +15,7 @@ import ResultStep from './Forms/ResultStep';
 import Addresses from './Forms/Addresses';
 import ContactInfo from './Forms/ContactInfo';
 import ReviewDetails from './Forms/ReviewDetails';
+import Button from '@/ui/Button';
 
 import { findTravelTime } from './utils/findTravelTime';
 import { submitFormToDb } from './utils/submitFormToDb';
@@ -275,14 +275,14 @@ function ResizablePanel({ children }) {
   circular references and internal React properties.
   https://github.com/facebook/react/issues/8669#issuecomment-531515508
 */
-const ignoreCircularReferences = () => {
-  const seen = new WeakSet();
-  return (key, value) => {
-    if (key.startsWith('_')) return; // Don't compare React's internal props.
-    if (typeof value === 'object' && value !== null) {
-      if (seen.has(value)) return;
-      seen.add(value);
-    }
-    return value;
-  };
-};
+// const ignoreCircularReferences = () => {
+//   const seen = new WeakSet();
+//   return (key, value) => {
+//     if (key.startsWith('_')) return; // Don't compare React's internal props.
+//     if (typeof value === 'object' && value !== null) {
+//       if (seen.has(value)) return;
+//       seen.add(value);
+//     }
+//     return value;
+//   };
+// };

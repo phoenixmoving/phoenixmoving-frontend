@@ -33,21 +33,21 @@ export const metadata = {
   alternates: {
     canonical: URL,
   },
-  openGraph: {
-    title,
-    description,
-    url: URL,
-    siteName: 'Natick Movers',
-    locale: 'en-US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@phoenix_moving',
-    domain: URL,
-    title,
-    description,
-  },
+  // openGraph: {
+  //   title,
+  //   description,
+  //   url: URL,
+  //   siteName: 'Natick Movers',
+  //   locale: 'en-US',
+  //   type: 'website',
+  // },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   site: '@phoenix_moving',
+  //   domain: URL,
+  //   title,
+  //   description,
+  // },
 };
 
 const schema1 = {

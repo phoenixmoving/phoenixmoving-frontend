@@ -11,7 +11,7 @@ import Pricing from '@/components/Pricing';
 import Services from '@/components/Services';
 import bgImage from '@/images/truck-and-house-opt.jpg';
 
-const URL = process.env.NEXT_PUBLIC_MAIN_URL;
+const pageUrl = process.env.NEXT_PUBLIC_MAIN_URL;
 const title = 'Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)';
 const description =
   'Professional moving company serving the Boston area. We provide fast, reliable, and affordable moving services for residential and commercial customers.';
@@ -27,36 +27,37 @@ const keywords = [
 ];
 
 export const metadata = {
+  metadataBase: new URL(pageUrl),
   title,
   description,
   keywords,
   alternates: {
-    canonical: URL,
+    canonical: pageUrl,
   },
-  openGraph: {
-    title,
-    description,
-    url: URL,
-    siteName: 'Phoenix Moving Boston',
-    locale: 'en-US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@phoenix_moving',
-    domain: URL,
-    title,
-    description,
-  },
+  // openGraph: {
+  //   title,
+  //   description,
+  //   url: pageUrl,
+  //   siteName: 'Phoenix Moving Boston',
+  //   locale: 'en-US',
+  //   type: 'website',
+  // },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   site: '@phoenix_moving',
+  //   domain: pageUrl,
+  //   title,
+  //   description,
+  // },
 };
 
 const schema1 = {
   '@context': 'https://schema.org',
   '@type': 'MovingCompany',
-  '@id': URL,
+  '@id': pageUrl,
   name: title,
-  url: URL,
-  logo: URL + '/logos/logo.png',
+  url: pageUrl,
+  logo: pageUrl + '/logos/logo.png',
   image: bgImage.src,
   telephone: '(508) 315-9458',
   openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 8am-8pm',

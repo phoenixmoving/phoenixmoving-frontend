@@ -15,27 +15,27 @@ export const metadata = {
   alternates: {
     canonical: URL,
   },
-  openGraph: {
-    title,
-    description,
-    url: URL,
-    siteName: 'Phoenix Moving Boston',
-    images: [
-      {
-        url: bgImage.src,
-      },
-    ],
-    locale: 'en-US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@phoenix_moving',
-    domain: URL,
-    title,
-    description,
-    images: [BASE_URL + bgImage],
-  },
+  // openGraph: {
+  //   title,
+  //   description,
+  //   url: URL,
+  //   siteName: 'Phoenix Moving Boston',
+  //   images: [
+  //     {
+  //       url: bgImage.src,
+  //     },
+  //   ],
+  //   locale: 'en-US',
+  //   type: 'website',
+  // },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   site: '@phoenix_moving',
+  //   domain: URL,
+  //   title,
+  //   description,
+  //   images: [BASE_URL + bgImage],
+  // },
 };
 
 // const schema1 = {

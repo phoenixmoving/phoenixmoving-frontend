@@ -1,7 +1,6 @@
 import '../styles/global.css';
 import { Maven_Pro } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 
 import Navbar from '@/ui/Navbar';
 import Footer from '@/components/Footer';

@@ -63,7 +63,7 @@ async function getCity(slug) {
 export async function generateMetadata({ params }) {
   const city = await getCity(params.slug);
 
-  const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/${city?.slug}`;
+  const page_url = `${process.env.NEXT_PUBLIC_MAIN_URL}/${city?.slug}`;
 
   const title =
     city && city?.interstate
@@ -86,41 +86,32 @@ export async function generateMetadata({ params }) {
   ];
 
   return {
+    metadataBase: new URL(page_url),
     title: city ? title : 'Not Found',
     description,
     keywords: city && city?.interstate ? [] : keywords,
     alternates: {
-      canonical: URL,
+      canonical: page_url,
     },
-    openGraph: {
-      title,
-      description,
-      url: URL,
-      siteName: 'Phoenix Moving Boston',
-      images: [
-        {
-          url: bgImage.src,
-        },
-      ],
-      locale: 'en-US',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      site: '@phoenix_moving',
-      domain: URL,
-      title,
-      description,
-      images: [bgImage.src],
-    },
+    // openGraph: {
+    //   title,
+    //   description,
+    //   url: page_url,
+    //   siteName: 'Phoenix Moving Boston',
+    //   images: JSON.stringify(bgImage),
+    //   locale: 'en-US',
+    //   type: 'website',
+    // },
+    // twitter: {
+    //   card: 'summary_large_image',
+    //   site: '@phoenix_moving',
+    //   domain: page_url,
+    //   title,
+    //   description,
+    //   images: JSON.stringify(bgImage),
+    // },
   };
 }
-
-const stats = [
-  { label: 'Transactions every 24 hours', value: '44 million' },
-  { label: 'Assets under holding', value: '$119 trillion' },
-  { label: 'New users annually', value: '46,000' },
-];
 
 export default async function CityPage({ params }) {
   const { slug } = params;

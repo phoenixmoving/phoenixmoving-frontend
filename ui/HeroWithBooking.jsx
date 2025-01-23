@@ -24,7 +24,6 @@ export default async function HeroWithBooking({ image, title }) {
     <section className="relative">
       <div className="absolute inset-0">
         <Image
-          // {...img}
           className="h-full w-full object-cover"
           src={image}
           alt={title}
