@@ -3,112 +3,318 @@ import Section from '@/ui/Section';
 export default function Info() {
   return (
     <Section className="max-w-5xl m-auto">
-      <p className="text-sm font-light mb-8">
-        This Privacy Policy describes our policies on the collection, use, and
-        disclosure of information about you in connection with your use of our
-        websites, emails, and mobile applications (“Site”). The terms “we” and
-        “us” refer to Phoenix Moving Inc., a Massachusetts corporation, when you
-        use the Site, you consent to our collection, use, and disclosure of
-        information about you as described in this Privacy Policy.
-      </p>
-      <div className="mb-8">
-        <p className="font-bold">1. INFORMATION WE COLLECT AND HOW WE USE IT</p>
-        <p className="text-sm font-light">
-          We may store the information you submit to or through the Site, as
-          well as information we collect in connection with your use of the
-          Site. We use the information to fulfill your requests, provide the
-          Site&apos;s functionality, improve the Site&apos;s quality,
-          personalize your experience, track usage of the Site, provide feedback
-          to our moving services, display relevant advertising, provide customer
-          support, message you, back up our systems and allow for disaster
-          recovery, enhance the security of the Site, and comply with legal
-          obligations.
+      <div className="space-y-8">
+        <p>
+          Phoenix Moving Inc. (&quot;Company&quot;, &quot;we&quot;,
+          &quot;our&quot;, or &quot;us&quot;) values your privacy. This Privacy
+          Policy describes how we collect, use, and protect your information
+          when you visit our website, contact us, or use our services.
+        </p>
+
+        <p>
+          By accessing or using our website (&quot;Site&quot;), submitting your
+          personal data, or opting into SMS communications, you agree to the
+          terms of this Privacy Policy. If you do not agree, please do not use
+          our Site.
+        </p>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            1. Information We Collect
+          </h3>
+          <p>
+            We collect personal and non-personal information through various
+            means, including when you visit our website, fill out forms, contact
+            us, or use our services.
+          </p>
+          <ol type="A" className="list-[upper-latin] list-inside space-y-2">
+            <li className="space-y-2">
+              <span className="font-medium">
+                Personal Information You Provide
+              </span>
+              <ul className="list-disc list-inside ml-4">
+                <li>Name, email address, phone number, mailing address.</li>
+                <li>
+                  Moving service details, requested estimates, or preferences.
+                </li>
+                <li>
+                  Payment details processed securely via third-party services,
+                  never stored on our servers.
+                </li>
+                <li>
+                  Communications and inquiries via email, phone, or chat
+                  support.
+                </li>
+              </ul>
+            </li>
+            <li className="space-y-2">
+              <span className="font-medium">
+                Automatically Collected Information, when you visit our Site, we
+                may collect
+              </span>
+              <ul className="list-disc list-inside ml-4">
+                <li>
+                  Device Information including IP address, browser type, and
+                  operating system.
+                </li>
+                <li>
+                  Website Usage Data such as page views, time spent, and
+                  referring websites.
+                </li>
+                <li>
+                  Cookies and Tracking Technologies used for analytics,
+                  improving user experience, and site functionality.
+                </li>
+              </ul>
+            </li>
+            <li className="space-y-2">
+              <span className="font-medium">Call and SMS Data</span>
+              <ul className="list-disc list-inside ml-4">
+                <li>
+                  Phone Calls may be recorded for quality assurance and training
+                  purposes.
+                </li>
+                <li>
+                  SMS Communications will only be used for service-related
+                  messages if you opt-in.
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            2. How We Use Your Information
+          </h3>
+          <p>We collect and use information for the following purposes:</p>
+          <ul className="list-disc list-inside ml-4">
+            <li>
+              Service Delivery and Customer Support including processing moving
+              service requests, providing estimates, and answering inquiries.
+            </li>
+            <li>
+              Site and Service Improvements such as analyzing website traffic,
+              troubleshooting issues, and optimizing performance.
+            </li>
+            <li>
+              Marketing and Promotions with consent, including sending service
+              updates, promotions, or offers, with the option to opt out
+              anytime.
+            </li>
+            <li>
+              Security and Fraud Prevention by monitoring for unauthorized
+              access, preventing fraud, and protecting company assets.
+            </li>
+            <li>
+              Legal and Compliance to comply with legal obligations, respond to
+              law enforcement requests, and enforce company policies.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            3. How We Share Your Information
+          </h3>
+          <p>
+            We do not sell, rent, or trade your personal information. We only
+            share data in these cases:
+          </p>
+          <ul className="list-disc list-inside ml-4">
+            <li>
+              Service Providers and Third Parties, including payment processors,
+              customer support tools, and analytics providers.
+            </li>
+            <li>
+              Legal Compliance and Protection if required by law or to protect
+              our rights, property, or safety.
+            </li>
+            <li>
+              Business Transfers in the event Phoenix Moving Inc. is merged,
+              sold, or acquired, customer information may be transferred.
+            </li>
+          </ul>
+          <p>
+            We do not share phone numbers collected for SMS consent with any
+            third parties for marketing purposes. SMS consent cannot be
+            transferred or disclosed to another company per The Campaign
+            Registry guidelines.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            4. Cookies and Tracking Technologies
+          </h3>
+          <p>
+            We use cookies and similar tracking technologies to enhance user
+            experience, analyze website traffic, and remember user preferences.
+          </p>
+          <p>
+            You can disable cookies in your browser settings, but doing so may
+            limit access to certain Site features.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            5. Your Rights and Choices
+          </h3>
+          <p>
+            Depending on your location, you may have the following rights
+            regarding your personal data:
+          </p>
+          <ul className="list-disc list-inside ml-4">
+            <li>
+              Access and Correction to request a copy of your data or correct
+              inaccurate information.
+            </li>
+            <li>
+              Deletion Request to ask us to delete your data unless required by
+              law to retain it.
+            </li>
+            <li>
+              Opt-Out of Marketing to unsubscribe from marketing emails or SMS
+              messages anytime.
+            </li>
+            <li>
+              Restrict Data Processing to request limits on how we use your data
+              in some cases.
+            </li>
+          </ul>
+          <p>
+            To exercise these rights, contact us at{' '}
+            <a href="mailto:info@gophoenixmoving.com" className="text-blue-500">
+              info@gophoenixmoving.com
+            </a>
+          </p>
+          <p>
+            Response Time: We will respond within 30 days of receiving your
+            request.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            6. Data Security and Protection Measures
+          </h3>
+          <p>
+            We take industry-standard precautions to protect your personal data:
+          </p>
+          <ul className="list-disc list-inside ml-4">
+            <li>
+              Encryption to secure data transmission using SSL or TLS
+              encryption.
+            </li>
+            <li>
+              Access Controls with limited access to customer data within the
+              company.
+            </li>
+            <li>
+              Regular Audits including routine security assessments to prevent
+              breaches.
+            </li>
+          </ul>
+          <p>
+            No method of transmission over the internet is 100 percent secure.
+            While we take every precaution, we cannot guarantee absolute
+            security.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            7. SMS Communications and Consent
+          </h3>
+          <p>SMS Opt-In Policy</p>
+          <p>
+            By opting into SMS messages, you consent to receive service-related
+            text messages from Phoenix Moving Inc.
+          </p>
+          <p>Important:</p>
+          <ul className="list-disc list-inside ml-4">
+            <li>The disclaimer applies only to SMS and not emails or calls.</li>
+            <li>Users must actively check the box to opt in.</li>
+            <li>
+              We do not sell or share phone numbers collected for SMS marketing.
+            </li>
+          </ul>
+          <p>How to Opt Out:</p>
+          <ul className="list-disc list-inside ml-4">
+            <li>Reply STOP to any SMS message to unsubscribe.</li>
+            <li>
+              Contact us at{' '}
+              <a
+                href="mailto:info@gophoenixmoving.com"
+                className="text-blue-500"
+              >
+                info@gophoenixmoving.com
+              </a>{' '}
+              to remove your number.
+            </li>
+            <li>
+              We do not sell or share phone numbers collected for SMS marketing.
+            </li>
+          </ul>
+          <p>
+            No method of transmission over the internet is 100 percent secure.
+            While we take every precaution, we cannot guarantee absolute
+            security.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            8. Children&apos;s Privacy
+          </h3>
+          <p>
+            Phoenix Moving Inc. does not knowingly collect personal data from
+            children under 13 years old. If we discover that a child has
+            provided us with personal data, we will delete it immediately.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">
+            9. Modifications to This Privacy Policy
+          </h3>
+          <p>
+            We may update this Privacy Policy from time to time. The most
+            current version will always be available on our website.
+          </p>
+          <p>
+            If we make material changes, we will notify you via email or a site
+            notice before the changes take effect.
+          </p>
+          <p>
+            By continuing to use our Site after updates are posted, you agree to
+            the revised Privacy Policy.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="font-bold uppercase mb-2">10. Contact Us</h3>
+          <p>For any privacy-related inquiries, please contact us:</p>
+          <p>Phoenix Moving Inc.</p>
+          <p>
+            Email:{' '}
+            <a href="mailto:info@gophoenixmoving.com" className="text-blue-500">
+              info@gophoenixmoving.com
+            </a>
+          </p>
+          <p>
+            Phone:{' '}
+            <a href="tel:+15083159458" className="text-blue-500">
+              (508) 315-9458
+            </a>
+          </p>
+        </div>
+
+        <p className="italic text-xs">
+          Privacy Policy was last modified on March 1, 2025.
         </p>
       </div>
-
-      <div className="mb-8">
-        <p className="font-bold">2. LINKS TO THIRD PARTY SITES</p>
-        <p className="text-sm font-light">
-          The Phoenix Moving Inc., Web Site may contain links to other Web Sites
-          (“Linked Sites”). The Linked Sites are not under the control of us and
-          Phoenix Moving Inc., is not responsible for the contents of any Linked
-          Site. Phoenix Moving Inc., Web Site is providing these links to you
-          only as a convenience, and the inclusion of any link does not imply
-          endorsement by Phoenix Moving Inc., of the site or any association
-          with its operators.
-        </p>
-      </div>
-
-      <div className="mb-8">
-        <p className="font-bold">3. COOKIES</p>
-        <p className="text-sm font-light">
-          “Cookies” are small pieces of information that are placed on a web
-          user&apos;s hard drive. We may use cookies to provide you with better
-          service. Cookies are pieces of information that a Web site transfers
-          to your computer&apos;s hard disk for record-keeping purposes. Cookies
-          can make the Web more useful by storing information about your
-          preferences for a particular site. The use of cookies is an industry
-          standard, and many major Web sites use them to provide useful features
-          for their customers. Cookies in and of themselves do not personally
-          identify users, although they do identify a user&apos;s computer. Most
-          browsers are initially set to accept cookies. If you prefer, you can
-          set your browser to refuse cookies. However, you may not be able to
-          take full advantage of the functionality of the Thorndike Laundromat
-          site if you do so.
-        </p>
-      </div>
-
-      <div className="mb-8">
-        <p className="font-bold">4. NO UNLAWFUL OR PROHIBITED USE</p>
-        <p className="text-sm font-light">
-          As a condition of your use of the Phoenix Moving Inc., Web Site, you
-          warrant to Phoenix Moving Inc., that you will not use the Phoenix
-          Moving Inc., Web Site for any purpose that is unlawful or prohibited
-          by our Privacy Policy. You may not use the Phoenix Moving Inc., Web
-          Site in any manner which could damage, disable, overburden, or impair
-          the Phoenix Moving Inc., reputation, operation or interfere with any
-          other party&apos;s use of our services. You may not obtain or attempt
-          to obtain any materials or information through any means not
-          intentionally made available or provided for through our Web Sites.
-          <br />
-          <br />
-          Notice: Phoenix Moving Inc., authorizes you to use our client login
-          systems for your convenience only. Any other use of the systems and
-          information, capture the whole page or any portion of the page from
-          the Phoenix Moving Inc., Web Site for public usage is strictly
-          prohibited.
-        </p>
-      </div>
-
-      <div className="mb-8">
-        <p className="font-bold">5. SECURITY</p>
-        <p className="text-sm font-light">
-          We follow generally accepted industry standards to protect the
-          personal information submitted to us, both during transmission and
-          once we receive it. However, no method of transmission over the
-          Internet or via mobile device, or method of electronic storage, is
-          100% secure. Therefore, while we strive to use commercially acceptable
-          means to protect your personal information, we cannot guarantee its
-          absolute security.
-        </p>
-      </div>
-
-      <div className="mb-8">
-        <p className="font-bold">6. MODIFICATIONS TO THIS PRIVACY POLICY</p>
-        <p className="text-sm font-light">
-          We may revise this Privacy Policy from time to time. The most current
-          version of the Privacy Policy will govern our use of information about
-          you and will be located here. If we make material changes to this
-          Privacy Policy, we will notify you by email or by posting a notice on
-          the Site prior to the effective date of the changes. By continuing to
-          access or use Phoenix Moving Inc. Web Site after those changes becomes
-          effective, you agree to be bound by the revised Privacy Policy.
-        </p>
-      </div>
-
-      <p className="italic text-xs">
-        Privacy Policy was last modified on June 1, 2023.
-      </p>
     </Section>
   );
 }

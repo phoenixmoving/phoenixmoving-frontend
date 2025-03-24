@@ -59,7 +59,7 @@ const packingOptions = [
   },
   {
     value: 'I will pack by myself',
-    label: 'I will pack by myself',
+    label: 'I will pack boxes by myself',
   },
   {
     value: 'I need partial packing service',

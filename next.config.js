@@ -3,8 +3,8 @@ const nextConfig = {
   poweredByHeader: false,
   experimental: {
     // appDir: true,
-    optimizeCss: true,
-    swcMinify: true,
+    // optimizeCss: true,
+    // swcMinify: true,
   },
   images: {
     remotePatterns: [
