@@ -41,6 +41,7 @@ export default async function Pricing() {
         'Delicate handling of your stuff.',
         'All taxes included in the price.',
       ],
+      isPopular: true,
     },
     {
       name: '4 Movers',
@@ -67,51 +68,54 @@ export default async function Pricing() {
       />
       <div className="mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
         {tiers.map((tier) => (
-          <div
-            key={tier.name}
-            className="divide-y divide-slate-200 rounded-3xl bg-white shadow-lg shadow-slate-900/5"
-          >
-            <div className="p-6">
-              <p className="text-lg font-semibold leading-6 text-slate-900">
-                {tier.name}
-              </p>
-              <p className="mt-4 text-sm text-slate-500">{tier.description}</p>
-              <p className="text-2xl font-semibold tracking-tight text-slate-500">
-                <s>${tier.oldPrice}</s>
-              </p>
-              <p className="text-4xl font-semibold tracking-tight text-slate-900">
-                ${tier.priceMonthly}
-                <span className="text-sm text-slate-500 ml-1 font-normal tracking-normal">
-                  per hour
-                </span>
-              </p>
-              <p className="font-semibold my-8">{tier.sizes}</p>
-              <Button
-                href={tier.href}
-                color="primary"
-                className="mt-8 w-full"
-                title="Get a Quote"
-              >
-                Get a Quote
-              </Button>
-            </div>
-            <div className="px-6 pt-6 pb-8">
-              <p className="text-sm font-semibold text-slate-900">
-                What&apos;s included
-              </p>
-              <ul className="mt-6 space-y-4">
-                {tier.includedFeatures.map((feature) => (
-                  <li key={feature} className="flex space-x-3">
-                    <CheckIcon
-                      className="h-5 w-5 flex-shrink-0 text-green-500"
-                      aria-hidden="true"
-                    />
-                    <span className="text-sm font-light text-slate-900">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+          <div className="relative" key={tier.name}>
+            {tier.isPopular && (
+              <div className="absolute -top-[12px] left-0 right-0 mx-auto w-fit rounded-full bg-palette-primary-500 px-4 py-1 text-center text-xs font-medium text-white">
+                MOST POPULAR
+              </div>
+            )}
+            <div className="divide-y divide-slate-200 rounded-3xl bg-white shadow-lg shadow-slate-900/5">
+              <div className="p-6">
+                <p className="text-lg font-semibold leading-6 text-slate-900">
+                  {tier.name}
+                </p>
+                <p className="mt-4 text-sm text-slate-500">
+                  {tier.description}
+                </p>
+                <p className="text-4xl font-semibold tracking-tight text-slate-900">
+                  ${tier.priceMonthly}
+                  <span className="text-sm text-slate-500 ml-1 font-normal tracking-normal">
+                    per hour
+                  </span>
+                </p>
+                <p className="font-semibold my-8">{tier.sizes}</p>
+                <Button
+                  href={tier.href}
+                  color="primary"
+                  className="mt-8 w-full"
+                  title="Get a Quote"
+                >
+                  Get a Quote
+                </Button>
+              </div>
+              <div className="px-6 pt-6 pb-8">
+                <p className="text-sm font-semibold text-slate-900">
+                  What&apos;s included
+                </p>
+                <ul className="mt-6 space-y-4">
+                  {tier.includedFeatures.map((feature) => (
+                    <li key={feature} className="flex space-x-3">
+                      <CheckIcon
+                        className="h-5 w-5 flex-shrink-0 text-green-500"
+                        aria-hidden="true"
+                      />
+                      <span className="text-sm font-light text-slate-900">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         ))}
@@ -167,6 +171,21 @@ export default async function Pricing() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mt-12 rounded-3xl bg-palette-primary-500 shadow-lg p-6 text-white text-center flex flex-col">
+        <h3 className="mb-2 text-2xl font-bold">Need a Custom Solution?</h3>
+        <p className="mb-4 text-lg">
+          Contact us for a personalized quote tailored to your specific moving
+          needs.
+        </p>
+        <Button
+          href="tel:(508)315-9458"
+          variant="outline"
+          className="border-0 self-center"
+          title="Contact Sales"
+        >
+          Contact Sales
+        </Button>
       </div>
     </Section>
   );

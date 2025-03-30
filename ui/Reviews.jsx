@@ -1,9 +1,12 @@
 import Testimonials from '@/ui/Testimonials';
 
+const placeId = 'ChIJ65r-D2iH44kRQVvxQOaxUUY';
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+
 export async function getData() {
   const res = await fetch(
-    'https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJ65r-D2iH44kRQVvxQOaxUUY&key=AIzaSyABLGmZ_4PNQoeLOH58jW3XNrdRbwQuTvI',
-    { next: { revalidate: 300 } },
+    `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${API_KEY}`,
+    // { next: { revalidate: 300 } },
   );
   return res.json();
 }
