@@ -6,13 +6,15 @@ const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 export async function getData() {
   const res = await fetch(
     `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${API_KEY}`,
-    // { next: { revalidate: 300 } },
+    { next: { revalidate: 604800 } },
   );
   return res.json();
 }
 
 export default async function Reviews() {
   const data = await getData();
+
+  // console.log(data);
   return (
     <Testimonials
       reviews={data?.result?.reviews}

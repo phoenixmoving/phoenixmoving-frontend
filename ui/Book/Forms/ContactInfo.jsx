@@ -21,24 +21,16 @@ const referralOptions = [
     label: 'Google',
   },
   {
+    value: 'word of mouth',
+    label: 'Word of mouth',
+  },
+  {
     value: 'thumbtack',
     label: 'Thumbtack',
   },
   {
-    value: 'bbb',
-    label: 'BBB',
-  },
-  {
-    value: 'social media',
-    label: 'Social media',
-  },
-  {
     value: 'repeat customer',
     label: 'Repeat customer',
-  },
-  {
-    value: 'saw our truck',
-    label: 'Saw our truck',
   },
   {
     value: 'customer referral',
@@ -49,8 +41,16 @@ const referralOptions = [
     label: 'Business Card',
   },
   {
-    value: 'other',
-    label: 'Other',
+    value: 'saw our truck',
+    label: 'Saw our truck',
+  },
+  {
+    value: 'facebook',
+    label: 'Facebook',
+  },
+  {
+    value: 'instagram',
+    label: 'Instagram',
   },
 ];
 
