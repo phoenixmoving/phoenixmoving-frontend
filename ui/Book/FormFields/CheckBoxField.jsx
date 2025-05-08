@@ -19,18 +19,31 @@ export default function CheckBoxField(props) {
         />
         <div className="ml-3 text-xs">
           <label htmlFor="agreed" className="text-xs">
-            By checking this box, you agree to receive text messages from
-            Phoenix Moving. Message and data rates may apply. Message frequency
-            varies. Reply STOP to opt out.
-            <br />
-            By clicking "Submit", you agree to the
+            By checking this box, you agree to receive <b>SMS</b> messages from
+            Phoenix Moving & Storage related to{' '}
+            <b>
+              Delivery notifications, Accounts notifications, Move details,
+              arrival time updates, General questions, Promotional offers,
+              discounts and Announcements.
+            </b>{' '}
+            You may reply STOP to opt-out at any time. Reply HELP to +1 (508)
+            315-9458 for assistance. Messages and data rates may apply. Message
+            frequency will vary. Learn more on our{' '}
+            <a
+              href="privacy"
+              target="_blank"
+              className="text-blue-600 hover:underline font-semibold"
+            >
+              Privacy Policy
+            </a>{' '}
+            page and{' '}
             <a
               href="terms"
               target="_blank"
-              className="text-blue-600 hover:underline ml-1 font-semibold"
+              className="text-blue-600 hover:underline font-semibold"
             >
-              terms & conditions*
-            </a>
+              Terms & Conditions.
+            </a>{' '}
           </label>
         </div>
       </div>

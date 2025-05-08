@@ -1,8 +1,5 @@
-import Hero from '@/ui/Hero';
 import Info from './Info';
-import bgImage from '@/images/prices.jpg';
 
-const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/policy`;
 const title = 'Company Policy - Phoenix Moving Boston (Free Estimate)';
 const description =
@@ -14,33 +11,16 @@ export const metadata = {
   alternates: {
     canonical: URL,
   },
-  // openGraph: {
-  //   title,
-  //   description,
-  //   url: URL,
-  //   siteName: 'Phoenix Moving Boston',
-  //   images: [
-  //     {
-  //       url: bgImage.src,
-  //     },
-  //   ],
-  //   locale: 'en-US',
-  //   type: 'website',
-  // },
-  // twitter: {
-  //   card: 'summary_large_image',
-  //   site: '@phoenix_moving',
-  //   domain: URL,
-  //   title,
-  //   description,
-  //   images: [BASE_URL + bgImage],
-  // },
 };
 
 export default async function PolicyPage() {
   return (
     <>
-      <Hero image={bgImage} title="Company Policy" />
+      <section className="py-28 bg-palette-primary-500">
+        <div className="max-w-5xl m-auto p-4">
+          <h1 className="text-white text-4xl font-bold">Company Policy</h1>
+        </div>
+      </section>
       <Info />
     </>
   );

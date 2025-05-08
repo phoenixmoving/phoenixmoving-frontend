@@ -2,13 +2,10 @@ import Section from '@/ui/Section';
 
 export default function Info() {
   return (
-    <Section className="max-w-5xl m-auto">
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 1.</span>
-          <span className="font-bold">Guidance, walk-trough and payment.</span>
-        </p>
-        <p className="text-sm font-light">
+    <Section className="max-w-5xl m-auto prose prose-a:text-blue-500">
+      <section>
+        <h2>Sec 1. Guidance, walk-trough and payment.</h2>
+        <p>
           At the time of the move, the customer or a representative must be
           present during the move at all times, as movers will need guidance. It
           is customer&apos;s responsibility to do a final “walk-through” at the
@@ -18,14 +15,11 @@ export default function Info() {
           payments with a personal check have to be granted by your moving
           coordinator.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 2.</span>
-          <span className="font-bold">Moving cost.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 2. Moving cost.</h2>
+        <p>
           The final cost of your move will be determined by multiplying the
           actual number of hours our moving crew had worked by the hourly rate
           indicated on your estimate, travel time, the amount of packing
@@ -34,28 +28,22 @@ export default function Info() {
           such services are provided). All jobs are subject to a 2-hour minimum
           labor + fixed travel time.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 3.</span>
-          <span className="font-bold">Labor time.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 3. Labor time.</h2>
+        <p>
           Labor time starts upon the arrival of our crew at your location and
           ends upon the departure from your final destination. Labor time is
           calculated based on 15-minute increments at the rate indicated on the
           estimate. Any travel between the origin and the destination is
           considered to be part of the labor time.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 4.</span>
-          <span className="font-bold">Travel time.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 4. Travel time.</h2>
+        <p>
           Please keep in mind that you will be billed for the travel time from
           our parking office to your origin, and for the travel time from your
           final destination back to our parking office. Those charges are
@@ -64,14 +52,11 @@ export default function Info() {
           delayed by traffic, the additional time incurred will not be added to
           the bill.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 5.</span>
-          <span className="font-bold">Packing materials.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 5. Packing materials.</h2>
+        <p>
           Our trucks carry a standard set of boxes: 5 small, 5 medium, 5 large,
           5 picture boxes, 5 wardrobe and 1 bundle of white packing paper. If
           you feel like there will be some packing for us to be done, please
@@ -79,40 +64,31 @@ export default function Info() {
           to our supplies. All boxes and supplies used on your move are subject
           to addition charge, unless specified in your moving estimate.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 6.</span>
-          <span className="font-bold">Arrival time frame.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 6. Arrival time frame.</h2>
+        <p>
           Please keep in mind that we do not provide a specific time of arrival.
           We offer 2-hour arrival time frames for all jobs scheduled in the
           morning and 3-hour arrival time frames for all the jobs scheduled in
           the afternoon.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 7.</span>
-          <span className="font-bold">Waiting time.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 7. Waiting time.</h2>
+        <p>
           If our crew arrives at your location as agreed, but you&apos;re not
           ready for us to start the job, you&apos;ll be billed for our waiting
           time. Please understand that you&apos;re holding up our team by not
           being ready for the move.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 8.</span>
-          <span className="font-bold">Parking.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 8. Parking.</h2>
+        <p>
           Two parking spaces (to accommodate a 34-foot-long moving truck) should
           be provided/secured by the customer. Parking spot must be located
           within 75 feet from the entrance. In case if a parking permit is
@@ -124,16 +100,11 @@ export default function Info() {
           responsibility to cover the cost of any parking tickets issued to
           Phoenix Moving.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 9.</span>
-          <span className="font-bold">
-            Payment and payment forms (for local moves).
-          </span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 9. Payment and payment forms (for local moves).</h2>
+        <p>
           For local moves, the payment is required at the end of the move/each
           moving day (for multiple days move), before the moving team leaves
           your location. The clock will continue running until the payment has
@@ -141,27 +112,23 @@ export default function Info() {
           of credit cards (Visa, Mastercard, Discover, AMEX) and 4% processing
           fee will be applied for all debit and credit card payments.
         </p>
-        <br />
-        <p className="font-bold text-sm">
+        <p>
           For credit card payments, the name on the card must match the name the
           reservation is under otherwise, an authorization form must be signed
           by the person paying for the move.
         </p>
-        <br />
-        <p className="font-bold text-sm">
+        <p>
           Any payments with a personal check have to be granted by your moving
           coordinator.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 10.</span>
-          <span className="font-bold">
-            Payment and payment forms (for long distance/interstate moves).
-          </span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>
+          Sec 10. Payment and payment forms (for long distance/interstate
+          moves).
+        </h2>
+        <p>
           We require cash, credit card, money order/cashier&apos;s check (no
           personal checks) at the time of delivery for any balance due on
           long-distance moves. 4% processing fee will be applied for credit card
@@ -169,16 +136,11 @@ export default function Info() {
           stage to secure crew and truck for your move, another 40% due at the
           pick-up time and 50% balance due at the delivery after unloading.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 11.</span>
-          <span className="font-bold">
-            Additional possible services/charges.
-          </span>
-        </p>
-        <ul className="text-sm font-light list-disc ml-4">
+      <section>
+        <h2>Sec 11. Additional possible services/charges.</h2>
+        <ul>
           <li>
             Grand piano special handling cost: $450.00 (first floor to the first
             floor and/or elevator only).
@@ -216,14 +178,11 @@ export default function Info() {
             during the move-in or loading services.
           </li>
         </ul>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 12.</span>
-          <span className="font-bold">Piano move.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 12. Piano move.</h2>
+        <p>
           We do not move large upright pianos up or down flights of stairs
           inside the house. We only move pianos from ground to ground floor.
           Exterior stairs are fine, but we encourage sending us pictures of
@@ -236,28 +195,22 @@ export default function Info() {
           the customer elects to leave the legs on, we will not be responsible
           if damage occurs to them.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 13.</span>
-          <span className="font-bold">Heavy/Oversized items move.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 13. Heavy/Oversized items move.</h2>
+        <p>
           Under safe conditions, we move upright or baby grand pianos,
           appliances, safe and items over 250 lbs. Unfortunately, sometimes, due
           to the weight of these items, damage may result to floor surfaces or
           walls so before we proceed with moving these items we will have a
           release of any liability signed so we can move those items for you.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="space-x-2">
-          <span className="italic">Sec 14.</span>
-          <span className="font-bold">Moving Crew size.</span>
-        </p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Sec 14. Moving Crew size.</h2>
+        <p>
           The size of the moving crew is determined by the number of items that
           will have to be packed and/or moved as well as factors like access on
           each moving location, walking distance, stairs, etc. We recommend a
@@ -270,11 +223,11 @@ export default function Info() {
           furniture, etc. The hourly rate will be increased accordingly and the
           move will run more efficiently with more movers.
         </p>
-      </div>
+      </section>
 
-      <div className="mb-8 space-y-2">
-        <p className="font-bold">Changes to Our Policy.</p>
-        <p className="text-sm font-light">
+      <section>
+        <h2>Changes to Our Policy.</h2>
+        <p>
           We may change our Privacy and Website Use Policy from time to time.
           The most current version of the Policy will govern our collection, use
           and disclosure of information about you and will be detailed here. If
@@ -283,11 +236,9 @@ export default function Info() {
           By continuing to access or use the Service after those changes become
           effective, you agree to the revised Privacy and Website Use Policy.
         </p>
-      </div>
+      </section>
 
-      <p className="italic text-xs">
-        This Policy was last modified on January 22, 2025.
-      </p>
+      <i>This Policy was last modified on January 22, 2025.</i>
     </Section>
   );
 }
