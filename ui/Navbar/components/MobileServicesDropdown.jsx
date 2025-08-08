@@ -1,12 +1,16 @@
-import { Disclosure } from '@headlessui/react';
-import ChevronDownIcon from '@heroicons/react/20/solid/ChevronDownIcon';
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import ChevronDownIcon from "@heroicons/react/20/solid/ChevronDownIcon";
 
 export default function MobileServicesDropdown({ item }) {
   return (
     <Disclosure>
       {({ open }) => (
         <>
-          <Disclosure.Button className="flex items-center w-full rounded-full py-2 px-3 font-medium leading-7 text-slate-900 hover:bg-slate-400/10">
+          <DisclosureButton className="flex w-full items-center rounded-full px-3 py-2 leading-7 font-medium text-slate-900 hover:bg-slate-400/10">
             <span>{item.name}</span>
             {/* <ChevronDownIcon
               className={`${
@@ -15,24 +19,24 @@ export default function MobileServicesDropdown({ item }) {
             /> */}
             <ChevronDownIcon
               className={`relative top-[1px] ${
-                open ? 'rotate-180 transform' : ''
+                open ? "rotate-180 transform" : ""
               } h-6 w-6`}
               aria-hidden="true"
             />
-          </Disclosure.Button>
-          <Disclosure.Panel className="px-4 text-sm text-slate-500">
+          </DisclosureButton>
+          <DisclosurePanel className="px-4 text-sm text-slate-500">
             {item.items.map((el, i) => {
               return (
                 <a
                   key={el.name}
                   href={el.href}
-                  className="block rounded-full py-2 px-3 text-sm font-medium leading-7 text-slate-700 hover:bg-slate-400/10"
+                  className="block rounded-full px-3 py-2 text-sm leading-7 font-medium text-slate-700 hover:bg-slate-400/10"
                 >
                   {el.name}
                 </a>
               );
             })}
-          </Disclosure.Panel>
+          </DisclosurePanel>
         </>
       )}
     </Disclosure>
