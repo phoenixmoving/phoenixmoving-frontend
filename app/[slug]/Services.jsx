@@ -12,17 +12,17 @@ const features = [
 
 export default function Services({ city }) {
   return (
-    <Section className="bg-palette-background">
+    <Section className="bg-muted">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-3 lg:gap-x-12 items-center">
         <div>
-          <p className="md:text-lg font-semibold leading-8 tracking-tight text-palette-primary-500">
+          <p className="md:text-lg font-semibold leading-8 tracking-tight text-primary">
             Everything you need
           </p>
           <div className="mx-auto max-w-3xl mb-16">
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
               Moving services.
             </h2>
-            <p className="mt-2 text-sm prose text-slate-900">
+            <p className="mt-2 text-sm prose">
               Among all of {city?.name}
               {city.state && `, ${city?.state}`} moving companies there is good
               reputable movers and shall we say. Phoenix Moving is fully
@@ -41,9 +41,7 @@ export default function Services({ city }) {
                   className="absolute h-6 w-6 text-green-500"
                   aria-hidden="true"
                 />
-                <p className="ml-9  font-semibold leading-6 text-slate-900">
-                  {feature}
-                </p>
+                <p className="ml-9  font-semibold leading-6">{feature}</p>
               </div>
             ))}
           </div>

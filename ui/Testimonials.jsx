@@ -26,8 +26,8 @@ function StarRating({ rating }) {
         <StarIcon
           key={index}
           className={clsx(
-            'h-5 w-5',
-            rating > index ? 'fill-palette-secondary-500' : 'fill-slate-300',
+            'size-5',
+            rating > index ? 'fill-yellow-400' : 'fill-muted-foreground/50',
           )}
         />
       ))}
@@ -47,11 +47,11 @@ function Review({
   return (
     <figure
       className={clsx(
-        'animate-fade-in rounded-3xl bg-white p-6 opacity-0 shadow-md shadow-slate-900/5',
+        'animate-fade-in rounded-3xl bg-background p-6 opacity-0 shadow',
         className,
       )}
     >
-      <blockquote className="text-slate-900">
+      <blockquote>
         <div className="flex justify-between items-center">
           <StarRating rating={rating || 5} />
           <Image
@@ -63,10 +63,10 @@ function Review({
             title="Google"
           />
         </div>
-        <p className="mt-3 leading-7 text-sm text-slate-900">{text || ''}</p>
+        <p className="mt-3 leading-7 text-sm">{text || ''}</p>
       </blockquote>
 
-      <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
+      <figcaption className="relative mt-6 flex items-center justify-between border-t  pt-6">
         <div>
           <a
             className="text-blue-600 hover:underline flex items-center"
@@ -77,11 +77,11 @@ function Review({
             {author_name || ''}
             <ArrowUpRightIcon className="w-3 h-3 ml-1 text-blue-600" />
           </a>
-          <div className="mt-1 text-sm text-slate-400">
+          <div className="mt-1 text-sm text-muted-foreground/80">
             {relative_time_description || ''}
           </div>
         </div>
-        <div className="overflow-hidden rounded-full bg-slate-50">
+        <div className="overflow-hidden rounded-full">
           <Image
             className="h-14 w-14 object-cover"
             src={profile_photo_url || ''}
@@ -194,9 +194,9 @@ function ReviewGrid({ reviews }) {
   );
 }
 
-export default function Testimonials({ reviews, totalReviews }) {
+export function Testimonials({ reviews, totalReviews }) {
   return (
-    <Section id="reviews" className="bg-palette-background">
+    <Section id="reviews" className="bg-muted">
       <SectionHeader title="What real people say about us." />
       {reviews && reviews.length > 0 && <ReviewGrid reviews={reviews} />}
       <div className="flex items-center justify-center mt-10">

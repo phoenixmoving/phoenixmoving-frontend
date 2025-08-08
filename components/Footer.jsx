@@ -142,7 +142,7 @@ const navigation = {
 export default async function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-palette-footer" aria-labelledby="footer-heading">
+    <footer className="bg-slate-800" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>

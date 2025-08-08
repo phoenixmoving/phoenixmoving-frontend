@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import BookFormWrapper from '@/ui/BookFormWrapper';
-import { Suspense } from 'react';
+import Image from "next/image";
+import BookFormWrapper from "@/ui/BookFormWrapper";
+import { Suspense } from "react";
 // import { getPlaiceholder } from 'plaiceholder';
 
 // const getImage = async (src) => {
@@ -23,7 +23,7 @@ export default async function HeroWithBooking({ image, title }) {
   return (
     <section className="relative">
       <div className="absolute inset-0">
-        <Image
+        {/* <Image
           className="h-full w-full object-cover"
           src={image}
           alt={title}
@@ -31,8 +31,23 @@ export default async function HeroWithBooking({ image, title }) {
           title={title}
           blurDataURL={image.blurDataURL}
           placeholder="blur"
+        /> */}
+
+        <Image
+          src={image}
+          blurDataURL={image.blurDataURL}
+          placeholder="blur"
+          alt={title}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          quality={80}
+          title="Image of a moving truck"
         />
-        <div className="absolute inset-0 bg-slate-900/30 mix-blend-multiply" />
+        {/* <div className="absolute inset-0 bg-slate-900/30 mix-blend-multiply" /> */}
+        {/* Overlay to improve text readability */}
+        <div className="from-foreground/70 to-foreground/30 absolute inset-0 bg-gradient-to-t" />
       </div>
       <div className="relative py-40 sm:py-32 lg:py-28">
         <div className="mx-auto max-w-7xl lg:px-8">
@@ -45,12 +60,12 @@ export default async function HeroWithBooking({ image, title }) {
                     #1 movers in Boston
                   </span>
                 </h1>
-                <p className="mt-3 text-base text-slate-50 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl hidden md:block">
+                <p className="mt-3 hidden text-base text-slate-50 sm:mt-5 sm:text-xl md:block lg:text-lg xl:text-xl">
                   Professional moving company serving the Boston area. We
                   provide fast, reliable, and affordable moving services for
                   residential and commercial customers.
                 </p>
-                <div className="mt-10 sm:mt-12 hidden md:block">
+                <div className="mt-10 hidden sm:mt-12 md:block">
                   <p className="mt-3 text-sm text-slate-50 sm:mt-4">
                     We offer FREE Online estimates to provide you with a
                     hassle-free and convenient experience.
@@ -58,8 +73,8 @@ export default async function HeroWithBooking({ image, title }) {
                 </div>
               </div>
             </div>
-            <div className="flex justify-end items-center mt-12 px-2">
-              <Suspense fallback="loading...">
+            <div className="mt-12 flex items-center justify-end px-2">
+              <Suspense fallback={<div className="h-[567px] w-[400px]" />}>
                 <BookFormWrapper />
               </Suspense>
             </div>

@@ -1,11 +1,11 @@
-'use client';
-import { cities } from '@/lib/citiesData';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
-import { useState } from 'react';
+"use client";
+import { cities } from "@/lib/citiesData";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import clsx from "clsx";
+import { useState } from "react";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function PopularCities() {
@@ -15,17 +15,17 @@ export default function PopularCities() {
     <>
       <div
         onClick={() => handleOpen()}
-        className={clsx('pt-6 w-full hover:cursor-pointer', {
-          'border-b border-slate-500': !open,
+        className={clsx("w-full pt-6 hover:cursor-pointer", {
+          "border-b border-slate-500": !open,
         })}
       >
         <div className="w-full pb-4">
-          <p className="text-white text-xs font-semibold flex items-center justify-between w-full">
+          <p className="flex w-full items-center justify-between text-xs font-semibold text-white">
             Popular Cities
             <ChevronDownIcon
               className={classNames(
-                open ? '-rotate-180' : 'rotate-0',
-                'h-4 w-4 transform',
+                open ? "-rotate-180" : "rotate-0",
+                "h-4 w-4 transform",
               )}
             />
           </p>
@@ -33,7 +33,7 @@ export default function PopularCities() {
       </div>
       <div
         className={clsx(
-          'pb-4 grid grid-cols-3 gap-1 md:grid-cols-6 border-b border-slate-500',
+          "grid w-full grid-cols-3 gap-1 border-b border-slate-500 pb-4 md:grid-cols-6",
           {
             hidden: !open,
           },
@@ -45,7 +45,7 @@ export default function PopularCities() {
               key={city.fullName}
               href={`/${city.slug}`}
               title={`${city.fullName} near me`}
-              className="hover:underline text-xs text-slate-400 col-span-1 justify-start"
+              className="col-span-1 justify-start text-xs text-slate-400 hover:underline"
             >
               {`${city.fullName} near me`}
             </a>

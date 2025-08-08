@@ -1,51 +1,51 @@
-'use client';
+"use client";
 
-import { AnimatePresence, motion, MotionConfig } from 'framer-motion';
-import useMeasure from 'react-use-measure';
-import { Toaster } from 'react-hot-toast';
-import React, { useState } from 'react';
-import { useJsApiLoader } from '@react-google-maps/api';
-import { Formik, Form } from 'formik';
-import validationSchema from './FormModel/validationSchema';
-import sumbitFormModel from './FormModel/submitFormModel';
-import formInitialValues from './FormModel/formInitialValues';
-import FirstStep from './Forms/FirstStep';
-import SecondStep from './Forms/SecondStep';
-import ResultStep from './Forms/ResultStep';
-import Addresses from './Forms/Addresses';
-import ContactInfo from './Forms/ContactInfo';
-import ReviewDetails from './Forms/ReviewDetails';
-import Button from '@/ui/Button';
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import useMeasure from "react-use-measure";
+import { Toaster } from "react-hot-toast";
+import React, { useState } from "react";
+import { useJsApiLoader } from "@react-google-maps/api";
+import { Formik, Form } from "formik";
+import validationSchema from "./FormModel/validationSchema";
+import sumbitFormModel from "./FormModel/submitFormModel";
+import formInitialValues from "./FormModel/formInitialValues";
+import FirstStep from "./Forms/FirstStep";
+import SecondStep from "./Forms/SecondStep";
+import ResultStep from "./Forms/ResultStep";
+import Addresses from "./Forms/Addresses";
+import ContactInfo from "./Forms/ContactInfo";
+import ReviewDetails from "./Forms/ReviewDetails";
+import { Button } from "@/components/ui/button";
 
-import { findTravelTime } from './utils/findTravelTime';
-import { submitFormToDb } from './utils/submitFormToDb';
+import { findTravelTime } from "./utils/findTravelTime";
+import { submitFormToDb } from "./utils/submitFormToDb";
 
 let duration = 0.5;
 
 const steps = [
-  'Get a Quote',
-  'Fill Move Details',
-  'Quote Result',
-  'Fill Addresses',
-  'Contact Information',
-  'Review & submit',
+  "Get a Quote",
+  "Fill Move Details",
+  "Quote Result",
+  "Fill Addresses",
+  "Contact Information",
+  "Review & submit",
 ];
 const stepsButtons = [
-  'Continue',
-  'View Quote',
-  'Continue',
-  'Contact Info',
-  'Review Quote',
-  'Submit Request',
+  "Continue",
+  "View Quote",
+  "Continue",
+  "Contact Info",
+  "Review Quote",
+  "Submit Request",
 ];
 
 const { formId, formField } = sumbitFormModel;
 
 function _renderStepContent(step, values, rates, prices) {
   // console.log(values);
-  const showDeliveryDate = values.service === 'Moving with Storage';
+  const showDeliveryDate = values.service === "Moving with Storage";
   const showDestination =
-    values.service === 'Moving with Storage' || values.service === 'Moving';
+    values.service === "Moving with Storage" || values.service === "Moving";
 
   switch (step) {
     case 0:
@@ -112,7 +112,7 @@ export default function Book({ rates, prices }) {
   function _handleSubmit(values, actions) {
     actions.setSubmitting(true);
     if (isLastStep) {
-      console.log('ok');
+      console.log("ok");
       // window.alert('ok');
       // actions.setSubmitting(false);
       submitFormToDb(values, actions, activeStep, setActiveStep);
@@ -120,7 +120,7 @@ export default function Book({ rates, prices }) {
       let originZip = `${values.originCity}, ${values.originState} ${values.originZip}, USA`;
       let destinationZip = values.destinationZip
         ? `${values.destinationCity}, ${values.destinationState} ${values.destinationZip}, USA`
-        : '';
+        : "";
       let service = values.service;
       if (isLoaded) {
         findTravelTime(
@@ -146,27 +146,21 @@ export default function Book({ rates, prices }) {
     <React.Fragment>
       <Toaster />
       {/* <ResizablePanel> */}
-      <div className="flex justify-center items-center w-full sm:w-[400px]">
+      <div className="flex w-full items-center justify-center sm:w-[400px]">
         {/* relative */}
-        <div className="w-full bg-white rounded-3xl shadow-3xl">
+        <div className="shadow-3xl w-full rounded-3xl bg-white">
           {/* overflow-y-auto max-h-[525px] */}
           <React.Fragment>
             {activeStep === steps.length ? (
-              <div className="text-center p-8">
-                <img src="/hands.png" alt="" className="w-12 m-auto" />
+              <div className="p-8 text-center">
+                <img src="/hands.png" alt="" className="m-auto w-12" />
                 <p className="mt-4">We're on it!</p>
                 <p className="mt-4">
                   Thanks for your submission. One of our moving specialists will
                   contact you shortly.
                 </p>
-                <Button
-                  size="large"
-                  component="a"
-                  href="tel:(508)315-9458"
-                  className="mt-4"
-                  variant="soft"
-                >
-                  +1 (508) 315-9458
+                <Button size="lg" className="mt-4" variant="outline" asChild>
+                  <a href="tel:(508)315-9458">+1 (508) 315-9458</a>
                 </Button>
               </div>
             ) : (
@@ -178,9 +172,9 @@ export default function Book({ rates, prices }) {
                 {({ isSubmitting, values, errors }) => {
                   return (
                     <Form id={formId} autoComplete="off">
-                      <MotionConfig transition={{ duration, type: 'tween' }}>
+                      <MotionConfig transition={{ duration, type: "tween" }}>
                         <ResizablePanel>
-                          <p className="text-2xl font-semibold text-center mb-6">
+                          <p className="mb-6 text-center text-2xl font-semibold">
                             {steps[activeStep]}
                           </p>
 
@@ -191,15 +185,14 @@ export default function Book({ rates, prices }) {
                             prices,
                           )}
 
-                          <div className="flex mt-10 gap-6 justify-between">
+                          <div className="mt-10 flex justify-between gap-6">
                             {activeStep !== 0 && (
                               <Button
                                 type="button"
                                 onClick={_handleBack}
-                                // color="primary"
                                 variant="outline"
-                                className="w-full"
-                                // size="small"
+                                size="lg"
+                                className="flex-1"
                               >
                                 Back
                               </Button>
@@ -207,22 +200,21 @@ export default function Book({ rates, prices }) {
 
                             <Button
                               type="submit"
-                              color="primary"
-                              className="w-full disabled:opacity-50"
                               disabled={isSubmitting}
-                              // size="small"
+                              size="lg"
+                              className="flex-1"
                             >
                               {isSubmitting
-                                ? 'Loading...'
+                                ? "Loading..."
                                 : stepsButtons[activeStep]}
                             </Button>
                           </div>
                           {activeStep === 0 ? (
-                            <p className="text-slate-500 font-semmibold text-xs text-center mt-2">
+                            <p className="font-semmibold mt-2 text-center text-xs text-slate-500">
                               Free instant quote at step 3
                             </p>
                           ) : (
-                            <p className="text-slate-500 font-semmibold text-xs text-center mt-2">
+                            <p className="font-semmibold mt-2 text-center text-xs text-slate-500">
                               step {activeStep + 1}/{steps.length}
                             </p>
                           )}
@@ -244,29 +236,32 @@ function ResizablePanel({ children }) {
   let [ref, { height }] = useMeasure();
 
   return (
-    <motion.div animate={{ height: height || 'auto' }} className="relative">
-      <AnimatePresence initial={false}>
-        <motion.div
-          // key={JSON.stringify(children, ignoreCircularReferences())}
-          // initial={{
-          //   x: 384,
-          // }}
-          // animate={{
-          //   x: 0,
-          //   // transition: { duration: duration / 2, delay: duration / 2 },
-          // }}
-          // exit={{
-          //   x: -384,
-          //   // transition: { duration: duration / 2 },
-          // }}
-          className="relative"
-        >
-          <div ref={ref} className="p-8">
-            {children}
-          </div>
-        </motion.div>
-      </AnimatePresence>
-    </motion.div>
+    <div ref={ref} className="p-8">
+      {children}
+    </div>
+    // <motion.div animate={{ height: height || "auto" }} className="relative">
+    //   <AnimatePresence initial={false}>
+    //     <motion.div
+    //       // key={JSON.stringify(children, ignoreCircularReferences())}
+    //       // initial={{
+    //       //   x: 384,
+    //       // }}
+    //       // animate={{
+    //       //   x: 0,
+    //       //   // transition: { duration: duration / 2, delay: duration / 2 },
+    //       // }}
+    //       // exit={{
+    //       //   x: -384,
+    //       //   // transition: { duration: duration / 2 },
+    //       // }}
+    //       // className="relative"
+    //     >
+    //       <div ref={ref} className="p-8">
+    //         {children}
+    //       </div>
+    //     </motion.div>
+    //   </AnimatePresence>
+    // </motion.div>
   );
 }
 

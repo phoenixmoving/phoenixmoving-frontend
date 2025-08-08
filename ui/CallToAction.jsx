@@ -1,10 +1,10 @@
-import Button from '@/ui/Button';
 import Container from '@/ui/Container';
 import SectionHeader from '@/ui/SectionHeader';
+import { Button } from '@/components/ui/button';
 
 export default function CallToAction() {
   return (
-    <section className="py-10 sm:py-16 bg-palette-background">
+    <section className="py-10 sm:py-16 bg-muted">
       <Container className="justify-center">
         <SectionHeader
           title="Have a moving need?"
@@ -12,14 +12,12 @@ export default function CallToAction() {
         />
         <div className="flex justify-center">
           <Button
-            href="tel:(508)315-9458"
-            size="large"
-            variant="solid"
-            color="primary"
+            size="lg"
             className="w-full sm:w-auto"
             title="Call us now"
+            asChild
           >
-            +1 (508) 315-9458
+            <a href="tel:(508)315-9458">+1 (508) 315-9458</a>
           </Button>
         </div>
       </Container>

@@ -98,16 +98,16 @@ const social = [
 
 export default function Contact() {
   return (
-    <section className="bg-palette-background">
+    <section className="bg-muted">
       <Container className="flex flex-col lg:flex-row">
         <div className="py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 xl:pr-12 w-full">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             Get in touch.
           </h2>
           <div className="flex gap-10 flex-col sm:flex-row justify-between mt-4">
             <div>
               <p className="text-lg font-medium">Address</p>
-              <address className="text-slate-500 mt-2 text-base not-italic">
+              <address className="text-muted-foreground mt-2 text-base not-italic">
                 <span className="flex items-center gap-2">
                   <MapPinIcon className="h-6 w-6" aria-hidden="true" /> 18
                   Lakeview Gardens
@@ -120,7 +120,7 @@ export default function Contact() {
               <p className="text-lg font-medium">Phone</p>
               <a
                 href="tel:(508)315-9458"
-                className="flex items-center gap-2 text-slate-500 mt-2 text-base hover:text-palette-primary-500"
+                className="flex items-center gap-2 text-muted-foreground mt-2 text-base hover:text-palette-primary-500"
                 title="Phoenix Moving Phone"
               >
                 <PhoneIcon className="h-6 w-6" aria-hidden="true" />
@@ -131,7 +131,7 @@ export default function Contact() {
               <p className="text-lg font-medium">Email</p>
               <a
                 href="mailto:info@gophoenixmoving.com"
-                className="flex items-center gap-2 text-slate-500 mt-2 text-base hover:text-palette-primary-500"
+                className="flex items-center gap-2 text-muted-foreground mt-2 text-base hover:text-palette-primary-500"
                 title="Phoenix Moving Email"
               >
                 <EnvelopeIcon className="h-6 w-6" aria-hidden="true" />
@@ -139,13 +139,13 @@ export default function Contact() {
               </a>
             </div>
           </div>
-          <p className="mt-8 text-slate-900">Follow us on Social Media</p>
+          <p className="mt-8">Follow us on Social Media</p>
           <ul className="mt-2 flex gap-6 flex-wrap items-center">
             {social.map((item, i) => {
               return (
                 <li key={item.name}>
                   <a
-                    className="relative text-slate-500 hover:text-palette-primary-500 transition-all duration-150 ease-in inline-block group"
+                    className="relative text-muted-foreground hover:text-palette-primary-500 transition-all duration-150 ease-in inline-block group"
                     href={item.href}
                     title={item.name}
                     target="_blank"
@@ -158,7 +158,7 @@ export default function Contact() {
                       // }
                       aria-hidden="true"
                     />
-                    <span className="invisible group-hover:visible absolute bottom-10 bg-slate-600 rounded-xl py-1 px-2 text-xs text-white z-10 scale-0 transition-all group-hover:scale-100">
+                    <span className="invisible group-hover:visible absolute bottom-10 bg-muted-foreground rounded-xl py-1 px-2 text-xs text-white z-10 scale-0 transition-all group-hover:scale-100">
                       {item.name}
                     </span>
                   </a>

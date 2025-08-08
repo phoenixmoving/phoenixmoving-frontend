@@ -41,12 +41,8 @@ export default function WhyChooseUs() {
       <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
         {features.map((feature) => (
           <div key={feature.name}>
-            <dt className="text-lg font-semibold leading-7 text-slate-900">
-              {feature.name}
-            </dt>
-            <dd className="mt-2 text-base leading-7 text-slate-900">
-              {feature.description}
-            </dd>
+            <dt className="text-lg font-semibold leading-7">{feature.name}</dt>
+            <dd className="mt-2 text-base leading-7">{feature.description}</dd>
           </div>
         ))}
       </dl>

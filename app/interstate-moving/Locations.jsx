@@ -19,7 +19,7 @@ export default function Locations() {
           >
             <div
               className={classNames(
-                'bg-slate-600',
+                'bg-muted-foreground',
                 'flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-2xl',
               )}
             >
@@ -27,7 +27,7 @@ export default function Locations() {
             </div>
             <div
               className={clsx(
-                'flex flex-1 truncate rounded-r-2xl border-t border-r border-b border-slate-200 bg-white',
+                'flex flex-1 truncate rounded-r-2xl border-t border-r border-b bg-background',
                 {
                   'items-center': !state.cities,
                   'items-baseline': state.cities,
@@ -39,21 +39,21 @@ export default function Locations() {
                   <p>
                     <a
                       href={state.slug}
-                      className="font-semibold text-slate-900 hover:text-slate-600 hover:underline"
+                      className="font-semibold hover:text-muted-foreground hover:underline"
                       title={`Moving From Boston to ${state.name}`}
                     >
                       {state.name}
                     </a>
                   </p>
                 ) : (
-                  <p className="font-semibold text-slate-900">{state.name}</p>
+                  <p className="font-semibold">{state.name}</p>
                 )}
                 {state.cities?.map((city) => {
                   return (
                     <p className="leading-none" key={city.name}>
                       <a
                         href={city.slug}
-                        className="font-light text-xs text-slate-900 hover:text-slate-600 hover:underline"
+                        className="font-light text-xs hover:text-muted-foreground hover:underline"
                         title={`Moving From Boston to ${city.name}`}
                       >
                         Moving From Boston to {city.name}

@@ -1,28 +1,28 @@
-import Section from '@/ui/Section';
-import SectionHeader from '@/ui/SectionHeader';
-import Image from 'next/image';
-import image from '@/images/truck-and-tree-opt.jpg';
+import Section from "@/ui/Section";
+import SectionHeader from "@/ui/SectionHeader";
+import Image from "next/image";
+import image from "@/images/truck-and-tree-opt.jpg";
 
 const localServices = [
   {
-    name: 'Residential Local Moves',
+    name: "Residential Local Moves",
     description:
-      'Trust our skilled team to handle every aspect of your residential move with care and efficiency. We offer customizable moving packages designed to suit your unique requirements, including furniture disassembly/reassembly, packing/unpacking services, and secure transportation of your belongings.',
+      "Trust our skilled team to handle every aspect of your residential move with care and efficiency. We offer customizable moving packages designed to suit your unique requirements, including furniture disassembly/reassembly, packing/unpacking services, and secure transportation of your belongings.",
   },
   {
-    name: 'Commercial Local Moves',
+    name: "Commercial Local Moves",
     description:
-      'Planning an office relocation? Count our movers for professional commercial moving services. We understand the importance of minimizing downtime and disruption to your business operations. Our services include office furniture/equipment relocation, IT equipment handling, and comprehensive logistics management.',
+      "Planning an office relocation? Count our movers for professional commercial moving services. We understand the importance of minimizing downtime and disruption to your business operations. Our services include office furniture/equipment relocation, IT equipment handling, and comprehensive logistics management.",
   },
   {
-    name: 'Small Moves',
+    name: "Small Moves",
     description:
-      'If you find yourself needing to move only a few items, opting for a full-service moving company might not be necessary. At our company, we offer a diverse range of services tailored to meet your specific needs, whether it is relocating a piano or household appliances.',
+      "If you find yourself needing to move only a few items, opting for a full-service moving company might not be necessary. At our company, we offer a diverse range of services tailored to meet your specific needs, whether it is relocating a piano or household appliances.",
   },
   {
-    name: 'Loading/Unloading Help',
+    name: "Loading/Unloading Help",
     description:
-      'If you require solely loading or unloading assistance, Phoenix Moving Company has you covered. Our dedicated team ensures efficient and secure loading, or unloading, of your belongings, making your move hassle-free.',
+      "If you require solely loading or unloading assistance, Phoenix Moving Company has you covered. Our dedicated team ensures efficient and secure loading, or unloading, of your belongings, making your move hassle-free.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function ServicesSection() {
             placeholder="blur"
             blurDataURL={image.blurDataURL}
             alt="Truck and tree"
-            className="mt-16 aspect-[6/5] w-full rounded-2xl -rotate-2 object-cover lg:aspect-auto lg:h-[34.5rem]"
+            className="mt-16 aspect-[6/5] w-full -rotate-2 rounded-2xl object-cover lg:aspect-auto lg:h-[34.5rem]"
             title="Local Moving Services"
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -68,10 +68,7 @@ export default function ServicesSection() {
                 <dl className="relative flex flex-wrap gap-x-3">
                   <dt className="sr-only">{service.name}</dt>
                   <dd className="w-full flex-none text-lg font-semibold tracking-tight text-slate-900">
-                    <p>
-                      {service.name}
-                      <span className="absolute inset-0" aria-hidden="true" />
-                    </p>
+                    <p>{service.name}</p>
                   </dd>
                   <dt className="sr-only">Description</dt>
                   <dd className="mt-2 w-full flex-none text-base leading-7 text-slate-900">

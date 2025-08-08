@@ -1,26 +1,24 @@
-// import Book from '@/ui/Book';
-import dynamic from 'next/dynamic';
+import Book from "@/ui/Book";
 
-const DynamicBook = dynamic(() => import('@/ui/Book'), {
-  loading: () => 'Loading...',
-});
+// export async function getRates() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/rates`);
+//   return res.json();
+// }
 
 export async function getData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/rates`, {
-    next: { revalidate: 5 },
-  });
-  return res.json();
-}
-
-export async function getPrices() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/prices`, {
-    next: { revalidate: 5 },
-  });
-  return res.json();
+  const pricesResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_BACK_END_API}/prices`,
+  );
+  const ratesResponse = await fetch(
+    `${process.env.NEXT_PUBLIC_BACK_END_API}/rates`,
+  );
+  return {
+    prices: pricesResponse.json(),
+    rates: ratesResponse.json(),
+  };
 }
 
 export default async function BookFormWrapper() {
-  const rates = await getData();
-  const prices = await getPrices();
-  return <DynamicBook rates={rates} prices={prices} />;
+  const { prices, rates } = await getData();
+  return <Book rates={rates} prices={prices} />;
 }

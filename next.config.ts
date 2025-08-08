@@ -1,11 +1,9 @@
+import type { NextConfig } from "next";
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  poweredByHeader: false,
-  experimental: {
-    // appDir: true,
-    // optimizeCss: true,
-    // swcMinify: true,
-  },
+const nextConfig: NextConfig = {
+  // poweredByHeader: false,
+  productionBrowserSourceMaps: false,
   images: {
     remotePatterns: [
       {
@@ -34,6 +32,15 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=9999999999, must-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow',
           },
         ],
       },

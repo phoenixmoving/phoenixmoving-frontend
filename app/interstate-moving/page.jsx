@@ -1,20 +1,21 @@
-import bgImage from '@/images/interstate.jpeg';
-import CallToAction from '@/ui/CallToAction';
-import Divider from '@/ui/Divider';
-import Hero from '@/ui/Hero';
-import Partners from '@/ui/Partners';
-import Photos from '@/ui/Photos';
-import InterstatePrices from '../pricing/InterstatePrices';
-import InterstateSection from './InterstateSection';
-import Locations from './Locations';
-import WhyChooseUs from './WhyChooseUs';
+import bgImage from "@/images/interstate.jpeg";
+import CallToAction from "@/ui/CallToAction";
+import Divider from "@/ui/Divider";
+import Hero from "@/ui/Hero";
+import Partners from "@/ui/Partners";
+import Photos from "@/ui/Photos";
+import InterstatePrices from "../pricing/InterstatePrices";
+import InterstateSection from "./InterstateSection";
+import Locations from "./Locations";
+import WhyChooseUs from "./WhyChooseUs";
+import { Gallery1 } from "@/blocks/image-gallery/gallery-1";
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/interstate-moving`;
 const title =
-  'Long Distance Moving Services - Phoenix Moving Boston (Free Estimate)';
+  "Long Distance Moving Services - Phoenix Moving Boston (Free Estimate)";
 const description =
-  'We offer reliable and affordable interstate moving services. Our experienced team will make sure your belongings are safely and securely transported to your destination.';
+  "We offer reliable and affordable interstate moving services. Our experienced team will make sure your belongings are safely and securely transported to your destination.";
 
 export const metadata = {
   title,
@@ -53,7 +54,7 @@ export default function InterstateMoving() {
       <InterstateSection />
       <Divider />
       <WhyChooseUs />
-      <Photos />
+      <Gallery1 />
       <CallToAction />
       <InterstatePrices />
       <Divider />

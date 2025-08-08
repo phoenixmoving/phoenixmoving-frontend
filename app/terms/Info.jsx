@@ -1,9 +1,8 @@
-import Section from '@/ui/Section';
-import Link from 'next/link';
+import { Section } from "@/components/section";
 
 export default function Info() {
   return (
-    <Section className="max-w-5xl m-auto prose prose-a:text-blue-500">
+    <Section className="prose prose-a:text-blue-500 m-auto max-w-5xl">
       <p>
         The following terms and conditions apply to all services performed by
         the carrier under this contract. The term “carrier” refers to Phoenix
@@ -267,7 +266,7 @@ export default function Info() {
             <p>
               Message frequency may vary depending on the type of communication.
               For example, up to 5 SMS messages per week may be received related
-              to{' '}
+              to{" "}
               <b>
                 Delivery notifications, Accounts notifications, Move details,
                 arrival time updates, General questions , Promotional offers,
@@ -313,10 +312,14 @@ export default function Info() {
             <b>Help:</b>
             <p>
               For any issues, reply with the keyword HELP. Alternatively, help
-              can be obtained directly from us at{' '}
-              <Link href="https://www.gophoenixmoving.com">
+              can be obtained directly from us at{" "}
+              <a
+                href="https://www.gophoenixmoving.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 https://www.gophoenixmoving.com.
-              </Link>{' '}
+              </a>{" "}
               Additional Options: If SMS messages are not desired, the SMS
               consent box on forms can be left unchecked.
             </p>
@@ -327,15 +330,9 @@ export default function Info() {
             <p>
               Message and data rates may apply. Opt-out at any time by texting
               &quot;STOP.&quot; For assistance, text &quot;HELP.&quot; or visit
-              our{' '}
-              <Link href="/privacy">
-                <a>Privacy Policy</a>
-              </Link>{' '}
-              and{' '}
-              <Link href="/terms">
-                <a>Terms and Conditions</a>
-              </Link>{' '}
-              pages. Message frequency may vary.
+              our <a href="/privacy">Privacy Policy</a> and{" "}
+              <a href="/terms">Terms and Conditions</a> pages. Message frequency
+              may vary.
             </p>
           </li>
         </ol>
@@ -344,8 +341,8 @@ export default function Info() {
         <p>
           Your phone number and personal information will not be shared with
           third parties for marketing purposes. For more details on how we
-          handle your data, please refer to our{' '}
-          <Link href="/privacy">Privacy Policy.</Link>
+          handle your data, please refer to our{" "}
+          <a href="/privacy">Privacy Policy.</a>
         </p>
         <p>
           By using our SMS services, you acknowledge and agree to these terms

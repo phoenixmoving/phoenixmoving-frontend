@@ -1,8 +1,8 @@
-import Section from '@/ui/Section';
+import { Section } from "@/components/section";
 
 export default function Info() {
   return (
-    <Section className="max-w-5xl m-auto prose prose-a:text-blue-500">
+    <Section className="prose prose-a:text-blue-500 m-auto max-w-5xl">
       <section>
         <h2>Sec 1. Guidance, walk-trough and payment.</h2>
         <p>

@@ -32,7 +32,7 @@ const localMoving = [
 
 export default function Included() {
   return (
-    <section className="py-2 sm:py-6 bg-palette-background">
+    <section className="py-2 sm:py-6 bg-muted">
       <Container>
         <dl className="grid grid-cols-2 gap-6 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-8 py-10 px-6 lg:px-8">
           {localMoving.map((feature) => (
@@ -45,9 +45,7 @@ export default function Included() {
                   className="absolute h-6 w-6 text-green-500"
                   aria-hidden="true"
                 />
-                <p className="ml-9 font-semibold leading-6 text-slate-900">
-                  {feature.name}
-                </p>
+                <p className="ml-9 font-semibold leading-6">{feature.name}</p>
               </dt>
               {/* <dd className="mt-2 ml-9  text-slate-500">
                   {feature.description}

@@ -1,40 +1,40 @@
-import { InformationCircleIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
+import { InformationCircleIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
 
 const InfoBox = ({ color, rates, type }) => {
-  const idx = type === 'discount' ? 0 : type === 'regular' ? 1 : 2;
+  const idx = type === "discount" ? 0 : type === "regular" ? 1 : 2;
   return (
-    <div className="transition-all duration-150 ease-in relative inline-block group cursor-pointer">
-      <InformationCircleIcon className="w-4 h-4" />
+    <div className="group relative inline-block cursor-pointer transition-all duration-150 ease-in">
+      <InformationCircleIcon className="h-4 w-4" />
 
-      <div className="invisible group-hover:visible w-[200px] absolute -right-12 bottom-6 rounded-xl p-3 text-slate-700 bg-slate-50 z-10 shadow-3xl scale-0 transition-all group-hover:scale-100">
-        <div className="flex justify-between items-center mb-2 font-semibold">
+      <div className="shadow-3xl invisible absolute -right-12 bottom-6 z-10 w-[200px] scale-0 rounded-xl bg-slate-50 p-3 text-slate-700 transition-all group-hover:visible group-hover:scale-100">
+        <div className="mb-2 flex items-center justify-between font-semibold">
           <p>2 Movers & Truck</p>
           <p>
             $
-            <span className={clsx('text-sm', color)}>
+            <span className={clsx("text-sm", color)}>
               {rates?.two_men[idx] || 0}
             </span>
             /h
           </p>
         </div>
 
-        <div className="flex justify-between items-center mb-2 font-semibold">
+        <div className="mb-2 flex items-center justify-between font-semibold">
           <p>3 Movers & Truck</p>
           <p>
             $
-            <span className={clsx('text-sm', color)}>
+            <span className={clsx("text-sm", color)}>
               {rates?.three_men[idx] || 0}
             </span>
             /h
           </p>
         </div>
 
-        <div className="flex justify-between items-center font-semibold">
+        <div className="flex items-center justify-between font-semibold">
           <p>4 Movers & Truck</p>
           <p>
             $
-            <span className={clsx('text-sm', color)}>
+            <span className={clsx("text-sm", color)}>
               {rates?.four_men[idx] || 0}
             </span>
             /h
@@ -48,18 +48,18 @@ const InfoBox = ({ color, rates, type }) => {
 export default function CalendarFooter({ prices }) {
   const rates = prices[0];
   return (
-    <div className="border-t border-slate-900/5 flex items-center justify-between pt-4 text-xs font-semibold rounded-b-xl">
-      <div className="rounded-lg bg-palette-cyan/20 text-palette-cyan p-2 flex items-center gap-1 relative">
+    <div className="flex items-center justify-between rounded-b-xl border-t border-slate-900/5 pt-4 text-xs font-semibold">
+      <div className="relative flex items-center gap-1 rounded-lg bg-green-600/20 p-2 text-green-600">
         Discount
-        <InfoBox color="text-palette-cyan" rates={rates} type="discount" />
+        <InfoBox color="text-green-600" rates={rates} type="discount" />
       </div>
-      <div className="rounded-lg bg-palette-blue/20 text-palette-blue p-2 flex items-center gap-1 relative">
+      <div className="relative flex items-center gap-1 rounded-lg bg-blue-600/20 p-2 text-blue-600">
         Regular
-        <InfoBox color="text-palette-blue" rates={rates} type="regular" />
+        <InfoBox color="text-blue-600" rates={rates} type="regular" />
       </div>
-      <div className="rounded-lg bg-palette-pink/20 text-palette-pink p-2 flex items-center gap-1 relative">
+      <div className="relative flex items-center gap-1 rounded-lg bg-pink-600/20 p-2 text-pink-600">
         Peak
-        <InfoBox color="text-palette-pink" rates={rates} type="peak" />
+        <InfoBox color="text-pink-600" rates={rates} type="peak" />
       </div>
     </div>
   );

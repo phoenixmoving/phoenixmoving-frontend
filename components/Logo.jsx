@@ -17,7 +17,7 @@ export default function Logo({ active, ...rest }) {
         transform="translate(-0,478) scale(0.1,-0.1)"
         // fill={active ? '#7801FF' : '#fff'}
         stroke="none"
-        className={active ? 'fill-palette-primary-500' : 'fill-white'}
+        className={active ? 'fill-primary' : 'fill-white'}
       >
         <path
           d="M41 4779 c172 -419 544 -817 989 -1058 41 -22 72 -41 68 -41 -16 0

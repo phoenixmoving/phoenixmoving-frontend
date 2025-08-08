@@ -1,7 +1,8 @@
 import Container from '@/ui/Container';
-import Button from '@/ui/Button';
 import Image from 'next/image';
 import SectionHeader from '@/ui/SectionHeader';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Info({ city }) {
   return (
@@ -12,8 +13,8 @@ export default function Info({ city }) {
         />
         <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-8">
           <div className="relative z-10">
-            <div className="prose prose-blue mx-auto text-slate-900 lg:max-w-none">
-              <p className="text-slate-900">
+            <div className="prose prose-blue mx-auto lg:max-w-none">
+              <p>
                 Phoenix Moving is a premier moving company that provides
                 high-quality moving services to customers in{' '}
                 <strong>{`${city?.name}, ${city?.state}`}</strong> and entire
@@ -43,16 +44,11 @@ export default function Info({ city }) {
               </p>
             </div>
             <div className="mx-auto mt-10 flex max-w-prose lg:max-w-none justify-evenly sm:justify-start sm:gap-4">
-              <Button href="/" size="large" color="primary" title="Get a Quote">
-                Get a Free Quote
+              <Button size="lg" title="Get a Quote" asChild>
+                <Link href="/">Get a Free Quote</Link>
               </Button>
-              <Button
-                href="/pricing"
-                size="large"
-                variant="soft"
-                title="View Rates"
-              >
-                View Rates
+              <Button size="lg" variant="outline" title="View Rates" asChild>
+                <Link href="/pricing">View Rates</Link>
               </Button>
             </div>
           </div>

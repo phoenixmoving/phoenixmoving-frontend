@@ -12,7 +12,7 @@ const links = {
 
 export default function Partners() {
   return (
-    <section className="bg-palette-background">
+    <section className="bg-muted">
       <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 items-center">
           <div className="flex justify-center">
@@ -32,7 +32,7 @@ export default function Partners() {
                 alt="Google logo"
                 title="Google"
               />
-              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-slate-700" />
+              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-muted-foreground" />
             </a>
           </div>
           <div className="flex justify-center">
@@ -52,7 +52,7 @@ export default function Partners() {
                 alt="Yelp logo"
                 title="Better Business Bureau"
               />
-              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-slate-700" />
+              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-muted-foreground" />
             </a>
           </div>
           <div className="flex justify-center">
@@ -72,7 +72,7 @@ export default function Partners() {
                 alt="Thumbtack logo"
                 title="Thumbtack"
               />
-              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-slate-700" />
+              <ArrowUpRightIcon className="w-3 h-3 ml-1 text-muted-foreground" />
             </a>
           </div>
           <div className="flex justify-center">

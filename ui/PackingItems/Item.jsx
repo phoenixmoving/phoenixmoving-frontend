@@ -6,11 +6,9 @@ export default function Item({ item }) {
     return currency + price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
   };
   return (
-    <div className="overflow-hidden rounded-2xl bg-white shadow-lg shadow-slate-900/5 flex flex-col min-w-[240px] mx-4">
+    <div className="overflow-hidden rounded-3xl bg-background shadow flex flex-col min-w-[240px] mx-4">
       <div className="px-4 py-5 sm:px-6">
-        <p className="text-sm font-medium text-slate-900">
-          {formatter(item.price, '$')}
-        </p>
+        <p className="text-sm font-medium">{formatter(item.price, '$')}</p>
       </div>
       <div className="relative flex flex-1 justify-center items-center w-[130px] h-full min-h-[170px] m-auto">
         <Image
@@ -23,8 +21,8 @@ export default function Item({ item }) {
         />
       </div>
       <div className="px-4 py-4 sm:px-6">
-        <p className="text-sm font-semibold text-slate-900">{item.name}</p>
-        <p className="text-sm text-slate-400">{item.size}</p>
+        <p className="text-sm font-semibold">{item.name}</p>
+        <p className="text-sm text-muted-foreground/80">{item.size}</p>
       </div>
     </div>
   );

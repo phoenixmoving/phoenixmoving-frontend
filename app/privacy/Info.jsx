@@ -1,8 +1,8 @@
-import Section from '@/ui/Section';
+import { Section } from "@/components/section";
 
 export default function Info() {
   return (
-    <Section className="max-w-5xl m-auto prose prose-a:text-blue-500">
+    <Section className="prose prose-a:text-blue-500 m-auto max-w-5xl">
       <p>
         Phoenix Moving Inc. (&quot;Company&quot;, &quot;we&quot;,
         &quot;our&quot;, or &quot;us&quot;) values your privacy. This Privacy
@@ -165,7 +165,7 @@ export default function Info() {
           </li>
         </ul>
         <p>
-          To exercise these rights, contact us at{' '}
+          To exercise these rights, contact us at{" "}
           <a href="mailto:info@gophoenixmoving.com">info@gophoenixmoving.com</a>
         </p>
         <p>
@@ -217,10 +217,10 @@ export default function Info() {
         <ul>
           <li>Reply STOP to any SMS message to unsubscribe.</li>
           <li>
-            Contact us at{' '}
+            Contact us at{" "}
             <a href="mailto:info@gophoenixmoving.com">
               info@gophoenixmoving.com
-            </a>{' '}
+            </a>{" "}
             to remove your number.
           </li>
           <li>
@@ -263,7 +263,7 @@ export default function Info() {
         <p>For any privacy-related inquiries, please contact us:</p>
         <p>Phoenix Moving Inc.</p>
         <p>
-          Email:{' '}
+          Email:{" "}
           <a href="mailto:info@gophoenixmoving.com">info@gophoenixmoving.com</a>
         </p>
         <p>

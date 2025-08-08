@@ -119,10 +119,10 @@ const data = [
 
 const Card = ({ houseSize }) => {
   return (
-    <li className="shadow-lg shadow-slate-900/5 sm:shadow-none overflow-hidden mx-4 sm:mx-0 rounded-2xl bg-white border border-slate-200 flex flex-col min-w-[240px] sm:col-span-1">
-      <table className="divide-y divide-slate-300">
+    <li className="shadow-lg shadow-slate-900/5 sm:shadow-none overflow-hidden mx-4 sm:mx-0 rounded-2xl bg-background border flex flex-col min-w-[240px] sm:col-span-1">
+      <table className="divide-y">
         <thead>
-          <tr className="bg-slate-100">
+          <tr className="bg-muted">
             <th
               scope="col"
               className="pl-4 py-2 text-left text-sm font-bold text-slate-900"
@@ -141,14 +141,11 @@ const Card = ({ houseSize }) => {
           {Object.entries(houseSize.items).map((material, i) => {
             // getTotal(houseSize.items);
             return (
-              <tr
-                key={`${material[0]}-${i}`}
-                className="border-b border-slate-200"
-              >
-                <td className="text-xs text-left pl-4 py-2 font-medium text-slate-900">
+              <tr key={`${material[0]}-${i}`} className="border-b">
+                <td className="text-xs text-left pl-4 py-2 font-medium">
                   {material[0]}
                 </td>
-                <td className="text-right text-slate-500 pr-4 py-2">
+                <td className="text-right text-muted-foreground pr-4 py-2">
                   {material[1]}
                 </td>
               </tr>
@@ -159,11 +156,11 @@ const Card = ({ houseSize }) => {
           <tr>
             <th
               scope="row"
-              className="pl-4 py-4 text-left sm:text-right text-sm font-normal text-slate-500 table-cell md:pl-0"
+              className="pl-4 py-4 text-left sm:text-right text-sm font-normal text-muted-foreground table-cell md:pl-0"
             >
               Total price
             </th>
-            <td className="pr-4 py-4 text-right text-sm text-slate-500">
+            <td className="pr-4 py-4 text-right text-sm text-muted-foreground">
               {/* ${houseSize.total}.00 */}$
               {getTotal(houseSize.items).toFixed(2)}
             </td>
@@ -179,7 +176,7 @@ export default function Packages() {
     <Section id="packages">
       <SectionHeader title="Packages." />
       <ul
-        className="flex overflow-x-scroll w-full scrollbar pb-6  sm:grid sm:gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        className="flex overflow-x-scroll w-full scrollbar pb-6 sm:grid sm:gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
         // className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
         {data.map((houseSize, i) => (

@@ -1,12 +1,15 @@
-import Testimonials from '@/ui/Testimonials';
+import { Testimonials } from "@/ui/Testimonials";
 
-const placeId = 'ChIJ65r-D2iH44kRQVvxQOaxUUY';
+const placeId = "ChIJ65r-D2iH44kRQVvxQOaxUUY";
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
 export async function getData() {
   const res = await fetch(
     `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&key=${API_KEY}`,
-    { next: { revalidate: 604800 } },
+    {
+      next: { revalidate: 604800 },
+      cache: "force-cache",
+    },
   );
   return res.json();
 }
@@ -14,7 +17,6 @@ export async function getData() {
 export default async function Reviews() {
   const data = await getData();
 
-  // console.log(data);
   return (
     <Testimonials
       reviews={data?.result?.reviews}

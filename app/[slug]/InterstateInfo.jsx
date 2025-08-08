@@ -13,7 +13,7 @@ export default function Info({ city }) {
     <Section>
       <SectionHeader title={`Movers from Boston to ${city.name}.`} start />
       <div className="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
-        <div className="lg:w-full lg:max-w-2xl lg:flex-auto space-y-6 text-slate-900 prose prose-blue">
+        <div className="lg:w-full lg:max-w-2xl lg:flex-auto space-y-6 prose prose-blue">
           <p>
             Long distance moving from{' '}
             <strong>
@@ -47,10 +47,10 @@ export default function Info({ city }) {
           <dl className="lg:w-64 space-y-8 xl:w-80 text-center">
             {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col-reverse gap-y-4">
-                <dt className="text-base leading-7 text-slate-600">
+                <dt className="text-base leading-7 text-muted-foreground">
                   {stat.label}
                 </dt>
-                <dd className="text-5xl font-semibold tracking-tight text-palette-primary-500">
+                <dd className="text-5xl font-semibold tracking-tight text-primary">
                   {stat.value}
                 </dd>
               </div>

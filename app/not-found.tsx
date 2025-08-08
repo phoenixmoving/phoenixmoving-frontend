@@ -1,4 +1,5 @@
-import Button from '@/ui/Button';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function NotFound() {
   return (
@@ -16,8 +17,8 @@ export default function NotFound() {
                 </h1>
               </div>
               <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
-                <Button href="/" color="primary">
-                  Go Back Home
+                <Button asChild>
+                  <Link href="/">Go Back Home</Link>
                 </Button>
               </div>
             </div>

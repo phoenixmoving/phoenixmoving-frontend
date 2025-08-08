@@ -1,20 +1,20 @@
-import { notFound } from 'next/navigation';
-import Hero from '@/ui/Hero';
-import { cities } from '@/lib/citiesData';
-import { states } from '@/lib/statesData';
-import Info from './Info';
-import InterstateInfo from './InterstateInfo';
-import Faqs from '@/ui/Faqs';
-import Stats from './Stats';
-import Conclusion from './Conclusion';
-import Services from './Services';
-import WhyBook from './WhyBook';
-import Advantages from './Advantages';
-import Partners from '@/ui/Partners';
-import Photos from '@/ui/Photos';
-import Divider from '@/ui/Divider';
-import CitiesSection from '@/ui/CitiesSection';
-import bgImage from '@/images/mover-pushing-dolly.jpg';
+import { notFound } from "next/navigation";
+import Hero from "@/ui/Hero";
+import { cities } from "@/lib/citiesData";
+import { states } from "@/lib/statesData";
+import Info from "./Info";
+import InterstateInfo from "./InterstateInfo";
+import Faqs from "@/ui/Faqs";
+import Stats from "./Stats";
+import Conclusion from "./Conclusion";
+import Services from "./Services";
+import WhyBook from "./WhyBook";
+import Advantages from "./Advantages";
+import Partners from "@/ui/Partners";
+import Photos from "@/ui/Photos";
+import Divider from "@/ui/Divider";
+import CitiesSection from "@/ui/CitiesSection";
+import bgImage from "@/images/mover-pushing-dolly.jpg";
 
 export const dynamicParams = true;
 
@@ -61,7 +61,8 @@ async function getCity(slug) {
 }
 
 export async function generateMetadata({ params }) {
-  const city = await getCity(params.slug);
+  const { slug } = await params;
+  const city = await getCity(slug);
 
   const page_url = `${process.env.NEXT_PUBLIC_MAIN_URL}/${city?.slug}`;
 
@@ -79,15 +80,15 @@ export async function generateMetadata({ params }) {
     `Movers near ${city?.name} MA`,
     `${city?.name} Movers`,
     `${city?.name} Moving Company`,
-    'Phoenix Moving is a professional Boston local and long distance moving company with a great reputation and affordable rates',
+    "Phoenix Moving is a professional Boston local and long distance moving company with a great reputation and affordable rates",
     `${city?.name} Movers serving ${city?.name} MA and beyond`,
-    'Best moving prices',
-    'Best moving rates with 100% satisfaction guaranteed',
+    "Best moving prices",
+    "Best moving rates with 100% satisfaction guaranteed",
   ];
 
   return {
     metadataBase: new URL(page_url),
-    title: city ? title : 'Not Found',
+    title: city ? title : "Not Found",
     description,
     keywords: city && city?.interstate ? [] : keywords,
     alternates: {
@@ -114,7 +115,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CityPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const city = await getCity(slug);
 
   const heroTitle = city?.interstate
@@ -143,67 +144,67 @@ export default async function CityPage({ params }) {
       : `${process.env.NEXT_PUBLIC_MAIN_URL + city?.icon}`;
 
   const schema1 = {
-    '@context': 'https://schema.org',
-    '@type': 'MovingCompany',
-    '@id': URL,
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "@id": URL,
     name: title,
     url: URL,
     logo: icon,
     image: [icon],
-    telephone: '(508) 315-9458',
-    openingHours: 'Mo,Tu,We,Th,Fr,Sa,Su 8am-8pm',
+    telephone: "(508) 315-9458",
+    openingHours: "Mo,Tu,We,Th,Fr,Sa,Su 8am-8pm",
     description: description,
     address: {
-      '@type': 'PostalAddress',
-      streetAddress: '18 Lakeview Gardens',
-      addressLocality: 'Natick',
-      addressRegion: 'MA',
-      postalCode: '01760',
+      "@type": "PostalAddress",
+      streetAddress: "18 Lakeview Gardens",
+      addressLocality: "Natick",
+      addressRegion: "MA",
+      postalCode: "01760",
     },
     geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '42.28343',
-      longitude: '-71.3495',
+      "@type": "GeoCoordinates",
+      latitude: "42.28343",
+      longitude: "-71.3495",
     },
     contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+1-508-315-9458',
-      contactType: 'customer service',
+      "@type": "ContactPoint",
+      telephone: "+1-508-315-9458",
+      contactType: "customer service",
     },
     review: {
-      '@type': 'Review',
+      "@type": "Review",
       reviewBody:
-        'Excellent crew. Den and Alex were amazing. Very efficient work , professional approach to workflow. Highly recommend it, I will tell all my friends about this company. Thank you Phoenix Moving.',
-      reviewRating: { '@type': 'Rating', ratingValue: 5 },
-      author: { '@type': 'Person', name: 'A. Jacob' },
+        "Excellent crew. Den and Alex were amazing. Very efficient work , professional approach to workflow. Highly recommend it, I will tell all my friends about this company. Thank you Phoenix Moving.",
+      reviewRating: { "@type": "Rating", ratingValue: 5 },
+      author: { "@type": "Person", name: "A. Jacob" },
     },
     areaServed: [
       {
-        '@type': 'City',
-        name: 'Boston',
-        '@id': 'https://en.wikipedia.org/wiki/Boston',
+        "@type": "City",
+        name: "Boston",
+        "@id": "https://en.wikipedia.org/wiki/Boston",
       },
       {
-        '@type': 'City',
-        name: 'Natick',
-        '@id': 'https://en.wikipedia.org/wiki/Natick,_Massachusetts',
+        "@type": "City",
+        name: "Natick",
+        "@id": "https://en.wikipedia.org/wiki/Natick,_Massachusetts",
       },
       {
-        '@type': 'State',
-        name: 'Massachusetts',
-        '@id': 'https://en.wikipedia.org/wiki/Massachusetts',
+        "@type": "State",
+        name: "Massachusetts",
+        "@id": "https://en.wikipedia.org/wiki/Massachusetts",
       },
     ],
   };
 
   const schema2 = {
-    '@context': 'http://schema.org',
-    '@type': 'Product',
+    "@context": "http://schema.org",
+    "@type": "Product",
     name: title,
     aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.98',
-      ratingCount: '143',
+      "@type": "AggregateRating",
+      ratingValue: "4.98",
+      ratingCount: "143",
     },
   };
 
@@ -212,16 +213,16 @@ export default async function CityPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schema1, null, '\t'),
+          __html: JSON.stringify(schema1, null, "\t"),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schema2, null, '\t'),
+          __html: JSON.stringify(schema2, null, "\t"),
         }}
       />
-      {city?.state ? (
+      {/* {city?.state ? (
         <Hero
           image={
             require(`/images/cities/${city.name
@@ -231,8 +232,8 @@ export default async function CityPage({ params }) {
           title={heroTitle}
         />
       ) : (
-        <Hero image={bgImage} title={heroTitle} />
-      )}
+      )} */}
+      <Hero image={bgImage} title={heroTitle} />
       <Partners />
       {city?.state && <Info city={city} />}
       {city?.interstate && <InterstateInfo city={city} />}

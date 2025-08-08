@@ -1,11 +1,11 @@
 // import Script from 'next/script';
-import Hero from '@/ui/Hero';
-import FAQS from './FAQS';
-import bgImage from '@/images/truck-and-condos-opt.jpg';
+import Hero from "@/ui/Hero";
+import FAQS from "./FAQS";
+import bgImage from "@/images/truck-and-condos-opt.jpg";
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/faq`;
-const title = 'FAQS - Phoenix Moving Boston (Free Estimate)';
+const title = "FAQS - Phoenix Moving Boston (Free Estimate)";
 const description =
   "Welcome to the FAQ page for Phoenix Moving Company. Here, you'll find answers to our most frequently asked questions about our services, pricing, and more.";
 

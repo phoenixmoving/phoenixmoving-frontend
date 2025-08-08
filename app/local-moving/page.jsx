@@ -1,19 +1,20 @@
-import Hero from '@/ui/Hero';
-import Info from './Info';
-import Included from './Included';
-import CallToAction from '@/ui/CallToAction';
-import CitiesSection from '@/ui/CitiesSection';
-import Photos from '@/ui/Photos';
-import bgImage from '@/images/truck-and-building-opt.jpg';
-import ServicesSection from './ServicesSection';
-import Divider from '@/ui/Divider';
-import WhyChooseUs from './WhyChooseUs';
+import Hero from "@/ui/Hero";
+import Info from "./Info";
+import Included from "./Included";
+import CallToAction from "@/ui/CallToAction";
+import CitiesSection from "@/ui/CitiesSection";
+import Photos from "@/ui/Photos";
+import bgImage from "@/images/truck-and-building-opt.jpg";
+import ServicesSection from "./ServicesSection";
+import Divider from "@/ui/Divider";
+import WhyChooseUs from "./WhyChooseUs";
+import { Gallery1 } from "@/blocks/image-gallery/gallery-1";
 
 const BASE_URL = process.env.NEXT_PUBLIC_MAIN_URL;
 const URL = `${BASE_URL}/local-moving`;
-const title = 'Local Moving Services - Phoenix Moving Boston (Free Estimate)';
+const title = "Local Moving Services - Phoenix Moving Boston (Free Estimate)";
 const description =
-  'We are your local moving experts! Our experienced movers can help you pack, load, and relocate your belongings quickly and safely. Call us today to get started!';
+  "We are your local moving experts! Our experienced movers can help you pack, load, and relocate your belongings quickly and safely. Call us today to get started!";
 
 export const metadata = {
   title,
@@ -54,7 +55,7 @@ export default function LocalMoving() {
       <ServicesSection />
       <Divider />
       <WhyChooseUs />
-      <Photos />
+      <Gallery1 />
       <CallToAction />
       <CitiesSection />
     </>

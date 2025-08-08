@@ -48,10 +48,10 @@ export default function Services() {
           <li key={service.name}>
             <Link
               href={service.href}
-              className="rounded-3xl border border-slate-200 p-8 flex flex-col h-full hover:shadow-md hover:border-slate-400"
+              className="rounded-3xl border group p-8 flex flex-col h-full hover:shadow-md hover:border-primary hover:scale-[1.05] transition-all duration-150"
               title={service.name}
             >
-              <p className="font-semibold text-lg flex justify-between items-center">
+              <p className="font-semibold text-lg group-hover:text-primary flex justify-between items-center">
                 {service.name}
                 <ChevronRightIcon className="w-4 h-4" />
               </p>
