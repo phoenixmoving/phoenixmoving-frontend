@@ -1,8 +1,8 @@
 import { InformationCircleIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 
-const InfoBox = ({ color, rates, type }) => {
-  const idx = type === "discount" ? 0 : type === "regular" ? 1 : 2;
+const InfoBox = ({ color, rates, idx, type }) => {
+  // const idx = type === "discount" ? 0 : type === "regular" ? 1 : 2;
   return (
     <div className="group relative inline-block cursor-pointer transition-all duration-150 ease-in">
       <InformationCircleIcon className="h-4 w-4" />
@@ -48,18 +48,34 @@ const InfoBox = ({ color, rates, type }) => {
 export default function CalendarFooter({ prices }) {
   const rates = prices[0];
   return (
-    <div className="flex items-center justify-between rounded-b-xl border-t border-slate-900/5 pt-4 text-xs font-semibold">
-      <div className="relative flex items-center gap-1 rounded-lg bg-green-600/20 p-2 text-green-600">
-        Discount
-        <InfoBox color="text-green-600" rates={rates} type="discount" />
-      </div>
-      <div className="relative flex items-center gap-1 rounded-lg bg-blue-600/20 p-2 text-blue-600">
-        Regular
-        <InfoBox color="text-blue-600" rates={rates} type="regular" />
-      </div>
-      <div className="relative flex items-center gap-1 rounded-lg bg-pink-600/20 p-2 text-pink-600">
-        Peak
-        <InfoBox color="text-pink-600" rates={rates} type="peak" />
+    <div className="rounded-b-xl border-t border-slate-900/5 pt-4 text-xs font-semibold">
+      <div className="flex w-full flex-wrap items-center justify-center gap-2">
+        <div className="relative flex w-fit items-center gap-2 self-end rounded-lg bg-green-600/20 p-1.5 text-green-600">
+          Discount
+          <InfoBox
+            color="text-green-600"
+            rates={rates}
+            idx={0}
+            type="discount"
+          />
+        </div>
+        <div className="relative flex w-fit items-center gap-1 rounded-lg bg-blue-600/20 p-1.5 text-blue-600">
+          Regular
+          <InfoBox color="text-blue-600" rates={rates} idx={1} type="regular" />
+        </div>
+        <div className="relative flex w-fit items-center gap-1 rounded-lg bg-pink-600/20 p-1.5 text-pink-600">
+          Peak
+          <InfoBox color="text-pink-600" rates={rates} idx={2} type="peak" />
+        </div>
+        <div className="relative flex w-fit items-center gap-1 rounded-lg bg-purple-600/20 p-1.5 text-purple-600">
+          High Peak
+          <InfoBox
+            color="text-purple-600"
+            rates={rates}
+            idx={3}
+            type="high_pick"
+          />
+        </div>
       </div>
     </div>
   );

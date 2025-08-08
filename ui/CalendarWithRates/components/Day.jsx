@@ -20,6 +20,7 @@ const Day = ({
   const isDiscount = rate?.rate_type === "discounted" && isValid;
   const isRegular = rate?.rate_type === "regular" && isValid;
   const isPeak = rate?.rate_type === "pick" && isValid;
+  const isHighPeak = rate?.rate_type === "high_pick" && isValid;
 
   const isDisabled = rate?.rate_type === "disabled";
 
@@ -51,6 +52,7 @@ const Day = ({
           "bg-green-600/20 text-green-600": isDiscount,
           "bg-blue-600/20 text-blue-600": isRegular,
           "bg-pink-600/20 text-pink-600": isPeak,
+          "bg-purple-600/20 text-purple-600": isHighPeak,
         },
       )}
     >
