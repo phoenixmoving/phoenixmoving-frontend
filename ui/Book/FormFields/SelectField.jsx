@@ -1,6 +1,6 @@
-import { useField, useFormikContext } from 'formik';
-import React from 'react';
-import clsx from 'clsx';
+import { useField, useFormikContext } from "formik";
+import React from "react";
+import clsx from "clsx";
 
 export default function SelectField(props) {
   const { label, options, icon } = props;
@@ -13,21 +13,21 @@ export default function SelectField(props) {
 
   function handleChnage(e) {
     const val = e.target.value;
-    const removeToZip = val.localeCompare('Moving') !== 0;
-    const removeDeliveryDate = val.localeCompare('Moving with Storage') !== 0;
+    const removeToZip = val.localeCompare("Moving") !== 0;
+    const removeDeliveryDate = val.localeCompare("Moving with Storage") !== 0;
 
-    if (name === 'service') {
+    if (name === "service") {
       if (removeToZip && removeDeliveryDate) {
-        formikProps.setFieldValue(`deliveryDate`, '');
-        formikProps.setFieldValue(`destinationAddress`, '');
-        formikProps.setFieldValue(`destinationCity`, '');
-        formikProps.setFieldValue(`destinationState`, '');
-        formikProps.setFieldValue(`destinationZip`, '');
-        formikProps.setFieldValue(`destinationFloor`, '');
-        formikProps.setFieldValue(`destinationApt`, '');
+        formikProps.setFieldValue(`deliveryDate`, "");
+        formikProps.setFieldValue(`destinationAddress`, "");
+        formikProps.setFieldValue(`destinationCity`, "");
+        formikProps.setFieldValue(`destinationState`, "");
+        formikProps.setFieldValue(`destinationZip`, "");
+        formikProps.setFieldValue(`destinationFloor`, "");
+        formikProps.setFieldValue(`destinationApt`, "");
       }
       if (removeDeliveryDate) {
-        formikProps.setFieldValue(`deliveryDate`, '');
+        formikProps.setFieldValue(`deliveryDate`, "");
       }
     }
     field.onChange(e);
@@ -37,20 +37,20 @@ export default function SelectField(props) {
     <>
       <label
         htmlFor={field.name}
-        className="block text-sm font-medium leading-6"
+        className="block text-sm leading-6 font-medium"
       >
         {label}
       </label>
       <div className="relative rounded-md">
-        <div className="z-10 pointer-events-none absolute inset-y-0 left-0 mt-1 flex items-center pl-3">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 mt-1 flex items-center pl-3">
           {/* {icon &&
             React.createElement(icon, { width: 12, height: 12, color: '#000' })} */}
           {icon && (
             <props.icon
-              className={clsx('h-4 w-4 stroke-[1.5]', {
-                'text-slate-400': field.value === '',
-                'text-slate-900': isError,
-                'text-slate-900': isSuccess,
+              className={clsx("h-4 w-4 stroke-[1.5]", {
+                "text-slate-400": field.value === "",
+                "text-slate-900": isError,
+                "text-slate-900": isSuccess,
               })}
               aria-hidden="true"
             />
@@ -62,17 +62,17 @@ export default function SelectField(props) {
           value={value}
           onChange={handleChnage}
           className={clsx(
-            'relative mt-1 lock w-full rounded-md border-0 bg-slate-100 font-normal placeholder:text-slate-400 py-2 pl-10 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm',
+            "relative mt-1 h-10 w-full rounded-md border-0 bg-slate-100 py-2 pr-3 pl-10 text-base font-normal placeholder:text-slate-400 focus:border-indigo-500 focus:ring-indigo-500 focus:outline-none sm:text-sm",
             {
-              'text-slate-400': value === '',
-              'shadow-inner !bg-red-50': isError,
-              'shadow-inner !bg-green-50': isSuccess,
+              "text-slate-400": value === "",
+              "!bg-red-50 shadow-inner": isError,
+              "!bg-green-50 shadow-inner": isSuccess,
             },
           )}
         >
           {options.map((o) => {
             return (
-              <option key={o.label} disabled={o.value === ''} value={o.value}>
+              <option key={o.label} disabled={o.value === ""} value={o.value}>
                 {o.label}
               </option>
             );
