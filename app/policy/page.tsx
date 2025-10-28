@@ -1,4 +1,5 @@
-import Info from "./Info";
+import { LegalSectionHeader } from "@/components/legal-section-header";
+import { Info } from "./Info";
 
 const URL = `${process.env.NEXT_PUBLIC_MAIN_URL}/policy`;
 const title = "Company Policy - Phoenix Moving Boston (Free Estimate)";
@@ -16,13 +17,7 @@ export const metadata = {
 export default async function PolicyPage() {
   return (
     <>
-      <section className="bg-primary py-28">
-        <div className="m-auto max-w-5xl p-4">
-          <h1 className="text-primary-foreground text-4xl font-bold">
-            Company Policy
-          </h1>
-        </div>
-      </section>
+      <LegalSectionHeader title="Company Policy" />
       <Info />
     </>
   );

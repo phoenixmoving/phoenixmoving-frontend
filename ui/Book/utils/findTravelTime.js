@@ -1,7 +1,7 @@
 // import { getMinutes } from 'utils/getMinutes';
 // import { getMiles } from 'utils/getMiles';
 // import { isEmptyString } from 'utils/isEmptyString';
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 const getMiles = (i) => {
   // Math.round(number * 10) / 10
@@ -10,12 +10,12 @@ const getMiles = (i) => {
 };
 
 const getMinutes = (i) => {
-  return Math.round(i / 60 / 5) * 5;
+  return Math.ceil(i / 60 / 10) * 10;
 };
 
 const isEmptyString = (arr) => {
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i] === '') return false;
+    if (arr[i] === "") return false;
   }
   return true;
 };
@@ -28,7 +28,7 @@ export const findTravelTime = (
   setActiveStep,
   actions,
 ) => {
-  let office = '01760';
+  let office = "02461";
   let fromZip = originZip;
   let toZip = destinationZip;
   let originsArray = [];
@@ -37,7 +37,7 @@ export const findTravelTime = (
   // console.log('fromZip', fromZip);
   // console.log('toZip', toZip);
 
-  if (toZip === '') {
+  if (toZip === "") {
     originsArray = [office];
     destinationsArray = [fromZip];
   } else {
@@ -53,16 +53,16 @@ export const findTravelTime = (
     {
       origins: originsArray,
       destinations: destinationsArray,
-      travelMode: 'DRIVING',
+      travelMode: "DRIVING",
       unitSystem: window.google.maps.UnitSystem.IMPERIAL,
-      region: 'US',
+      region: "US",
       avoidHighways: false,
       avoidTolls: false,
     },
     function (response, status) {
       // console.log(response);
-      if (status !== 'OK') {
-        console.log('Error was:', status);
+      if (status !== "OK") {
+        console.log("Error was:", status);
         actions.setTouched({});
         actions.setSubmitting(false);
       } else {
@@ -70,19 +70,19 @@ export const findTravelTime = (
         let toHq = 20;
         let timeBetween = 0;
         let distanceBetween = 0;
-        // console.log(response);
+        // console.log("response TT", response);
         if (
-          toZip === '' &&
+          toZip === "" &&
           isEmptyString(response.destinationAddresses) &&
-          response.rows[0].elements[0].status !== 'ZERO_RESULTS'
+          response.rows[0].elements[0].status !== "ZERO_RESULTS"
         ) {
           fromHq = getMinutes(response.rows[0].elements[0].duration.value);
           if (fromHq < 20) fromHq = 20;
           toHq = fromHq;
-          actions.setFieldValue('distanceBetween', distanceBetween);
-          actions.setFieldValue('travelTime', [fromHq, toHq]);
-          actions.setFieldValue('timeBetween', timeBetween);
-          actions.setFieldValue('isFlatRate', false);
+          actions.setFieldValue("distanceBetween", distanceBetween);
+          actions.setFieldValue("travelTime", [fromHq, toHq]);
+          actions.setFieldValue("timeBetween", timeBetween);
+          actions.setFieldValue("isFlatRate", false);
 
           setActiveStep(activeStep + 1);
           actions.setTouched({});
@@ -97,10 +97,10 @@ export const findTravelTime = (
         else if (
           isEmptyString(response.originAddresses) &&
           isEmptyString(response.destinationAddresses) &&
-          response.rows[0].elements[0].status !== 'ZERO_RESULTS' &&
-          response.rows[0].elements[1].status !== 'ZERO_RESULTS' &&
-          response.rows[1].elements[1].status !== 'ZERO_RESULTS' &&
-          response.rows[1].elements[0].status !== 'ZERO_RESULTS'
+          response.rows[0].elements[0].status !== "ZERO_RESULTS" &&
+          response.rows[0].elements[1].status !== "ZERO_RESULTS" &&
+          response.rows[1].elements[1].status !== "ZERO_RESULTS" &&
+          response.rows[1].elements[0].status !== "ZERO_RESULTS"
         ) {
           fromHq = getMinutes(response.rows[0].elements[0].duration.value);
           toHq = getMinutes(response.rows[0].elements[1].duration.value);
@@ -111,7 +111,7 @@ export const findTravelTime = (
           if (fromHq < 15) fromHq = 15;
           if (toHq < 15) toHq = 15;
           if (
-            movingService === 'Moving with Storage' &&
+            movingService === "Moving with Storage" &&
             distanceBetween < 150
           ) {
             timeBetween = toHq;
@@ -121,13 +121,13 @@ export const findTravelTime = (
             );
           }
           if (distanceBetween > 150) {
-            actions.setFieldValue('isFlatRate', true);
+            actions.setFieldValue("isFlatRate", true);
           } else {
-            actions.setFieldValue('isFlatRate', false);
+            actions.setFieldValue("isFlatRate", false);
           }
-          actions.setFieldValue('distanceBetween', distanceBetween);
-          actions.setFieldValue('travelTime', [fromHq, toHq]);
-          actions.setFieldValue('timeBetween', timeBetween);
+          actions.setFieldValue("distanceBetween", distanceBetween);
+          actions.setFieldValue("travelTime", [fromHq, toHq]);
+          actions.setFieldValue("timeBetween", timeBetween);
 
           // console.log('from HQ', fromHq);
           // console.log('to HQ', toHq);
@@ -138,7 +138,7 @@ export const findTravelTime = (
           actions.setTouched({});
           actions.setSubmitting(false);
         } else {
-          toast.error('Sorry, we could not calculate driving directions');
+          toast.error("Sorry, we could not calculate driving directions");
           actions.setTouched({});
           actions.setSubmitting(false);
         }

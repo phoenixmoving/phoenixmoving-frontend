@@ -204,7 +204,7 @@ export default async function CityPage({ params }) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.98",
-      ratingCount: "143",
+      ratingCount: "394",
     },
   };
 

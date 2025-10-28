@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "What forms of payment do you accept?",
     answer:
-      "Payments for local services can be made in form of cash, credit card or a certified bankers check. Payments for long distance services can be made in form of cash, certified bankers check or debit/credit cards. Any payments with a personal check have to be granted by your moving coordinator.",
+      "Payments for local services can be made in form of cash, zelle transfer, credit/debit card or a certified bankers check. Payments for long distance services can be made in form of cash, certified bankers check or debit/credit cards. Any payments with a personal check have to be granted by your moving coordinator.",
   },
   {
     question: "When should I pay for the move?",

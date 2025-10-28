@@ -1,17 +1,17 @@
-import { useEffect, useCallback } from 'react';
-import FlatRateQuote from './components/FlatRateQuote';
-import LocalMoveQuote from './components/LocalMoveQuote';
+import { useEffect, useCallback } from "react";
+import FlatRateQuote from "./components/FlatRateQuote";
+import LocalMoveQuote from "./components/LocalMoveQuote";
 import {
   getCrewSize,
   getCrewSizeLoadingUnloading,
   getCrewSizeFlatRate,
-} from './getCrewSize';
+} from "./getCrewSize";
 import {
   estimateJobTime,
   estimateJobTimeLongDistance,
-} from './getEstimateJobTime';
-import { getEstimateQuote } from './getEstimateQuote';
-import { useFormikContext } from 'formik';
+} from "./getEstimateJobTime";
+import { getEstimateQuote } from "./getEstimateQuote";
+import { useFormikContext } from "formik";
 
 const ResultStep = ({ values }) => {
   const formikProps = useFormikContext();
@@ -28,27 +28,27 @@ const ResultStep = ({ values }) => {
 
   const findCrewSize = useCallback(() => {
     let crew = 0;
-    if (values.destinationFloor === '') {
+    if (values.destinationFloor === "") {
       crew = getCrewSizeLoadingUnloading(values.size, values.originFloor);
       // console.log('crew Size---> L U ', crew);
     } else if (values.isFlatRate) {
       crew = getCrewSizeFlatRate(
         values.size,
         values.originFloor,
-        values.destinationFloor
+        values.destinationFloor,
       );
       // console.log('crew Size--->Flat rate', crew);
     } else {
       crew = getCrewSize(
         values.size,
         values.originFloor,
-        values.destinationFloor
+        values.destinationFloor,
       );
       // console.log('crew Size---> Normal', crew);
     }
-    formikProps.setFieldValue('crewSize', crew);
+    formikProps.setFieldValue("crewSize", crew);
     formikProps.setFieldValue(
-      'rate',
+      "rate",
       parseInt(formikProps.values.rates[crew - 2]),
     );
     return crew;
@@ -68,14 +68,14 @@ const ResultStep = ({ values }) => {
       ? estimateJobTimeLongDistance(data)
       : estimateJobTime(data);
 
-    formikProps.setFieldValue('estimateTime', jobTime);
+    formikProps.setFieldValue("estimateTime", jobTime);
     let quote = getEstimateQuote(
       values.distanceBetween,
       values.isFlatRate,
       jobTime,
-      values.rate
+      values.rate,
     );
-    formikProps.setFieldValue('estimateQuote', quote);
+    formikProps.setFieldValue("estimateQuote", quote);
     return;
   }, [values]);
 

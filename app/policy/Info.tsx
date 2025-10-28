@@ -1,10 +1,65 @@
 import { Section } from "@/components/section";
 
-export default function Info() {
+const companyEmail = "info@gophoenixmoving.com";
+
+export function Info() {
   return (
     <Section className="prose prose-a:text-blue-500 m-auto max-w-5xl">
       <section>
-        <h2>Sec 1. Guidance, walk-trough and payment.</h2>
+        <h2>Sec 1. Deposit Policy.</h2>
+        <p>
+          To secure your booking and confirm your move, a deposit is required at
+          the time of reservation. This helps us prepare efficiently and ensures
+          your spot during busy periods.
+        </p>
+        <ul>
+          <li>
+            <b>Local Moves:</b> $100 deposit.
+          </li>
+          <li>
+            <b>Long-Distance Moves:</b> 10% of the quoted flat-rate price.
+          </li>
+        </ul>
+        <p>
+          Your deposit will be credited directly toward the total cost of your
+          move.
+        </p>
+        <h3>Cancellation and Refund Policy</h3>
+        <p>
+          Deposits are fully refundable if you cancel at least 5 calendar days
+          prior to the scheduled move date. Refunds will be processed within
+          7-10 business days via the original payment method.
+        </p>
+        <p>However, the deposit is non-refundable in the following cases:</p>
+        <ul>
+          <li>
+            Cancellation within 72 hours (3 days) of the scheduled move date.
+          </li>
+          <li>No-show by the customer on the move date.</li>
+          <li>If the moving crew has already been dispatched.</li>
+        </ul>
+        <h3>Peak Season Considerations (May 1 - September 30)</h3>
+        <p>
+          During high-demand periods, availability is limited. Deposits are
+          required to hold your slot and are non-refundable for any
+          cancellations within 72 hours of the scheduled date to account for
+          operational commitments.
+        </p>
+        <h3>Payment and Agreement</h3>
+        <p>
+          We accept secure payments via credit/debit card, zelle transfer, or
+          digital wallets (e.g., PayPal, Apple Pay). By submitting your deposit,
+          you acknowledge and agree to these terms. If you have questions or
+          need to make changes, contact us at{" "}
+          <a href={`mailto:${companyEmail}`}>{companyEmail}</a> as soon as
+          possible. In the event of unforeseen circumstances (e.g., natural
+          disasters or government restrictions), we may offer flexibility on a
+          case-by-case basis.
+        </p>
+      </section>
+
+      <section>
+        <h2>Sec 2. Guidance, walk-trough and payment.</h2>
         <p>
           At the time of the move, the customer or a representative must be
           present during the move at all times, as movers will need guidance. It
@@ -18,20 +73,20 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 2. Moving cost.</h2>
+        <h2>Sec 3. Moving cost.</h2>
         <p>
           The final cost of your move will be determined by multiplying the
           actual number of hours our moving crew had worked by the hourly rate
           indicated on your estimate, travel time, the amount of packing
           materials used, the amount of valuation coverage and any will be added
           to the final cost of your move, additional services listed below (if
-          such services are provided). All jobs are subject to a 2-hour minimum
-          labor + fixed travel time.
+          such services are provided). All jobs are subject to a 3 hour minimum
+          including the travel time.
         </p>
       </section>
 
       <section>
-        <h2>Sec 3. Labor time.</h2>
+        <h2>Sec 4. Labor time.</h2>
         <p>
           Labor time starts upon the arrival of our crew at your location and
           ends upon the departure from your final destination. Labor time is
@@ -42,7 +97,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 4. Travel time.</h2>
+        <h2>Sec 5. Travel time.</h2>
         <p>
           Please keep in mind that you will be billed for the travel time from
           our parking office to your origin, and for the travel time from your
@@ -55,7 +110,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 5. Packing materials.</h2>
+        <h2>Sec 6. Packing materials.</h2>
         <p>
           Our trucks carry a standard set of boxes: 5 small, 5 medium, 5 large,
           5 picture boxes, 5 wardrobe and 1 bundle of white packing paper. If
@@ -67,7 +122,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 6. Arrival time frame.</h2>
+        <h2>Sec 7. Arrival time frame.</h2>
         <p>
           Please keep in mind that we do not provide a specific time of arrival.
           We offer 2-hour arrival time frames for all jobs scheduled in the
@@ -77,7 +132,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 7. Waiting time.</h2>
+        <h2>Sec 8. Waiting time.</h2>
         <p>
           If our crew arrives at your location as agreed, but you&apos;re not
           ready for us to start the job, you&apos;ll be billed for our waiting
@@ -87,7 +142,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 8. Parking.</h2>
+        <h2>Sec 9. Parking.</h2>
         <p>
           Two parking spaces (to accommodate a 34-foot-long moving truck) should
           be provided/secured by the customer. Parking spot must be located
@@ -103,7 +158,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 9. Payment and payment forms (for local moves).</h2>
+        <h2>Sec 10. Payment and payment forms (for local moves).</h2>
         <p>
           For local moves, the payment is required at the end of the move/each
           moving day (for multiple days move), before the moving team leaves
@@ -125,7 +180,7 @@ export default function Info() {
 
       <section>
         <h2>
-          Sec 10. Payment and payment forms (for long distance/interstate
+          Sec 11. Payment and payment forms (for long distance/interstate
           moves).
         </h2>
         <p>
@@ -139,7 +194,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 11. Additional possible services/charges.</h2>
+        <h2>Sec 12. Additional possible services/charges.</h2>
         <ul>
           <li>
             Grand piano special handling cost: $450.00 (first floor to the first
@@ -181,7 +236,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 12. Piano move.</h2>
+        <h2>Sec 13. Piano move.</h2>
         <p>
           We do not move large upright pianos up or down flights of stairs
           inside the house. We only move pianos from ground to ground floor.
@@ -195,10 +250,16 @@ export default function Info() {
           the customer elects to leave the legs on, we will not be responsible
           if damage occurs to them.
         </p>
+        <p>Prices may vary depending on the type of piano being moved:</p>
+        <ul>
+          <li>Upright Piano: Starting from $150.</li>
+          <li>Baby Grand Piano: Starting from $300.</li>
+          <li>Grand Piano: Starting from $400.</li>
+        </ul>
       </section>
 
       <section>
-        <h2>Sec 13. Heavy/Oversized items move.</h2>
+        <h2>Sec 14. Heavy/Oversized items move.</h2>
         <p>
           Under safe conditions, we move upright or baby grand pianos,
           appliances, safe and items over 250 lbs. Unfortunately, sometimes, due
@@ -209,7 +270,7 @@ export default function Info() {
       </section>
 
       <section>
-        <h2>Sec 14. Moving Crew size.</h2>
+        <h2>Sec 15. Moving Crew size.</h2>
         <p>
           The size of the moving crew is determined by the number of items that
           will have to be packed and/or moved as well as factors like access on
@@ -226,6 +287,149 @@ export default function Info() {
       </section>
 
       <section>
+        <h2>Sec 16. Storage in Transit (SIT) Policy.</h2>
+        <p>
+          If delivery to the final destination cannot be completed on the
+          scheduled date, Phoenix Moving may provide Storage in Transit (SIT)
+          services to temporarily store the customer&apos;s belongings in a
+          secure facility until delivery can be made.
+        </p>
+        <p>
+          SIT is available for up to 180 days, depending on the type of move. If
+          items must be held overnight or for several days, the customer will be
+          charged for each moving day that the crew is dispatched and working on
+          the job.
+        </p>
+        <p>
+          All storage and handling charges must be paid in full prior to the
+          release or delivery of goods. While in SIT, items remain covered under
+          the same valuation or insurance option selected for the move.
+        </p>
+      </section>
+
+      <section>
+        <h2>Sec 17. Responsibility and Claims Policy.</h2>
+        <ol>
+          <li>
+            <b>Customer-Packed Items.</b> We are not responsible for damage to
+            any items, boxes, totes, or containers packed by you or anyone
+            outside our crew.
+          </li>
+          <li>
+            <b>Pre-Existing Damage.</b> Phoenix Moving is not liable for any
+            damage that existed before our involvement. Our team will document
+            visible issues (e.g., via photos) prior to starting the move.
+          </li>
+          <li>
+            <b>Perishable, Hazardous, or Restricted Items.</b> We do not
+            transport perishable goods, plants, live animals, or hazardous
+            materials. These are excluded from all coverage and liability.
+          </li>
+          <li>
+            <b>Valuation Coverage.</b> Unless you purchase additional coverage,
+            your move is protected under our Basic Valuation Coverage at $0.60
+            per pound per article. (Example: A 50 lb. item would have a maximum
+            liability of $30.)
+          </li>
+          <li>
+            <b>Claims Process.</b> Report any damage or loss within 7 calendar
+            days of your move completion. Submit claims via email to{" "}
+            <a href={`mailto:${companyEmail}`}>{companyEmail}</a> including a
+            detailed description, photos, and any supporting evidence. Our
+            claims team will respond within 5 business days and may request an
+            on-site inspection or further details.
+          </li>
+          <li>
+            <b>Repairs and Compensation.</b> We reserve the right to repair
+            damaged items or provide compensation based on their actual cash
+            value (not replacement cost), at our discretion.
+          </li>
+          <li>
+            <b>Property Damage.</b> Any damage to walls, floors, doors, or other
+            property must be reported to our crew immediately before they depart
+            the site. Failure to do so may invalidate the claim.
+          </li>
+          <li>
+            <b>Weather-Related and Uncontrollable Delays.</b>
+            We are not liable for damages or delays due to weather, traffic,
+            road closures, mechanical issues, or other factors beyond our
+            control (force majeure events).
+          </li>
+        </ol>
+        <p>
+          If a claim is denied, you may request a review by providing additional
+          information within 14 days of the decision.
+        </p>
+      </section>
+
+      <section>
+        <h2>Sec 18. Coverage / Insurance Options.</h2>
+        <p>
+          Phoenix Moving provides valuation coverage options to protect your
+          items during transit. Coverage only applies if we are responsible for
+          the loss or damage. Note: Even if damage is identified during the
+          move, full payment for services is still required.
+        </p>
+        <ol>
+          <li>
+            <b>Basic Value Protection (Default).</b>
+            <ul>
+              <li>$0.60 per pound per article.</li>
+              <li>Automatically included if no upgrade is selected.</li>
+            </ul>
+          </li>
+          <li>
+            <b>Replacement Cost Coverage (Optional Upgrade).</b>
+            <ul>
+              <li>
+                Covers repair, replacement, or reimbursement up to the full
+                declared value of lost or damaged items.
+              </li>
+              <li>Cost: $50 per $1,000 of declared shipment value.</li>
+              <li>Minimum: $5,000; Maximum: $20,000.</li>
+              <li>
+                To add this, declare your shipment value in writing at least 48
+                hours before the move.
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <h3>Exclusions (Apply to All Coverage Options).</h3>
+        <ul>
+          <li>
+            Furniture made of particle board, pressed wood, or similar
+            materials.
+          </li>
+          <li>Items found damaged in boxes not packed by Phoenix Moving.</li>
+          <li>
+            Mechanical or functional issues with electronics during transit or
+            storage.
+          </li>
+          <li>
+            Previously damaged, repaired, or fragile items without prior
+            disclosure.
+          </li>
+          <li>Loose, unpacked items.</li>
+        </ul>
+        <h3>Important Rules.</h3>
+        <ul>
+          <li>
+            Valuation does not cover customer-packed items, pre-existing damage,
+            or excluded categories (see Section 17).
+          </li>
+          <li>
+            Select your coverage option during booking. By proceeding with the
+            move, you agree to these terms and waive any claims outside this
+            policy.
+          </li>
+          <li>
+            For questions or to upgrade coverage, contact us at{" "}
+            <a href={`mailto:${companyEmail}`}>{companyEmail}</a>{" "}
+          </li>
+        </ul>
+      </section>
+
+      <section>
         <h2>Changes to Our Policy.</h2>
         <p>
           We may change our Privacy and Website Use Policy from time to time.
@@ -237,8 +441,7 @@ export default function Info() {
           effective, you agree to the revised Privacy and Website Use Policy.
         </p>
       </section>
-
-      <i>This Policy was last modified on January 22, 2025.</i>
+      <i>This Policy was last modified on July 1, 2025.</i>
     </Section>
   );
 }
