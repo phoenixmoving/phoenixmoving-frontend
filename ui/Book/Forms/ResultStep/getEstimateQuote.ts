@@ -1,21 +1,15 @@
-const roundAmount = (amount, rate) => {
+const roundAmount = (amount: number, rate: string) => {
   return Math.floor(amount * parseInt(rate));
 };
 
-export const getEstimateQuote = (distance, isFlatRate, estimateTime, rate) => {
-  // console.log(rate);
+export const getEstimateQuote = (distance: number, isFlatRate: boolean, estimateTime: number[], rate: string) => {
   if (estimateTime.length === 0) return [];
   let estimateQuoteArray = [];
   let oneDollarPerMile = Math.floor(distance * 2 * 0.6);
-  // if (oneDollarPerMile < 300) {
-  //   oneDollarPerMile += 300;
-  // }
-  // let addTime = Math.ceil(distance / 50) * 50 * 5;
-  // console.log('dollar per mile--->', oneDollarPerMile);
   if (isFlatRate) {
     estimateQuoteArray = [
       Math.ceil((roundAmount(estimateTime[0], rate) + oneDollarPerMile) / 50) *
-        50,
+      50,
     ];
   } else {
     estimateQuoteArray = [

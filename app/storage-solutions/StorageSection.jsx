@@ -1,40 +1,40 @@
-import Section from '@/ui/Section';
-import SectionHeader from '@/ui/SectionHeader';
-import Image from 'next/image';
-import image from '@/images/storage-units.jpg';
+import Section from "@/ui/Section";
+import SectionHeader from "@/ui/SectionHeader";
+import Image from "next/image";
+import image from "@/images/storage-units.jpg";
 
 const options = [
   {
-    name: 'Monthly Storage',
+    name: "Monthly Storage",
     items: [
-      'Perfect for those who need ongoing storage solutions, our monthly storage options offer flexibility and convenience.',
-      'Room or Less: Starting from $100/month.',
-      'Studio: Starting from $150/month.',
-      'One Bedroom: Starting from $200/month.',
-      'Two Bedroom: Starting from $250/month.',
-      'Three Bedroom: Starting from $300/month.',
-      'Private House: Starting from $400/month.',
+      "Perfect for those who need ongoing storage solutions, our monthly storage options offer flexibility and convenience.",
+      "Room or Less: Starting from $100/month.",
+      "Studio: Starting from $150/month.",
+      "One Bedroom: Starting from $250/month.",
+      "Two Bedroom: Starting from $300/month.",
+      "Three Bedroom: Starting from $350/month.",
+      "Private House: Starting from $500/month.",
     ],
   },
   {
-    name: 'Short-term Storage',
+    name: "Short-term Storage",
     items: [
-      'Ideal for temporary storage needs during a move or renovation, our short-term storage options provide a secure and accessible solution.',
-      'Contact us for pricing and availability.',
+      "Ideal for temporary storage needs during a move or renovation, our short-term storage options provide a secure and accessible solution.",
+      "Contact us for pricing and availability.",
     ],
   },
   {
-    name: 'Long-term Storage',
+    name: "Long-term Storage",
     items: [
-      'For those looking for extended storage solutions, our long-term storage options offer peace of mind knowing your belongings are safe and secure for the duration of your storage period.',
-      'Contact us for pricing and availability.',
+      "For those looking for extended storage solutions, our long-term storage options offer peace of mind knowing your belongings are safe and secure for the duration of your storage period.",
+      "Contact us for pricing and availability.",
     ],
   },
   {
-    name: 'Overnight Storage',
+    name: "Overnight Storage",
     items: [
-      'Need to store your belongings overnight? Our overnight storage service provides a convenient solution for short-term storage needs.',
-      'Price: $200 per overnight stay.',
+      "Need to store your belongings overnight? Our overnight storage service provides a convenient solution for short-term storage needs.",
+      "Price: $200 per overnight stay.",
     ],
   },
 ];
@@ -55,7 +55,7 @@ export default function StorageSection() {
             placeholder="blur"
             blurDataURL={image.blurDataURL}
             alt="Truck and tree"
-            className="mt-16 aspect-[6/5] w-full rounded-2xl -rotate-2 object-cover lg:aspect-auto lg:h-[34.5rem]"
+            className="mt-16 aspect-[6/5] w-full -rotate-2 rounded-2xl object-cover lg:aspect-auto lg:h-[34.5rem]"
             title="Local Moving Services"
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     title,
     description,
     url: new URL(pageUrl),
-    siteName: "Brave Movers",
+    siteName: "Phoenix Moving",
     images: [
       {
         url: bgImage.src,
         width: 1200,
         height: 630,
-        alt: "Brave Movers truck and team in front of a Boston home",
+        alt: "Phoenix Moving truck and team in front of a Boston home",
       },
     ],
     locale: "en_US",

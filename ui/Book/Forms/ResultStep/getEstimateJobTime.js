@@ -1,12 +1,12 @@
 const averageTime = {
   "Room or less (partial move)": 30,
   "Studio apartment": 60,
-  "1 Bedroom apartment": 60,
-  "2 Bedroom apartment": 100,
-  "2 Bedroom House/Townhouse": 170,
-  "3+ Bedroom apartment": 160,
-  "3 Bedroom House/Townhouse": 230,
-  "4+ Bedroom House/Townhouse": 320,
+  "1 Bedroom apartment": 80,
+  "2 Bedroom apartment": 130,
+  "2 Bedroom House/Townhouse": 180,
+  "3+ Bedroom apartment": 190,
+  "3 Bedroom House/Townhouse": 260,
+  "4+ Bedroom House/Townhouse": 360,
   "Office / Commercial space": 220,
 };
 
@@ -23,9 +23,9 @@ const averageTimeLongDistance = {
 };
 
 const timeFrame = {
-  "Room or less (partial move)": 0.5,
+  "Room or less (partial move)": 1,
   "Studio apartment": 1,
-  "1 Bedroom apartment": 1.5,
+  "1 Bedroom apartment": 2,
   "2 Bedroom apartment": 2,
   "2 Bedroom House/Townhouse": 2,
   "3+ Bedroom apartment": 2,
@@ -62,6 +62,16 @@ const averageFloorTimeLongDistance = (size) => {
   return obj;
 };
 
+export function formatMinutesToQuarters(totalMinutes) {
+  // 1. Round minutes up to the next quarter hour (using Math.ceil)
+  // 292 / 15 ≈ 19.466...
+  // Math.ceil(19.466...) = 20
+  // 20 * 15 = 300 total minutes (rounded up)
+  const roundedMinutes = Math.ceil(totalMinutes / 15) * 15;
+
+  return roundedMinutes;
+}
+
 const roundTime = (hours) => {
   return Math.round(hours * 2) / 2;
 };
@@ -94,14 +104,17 @@ export const estimateJobTime = (data) => {
     isFlatRate,
   } = data;
 
-  // console.log('data', data);
+  console.log("data", JSON.stringify(data, null, 2));
 
   if (travelTime.length == 0) return [];
 
-  let travelTimeSum = travelTime.reduce((a, b) => a + b);
+  let travelTimeSum = formatMinutesToQuarters(
+    travelTime.reduce((a, b) => a + b),
+  );
   // console.log("ttSuma", travelTimeSum);
-  if (isMovingWithStorage(movingService) && !isFlatRate)
+  if (isMovingWithStorage(movingService) && !isFlatRate) {
     travelTimeSum = travelTime[0] * 2;
+  }
 
   let averageFloorTimeDest =
     toHouseType === "" ? 0 : averageFloorTime(movingSize)[toHouseType];
@@ -125,16 +138,16 @@ export const estimateJobTime = (data) => {
     averageLabourTime +
     averageFloorTime(movingSize)[fromHouseType] +
     averageFloorTimeDest +
-    travelTimeSum +
-    timeBetween;
+    timeBetween +
+    travelTimeSum;
 
-  if (totalTimeInMinutes < 150) totalTimeInMinutes = 150;
+  if (totalTimeInMinutes < 120) totalTimeInMinutes = 120;
 
-  // console.log("avg labour", averageLabourTime);
-  // console.log("avg floor pickup", averageFloorTime(movingSize)[fromHouseType]);
-  // console.log("avg floor destination", averageFloorTimeDest);
-  // console.log("tt suma", travelTimeSum);
-  // console.log("time between", timeBetween);
+  console.log("avg labour", averageLabourTime);
+  console.log("avg floor pickup", averageFloorTime(movingSize)[fromHouseType]);
+  console.log("avg floor destination", averageFloorTimeDest);
+  console.log("tt suma", travelTimeSum);
+  console.log("time between", timeBetween);
 
   let totalTimeInHours = roundTime(totalTimeInMinutes / 60);
   let estimateTimeArray = [totalTimeInHours, totalTimeInHours + timeWindow];
@@ -150,12 +163,17 @@ export const estimateJobTime = (data) => {
   //     ];
   //   }
 
-  // console.log("total Time in minutes --->", totalTimeInMinutes);
+  console.log(
+    "formatMinutesToQuarters",
+    formatMinutesToQuarters(travelTimeSum),
+  );
 
-  // console.log("total Time in hours --->", totalTimeInHours);
-  // console.log("time + window --->", totalTimeInHours + timeWindow);
+  console.log("total Time in minutes --->", totalTimeInMinutes);
 
-  if (totalTimeInHours + timeWindow <= 2.5) estimateTimeArray = [2.5];
+  console.log("total Time in hours --->", totalTimeInHours);
+  console.log("time + window --->", totalTimeInHours + timeWindow);
+
+  if (totalTimeInHours + timeWindow <= 2) estimateTimeArray = [2];
   return estimateTimeArray;
 };
 
