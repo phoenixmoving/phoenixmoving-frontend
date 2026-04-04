@@ -95,7 +95,7 @@ export default function Navbar() {
     >
       <div
         className={clsx(
-          "m-auto max-w-screen-xl transform px-6 duration-300 lg:px-8",
+          "m-auto max-w-7xl transform px-6 duration-300 lg:px-8",
           {
             "py-2": active,
             "py-4": !active,
@@ -135,7 +135,7 @@ export default function Navbar() {
                   {link.href === pathname && (
                     <span
                       className={clsx(
-                        "absolute inset-x-1 -bottom-px h-px bg-gradient-to-r",
+                        "absolute inset-x-1 -bottom-px h-px bg-linear-to-r",
                         {
                           "from-purple-500/0 via-purple-500/60 to-purple-500/0 dark:from-purple-400/0 dark:via-purple-400/40 dark:to-purple-400/0":
                             active,

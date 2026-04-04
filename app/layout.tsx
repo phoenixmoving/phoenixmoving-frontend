@@ -111,7 +111,7 @@ export default function RootLayout({
         <a
           href="tel:(508)315-9458"
           title="Call us"
-          className="fixed right-[0px] bottom-[0px] z-10 m-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500 text-white drop-shadow-lg lg:hidden"
+          className="fixed right-0 bottom-0 z-10 m-6 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500 text-white drop-shadow-lg lg:hidden"
         >
           <svg
             xmlns="http:www.w3.org/2000/svg"

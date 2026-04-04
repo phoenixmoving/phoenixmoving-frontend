@@ -3,7 +3,6 @@ import { SectionHeader } from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckIcon } from "lucide-react";
-import Link from "next/link";
 
 type Tier = {
   name: string;
