@@ -1,73 +1,73 @@
-import { ClockIcon, TruckIcon } from '@heroicons/react/24/outline';
-import { FiPackage } from 'react-icons/fi';
-import { CustomDatePicker, SelectField, ZipField } from '../FormFields';
+import { ClockIcon, TruckIcon } from "@heroicons/react/24/outline";
+import { FiPackage } from "react-icons/fi";
+import { CustomDatePicker, SelectField, ZipField } from "../FormFields";
 
 const times = [
   {
-    value: '',
-    label: 'Select...',
+    value: "",
+    label: "Select...",
   },
   {
-    value: 'Any time',
-    label: 'Any time',
+    value: "Any time",
+    label: "Any time",
   },
   {
-    value: '8-9AM',
-    label: 'morning',
+    value: "8-9AM",
+    label: "morning",
   },
   {
-    value: '12-3PM',
-    label: 'noon',
+    value: "12-3PM",
+    label: "noon",
   },
   {
-    value: '3-7PM',
-    label: 'afternoon',
+    value: "3-7PM",
+    label: "afternoon",
   },
 ];
 
 const services = [
   {
-    value: 'Moving',
-    label: 'Moving',
+    value: "Moving",
+    label: "Moving",
   },
   {
-    value: 'Moving with Storage',
-    label: 'Moving with Storage',
+    value: "Moving with Storage",
+    label: "Moving with Storage",
   },
   {
-    value: 'Packing Only',
-    label: 'Packing Only',
+    value: "Packing Only",
+    label: "Packing Only",
   },
   {
-    value: 'Loading Help',
-    label: 'Loading Help',
+    value: "Loading Help",
+    label: "Loading Help",
   },
   {
-    value: 'Unloading Help',
-    label: 'Unloading Help',
+    value: "Unloading Help",
+    label: "Unloading Help",
   },
   {
-    value: 'Inside Move',
-    label: 'Inside Move',
+    value: "Inside Move",
+    label: "Inside Move",
   },
 ];
 
 const packingOptions = [
   {
-    value: '',
-    label: 'Select...',
+    value: "",
+    label: "Select...",
   },
   {
-    value: 'I will pack by myself',
-    label: 'I will pack boxes by myself',
+    value: "I will pack by myself",
+    label: "I will pack boxes by myself",
   },
   {
-    value: 'I need partial packing service',
-    label: 'I need partial packing service',
+    value: "I need partial packing service",
+    label: "I need partial packing service",
   },
   {
-    value: 'I need full packing service',
-    label: 'I need full packing service',
+    value: "I need full packing service",
+    label: "I need full packing service",
   },
 ];
 
@@ -115,6 +115,8 @@ export default function FirstStep(props) {
           name={originZip.name}
           label={originZip.label}
           placeholder="01234"
+          id={originZip.name}
+          autoComplete="shipping postal-code"
         />
       </div>
 
@@ -124,6 +126,8 @@ export default function FirstStep(props) {
             name={destinationZip.name}
             label={destinationZip.label}
             placeholder="01234"
+            id={destinationZip.name}
+            autoComplete="billing postal-code"
           />
         )}
       </div>
@@ -154,7 +158,7 @@ export default function FirstStep(props) {
           options={packingOptions}
           icon={FiPackage}
         />
-        <p className="text-xs mt-2 font-medium text-slate-700 leading-tight">
+        <p className="mt-2 text-xs leading-tight font-medium text-slate-700">
           Note: Packing services are based on a same hourly rates. Packing
           materials charges will be applied upon usage.
         </p>

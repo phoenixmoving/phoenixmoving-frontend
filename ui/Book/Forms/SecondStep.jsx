@@ -2,76 +2,79 @@ import {
   ArrowTrendingDownIcon,
   ArrowTrendingUpIcon,
   HomeIcon,
-} from '@heroicons/react/24/outline';
-import { SelectField } from '../FormFields';
-import { TbStairsDown, TbStairsUp } from 'react-icons/tb';
+} from "@heroicons/react/24/outline";
+import { SelectField } from "../FormFields";
+import { TbStairsDown, TbStairsUp } from "react-icons/tb";
 
 const movingSizeOptions = [
   {
-    label: 'Select...',
-    value: '',
+    label: "Select...",
+    value: "",
   },
   {
-    label: 'One Room or less (<1000 lbs)',
-    value: 'Room or less (partial move)',
+    label: "Room or less (<300 cb.ft.)",
+    value: "Room or less (<300 cb.ft.)",
   },
-  { label: 'Studio apartment', value: 'Studio apartment' },
-  { label: '1 Bedroom apartment', value: '1 Bedroom apartment' },
-  { label: '2 Bedroom apartment', value: '2 Bedroom apartment' },
+  { label: "Studio apartment", value: "Studio apartment" },
+  { label: "Small 1 Bedroom apartment", value: "Small 1 Bedroom apartment" },
+  { label: "Large 1 Bedroom apartment", value: "Large 1 Bedroom apartment" },
+  { label: "Small 2 Bedroom apartment", value: "Small 2 Bedroom apartment" },
+  { label: "Large 2 Bedroom apartment", value: "Large 2 Bedroom apartment" },
+
   {
-    label: '3+ Bedroom apartment',
-    value: '3+ Bedroom apartment',
-  },
-  {
-    label: '2 Bedroom House/Townhouse',
-    value: '2 Bedroom House/Townhouse',
-  },
-  {
-    label: '3 Bedroom House/Townhouse',
-    value: '3 Bedroom House/Townhouse',
+    label: "3 Bedroom apartment",
+    value: "3 Bedroom apartment",
   },
   {
-    label: '4+ Bedroom House/Townhouse',
-    value: '4+ Bedroom House/Townhouse',
+    label: "2 Bedroom House/Townhouse",
+    value: "2 Bedroom House/Townhouse",
   },
   {
-    label: 'Office / Commercial space',
-    value: 'Office / Commercial space',
+    label: "3 Bedroom House/Townhouse",
+    value: "3 Bedroom House/Townhouse",
+  },
+  {
+    label: "4+ Bedroom House/Townhouse",
+    value: "4+ Bedroom House/Townhouse",
+  },
+  {
+    label: "Office / Commercial space",
+    value: "Office / Commercial space",
   },
 ];
 
 const floorOptions = [
   {
-    label: 'Select...',
-    value: '',
+    label: "Select...",
+    value: "",
   },
   {
-    value: '1st/ground floor',
-    label: '1st/ground floor',
+    value: "1st/ground floor",
+    label: "1st/ground floor",
   },
   {
-    value: '2nd floor',
-    label: '2nd floor',
+    value: "2nd floor",
+    label: "2nd floor",
   },
   {
-    value: '3rd floor',
-    label: '3rd floor',
+    value: "3rd floor",
+    label: "3rd floor",
   },
   {
-    value: '4th floor',
-    label: '4th floor',
+    value: "4th floor",
+    label: "4th floor",
   },
   {
-    value: 'elevator building',
-    label: 'elevator building',
+    value: "elevator building",
+    label: "elevator building",
   },
   {
-    value: 'private house',
-    label: 'private house',
+    value: "private house",
+    label: "private house",
   },
   {
-    value: 'storage unit',
-    label: 'storage unit',
+    value: "storage unit",
+    label: "storage unit",
   },
 ];
 

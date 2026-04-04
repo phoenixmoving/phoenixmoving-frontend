@@ -1,45 +1,53 @@
+const MINIMUM_TIME_IN_MINUTES = 180;
+
 const averageTime = {
-  "Room or less (partial move)": 30,
-  "Studio apartment": 60,
-  "1 Bedroom apartment": 80,
-  "2 Bedroom apartment": 130,
+  "Room or less (<300 cb.ft.)": 30,
+  "Studio apartment": 70,
+  "Small 1 Bedroom apartment": 80,
+  "Large 1 Bedroom apartment": 100,
+  "Small 2 Bedroom apartment": 100,
+  "Large 2 Bedroom apartment": 130,
+  "3 Bedroom apartment": 130,
   "2 Bedroom House/Townhouse": 180,
-  "3+ Bedroom apartment": 190,
   "3 Bedroom House/Townhouse": 260,
   "4+ Bedroom House/Townhouse": 360,
-  "Office / Commercial space": 220,
+  "Office / Commercial move": 220,
 };
 
 const averageTimeLongDistance = {
-  "Room or less (partial move)": 60,
+  "Room or less (<300 cb.ft.)": 60,
   "Studio apartment": 120,
-  "1 Bedroom apartment": 180,
-  "2 Bedroom apartment": 240,
+  "Small 1 Bedroom apartment": 180,
+  "Large 1 Bedroom apartment": 180,
+  "Small 2 Bedroom apartment": 240,
+  "Large 2 Bedroom apartment": 240,
+  "3 Bedroom apartment": 240,
   "2 Bedroom House/Townhouse": 360,
-  "3+ Bedroom apartment": 360,
   "3 Bedroom House/Townhouse": 480,
   "4+ Bedroom House/Townhouse": 540,
-  "Office / Commercial space": 300,
+  "Office / Commercial move": 300,
 };
 
 const timeFrame = {
-  "Room or less (partial move)": 1,
+  "Room or less (<300 cb.ft.)": 1,
   "Studio apartment": 1,
-  "1 Bedroom apartment": 2,
-  "2 Bedroom apartment": 2,
+  "Small 1 Bedroom apartment": 1,
+  "Large 1 Bedroom apartment": 2,
+  "Small 2 Bedroom apartment": 2,
+  "Large 2 Bedroom apartment": 2,
+  "3 Bedroom apartment": 2,
   "2 Bedroom House/Townhouse": 2,
-  "3+ Bedroom apartment": 2,
   "3 Bedroom House/Townhouse": 2,
   "4+ Bedroom House/Townhouse": 2,
-  "Office / Commercial space": 2,
+  "Office / Commercial move": 2,
 };
 
 const averageFloorTime = (size) => {
   if (!size) return {};
   let obj = {
-    "elevator building": Math.round(averageTime[size] * 0.2),
+    "storage unit": Math.round(averageTime[size] * 0.1),
     "private house": Math.round(averageTime[size] * 0.1),
-    "storage unit": -10,
+    "elevator building": Math.round(averageTime[size] * 0.3),
     "1st/ground floor": Math.round(averageTime[size] * 0.1),
     "2nd floor": Math.round(averageTime[size] * 0.2),
     "3rd floor": Math.round(averageTime[size] * 0.3),
@@ -104,7 +112,7 @@ export const estimateJobTime = (data) => {
     isFlatRate,
   } = data;
 
-  console.log("data", JSON.stringify(data, null, 2));
+  // console.log("data", JSON.stringify(data, null, 2));
 
   if (travelTime.length == 0) return [];
 
@@ -141,16 +149,22 @@ export const estimateJobTime = (data) => {
     timeBetween +
     travelTimeSum;
 
-  if (totalTimeInMinutes < 120) totalTimeInMinutes = 120;
+  // if (totalTimeInMinutes < 120) totalTimeInMinutes = 120;
 
-  console.log("avg labour", averageLabourTime);
-  console.log("avg floor pickup", averageFloorTime(movingSize)[fromHouseType]);
-  console.log("avg floor destination", averageFloorTimeDest);
-  console.log("tt suma", travelTimeSum);
-  console.log("time between", timeBetween);
+  // console.log("avg labour", averageLabourTime);
+  // console.log("avg floor pickup", averageFloorTime(movingSize)[fromHouseType]);
+  // console.log("avg floor destination", averageFloorTimeDest);
+  // console.log("tt suma", travelTimeSum);
+  // console.log("time between", timeBetween);
 
   let totalTimeInHours = roundTime(totalTimeInMinutes / 60);
   let estimateTimeArray = [totalTimeInHours, totalTimeInHours + timeWindow];
+
+  if (totalTimeInHours < MINIMUM_TIME_IN_MINUTES / 60) {
+    totalTimeInHours = MINIMUM_TIME_IN_MINUTES / 60;
+    estimateTimeArray = [MINIMUM_TIME_IN_MINUTES / 60];
+  }
+
   //   if (movingService === "Moving" || movingService === "Moving with Storage") {
   //     estimateTimeArray = [
   //       totalTimeInHours,
@@ -163,17 +177,18 @@ export const estimateJobTime = (data) => {
   //     ];
   //   }
 
-  console.log(
-    "formatMinutesToQuarters",
-    formatMinutesToQuarters(travelTimeSum),
-  );
+  // console.log(
+  //   "formatMinutesToQuarters",
+  //   formatMinutesToQuarters(travelTimeSum),
+  // );
 
-  console.log("total Time in minutes --->", totalTimeInMinutes);
+  // console.log("total Time in minutes --->", totalTimeInMinutes);
 
-  console.log("total Time in hours --->", totalTimeInHours);
-  console.log("time + window --->", totalTimeInHours + timeWindow);
+  // console.log("total Time in hours --->", totalTimeInHours);
+  // console.log("time + window --->", totalTimeInHours + timeWindow);
 
-  if (totalTimeInHours + timeWindow <= 2) estimateTimeArray = [2];
+  // if (totalTimeInHours + timeWindow <= MINIMUM_TIME_IN_MINUTES / 60)
+  //   estimateTimeArray = [MINIMUM_TIME_IN_MINUTES / 60];
   return estimateTimeArray;
 };
 
