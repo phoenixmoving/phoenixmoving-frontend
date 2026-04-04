@@ -7,7 +7,6 @@ import Link from "next/link";
 
 type Tier = {
   name: string;
-  href: string;
   hourlyRate: number;
   oldRate: number;
   description: string;
@@ -30,7 +29,6 @@ export async function Pricing1() {
   const tiers: Tier[] = [
     {
       name: "2 Movers",
-      href: "/",
       hourlyRate: prices[0].two_men[0],
       oldRate: prices[0].two_men[0] + 30,
       description: "Starting from",
@@ -44,7 +42,6 @@ export async function Pricing1() {
     },
     {
       name: "3 Movers",
-      href: "/",
       hourlyRate: prices[0].three_men[0],
       oldRate: prices[0].three_men[0] + 30,
       description: "Starting from",
@@ -59,7 +56,6 @@ export async function Pricing1() {
     },
     {
       name: "4 Movers",
-      href: "/",
       hourlyRate: prices[0].four_men[0],
       oldRate: prices[0].four_men[0] + 30,
       description: "Starting from",
@@ -107,7 +103,7 @@ export async function Pricing1() {
                   title="Get a Quote"
                   asChild
                 >
-                  <Link href="/">Get a Quote</Link>
+                  <a href="/">Get a Quote</a>
                 </Button>
               </div>
               <div className="px-6 pt-6 pb-8">
@@ -115,7 +111,7 @@ export async function Pricing1() {
                 <ul className="mt-6 space-y-4">
                   {tier.includedFeatures.map((feature) => (
                     <li key={feature} className="flex items-center gap-2">
-                      <CheckIcon className="size-5 flex-shrink-0 text-green-500" />
+                      <CheckIcon className="size-5 shrink-0 text-green-500" />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -139,7 +135,7 @@ export async function Pricing1() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <p className="flex items-center gap-2">
-                <CheckIcon className="size-5 flex-shrink-0 text-green-500" />
+                <CheckIcon className="size-5 shrink-0 text-green-500" />
                 <span>
                   Rate per hour per moving added to your quoted houry rate if
                   you request it.
@@ -161,7 +157,7 @@ export async function Pricing1() {
             </div>
             <div className="px-6 pt-6 pb-8">
               <p className="flex items-center gap-2">
-                <CheckIcon className="size-5 flex-shrink-0 text-green-500" />
+                <CheckIcon className="size-5 shrink-0 text-green-500" />
                 <span>
                   Rate per hour per truck added to your quoted houry rate if you
                   requested.
@@ -171,7 +167,7 @@ export async function Pricing1() {
           </div>
         </div>
       </div>
-      <Card className="from-primary via-primary/90 to-primary/80 text-primary-foreground mt-12 bg-gradient-to-br py-8">
+      <Card className="from-primary via-primary/90 to-primary/80 text-primary-foreground mt-12 bg-linear-to-br py-8">
         <CardContent className="flex flex-col items-center justify-center gap-4 text-center">
           <h3 className="text-2xl font-bold">Need a Custom Solution?</h3>
           <p className="text-lg">

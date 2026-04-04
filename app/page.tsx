@@ -1,16 +1,15 @@
+import type { Metadata } from "next";
 import { Gallery1 } from "@/blocks/image-gallery/gallery-1";
 import { Pricing1 } from "@/blocks/pricing/pricing-1";
 import { Services1 } from "@/blocks/services/services-1";
-import type { Metadata } from "next";
-
 import { Cities1 } from "@/blocks/cities/cities-1";
+import { Faq1 } from "@/blocks/faq/faq-1";
 import { Feature1 } from "@/blocks/features/feature-1";
 import { Partners2 } from "@/blocks/partners/partners-2";
 import bgImage from "@/images/truck-and-house-opt.jpg";
 import HeroWithBooking from "@/ui/HeroWithBooking";
 import Reviews from "@/ui/Reviews";
 import { Suspense } from "react";
-import { Faq1 } from "@/blocks/faq/faq-1";
 
 const pageUrl = process.env.NEXT_PUBLIC_MAIN_URL || "";
 const title = "Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)";

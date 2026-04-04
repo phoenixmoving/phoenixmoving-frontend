@@ -47,7 +47,7 @@ export default async function HeroWithBooking({ image, title }) {
         />
         {/* <div className="absolute inset-0 bg-slate-900/30 mix-blend-multiply" /> */}
         {/* Overlay to improve text readability */}
-        <div className="from-foreground/70 to-foreground/30 absolute inset-0 bg-gradient-to-t" />
+        <div className="from-foreground/70 to-foreground/30 absolute inset-0 bg-linear-to-t" />
       </div>
       <div className="relative py-40 sm:py-32 lg:py-28">
         <div className="mx-auto max-w-7xl lg:px-8">

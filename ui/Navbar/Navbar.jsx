@@ -193,7 +193,7 @@ export default function Navbar() {
               <p>Client Login</p>
             </a>
             <Button variant="secondary" asChild>
-              <Link href="/">Get a Quote</Link>
+              <a href="/">Get a Quote</a>
             </Button>
           </div>
           <div className="flex lg:hidden">

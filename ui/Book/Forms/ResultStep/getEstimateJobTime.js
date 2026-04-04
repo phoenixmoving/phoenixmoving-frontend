@@ -9,8 +9,8 @@ const averageTime = {
   "Large 2 Bedroom apartment": 130,
   "3 Bedroom apartment": 130,
   "2 Bedroom House/Townhouse": 180,
-  "3 Bedroom House/Townhouse": 260,
-  "4+ Bedroom House/Townhouse": 360,
+  "3 Bedroom House/Townhouse": 240,
+  "4+ Bedroom House/Townhouse": 290,
   "Office / Commercial move": 220,
 };
 
