@@ -17,7 +17,7 @@ export function Gallery1() {
   ];
 
   return (
-    <section className="from-muted to-background bg-gradient-to-t">
+    <section className="from-muted to-background bg-linear-to-t">
       <ScrollArea>
         <div className="flex w-full gap-5 px-4 py-4 sm:justify-center sm:gap-8 sm:px-0">
           {[img3, img2, img1, img4, img5].map((image, imageIndex) => (

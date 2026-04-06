@@ -38,8 +38,8 @@ const movingSizeOptions = [
     value: "4+ Bedroom House/Townhouse",
   },
   {
-    label: "Office / Commercial space",
-    value: "Office / Commercial space",
+    label: "Office / Commercial move",
+    value: "Office / Commercial move",
   },
 ];
 
