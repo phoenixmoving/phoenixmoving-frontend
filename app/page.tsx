@@ -1,15 +1,41 @@
 import type { Metadata } from "next";
-import { Gallery1 } from "@/blocks/image-gallery/gallery-1";
-import { Pricing1 } from "@/blocks/pricing/pricing-1";
-import { Services1 } from "@/blocks/services/services-1";
-import { Cities1 } from "@/blocks/cities/cities-1";
-import { Faq1 } from "@/blocks/faq/faq-1";
-import { Feature1 } from "@/blocks/features/feature-1";
-import { Partners2 } from "@/blocks/partners/partners-2";
+// import { Gallery1 } from "@/blocks/image-gallery/gallery-1";
+// import { Services1 } from "@/blocks/services/services-1";
+// import { Cities1 } from "@/blocks/cities/cities-1";
+// import { Faq1 } from "@/blocks/faq/faq-1";
+// import { Feature1 } from "@/blocks/features/feature-1";
+// import { Partners2 } from "@/blocks/partners/partners-2";
 import bgImage from "@/images/truck-and-house-opt.jpg";
 import HeroWithBooking from "@/ui/HeroWithBooking";
 import Reviews from "@/ui/Reviews";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const Pricing1 = dynamic(() =>
+  import("@/blocks/pricing/pricing-1").then((m) => m.Pricing1),
+);
+
+const Gallery1 = dynamic(() =>
+  import("@/blocks/image-gallery/gallery-1").then((m) => m.Gallery1),
+);
+
+const Services1 = dynamic(() =>
+  import("@/blocks/services/services-1").then((m) => m.Services1),
+);
+
+const Cities1 = dynamic(() =>
+  import("@/blocks/cities/cities-1").then((m) => m.Cities1),
+);
+
+const Faq1 = dynamic(() => import("@/blocks/faq/faq-1").then((m) => m.Faq1));
+
+const Feature1 = dynamic(() =>
+  import("@/blocks/features/feature-1").then((m) => m.Feature1),
+);
+
+const Partners2 = dynamic(() =>
+  import("@/blocks/partners/partners-2").then((m) => m.Partners2),
+);
 
 const pageUrl = process.env.NEXT_PUBLIC_MAIN_URL || "";
 const title = "Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)";

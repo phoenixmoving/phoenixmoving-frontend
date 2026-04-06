@@ -1,11 +1,11 @@
-'use client';
-import { useField, useFormikContext } from 'formik';
-import clsx from 'clsx';
+"use client";
+import { useField, useFormikContext } from "formik";
+import clsx from "clsx";
 // import useSWR from 'swr';
-import CalendarWithRates from '@/ui/CalendarWithRates';
-import { useState } from 'react';
-import { format } from 'date-fns';
-import { CalendarDaysIcon } from '@heroicons/react/24/outline';
+import CalendarWithRates from "@/ui/CalendarWithRates";
+import { useState } from "react";
+import { format } from "date-fns";
+import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 // import { CalendarDaysIcon } from '@heroicons/react/20/solid';
 
 // const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -26,7 +26,7 @@ export default function CustomDatePicker(props) {
 
   const { label, placeholder, rates, prices } = props;
 
-  const isDelivery = field.name === 'deliveryDate';
+  const isDelivery = field.name === "deliveryDate";
 
   const handleOpen = () => {
     setOpen(true);
@@ -37,11 +37,11 @@ export default function CustomDatePicker(props) {
 
   const hanldeChange = (date) => {
     // console.log(format(date, "yyyy-MM-dd'T'00:00:00"));
-    const formattedDate = format(date, 'MM/dd/yyyy');
+    const formattedDate = format(date, "MM/dd/yyyy");
     const rateArray = rates.find((r) => r.date === formattedDate);
 
     if (!isDelivery) {
-      formikProps.setFieldValue('rates', rateArray.rates);
+      formikProps.setFieldValue("rates", rateArray.rates);
     }
 
     formikProps.setFieldValue(field.name, date);
@@ -52,19 +52,19 @@ export default function CustomDatePicker(props) {
   return (
     <>
       <label
-        className="block text-sm font-medium leading-6"
+        className="block text-sm leading-6 font-medium"
         htmlFor={field.name}
       >
         {label}
       </label>
       <div className="relative rounded-md">
-        <div className="z-10 pointer-events-none absolute inset-y-0 left-0 mt-1 flex items-center pl-3">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 mt-1 flex items-center pl-3">
           <CalendarDaysIcon
             // className="h-4 w-4"
-            className={clsx('h-5 w-5', {
-              'text-slate-400': field.value === '',
-              'text-slate-900': isError,
-              'text-slate-900': isSuccess,
+            className={clsx("h-5 w-5", {
+              "text-slate-400": field.value === "",
+              "text-slate-900": isError,
+              "text-slate-900": isSuccess,
             })}
             aria-hidden="true"
           />
@@ -72,16 +72,16 @@ export default function CustomDatePicker(props) {
         <input
           {...field}
           id={field.name}
-          value={field.value ? format(field.value, 'MMM dd, yyyy') : ''}
+          value={field.value ? format(field.value, "MMM dd, yyyy") : ""}
           // inputMode="none"
           placeholder={placeholder}
           type="text"
           className={clsx(
-            'mt-1 lock w-full rounded-md border-0 bg-slate-100 font-normal placeholder:text-slate-400 py-2 pl-10 pr-3 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm caret-transparent',
+            "lock mt-1 w-full rounded-md border-0 bg-slate-100 py-2 pr-3 pl-10 text-base font-normal caret-transparent placeholder:text-slate-400 focus:border-indigo-500 focus:ring-indigo-500 focus:outline-none sm:text-sm",
             {
-              'text-slate-400': field.value === '',
-              'shadow-inner !bg-red-50': isError,
-              'shadow-inner !bg-green-50': isSuccess,
+              "text-slate-400": field.value === "",
+              "!bg-red-50 shadow-inner": isError,
+              "!bg-green-50 shadow-inner": isSuccess,
             },
           )}
           onClick={handleOpen}

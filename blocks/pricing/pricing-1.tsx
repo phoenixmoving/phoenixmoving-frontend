@@ -1,8 +1,20 @@
+"use client";
+
+import { fetchPrices } from "@/api";
 import { Section } from "@/components/section";
 import { SectionHeader } from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useQuery } from "@tanstack/react-query";
 import { CheckIcon } from "lucide-react";
+
+type Price = {
+  two_men: [number, number];
+  three_men: [number, number];
+  four_men: [number, number];
+  add_men: [number, number];
+  add_truck: [number, number];
+};
 
 type Tier = {
   name: string;
@@ -21,15 +33,17 @@ export async function getData() {
   return res.json();
 }
 
-export async function Pricing1() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  const prices = await getData();
+export function Pricing1() {
+  const { data: prices } = useQuery<Price[]>({
+    queryKey: ["prices"],
+    queryFn: fetchPrices,
+  });
 
   const tiers: Tier[] = [
     {
       name: "2 Movers",
-      hourlyRate: prices[0].two_men[0],
-      oldRate: prices[0].two_men[0] + 30,
+      hourlyRate: prices?.[0]?.two_men[0] ?? 0,
+      oldRate: (prices?.[0]?.two_men[0] ?? 0) + 30,
       description: "Starting from",
       sizes: "Room/Studio",
       includedFeatures: [
@@ -41,8 +55,8 @@ export async function Pricing1() {
     },
     {
       name: "3 Movers",
-      hourlyRate: prices[0].three_men[0],
-      oldRate: prices[0].three_men[0] + 30,
+      hourlyRate: prices?.[0]?.three_men[0] ?? 0,
+      oldRate: (prices?.[0]?.three_men[0] ?? 0) + 30,
       description: "Starting from",
       sizes: "1-2 Bedroom Apt/House",
       includedFeatures: [
@@ -55,8 +69,8 @@ export async function Pricing1() {
     },
     {
       name: "4 Movers",
-      hourlyRate: prices[0].four_men[0],
-      oldRate: prices[0].four_men[0] + 30,
+      hourlyRate: prices?.[0]?.four_men[0] ?? 0,
+      oldRate: (prices?.[0]?.four_men[0] ?? 0) + 30,
       description: "Starting from",
       sizes: "3-4 Bedroom Apt/House",
       includedFeatures: [
@@ -127,7 +141,7 @@ export async function Pricing1() {
               </p>
               <p className="mt-4">
                 <span className="text-4xl font-semibold tracking-tight">
-                  ${prices[0].add_men[0]}
+                  ${prices?.[0]?.add_men[0] ?? 0}
                 </span>{" "}
                 <span className="text-muted-foreground text-sm">per hour</span>
               </p>
@@ -149,7 +163,7 @@ export async function Pricing1() {
               </p>
               <p className="mt-4">
                 <span className="text-4xl font-semibold tracking-tight">
-                  ${prices[0].add_truck[0]}
+                  ${prices?.[0]?.add_truck[0] ?? 0}
                 </span>{" "}
                 <span className="text-muted-foreground text-sm">per hour</span>
               </p>

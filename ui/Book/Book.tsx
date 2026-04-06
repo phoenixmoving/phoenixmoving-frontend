@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import { MotionConfig } from "framer-motion";
 import useMeasure from "react-use-measure";
 import { Toaster } from "react-hot-toast";
 import React, { useState } from "react";
@@ -19,6 +19,8 @@ import { Button } from "@/components/ui/button";
 
 import { findTravelTime } from "./utils/findTravelTime";
 import { submitFormToDb } from "./utils/submitFormToDb";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPrices, fetchRates } from "@/api";
 
 let duration = 0.5;
 
@@ -41,7 +43,12 @@ const stepsButtons = [
 
 const { formId, formField } = sumbitFormModel;
 
-function _renderStepContent(step, values, rates, prices) {
+function _renderStepContent(
+  step: number,
+  values: any,
+  rates: any,
+  prices: any,
+) {
   // console.log(values);
   const showDeliveryDate = values.service === "Moving with Storage";
   const showDestination =
@@ -81,15 +88,23 @@ function _renderStepContent(step, values, rates, prices) {
   }
 }
 
-export default function Book({ rates, prices }) {
+export default function Book() {
+  const { data: rates } = useQuery({
+    queryKey: ["rates"],
+    queryFn: fetchRates,
+  });
+  const { data: prices } = useQuery({
+    queryKey: ["prices"],
+    queryFn: fetchPrices,
+  });
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
   const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = validationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
 
-  function merge(...schemas) {
+  function merge(...schemas: any[]) {
     const [first, ...rest] = schemas;
 
     const merged = rest.reduce(
@@ -109,7 +124,7 @@ export default function Book({ rates, prices }) {
     validationSchema[5],
   );
 
-  function _handleSubmit(values, actions) {
+  function _handleSubmit(values: any, actions: any) {
     actions.setSubmitting(true);
     if (isLastStep) {
       console.log("ok");
@@ -169,7 +184,7 @@ export default function Book({ rates, prices }) {
                 validationSchema={isLastStep ? merged : currentValidationSchema}
                 onSubmit={_handleSubmit}
               >
-                {({ isSubmitting, values, errors }) => {
+                {({ isSubmitting, values }: any) => {
                   return (
                     <Form id={formId} autoComplete="off">
                       <MotionConfig transition={{ duration, type: "tween" }}>
@@ -232,8 +247,8 @@ export default function Book({ rates, prices }) {
   );
 }
 
-function ResizablePanel({ children }) {
-  let [ref, { height }] = useMeasure();
+function ResizablePanel({ children }: { children: React.ReactNode }) {
+  let [ref] = useMeasure();
 
   return (
     <div ref={ref} className="p-8">

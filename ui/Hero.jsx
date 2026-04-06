@@ -1,6 +1,5 @@
 import Image from "next/image";
-import BookFormWrapper from "@/ui/BookFormWrapper";
-import { Suspense } from "react";
+import BookForm from "@/ui/Book";
 
 export default async function HeroWithBooking({ image, title }) {
   return (
@@ -35,9 +34,7 @@ export default async function HeroWithBooking({ image, title }) {
               </div>
             </div>
             <div className="mt-12 flex items-center justify-end px-2">
-              <Suspense fallback={<div className="h-[567px] w-[400px]" />}>
-                <BookFormWrapper />
-              </Suspense>
+              <BookForm />
             </div>
           </div>
         </div>
