@@ -16,7 +16,7 @@ type Tier = {
 
 export async function getData() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_API}/prices`, {
-    next: { revalidate: 60 },
+    cache: "no-store",
   });
   return res.json();
 }

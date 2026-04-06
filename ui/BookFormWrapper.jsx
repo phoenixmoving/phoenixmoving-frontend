@@ -8,13 +8,13 @@ import Book from "@/ui/Book";
 export async function getData() {
   const pricesResponse = await fetch(
     `${process.env.NEXT_PUBLIC_BACK_END_API}/prices`,
-    { next: { revalidate: 60 } },
+    { cache: "no-store" },
   );
   const prices = await pricesResponse.json();
 
   const ratesResponse = await fetch(
     `${process.env.NEXT_PUBLIC_BACK_END_API}/rates`,
-    { next: { revalidate: 60 } },
+    { cache: "no-store" },
   );
   const rates = await ratesResponse.json();
 
