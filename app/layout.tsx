@@ -1,13 +1,14 @@
-import { Maven_Pro } from "next/font/google";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { Maven_Pro } from "next/font/google";
 
-import Navbar from "@/ui/Navbar";
-import Footer from "@/components/Footer";
-import Contact from "@/components/Contact";
-import { Viewport } from "next";
 import { Cta1 } from "@/blocks/cta/cta-1";
-import "./globals.css";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import { QueryProvider } from "@/components/query-provider";
+import Navbar from "@/ui/Navbar";
+import { Analytics } from "@vercel/analytics/next";
+import { Viewport } from "next";
+import "./globals.css";
 
 const maven = Maven_Pro({
   variable: "--font-maven",
@@ -77,13 +78,8 @@ export const metadata = {
     ],
     apple: [
       {
-        url: "/apple-icon-57x57.png",
-        sizes: "57x57",
-        type: "image/png",
-      },
-      {
-        url: "/apple-icon-60x60.png",
-        sizes: "60x60",
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
         type: "image/png",
       },
     ],
@@ -129,6 +125,7 @@ export default function RootLayout({
             </svg>
           </a>
         </QueryProvider>
+        <Analytics />
       </body>
     </html>
   );
