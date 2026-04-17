@@ -3,9 +3,9 @@ const MINIMUM_TIME_IN_MINUTES = 180;
 const averageTime = {
   "Room or less (<300 cb.ft.)": 30,
   "Studio apartment": 70,
-  "Small 1 Bedroom apartment": 80,
-  "Large 1 Bedroom apartment": 100,
-  "Small 2 Bedroom apartment": 100,
+  "Small 1 Bedroom apartment": 120,
+  "Large 1 Bedroom apartment": 120,
+  "Small 2 Bedroom apartment": 120,
   "Large 2 Bedroom apartment": 130,
   "3 Bedroom apartment": 130,
   "2 Bedroom House/Townhouse": 180,
@@ -29,11 +29,11 @@ const averageTimeLongDistance = {
 };
 
 const timeFrame = {
-  "Room or less (<300 cb.ft.)": 1,
-  "Studio apartment": 1,
-  "Small 1 Bedroom apartment": 1,
-  "Large 1 Bedroom apartment": 2,
-  "Small 2 Bedroom apartment": 2,
+  "Room or less (<300 cb.ft.)": 0.5,
+  "Studio apartment": 0.5,
+  "Small 1 Bedroom apartment": 0.5,
+  "Large 1 Bedroom apartment": 1.5,
+  "Small 2 Bedroom apartment": 1.5,
   "Large 2 Bedroom apartment": 2,
   "3 Bedroom apartment": 2,
   "2 Bedroom House/Townhouse": 2,

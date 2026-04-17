@@ -1,26 +1,26 @@
-import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
-import Section from '@/ui/Section';
-import Image from 'next/image';
-import SectionHeader from './SectionHeader';
+import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/outline";
+import Section from "@/ui/Section";
+import Image from "next/image";
+import SectionHeader from "./SectionHeader";
 
 const incentives = [
   {
-    name: 'Efficient and Proficient',
-    imageSrc: '/icon-shipping-simple.svg',
+    name: "Efficient and Proficient",
+    imageSrc: "/icon-shipping-simple.svg",
     description:
-      'Your local Boston Movers are polite, fast and of course caring with your belongings.',
+      "Your local Boston Movers are polite, fast and of course caring with your belongings.",
   },
   {
-    name: '100% On-Time Guarantee',
-    imageSrc: '/icon-warranty-simple.svg',
+    name: "100% On-Time Guarantee",
+    imageSrc: "/icon-warranty-simple.svg",
     description:
-      'We guarantee that we will be at the needed place on time, as specified in our agreement. Be sure that we got you covered.',
+      "We guarantee that we will be at the needed place on time, as specified in our agreement. Be sure that we got you covered.",
   },
   {
-    name: 'Licensed, Bonded and Insured',
+    name: "Licensed, Bonded and Insured",
     imageSrc: ClipboardDocumentCheckIcon,
     description:
-      'Phoenix Moving is Fully Licensed and Insured with the Massachusetts Department of Public Utilities.',
+      "Phoenix Moving is Fully Licensed and Insured with the Massachusetts Department of Public Utilities.",
   },
 ];
 
@@ -28,19 +28,19 @@ export default function WhyBookSection() {
   return (
     <Section>
       <SectionHeader title="Why book with Phoenix Moving Boston." />
-      <div className="mx-auto mt-12 grid max-w-sm grid-cols-1 gap-y-10 gap-x-8 sm:max-w-none lg:grid-cols-3">
+      <div className="mx-auto mt-12 grid max-w-sm grid-cols-1 gap-x-8 gap-y-10 sm:max-w-none lg:grid-cols-3">
         {incentives.map((incentive, i) => (
           <div
             key={incentive.name}
             className={
               i === 1
-                ? 'text-center sm:flex sm:text-left lg:block lg:text-center lg:relative bottom-1'
-                : 'text-center sm:flex sm:text-left lg:block lg:text-center'
+                ? "bottom-1 text-center sm:flex sm:text-left lg:relative lg:block lg:text-center"
+                : "text-center sm:flex sm:text-left lg:block lg:text-center"
             }
           >
-            <div className="sm:flex-shrink-0">
+            <div className="sm:shrink-0">
               <div className="flow-root">
-                {typeof incentive.imageSrc === 'string' ? (
+                {typeof incentive.imageSrc === "string" ? (
                   <Image
                     className="mx-auto h-16 w-16"
                     width={64}
@@ -59,7 +59,7 @@ export default function WhyBookSection() {
                 {incentive.name}
               </h3>
               <p
-                className="mt-2 text-sm text-slate-900 prose prose-blue"
+                className="prose prose-blue mt-2 text-sm text-slate-900"
                 dangerouslySetInnerHTML={{
                   __html: incentive.description,
                 }}
