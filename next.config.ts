@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   // poweredByHeader: false,
   productionBrowserSourceMaps: false,
   images: {
+    qualities: [75, 80],
     remotePatterns: [
       {
         protocol: 'https',
