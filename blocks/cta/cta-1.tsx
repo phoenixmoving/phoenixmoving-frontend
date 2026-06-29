@@ -7,7 +7,7 @@ import Link from "next/link";
 export function Cta1() {
   return (
     <Section>
-      <Card className="from-primary via-primary/90 to-primary/80 bg-gradient-to-br py-20">
+      <Card className="from-primary via-primary/90 to-primary/80 bg-linear-to-br py-20">
         <CardContent className="flex flex-col items-center justify-center gap-4">
           <SectionHeader
             title="Move with Phoenix Moving Boston."
@@ -17,7 +17,7 @@ export function Cta1() {
           <Button
             size="lg"
             variant="secondary"
-            title="Reques tFree Estimate Online"
+            title="Request Free Estimate Online"
             className="self-center"
             asChild
           >

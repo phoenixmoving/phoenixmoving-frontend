@@ -55,14 +55,14 @@ export default function StorageSection() {
             placeholder="blur"
             blurDataURL={image.blurDataURL}
             alt="Truck and tree"
-            className="mt-16 aspect-[6/5] w-full -rotate-2 rounded-2xl object-cover lg:aspect-auto lg:h-[34.5rem]"
-            title="Local Moving Services"
+            className="mt-16 aspect-6/5 w-full -rotate-2 rounded-2xl object-cover lg:aspect-auto lg:h-138"
+            title="Storage Solutions"
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="w-full lg:max-w-xl lg:flex-auto">
-          <h3 className="sr-only">Local Moving Services</h3>
+          <h3 className="sr-only">Storage Solutions</h3>
           <ul className="-my-8 divide-y divide-slate-100">
             {options.map((option) => (
               <li key={option.name} className="py-8">

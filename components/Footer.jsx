@@ -1,77 +1,77 @@
-import { services } from '@/lib/navigation';
-import PopularCities from '@/ui/PopularCities';
+import { services } from "@/lib/navigation";
+import PopularCities from "@/ui/PopularCities";
 
 const interstateCities = [
   {
-    name: 'New York',
-    href: 'boston-new-york-movers',
+    name: "New York",
+    href: "boston-new-york-movers",
   },
   {
-    name: 'Washington, DC.',
-    href: 'boston-washington-dc-movers',
+    name: "Washington, DC.",
+    href: "boston-washington-dc-movers",
   },
   {
-    name: 'Philadelphia',
-    href: 'boston-philadelphia-movers',
+    name: "Philadelphia",
+    href: "boston-philadelphia-movers",
   },
   {
-    name: 'Miami',
-    href: 'boston-miami-movers',
+    name: "Miami",
+    href: "boston-miami-movers",
   },
   {
-    name: 'Chicago',
-    href: 'boston-chicago-movers',
+    name: "Chicago",
+    href: "boston-chicago-movers",
   },
   {
-    name: 'Detroit',
-    href: 'boston-detroit-movers',
+    name: "Detroit",
+    href: "boston-detroit-movers",
   },
   {
-    name: 'Charlotte',
-    href: 'boston-charlotte-movers',
+    name: "Charlotte",
+    href: "boston-charlotte-movers",
   },
   {
-    name: 'Atlanta',
-    href: 'boston-atlanta-movers',
+    name: "Atlanta",
+    href: "boston-atlanta-movers",
   },
   {
-    name: 'Nashville',
-    href: 'boston-nashville-movers',
+    name: "Nashville",
+    href: "boston-nashville-movers",
   },
   {
-    name: 'Denver',
-    href: 'boston-denver-movers',
+    name: "Denver",
+    href: "boston-denver-movers",
   },
   {
-    name: 'Austin',
-    href: 'boston-austin-movers',
+    name: "Austin",
+    href: "boston-austin-movers",
   },
   {
-    name: 'Raleigh',
-    href: 'boston-raleigh-movers',
+    name: "Raleigh",
+    href: "boston-raleigh-movers",
   },
   {
-    name: 'Jersey City',
-    href: 'boston-jersey-city-movers',
+    name: "Jersey City",
+    href: "boston-jersey-city-movers",
   },
 ];
 
 const navigation = {
   services,
   support: [
-    { name: 'Prices', href: '/pricing' },
-    { name: 'FAQ', href: '/faq' },
+    { name: "Prices", href: "/pricing" },
+    { name: "FAQ", href: "/faq" },
   ],
-  company: [{ name: 'About', href: 'about' }],
+  company: [{ name: "About", href: "about" }],
   legal: [
-    { name: 'Company Policy', href: 'policy' },
-    { name: 'Privacy Policy', href: 'privacy' },
-    { name: 'Terms and Conditions', href: 'terms' },
+    { name: "Company Policy", href: "policy" },
+    { name: "Privacy Policy", href: "privacy" },
+    { name: "Terms and Conditions", href: "terms" },
   ],
   social: [
     {
-      name: 'Facebook',
-      href: 'https://www.facebook.com/phoenixmoving',
+      name: "Facebook",
+      href: "https://www.facebook.com/phoenixmoving",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -83,8 +83,8 @@ const navigation = {
       ),
     },
     {
-      name: 'Instagram',
-      href: 'https://www.instagram.com/phoenixmoving/',
+      name: "Instagram",
+      href: "https://www.instagram.com/phoenixmoving/",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -96,8 +96,8 @@ const navigation = {
       ),
     },
     {
-      name: 'Twitter',
-      href: 'https://twitter.com/phoenix_moving',
+      name: "Twitter",
+      href: "https://twitter.com/phoenix_moving",
       icon: (props) => (
         // <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         //   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -120,8 +120,8 @@ const navigation = {
       ),
     },
     {
-      name: 'Yelp',
-      href: 'https://www.yelp.com/biz/phoenix-moving-natick-6',
+      name: "Yelp",
+      href: "https://www.yelp.com/biz/phoenix-moving-and-storage-newton",
       icon: (props) => (
         <svg
           id="Layer_1"
@@ -146,24 +146,24 @@ export default async function Footer() {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div className="flex gap-1 flex-wrap mb-4">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mb-4 flex flex-wrap gap-1">
           <PopularCities />
         </div>
-        <div className="flex gap-1 flex-wrap mb-8 items-center">
-          <p className="text-white text-xs font-semibold p-2 sm:p-1">
+        <div className="mb-8 flex flex-wrap items-center gap-1">
+          <p className="p-2 text-xs font-semibold text-white sm:p-1">
             Top Cities
           </p>
           {interstateCities.map((city, i) => {
             return (
               <a
                 key={i}
-                className="text-slate-400 text-xs p-2 sm:p-1"
+                className="p-2 text-xs text-slate-400 sm:p-1"
                 href={city.href}
                 title={`Moving From Boston to ${city.name}`}
               >
-                <span className="text-slate-400 text-xs">|</span>
-                <span className="hover:underline ml-4 sm:ml-2">
+                <span className="text-xs text-slate-400">|</span>
+                <span className="ml-4 hover:underline sm:ml-2">
                   {city.name}
                 </span>
               </a>
@@ -174,7 +174,7 @@ export default async function Footer() {
           <div className="grid grid-cols-2 gap-8 xl:col-span-4">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className=" font-medium text-white">Services</h3>
+                <h3 className="font-medium text-white">Services</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.services.map((item) => (
                     <li key={item.name}>
@@ -190,7 +190,7 @@ export default async function Footer() {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className=" font-medium text-white">Support</h3>
+                <h3 className="font-medium text-white">Support</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.support.map((item) => (
                     <li key={item.name}>
@@ -208,7 +208,7 @@ export default async function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className=" font-medium text-white">Company</h3>
+                <h3 className="font-medium text-white">Company</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
@@ -224,7 +224,7 @@ export default async function Footer() {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className=" font-medium text-white">Legal</h3>
+                <h3 className="font-medium text-white">Legal</h3>
                 <ul className="mt-4 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
@@ -244,10 +244,10 @@ export default async function Footer() {
         </div>
         <div className="border-t border-slate-500 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
           <div>
-            <p className="mt-2  text-slate-300">
+            <p className="mt-2 text-slate-300">
               Phoenix Moving Inc. is fully licensed, bonded and insured.
             </p>
-            <p className="mt-2  text-slate-300 flex gap-4 items-center">
+            <p className="mt-2 flex items-center gap-4 text-slate-300">
               <span>MDPU&#183;32054</span>
 
               <span>DOT&#183;3868109</span>
@@ -257,7 +257,7 @@ export default async function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-slate-500 pt-8 md:flex md:items-center md:justify-between">
-          <p className="mt-8  text-slate-400 md:order-1 md:mt-0">
+          <p className="mt-8 text-slate-400 md:order-1 md:mt-0">
             &copy; {year} Phoenix Moving, Inc. Make moving chill
           </p>
         </div>

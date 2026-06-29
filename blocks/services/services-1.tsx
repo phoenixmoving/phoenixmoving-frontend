@@ -15,7 +15,7 @@ const services: Service[] = [
     name: "Local Moving.",
     href: "local-moving",
     description:
-      "Phoenix Moving is a perfect soultion for your Boston and surrounding area move.",
+      "Phoenix Moving is a perfect solution for your Boston and surrounding area move.",
   },
   {
     name: "Interstate Moving.",

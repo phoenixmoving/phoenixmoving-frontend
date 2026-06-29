@@ -54,7 +54,7 @@ export default function ServicesSection() {
             placeholder="blur"
             blurDataURL={image.blurDataURL}
             alt="Truck and tree"
-            className="mt-16 aspect-[6/5] w-full -rotate-2 rounded-2xl object-cover lg:aspect-auto lg:h-[34.5rem]"
+            className="mt-16 aspect-6/5 w-full -rotate-2 rounded-2xl object-cover lg:aspect-auto lg:h-138"
             title="Local Moving Services"
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

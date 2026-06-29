@@ -38,7 +38,7 @@ const Partners2 = dynamic(() =>
 );
 
 const pageUrl = process.env.NEXT_PUBLIC_MAIN_URL || "";
-const title = "Phoenix Moving - 🚚 Boston Moving Compnay (Free Estimate)";
+const title = "Phoenix Moving - 🚚 Boston Moving Company (Free Estimate)";
 const description =
   "Professional moving company serving the Boston area. We provide fast, reliable, and affordable moving services for residential and commercial customers.";
 

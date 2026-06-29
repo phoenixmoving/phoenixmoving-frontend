@@ -135,7 +135,7 @@ export default async function Pricing() {
                   aria-hidden="true"
                 />
                 <span className="text-slate9500 text-sm font-light">
-                  Rate per hour per moving added to your quoted houry rate if
+                  Rate per hour per moving added to your quoted hourly rate if
                   you request it.
                 </span>
               </p>
@@ -160,8 +160,8 @@ export default async function Pricing() {
                   aria-hidden="true"
                 />
                 <span className="text-sm font-light">
-                  Rate per hour per truck added to your quoted houry rate if you
-                  requested.
+                  Rate per hour per truck added to your quoted hourly rate if
+                  you requested.
                 </span>
               </p>
             </div>

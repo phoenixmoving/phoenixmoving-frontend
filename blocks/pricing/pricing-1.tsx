@@ -150,7 +150,7 @@ export function Pricing1() {
               <p className="flex items-center gap-2">
                 <CheckIcon className="size-5 shrink-0 text-green-500" />
                 <span>
-                  Rate per hour per moving added to your quoted houry rate if
+                  Rate per hour per moving added to your quoted hourly rate if
                   you request it.
                 </span>
               </p>
@@ -172,8 +172,8 @@ export function Pricing1() {
               <p className="flex items-center gap-2">
                 <CheckIcon className="size-5 shrink-0 text-green-500" />
                 <span>
-                  Rate per hour per truck added to your quoted houry rate if you
-                  requested.
+                  Rate per hour per truck added to your quoted hourly rate if
+                  you requested.
                 </span>
               </p>
             </div>
