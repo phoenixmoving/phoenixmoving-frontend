@@ -131,7 +131,7 @@ export default function Book() {
       /> */}
 
       <Script
-        src="http://app.gophoenixmoving.com/book-form-widget.js"
+        src="https://app.gophoenixmoving.com/book-form-widget.js"
         strategy="afterInteractive"
         // Runs on initial page load
         onLoad={() => setScriptLoaded(true)}
