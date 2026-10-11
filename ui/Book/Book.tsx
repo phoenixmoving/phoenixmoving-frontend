@@ -1,284 +1,179 @@
 "use client";
 
-import { MotionConfig } from "framer-motion";
-import useMeasure from "react-use-measure";
-import { Toaster } from "react-hot-toast";
-import React, { useState } from "react";
-import { useJsApiLoader } from "@react-google-maps/api";
-import { Formik, Form } from "formik";
-import validationSchema from "./FormModel/validationSchema";
-import sumbitFormModel from "./FormModel/submitFormModel";
-import formInitialValues from "./FormModel/formInitialValues";
-import FirstStep from "./Forms/FirstStep";
-import SecondStep from "./Forms/SecondStep";
-import ResultStep from "./Forms/ResultStep";
-import Addresses from "./Forms/Addresses";
-import ContactInfo from "./Forms/ContactInfo";
-import ReviewDetails from "./Forms/ReviewDetails";
-import { Button } from "@/components/ui/button";
+// import { MotionConfig } from "framer-motion";
+// import useMeasure from "react-use-measure";
+// import { Toaster } from "react-hot-toast";
+import { useEffect, useState } from "react";
+// import { useJsApiLoader } from "@react-google-maps/api";
+// import { Formik, Form } from "formik";
+// import validationSchema from "./FormModel/validationSchema";
+// import sumbitFormModel from "./FormModel/submitFormModel";
+// import formInitialValues from "./FormModel/formInitialValues";
+// import FirstStep from "./Forms/FirstStep";
+// import SecondStep from "./Forms/SecondStep";
+// import ResultStep from "./Forms/ResultStep";
+// import Addresses from "./Forms/Addresses";
+// import ContactInfo from "./Forms/ContactInfo";
+// import ReviewDetails from "./Forms/ReviewDetails";
+// import { Button } from "@/components/ui/button";
 
-import { findTravelTime } from "./utils/findTravelTime";
-import { submitFormToDb } from "./utils/submitFormToDb";
-import { useQuery } from "@tanstack/react-query";
-import { fetchPrices, fetchRates } from "@/api";
+// import { findTravelTime } from "./utils/findTravelTime";
+// import { submitFormToDb } from "./utils/submitFormToDb";
+// import { useQuery } from "@tanstack/react-query";
+// import { fetchPrices, fetchRates } from "@/api";
+import Script from "next/script";
 
-let duration = 0.5;
+// let duration = 0.5;
 
-const steps = [
-  "Get a Quote",
-  "Fill Move Details",
-  "Quote Result",
-  "Fill Addresses",
-  "Contact Information",
-  "Review & submit",
-];
-const stepsButtons = [
-  "Continue",
-  "View Quote",
-  "Continue",
-  "Contact Info",
-  "Review Quote",
-  "Submit Request",
-];
+// const steps = [
+//   "Get a Quote",
+//   "Fill Move Details",
+//   "Quote Result",
+//   "Fill Addresses",
+//   "Contact Information",
+//   "Review & submit",
+// ];
+// const stepsButtons = [
+//   "Continue",
+//   "View Quote",
+//   "Continue",
+//   "Contact Info",
+//   "Review Quote",
+//   "Submit Request",
+// ];
 
-const { formId, formField } = sumbitFormModel;
+// const { formId, formField } = sumbitFormModel;
 
-function _renderStepContent(
-  step: number,
-  values: any,
-  rates: any,
-  prices: any,
-) {
-  // console.log(values);
-  const showDeliveryDate = values.service === "Moving with Storage";
-  const showDestination =
-    values.service === "Moving with Storage" || values.service === "Moving";
+// function _renderStepContent(
+//   step: number,
+//   values: any,
+//   rates: any,
+//   prices: any,
+// ) {
+//   console.log(values);
+//   const showDeliveryDate = values.service === "Moving with Storage";
+//   const showDestination =
+//     values.service === "Moving with Storage" || values.service === "Moving";
 
-  switch (step) {
-    case 0:
-      return (
-        <FirstStep
-          formField={formField}
-          showDeliveryDate={showDeliveryDate}
-          showDestination={showDestination}
-          rates={rates}
-          prices={prices}
-        />
-      );
-    case 1:
-      return (
-        <SecondStep formField={formField} showDestination={showDestination} />
-      );
-    case 2:
-      return <ResultStep values={values} />;
-    case 3:
-      return (
-        <Addresses
-          formField={formField}
-          values={values}
-          showDestination={showDestination}
-        />
-      );
-    case 4:
-      return <ContactInfo formField={formField} />;
-    case 5:
-      return <ReviewDetails values={values} formField={formField} />;
-    default:
-      return <div>Not Found</div>;
-  }
-}
+//   switch (step) {
+//     case 0:
+//       return (
+//         <FirstStep
+//           formField={formField}
+//           showDeliveryDate={showDeliveryDate}
+//           showDestination={showDestination}
+//           rates={rates}
+//           prices={prices}
+//         />
+//       );
+//     case 1:
+//       return (
+//         <SecondStep formField={formField} showDestination={showDestination} />
+//       );
+//     case 2:
+//       return <ResultStep values={values} />;
+//     case 3:
+//       return (
+//         <Addresses
+//           formField={formField}
+//           values={values}
+//           showDestination={showDestination}
+//         />
+//       );
+//     case 4:
+//       return <ContactInfo formField={formField} />;
+//     case 5:
+//       return <ReviewDetails values={values} formField={formField} />;
+//     default:
+//       return <div>Not Found</div>;
+//   }
+// }
 
 export default function Book() {
-  const { data: rates } = useQuery({
-    queryKey: ["rates"],
-    queryFn: fetchRates,
-  });
-  const { data: prices } = useQuery({
-    queryKey: ["prices"],
-    queryFn: fetchPrices,
-  });
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
-  });
-  const [activeStep, setActiveStep] = useState(0);
-  const currentValidationSchema = validationSchema[activeStep];
-  const isLastStep = activeStep === steps.length - 1;
+  const [scriptLoaded, setScriptLoaded] = useState(false);
 
-  function merge(...schemas: any[]) {
-    const [first, ...rest] = schemas;
+  useEffect(() => {
+    // 1. Check if the script is loaded and the global init function exists
+    // Note: If gophoenixmoving uses a different init name, we handle it here
+    const globalWin = window as any;
 
-    const merged = rest.reduce(
-      (mergedSchemas, schema) => mergedSchemas.concat(schema),
-      first,
-    );
-
-    return merged;
-  }
-
-  const merged = merge(
-    validationSchema[0],
-    validationSchema[1],
-    validationSchema[2],
-    validationSchema[3],
-    validationSchema[4],
-    validationSchema[5],
-  );
-
-  function _handleSubmit(values: any, actions: any) {
-    actions.setSubmitting(true);
-    if (isLastStep) {
-      console.log("ok");
-      // window.alert('ok');
-      // actions.setSubmitting(false);
-      submitFormToDb(values, actions, activeStep, setActiveStep);
-    } else if (activeStep === 0) {
-      let originZip = `${values.originCity}, ${values.originState} ${values.originZip}, USA`;
-      let destinationZip = values.destinationZip
-        ? `${values.destinationCity}, ${values.destinationState} ${values.destinationZip}, USA`
-        : "";
-      let service = values.service;
-      if (isLoaded) {
-        findTravelTime(
-          originZip,
-          destinationZip,
-          service,
-          activeStep,
-          setActiveStep,
-          actions,
-        );
+    if (scriptLoaded) {
+      // Some scripts auto-run on load. If yours doesn't, we trigger it manually:
+      if (globalWin.initializeBookingWidget) {
+        globalWin.initializeBookingWidget();
+      } else if (globalWin.initBookingWidget) {
+        globalWin.initBookingWidget();
       }
-    } else {
-      setActiveStep(activeStep + 1);
-      actions.setTouched({});
-      actions.setSubmitting(false);
+
+      // Optional: If the script auto-executes on window load, we can force-trigger its entry point
+      // by dispatching a custom event or calling the script's global setup if it exists.
     }
-  }
+  }, [scriptLoaded]);
 
-  function _handleBack() {
-    setActiveStep(activeStep - 1);
-  }
   return (
-    <React.Fragment>
-      <Toaster />
-      {/* <ResizablePanel> */}
-      <div className="flex w-full items-center justify-center sm:w-[400px]">
-        {/* relative */}
-        <div className="shadow-3xl w-full rounded-3xl bg-white">
-          {/* overflow-y-auto max-h-[525px] */}
-          <React.Fragment>
-            {activeStep === steps.length ? (
-              <div className="p-8 text-center">
-                <img src="/hands.png" alt="" className="m-auto w-12" />
-                <p className="mt-4">We're on it!</p>
-                <p className="mt-4">
-                  Thanks for your submission. One of our moving specialists will
-                  contact you shortly.
-                </p>
-                <Button size="lg" className="mt-4" variant="outline" asChild>
-                  <a href="tel:(508)315-9458">+1 (508) 315-9458</a>
-                </Button>
-              </div>
-            ) : (
-              <Formik
-                initialValues={formInitialValues}
-                validationSchema={isLastStep ? merged : currentValidationSchema}
-                onSubmit={_handleSubmit}
-              >
-                {({ isSubmitting, values }: any) => {
-                  return (
-                    <Form id={formId} autoComplete="off">
-                      <MotionConfig transition={{ duration, type: "tween" }}>
-                        <ResizablePanel>
-                          <p className="mb-6 text-center text-2xl font-semibold">
-                            {steps[activeStep]}
-                          </p>
-
-                          {_renderStepContent(
-                            activeStep,
-                            values,
-                            rates,
-                            prices,
-                          )}
-
-                          <div className="mt-10 flex justify-between gap-6">
-                            {activeStep !== 0 && (
-                              <Button
-                                type="button"
-                                onClick={_handleBack}
-                                variant="outline"
-                                size="lg"
-                                className="flex-1"
-                              >
-                                Back
-                              </Button>
-                            )}
-
-                            <Button
-                              type="submit"
-                              disabled={isSubmitting}
-                              size="lg"
-                              className="flex-1"
-                            >
-                              {isSubmitting
-                                ? "Loading..."
-                                : stepsButtons[activeStep]}
-                            </Button>
-                          </div>
-                          {activeStep === 0 ? (
-                            <p className="font-semmibold mt-2 text-center text-xs text-slate-500">
-                              Free instant quote at step 3
-                            </p>
-                          ) : (
-                            <p className="font-semmibold mt-2 text-center text-xs text-slate-500">
-                              step {activeStep + 1}/{steps.length}
-                            </p>
-                          )}
-                        </ResizablePanel>
-                      </MotionConfig>
-                    </Form>
-                  );
-                }}
-              </Formik>
-            )}
-          </React.Fragment>
-        </div>
+    <>
+      <div className="min-h-132 w-full max-w-sm max-lg:mx-auto lg:ml-auto">
+        <div className="booking-widget-container"></div>
       </div>
-    </React.Fragment>
+      {/* 
+      <Script
+        src="http://app.gophoenixmoving.com/book-form-widget.js"
+        strategy="afterInteractive" // Loads after the page becomes interactive
+        onLoad={() => {
+          // 3. Initialize the form if the script requires a manual function call
+          if (window.initializeExternalForm) {
+            window.initializeExternalForm({
+              targetId: "my-external-form-placeholder",
+              formId: "12345",
+            });
+          }
+        }}
+      /> */}
+
+      <Script
+        src="http://app.gophoenixmoving.com/book-form-widget.js"
+        strategy="afterInteractive"
+        // Runs on initial page load
+        onLoad={() => setScriptLoaded(true)}
+        // Runs if the script is already cached/loaded when navigating back
+        onReady={() => setScriptLoaded(true)}
+      />
+    </>
   );
 }
 
-function ResizablePanel({ children }: { children: React.ReactNode }) {
-  let [ref] = useMeasure();
+// function ResizablePanel({ children }: { children: React.ReactNode }) {
+//   let [ref] = useMeasure();
 
-  return (
-    <div ref={ref} className="p-8">
-      {children}
-    </div>
-    // <motion.div animate={{ height: height || "auto" }} className="relative">
-    //   <AnimatePresence initial={false}>
-    //     <motion.div
-    //       // key={JSON.stringify(children, ignoreCircularReferences())}
-    //       // initial={{
-    //       //   x: 384,
-    //       // }}
-    //       // animate={{
-    //       //   x: 0,
-    //       //   // transition: { duration: duration / 2, delay: duration / 2 },
-    //       // }}
-    //       // exit={{
-    //       //   x: -384,
-    //       //   // transition: { duration: duration / 2 },
-    //       // }}
-    //       // className="relative"
-    //     >
-    //       <div ref={ref} className="p-8">
-    //         {children}
-    //       </div>
-    //     </motion.div>
-    //   </AnimatePresence>
-    // </motion.div>
-  );
-}
+//   return (
+//     <div ref={ref} className="p-8">
+//       {children}
+//     </div>
+//     // <motion.div animate={{ height: height || "auto" }} className="relative">
+//     //   <AnimatePresence initial={false}>
+//     //     <motion.div
+//     //       // key={JSON.stringify(children, ignoreCircularReferences())}
+//     //       // initial={{
+//     //       //   x: 384,
+//     //       // }}
+//     //       // animate={{
+//     //       //   x: 0,
+//     //       //   // transition: { duration: duration / 2, delay: duration / 2 },
+//     //       // }}
+//     //       // exit={{
+//     //       //   x: -384,
+//     //       //   // transition: { duration: duration / 2 },
+//     //       // }}
+//     //       // className="relative"
+//     //     >
+//     //       <div ref={ref} className="p-8">
+//     //         {children}
+//     //       </div>
+//     //     </motion.div>
+//     //   </AnimatePresence>
+//     // </motion.div>
+//   );
+// }
 
 /*
   Replacer function to JSON.stringify that ignores
